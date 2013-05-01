@@ -1,0 +1,135 @@
+\chapter{Literature study}\label{chapter:literature_study}
+
+In this chapter we will look at the various aspects of this research from the perspective of human-computer interaction.
+
+Shirley et al. \cite{shirley:2009} identify three kinds of limitations: ...
+
+First we will try to find out who the human is: its characteristics and which constraints it introduces and challenges it poses on software design and development. We try to find out how does a person gain insight into a complex concept, and how can a person use interactive visualization to arrive at insight.
+
+Next we will look at the machine. The focus here lies on the algorithms used in recommender systems. The various ...
+
+Finally we will discuss the interaction between the human and the computer, covering visualization techniques and principles.
+
+
+\section{The user}\label{chapter:literature_study:section:user}
+
+\subsection{Insight gaining}\label{chapter:literature_study:section:user:subsection:insight}
+
+In \cite{north:2006} it is argued that insight is not a well-defined term. A formal definition might be too restrictive to capture its essence, and yet too broad to be useful. To quantify insight, \cite{north:2006} and \cite{yi:2008} list characteristics that allow a finer evaluation:
+
+\begin{itemize}
+	\item \textbf{Complex}: insight is complex in the sense that involves large amounts of data that form cognitive constructs, rather than individual units;
+	\item \textbf{Deep}: insight is self-generating in a way, as insight provides a starting point for insight on the next level;
+	\item \textbf{Qualitative}: insight is subjective, uncertain and can have multiple levels of resolution;
+	\item \textbf{Unexpected}: insight is usually unpredictable, serendipitous and creative;
+	\item \textbf{Relevant}: insight is deeply embedded in the data domain: it gives data meaning as it connects data to the existing domain knowledge;
+\end{itemize}
+
+The quality of insight can then be determined by quantifying each of these characteristics \cite{north:2006}.
+
+\subsubsection{Sensemaking}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:sensemaking}
+
+Sensemaking plays an important part in insight gaining \cite{yi:2008}. The definitions for sensemaking may vary. We adapt a number of descriptions presented by \cite{Klein:2006:MSS:1158821.1159015} and \cite{yi:2008}.
+
+In \cite{Klein:2006:MSS:1158821.1159015} sensemaking is looked at from a psychological perspective, a perspective of human-centered computing, and the perspective of naturalistic decision making. Sensemaking is then defined as follows: "sensemaking is a motivated, continuous effort to understand connections in order to anticipate their trajectories and act effectively"\cite{Klein:2006:MSS:1158821.1159015}.
+
+Based on the dicussion in \cite{klein:2006:MSS:1175882.1176017} and \cite{yi:2008}, Soo Yi et al. describe the process of sensemaking. Sensemaking is a:
+
+\begin{itemize}
+	\item \textbf{Cyclic and iterative proceduce}: consisting out of a generation loop searching for representations, a data coverage loop instantiating the representations and finally shift representations;
+	\item \textbf{Creation procedure}: being more about reasoning than discovery;
+	\item \textbf{Retrospective procedure}: as people construct a framework and assign relevant information to a place withing this framework. If the data fits the framework well, the framework is confirmed, otherwise it may be updated or discarded;
+\end{itemize}
+
+An important remark made in \cite{Klein:2006:MSS:1158821.1159015} is that data fusion algorithms can reduce information overload, but they also pose challenges to sensemaking if the human can't form an accurate mental model of the machine, to understand why and how the algorithms are doing what they are doing. This directly relates to an issue of traditional recommender systems, as described by Herlocker et al.\cite{herlocker:2000}, namely the black box problem.
+
+
+\subsubsection{Processes of insight gaining}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:processes}
+
+Although sensemaking can play an important part in gaining insight, it is not the only path to arrive at insight \cite{yi:2008}. Soo Yi et al. \cite{yi:2008} identify four processes through which insight is established. Note that these processes are intertwined and often used together to generate insights. The processes are as follows\cite{yi:2008}:
+
+\begin{itemize}
+	\item \textbf{Provide overview}: in this process the individual gains understanding of the big picture of a dataset of interest. It allows the user to make a distinction between what is known to him/her and what is not;
+	\item \textbf{Adjust}: in this process a person will explore a dataset by adjusting the level of abstraction and/or the range of selection. Typical actions involve filtering and grouping of data;
+	\item \textbf{Detect pattern}: in this process the user will try to identify specific distributions, trends, frequencies, outliers or structure in the dataset;
+	\item \textbf{Match mental model}: in this process the gap between data and cognitive model is bridged, reducing cognitive load and linking the present visual information with real-world knowledge.
+\end{itemize}
+
+The link with sensemaking is found in the cyclic and iterative nature of sensemaking - provide overview, adjust and detected pattern can be applied iteratively, as well as its creative and retrospective aspects - adjust and detect pattern create hypotheses and test them through various interaction techniques\cite{yi:2008}.
+
+
+\subsection{Improving insight}\label{chapter:literature_study:section:user:subsection:improving}
+
+Yi et al. \cite{yi:2008} identify several ways in which the insight gaining process can be made more efficient. They list the system's interactivity, the quality of visual encodings and usability among others, as possible enablers for increased insight gaining. Naturally, improvident designs will act as barriers rather than enablers in the insight gaining process.
+
+
+\subsubsection{Interactivity and visual encodings}\label{chapter:literature_study:section:user:subsection:improving:subsubsection:visualization}
+
+Interactivity of the system promotes the user's engagement into the dataset. Spending more time with the data will allow users to form more detailed and accurate hypotheses, and as a result greater insight\cite{yi:2008}. Similarly visual encodings that are counter-intuitive will also increase the cognitive load. Other barriers on insight gaining are clutter, occlusion and data overload\cite{yi:2008}.
+
+
+\subsubsection{Usability}\label{chapter:literature_study:section:user:subsection:improving:subsubsection:usability}
+
+Usability is another aspect that may have an impact on the insight gaining process, as controls that are hard to use will inevitably occupy some of the cognitive capacity of the user. In the ISO standard ISO 9241-11, usability is defined as "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use"\cite{usabilitynet:2006:standards}.
+
+Usability should not be considered a one-dimensional property of a user interface. Nielsen identifies several characteristics of usability in applications\cite{nielsen:1993:UE:529793}:
+
+\begin{itemize}
+	\item \textbf{Learnability}: if the system is easy to learn, the user can get started quickly;
+	\item \textbf{Efficiency}: if the system is efficient to use, it will be possible to complete more work in less time;
+	\item \textbf{Error rate and severity}: if the system should be robust and minimize faults;
+	\item \textbf{Memorability}: once the system is learned, acquired skills should not be forgotten easily;
+	\item \textbf{Satisfaction}: the system should be pleasant to use.
+\end{itemize}
+
+Apart from the benefits for improving insight, usability is also related to user satisfaction. Although good usability is not a guarantee for optimal user satisfaction, in the general case the influence of usability on user satisfaction is large\cite{nielsen:2012:nngroup:satisfaction}.
+
+
+
+
+\subsection{Feedback loops}
+
+As we now have a better understanding of what insight is, we will try to establish how the insight gaining process works in combination with visual data mining and interactive visualization.
+
+interactive visualization
+
+visual working memory
+
+from feedback loops to insight gaining process
+
+
+
+\section{The system}\label{chapter:literature_study:section:computer}
+
+definition
+
+history
+
+properties
+
+
+\subsection{A classification of recommendation algorithms}\label{chapter:literature_study:section:computer:algorithms}
+
+
+\subsection{Challenges for recommendater systems}\label{chapter:literature_study:section:computer:challenges}
+
+
+
+
+\section{The interface}\label{chapter:literature_study:section:interaction}
+
+Ware et al. \cite{ware:2004} describes the interactive visualization as the interface between the user and the computer in a problem solving system.
+
+\subsection{Visualization}\label{chapter:literature_study:section:interaction:subsection:infovis}
+
+
+\subsection{Graph-based visualization}\label{chapter:literature_study:section:interaction:subsection:graph}
+
+techniques
+
+
+
+
+
+
+

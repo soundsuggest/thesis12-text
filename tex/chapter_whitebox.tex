@@ -1,0 +1,11 @@
+\chapter{Designing a white box model for collaborative filtering}\label{chapter:whitebox}
+
+In this chapter we will describe our approach to design a white box model for collaborative filtering. In order to provide explanations about the recommendation process, we will base our design on the characteristics of collaborative filtering.
+
+The underlying structure of collaborative filtering can be interpreted as a dual graph. This is a graph $G(V,E)$ for which $V = U \cup I$ such that $U \cap I = \emptyset \wedge E \subseteq U \times I$\cite{dekimpe:2007}. In this case the set of nodes U corresponds to the set of users, and the other set of nodes I is set of items. In plain language this means that there only exist edges of that go from an item to a user or from a user to an item. A quantification of the similarity between users can then be identified as the number of edges leading to common items within user profiles. This way we hope to be able to answer most of the questions raised in the previous paragraphs, describing Herlocker's white box model.
+
+One of the challenges of this approach is overcoming the graph drawing problem, as defined earlier in section \ref{chapter:literature_study:section:interaction:subsection:graph}. In an application where easily millions of items may be involved, scalability becomes a significant constraint on the visualization design\cite{herman:2000}.
+
+%Several strategies have been identified to reduce the number of items, reduce the number of dimensions and reduce visual clutter, as listed in section \ref{chapter:literature_study:section:interaction:subsection:infovis} and \ref{chapter:literature_study:section:interaction:subsection:graph}.
+
+Based on a visualization design by Valdis Krebs, a dimensionality reduction can be performed on the graph, by keeping only one set of nodes and representing the other set of nodes as implicit information in the edges. In \cite{steele:2010} Valdis Krebs kept the items, books purchased from the Amazon web store in this case, and represented the number of users that where linked to these items, i.e., purchased a particular book, by the thickness of the edges.

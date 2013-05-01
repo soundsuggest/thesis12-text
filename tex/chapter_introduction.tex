@@ -1,0 +1,77 @@
+\chapter{Introduction}\label{chapter:introduction}
+
+\section{Music suggestions and explanation systems}\label{chapter:introduction:section:context}
+
+Imagine you have a music library with a number of tracks in it. No doubt you will like certain tracks more than others. At a certain point you will want to expand your library. It is only natural that you will want to add music that is similar to the music you already like, but where should you begin to look for this kind of music? Over the last decade, systems have been developed to compute what tracks, or in the more general case, items or information, would be of interest to you based on your listening history and/or track ratings. This kind of systems are called recommender systems.
+
+In their essence, recommender systems can be seen as filters applied on a larg data sets. Ever since computer engineers started to develop this kind of systems, a wide range of algorithms have been designed and implemented to compute item recommendations\cite{burke:2002, melville:2002:CCF:777092.777124, pazzani:2007:CRS:1768197.1768209, rajaraman:2012}; each of them with their own advantages and disadvantages.
+
+Let us assume you have plugged some recommender system into your music library and you have received a list of music suggestions. Which of these recommendations should you choose? Of course you could go through them all one by one, but that might take up quite some time. What it comes down to is that you don't know how the recommender system computed these recommendations, and as a result, you have a hard time making an educated decision where to start.
+
+To solve this problem, you will need some kind of explanation system that provides a reasoning to arrive at the results. An ambitious approach would be to explain each step of the recommendation algorithm, but this not always possible or desired. Indicating which of your tracks are closely related to the given recommendations, the system's confidence in the accuracy of the suggestions, et cetera, also help giving some additional context in explaining why a particular recommendation would be interesting\cite{herlocker:2000}. Over the course of the last decade a wide range of explanation systems have been implemented. Many of these also use visualizations to explore user and/or item relationships\cite{bostandjiev:2012, crnovrsanin:2011:VRN:2421953.2422013, faridani:2010:opinionspace, gou:2011:SIF:2016656.2016671, gretarsson:2010, odonovan:2008}.
+
+Let's say that you have installed the the recommender system with an integrated explanation system. The explanation system visualizes how the items in your library are related to the recommendations, and provides additional statistics. Now, finding new, interesting music will hopefully become easier than ever before.
+
+\section{Thesis objective}\label{chapter:introduction:section:objective}
+
+The goal of this thesis is to design, implement and evaluate visualization and interaction techniques that allow the user to gain insight into the recommendation process as well as actively steer the process. The elaboration of this thesis consists out of a literature study on the topic of visualization of music suggestions, and secondly a similar application is designed and implemented\cite{kuleuven:2008:t313}.
+
+In the design of the application findings of the literature study and comparative study of visual explanation systems are taken into account. From this initial design a hypothesis and expected result are derived. This hypothesis is tested through user tests. If possible, the application is improved. This process can be repeated, incrementally improving the application.
+
+The scenario in section \ref{chapter:introduction:section:context} sketches the context in which this application can be used.
+
+
+\section{A multi-focal perspective}\label{chapter:introduction:section:perspective}
+
+Although the focus of this thesis lies on the creation of a visual explanation system for music recommendation, this thesis covers aspects of several research domains. Therefore, this text can be viewed from a multi-focal perspective. The various facets that can be distinguished are as follows: item recommendation, which is in turn a subfield of data mining, insight gaining and sensemaking, and information visualization and visual data mining. Also the graph drawing problem is an important topic in this paper. And last but not least, human-computer interaction can be seen as the overarching concept.
+
+To make the forementioned topics more concrete in the context of this thesis, the following subsections try to explain how each of these topics is relevant, as well as explain how they are interrelated.
+
+
+\subsection{Item recommendation}\label{chapter:introduction:section:perspective:subsection:recommendation}
+
+Recommender systems form one of the major topics of this thesis. In particular this thesis tries to address the black box problem. In a paper by Herlocker et al. \cite{herlocker:2000}, recommender systems are compared to a black box. This black box generates item recommendations seemingly at random, leaving the user guessing as to how recommendations were computed. Herlocker et al. propose to create an explanation system, i.e., the white box, to overcome this black box problem.
+
+Although there are many variations of recommendation algorithms, the focus of this thesis is on collaborative filtering-based (CF) item recommendation. This algorithm is studied in the context of music recommendation. The CF algorithm tries to establish similarities between user profiles, in this case music libraries with additional listening history and/or item ratings. Items in the difference between items sets of similar profiles are then candidate recommendations\cite{rajaraman:2012}.
+
+
+\subsection{Insight gaining and sensemaking}\label{chapter:introduction:section:perspective:subsection:sensemaking}
+
+Another aspect of this thesis is related to insight gaining. In order to develop an explanation system, it is interesting to explore how a user arrives at insight. We will try to define the insight gaining process and the related concept of sensemaking. Sensemaking is not uniquely defined as its meaning may slightly vary depending on the context\cite{yi:2008}. In short, sensemaking can be explained as the effort by an individual to understand the underlying information structures with the objective to answer task-specific questions\cite{russell:1993:CSS:169059.169209, yi:2008}.
+
+
+\subsection{Information visualization and visual data mining}\label{chapter:introduction:section:perspective:subsection:infovis}
+
+As the explanation system will be using visual elements, concepts from the field of information visualization will be used. We will look at general characteristics of information visualization and interactive visualization. Also, various visualization techniques, and clutter reduction techniques are discussed.
+
+
+\subsection{Graph drawing}\label{chapter:introduction:section:perspective:subsection:graph}
+
+To determine whether or not graphs are applicable to visualize a concept, Herman et al. \cite{herman:2000} pose the following question: "is there an inherent relation among the data elements to be visualized?" As the structure behind collaborative filtering can be interpreted as a network of users and items, the answer to this question is yes. As a result, it should come as no surprise that graphs are a popular way to visualize collaborative filtering-based recommendation\cite{bostandjiev:2012, gretarsson:2010}, and the application developed for this thesis will also contain a graph-based visualization.
+
+Herman et al. \cite{herman:2000} define the graph drawing problem as follows: "given a set of nodes with a set of edges (relations), calculate the position of the nodes and the curve to be drawn for each edge". This thesis can then be seen as an effort to solve the graph drawing problem in a particular context, i.e., specific constraints in terms of screen size, data dimensionality, data quantity, et cetera.
+
+
+\subsection{Human-computer interaction and usability}\label{chapter:introduction:section:perspective:subsection:hci}
+
+In its most basic form, this is a thesis about humans and computers. The human uses a computer to find new item recommendations. The computer provides these recommendations. The human wants to understand the recommendation process. The computer explains how it computed the item suggestions. The user interacts with the system to further his/her understanding of the subject.
+
+In this thesis we will try to understand the user, the system or computer, and the interface that allows interactions between them. Human interaction (CHI) is defined as "is the study of how people design, implement, and use interactive computer systems and how computers affect individuals, organizations and society."\cite{tripathi:2011}.
+
+To improve the interaction between humans and computers, we will aim to develop an interface with high usability. The evaluation methods in this thesis draw from the evaluation techniques from the field of human-computer interaction. Paper prototyping, think aloud protocol, subjective evaluation methods among others, are examples of these techniques\cite{nielsen:1993:UE:529793}. In this sense, this thesis can be seen as a case study of designing, implementing and incrementally improving an application using CHI techniques.
+
+
+\section{The visual explanation system}\label{chapter:introduction:section:application}
+
+The application created for this thesis is a page action Chrome Extension that injects \emph{HTML} and \emph{JavaScript} into the recommendations page of \emph{Last.fm} at \url{http://last.fm/home/recs}. The application makes use of several \emph{JavaScript} libraries, such as D3\footnote{A library using SVG, HTML and JavaScript\cite{bostock:2012:d3js}; available at: \url{http://d3js.org/}} and jQuery\footnote{Available at: \url{http://jquery.com/}}, as well as a specific JavaScript library by Felix Bruns\footnote{Available at: \url{https://github.com/fxb/javascript-last.fm-api}} to facilitate using the Last.fm API\footnote{Available at: \url{http://www.last.fm/api}}.
+
+The application can be found in the Google Chrome web store\footnote{The SoundSuggest application can be found at: \url{https://chrome.google.com/webstore/detail/soundsuggest/jimmblcjmmjjfaklclmohcnabndlidmb}}.
+
+
+\section{Next chapters}\label{chapter:introduction:section:chapters}
+
+The rest of this thesis text is organized as follows. First we will present a literature study on the topics discussed in section \ref{chapter:introduction:section:perspective} of this introduction. The next chapter is a comparative study of recommender systems with visual explanation systems. After this we will try to design a white box for CF-based recommendation by applying some of the conclusions and techniques discussed in the literature study. This concludes the theoretical part of the thesis.
+
+In the next part of the thesis we will look at the evaluation of the application's design through user tests, as well as the software design and implementation of the application. In these chapters we will try to identify liabilities in the design, highlight implementation details, and discuss evaluation methods.
+
+The thesis text ends with an analysis of the application's evaluation results, further conclusions, and a reflection on future work and opportunities.

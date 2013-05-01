@@ -1,0 +1,320 @@
+\chapter{Literature study}\label{chapter:literature_study}
+
+The term 'human-computer interaction' describes a phenomenon where two actors, the human or \emph{user} and the computer or \emph{system}, share a communication channel. The communication channel is a representation of data of the system towards the user. It is clear that both actors will impose certain restrictions on this visual communication channel\cite{shirley:2009, ware:2004}. In this chapter we will try to establish who these actors are, what this communication channel looks like, and what kind of restrictions are imposed upon the visual communication channel. 
+
+
+\section{The user}\label{chapter:literature_study:section:user}
+
+Who is the first actor? The answer to this question is of course very broad, so first we will try to list what we actually want to know. The goal is to allow the user to gain insight into the system through an interactive, visual explanation system. In conclusion, two specific questions arise:
+
+\begin{itemize}
+	\item how does a human gain insight?
+	\item what kind of limitations are imposed by the user on the design of an interactive visualization?
+\end{itemize}
+
+The following subsections try to establish an answer to these questions. Most of the ideas in these subsections are drawn from a papers by Yi. et al. \cite{yi:2008}, North et al. \cite{north:2006}, Klein et al. \cite{Klein:2006:MSS:1158821.1159015, klein:2006:MSS:1175882.1176017}, and a book by Colin Ware \cite{ware:2004}.
+
+
+\subsection{Insight gaining}\label{chapter:literature_study:section:user:subsection:insight}
+
+What is insight\index{insight}? In \cite{north:2006} it is argued that insight is not a well-defined term. A formal definition might be too restrictive to capture its essence, and yet too broad to be useful. To quantify insight, \cite{north:2006} and \cite{yi:2008} list characteristics that allow a finer evaluation:
+
+\begin{itemize}
+	\item \textbf{Complex}: insight is complex in the sense that involves large amounts of data that form cognitive constructs, rather than individual units;
+	\item \textbf{Deep}: insight is self-generating in a way, as insight provides a starting point for insight on the next level;
+	\item \textbf{Qualitative}: insight is subjective, uncertain and can have multiple levels of resolution;
+	\item \textbf{Unexpected}: insight is usually unpredictable, serendipitous and creative;
+	\item \textbf{Relevant}: insight is deeply embedded in the data domain: it gives data meaning as it connects data to the existing domain knowledge;
+\end{itemize}
+
+The quality of insight can then be determined by quantifying each of these characteristics\cite{north:2006}. The previously described collection of properties defines insight. Now we will look at the closely related concept of sensemaking. The next paragraphs describe how a user can arrive at insight.
+
+
+\subsubsection{Sensemaking}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:sensemaking}
+
+Sensemaking\index{sensemaking} plays an important part in insight gaining \cite{yi:2008}. The definitions for sensemaking may vary. We adapt the definition presented by \cite{Klein:2006:MSS:1158821.1159015} and \cite{yi:2008}.
+
+In \cite{Klein:2006:MSS:1158821.1159015} sensemaking is looked at from a psychological perspective, a perspective of human-centered computing, and the perspective of naturalistic decision making. Sensemaking is then defined as follows: "sensemaking is a motivated, continuous effort to understand connections in order to anticipate their trajectories and act effectively"\cite{Klein:2006:MSS:1158821.1159015}.
+
+Based on the dicussion in \cite{klein:2006:MSS:1175882.1176017} and \cite{yi:2008}, Soo Yi et al. describe the process of sensemaking. Sensemaking is a:
+
+\begin{itemize}
+	\item \textbf{Cyclic and iterative proceduce}: consisting out of a generation loop searching for representations, a data coverage loop instantiating the representations and finally shift representations;
+	\item \textbf{Creation procedure}: being more about reasoning than discovery;
+	\item \textbf{Retrospective procedure}: as people construct a framework and assign relevant information to a place withing this framework. If the data fits the framework well, the framework is confirmed, otherwise it may be updated or discarded;
+\end{itemize}
+
+An important remark made in \cite{Klein:2006:MSS:1158821.1159015} is that data fusion algorithms can reduce information overload, but they also pose challenges to sensemaking if the human can't form an accurate mental model of the machine, to understand why and how the algorithms are doing what they are doing.
+
+
+\subsubsection{Processes of insight gaining}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:processes}
+
+Although sensemaking can play an important part in gaining insight, it is not the only path to arrive at insight \cite{yi:2008}. Soo Yi et al. \cite{yi:2008} identify four processes through which insight is established. Note that these processes are intertwined and often used together to generate insights. The processes are as follows\cite{yi:2008}:
+
+\begin{itemize}
+	\item \textbf{Provide overview}: in this process the individual gains understanding of the big picture of a dataset of interest. It allows the user to make a distinction between what is known to him/her and what is not;
+	\item \textbf{Adjust}: in this process a person will explore a dataset by adjusting the level of abstraction and/or the range of selection. Typical actions involve filtering and grouping of data;
+	\item \textbf{Detect pattern}: in this process the user will try to identify specific distributions, trends, frequencies, outliers or structure in the dataset;
+	\item \textbf{Match mental model}: in this process the gap between data and cognitive model is bridged, reducing cognitive load and linking the present visual information with real-world knowledge.
+\end{itemize}
+
+The link with sensemaking is found in the cyclic and iterative nature of sensemaking - provide overview, adjust and detected pattern can be applied iteratively, as well as its creative and retrospective aspects - adjust and detect pattern create hypotheses and test them through various interaction techniques\cite{yi:2008}.
+
+
+\subsubsection{Improving insight}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:improving}
+
+Yi et al. \cite{yi:2008} identify several ways in which the insight gaining process can be made more efficient. They list the system's interactivity, the quality of visual encodings and usability among others, as possible enablers for increased insight gaining. Naturally, improvident designs will act as barriers rather than enablers in the insight gaining process.
+
+Interactivity of the system promotes the user's engagement into the dataset. Spending more time with the data will allow users to form more detailed and accurate hypotheses, and as a result greater insight\cite{yi:2008}. At the same time, while using the visualization, the user will become moe skilled at a task over time. Nonetheless, bare in mind that when performing long and tedious search tasks, vigilance will become an important aspect as well in the efficiency of data exploration\cite{ware:2004}.
+
+Similarly visual encodings that are counter-intuitive will also increase the cognitive load. Other barriers on insight gaining are clutter, occlusion and data overload\cite{yi:2008}.
+
+Usability is another aspect that may have an impact on the insight gaining process, as controls that are hard to use will inevitably occupy some of the cognitive capacity of the user\cite{yi:2008}. In the ISO standard ISO 9241-11, usability is defined as "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use"\cite{usabilitynet:2006:standards}.
+
+Note that usability\index{usability} should not be considered a one-dimensional property of a user interface. Nielsen identifies several characteristics of usability in applications\cite{nielsen:1993:UE:529793}:
+
+\begin{itemize}
+	\item \textbf{Learnability}: if the system is easy to learn, the user can get started quickly;
+	\item \textbf{Efficiency}: if the system is efficient to use, it will be possible to complete more work in less time;
+	\item \textbf{Error rate and severity}: if the system should be robust and minimize faults;
+	\item \textbf{Memorability}: once the system is learned, acquired skills should not be forgotten easily;
+	\item \textbf{Satisfaction}: the system should be pleasant to use.
+\end{itemize}
+
+
+\subsection{Interactive visualization}\label{chapter:literature_study:section:user:subsection:interactive}
+
+As we now have a better understanding of what insight is, we will try to establish how the insight gaining process works through visual data mining\index{visual data mining} and interactive visualization\index{visualization!interactive visualization}. The relation between insight gaining and data visualization has been pointed out in other research. Colin Ware \cite{ware:2004} describes interactive visualization as the interface between the user and the computer in a problem solving system. Keim \cite{keim:2002} notes that "idea behind visual data exploration, is to present data in a visual form, allowing the user to gain insight into the data, draw conclusions, and directly interact with the data".
+
+In a chapter on visualization\index{visualization} in \cite{shirley:2009}, Tamara Munzner describes visualization as follows: "visualization allows the user to offload cognition to the perceptual system, using graphical data representations as a form of external memory. Therefore, by augmenting human capabilities, the data analyst is aided to understand, explore and form hypotheses of the data"\cite{shirley:2009}. In conclusion, the visual data exploration\index{visual data exploration|see{visual data mining}} process can then be understood as a hypothesis generation process\cite{keim:2002}.
+
+In what follows, we try to describe how a human interacts with interactive visualization on a cognitive level. It will be clear that some parallels can be drawn with the insight gaining process. This should come as no surprise, since these processes are intertwined\cite{keim:2002, ware:2004, yi:2008}.
+
+In \cite{ware:2004} interactive visualization is characterized by three classes of feedback loops:
+
+\begin{itemize}
+	\item \textbf{Data selection and manipulation loop}: the user selects and moves objects that are selected through simple interactions based on eye-hand coordination;
+	\item \textbf{Exploration and manipulation loop}: the user tries to find his/her way through a large visual data space;
+	\item \textbf{Problem solving loop}: the user forms hypotheses about the data and refines them through an augmented visualization process.
+\end{itemize}
+
+The following subsections describe each feedback loop in greater detail.
+
+
+\subsubsection{Data selection and manipulation loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops1}
+
+The quality of performance of selecting and manipulating data on a screen, depends on certain factors. Colin Ware discusses the following attributes:
+
+\begin{itemize}
+	\item \textbf{Reaction time}: This is the amount of time for a user to identify and select certain objects\cite{ware:2004}.
+	\item \textbf{Types of interaction}: different types of interaction will have a different influence on user performance.
+	\item \textbf{Learning}: The speed at which a user performs a task may decrease over time, as the user becomes more skilled at executing the task.
+\end{itemize}
+
+Each of these factors has been evaluated and since, they are captured in various laws. We will discuss some of them, as listed by Ware et al. in \cite{ware:2004}.
+
+The reaction time is given by the \emph{Hick-Hyman law}\index{Hick-Hyman law}: $Time_{reaction} = a + b \log_{2}(C)$ with $C$ the number of choices and $a$ and $b$ empirically determined constants. This formula has been derived from experiments in which subjects had to press one of two buttons depending on the color of a light that was turned on or turned off\cite{ware:2004}.
+
+The reaction-time may be influenced by many other factors such as the amount of visual noise, the distinctness of the signal and so on. If a person is allowed to make mistakes, the subject will respond faster, but at a cost of loss of accuracy\cite{ware:2004}. When performing long and tedious search tasks, vigilance will become an important aspect as well\cite{ware:2004}.
+
+In \cite{ware:2004} different kinds of interactions are discussed such as selection, hover querries and path tracing. The time required for selecting an object in a two-dimensional space is determined by \emph{Fitt's law}\index{Fitt's law}: $Time_{selection} = a + b \log_{2}(D/W+1.0)$ with $D$ the distance to the target, $W$ the width of the target and $a$ and $b$ empirically determined constants\cite{ware:2004}.
+
+A common way of selecting objects is through hover queries: the user drags a cursor over an object\cite{ware:2004}.
+
+Another type of interaction is path tracing. The speed at which a user can trace or follow a given path is given by $v = W/\tau$ with velocity $v$, $W$ the path width and $\tau$ a constant depending on the motor control system of the user\cite{ware:2004}.
+
+When a task is repeated over time, the user will become more efficient at performing this task. Depending on the difficulty of the task, this learning effect will be more or less prominent. The \emph{power law of practice}\index{power law of practice} describes this speed up \cite{ware:2004}: $\log(T_{n})=C-\alpha\log(n)$ in which $T_{n}$ is the time required to perform the task at the $n$-th trial, with $C=log(T_{1})$ and $\alpha$ the steepness of the learning curve.
+
+Some actions are easier to learn than others. This is related to the \emph{stimulus-response (S-R) compatibility}\index{stimulus-response compatibility}. The stimulus-response compatibility refers to the way in which skills that have been learned before through everyday experience, are applied to computer control design. However it is not necessary to produce a whole virtual reality to create excellent computer interfaces. Research shows that mismatches between the interface and real world experience are not necessarily detrimental to the efficiency of human-computer interaction. Ware concludes that "it would be naive to conclude that computer interfaces should evolve toward VR simulations of real-world tasks (...). The magic of computers is that a single button click can often accomplish as much as a prolonged series of actions in the real world"\cite{ware:2004}.
+
+
+\subsubsection{Exploration and manipulation loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops2}
+
+The basic navigation control loop is described as an iterative process consisting out of the following steps\cite{ware:2004}:
+
+\begin{itemize}
+	\item On the human side, there is a logical and spatial model whereby the user understands the data space and his or her progress through it. If the data space is maintained for a long enough period of time, parts of the model may be encoded in the longterm memory;
+	\item On the computer side, the visualization may be updated and refined from data mapped into the spatial model.
+\end{itemize}
+
+
+
+\subsubsection{Problem solving loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops3}
+
+
+
+\section{The system}\label{chapter:literature_study:section:computer}
+
+Before describing the visual communication channel between human and computer, it is necessary to know what exactly has to be explained through visualization. Therefore we will take a closer look at the system, i.e., the recommender system.
+
+A recommender system\index{recommender system} is a system that computes item suggestions for users based on a ratings of related items in the user's profile/history. Additional information can be incorporated into the recommendation algorithm\index{recommendation algorithm} to refine suggestions. Several categorizations of these techniques are proposed in literature \cite{bostandjiev:2012, burke:2002, herlocker:2000, melville:2002:CCF:777092.777124, celma:2008:phd}.
+
+One of the incentives behind creating recommender system is the 'long-tail phenomenon'\index{Long Tail}. This phenomenon can be explained as follows. Physical retail and warehouses can only keep a subset of all the available items in stock. These items are usually the most popular items on the market. Online vendors however, such as \emph{Amazon}\footnote{\url{http://www.amazon.com/}}, can offer a vastly larger subset of these items to clients, including also less popular and/or less known items\cite{rajaraman:2012}. Typically the long-tail phenomenon is visualized in a graph in which items are ordered by their popularity on the horizontal axis against the popularity rating on the vertical axis. Physical stores will offer only items in the first part of the graph, whereas the online vendors will also sell items from the remaining 'long tail' of the graph\cite{rajaraman:2012, celma:2008:phd}. Recommender systems then provide a means to find relevant items within this much larger range of items\cite{rajaraman:2012}. They enable to "connect supply and demand, introducing consumers to these new and newly available goods and driving demand down the tail "\cite{anderson:2006:LTW:1197299, celma:2008:phd}.
+
+The success of recommender systems to achieve this objective has been the subject of some research, e.g. \cite{levy:2010} and \cite{celma:2008:phd}. Different classes of recommender algorithms favour different properties\cite{burke:2002, shani:2011:9780387858197}. This is elaborated further in subsection \ref{chapter:literature_study:section:computer:subsection:challenges}. For now its enough to see that the quality of recommendations is not uniquely defined. For example, in order to increase coverage of the item space, achieving high serendipity and novelty may be desired more than high recommendation accuracy, depending on the application context\cite{shani:2011:9780387858197, tripathi:2011, celma:2008:phd}.
+
+Typical applications of recommender systems are product recommenders for online retailers, movie and music recommenders such as \emph{Netflix}\footnote{\url{http://www.netflix.com/}} and \emph{Last.fm}\footnote{\url{http://www.last.fm/}}, and news article recommenders in online news services\cite{levy:2010, rajaraman:2012, celma:2008:phd}.
+
+Recommender system have opened up new possibilities in the landscape of online retail, and as a result, spurred the interest of businesses in this field. A remarkable initiative was the Netflix challenge\index{Netflix challenge}. In 2006, Netflix Inc. offered a prize to beat the performance of their recommendation algorithm by 10 percent. It gave a significant boost to the research on recommendation algorithms, and yielded a winning algorithm in September 2009\cite{bell:2007, rajaraman:2012}.
+
+
+\subsection{Properties of recommendation algorithms}\label{chapter:literature_study:section:computer:subsection:properties}
+
+in \cite{herlocker:2004:ECF:963770.963772} and \cite{shani:2011:9780387858197}, Herlocker et al. and Shani et al.  respectively, compare the performance of recommender systems. They list a number of metrics for recommendation algorithms. The resulting set of properties consist out of the following characteristics:
+
+\begin{itemize}
+	\item \textbf{Accuracy}: The accuracy of item recommendations. There are three broad classes of prediction accuracy measures:
+	\begin{itemize}
+		\item the prediction of the rating given by a user;
+		\item the prediction whether or not a user will actually use the item (for example adding to a queue) opposed to predicting the rating itself;
+		\item the prediction of a ranking among items rather than an explicit rating of each item independently.
+	\end{itemize}
+	\item \textbf{User preference}: The opinion of certain users may be more valuable than the opinion of others.
+	\item \textbf{Coverage}: The proportion of items that the recommender system can recommend is referred to as catalog coverage. Another measure in this respect is the percentage of all items that are recommended to users. Finally we can also look at the diversity of the recommended items. Coverage can also mean the proportion of users or user interactions for which the system can recommend items.
+The cold start problem relates to coverage as it measures the coverage for a specific type of users, namely new users.
+	\item \textbf{Confidence}: Confidence in the recommendation can be defined as the systems trust in its recommendations or predictions. The most common measurement of confidence is the probability that the predicted value is indeed true, or the interval around the predicted value where predefined portion of the true values lie. Confidence bounds can be used to filter recommended items where the confidence in the predicted value is below some threshold.
+	\item \textbf{Trust}: Trust refers to the user's trust in the system, as opposed to confidence.
+	\item \textbf{Novelty}: Novel recommendations are recommendations for items that the user did not know about.
+	\item \textbf{Serendipity}: Serendipity is a measure of how surprising the successful recommendations are. One can think of serendipity as the amount of relevant information that is new to the user in a recommendation, or alternatively as deviation from the 'natural' prediction.
+	\item \textbf{Diversity}: Diversity is generally defined as the opposite of similarity. Note that an increase in diversity may correlate to a decrease in accuracy.
+\end{itemize}
+
+
+\subsection{A classification of recommendation algorithms}\label{chapter:literature_study:section:computer:subsection:algorithms}
+
+Based on classifications presented in \cite{burke:2002} and \cite{celma:2008:phd}, a categorization of different types of recommendation strategies can be identified. We will only discuss the two most prominent ones, namely collaborative filtering (CF)\index{recommendation algorithm!collaborative filtering} and content-based filtering (CB)\index{recommendation algorithm!content-based filtering}\cite{herlocker:2000, rajaraman:2012}, and list some hybrid strategies. In the literature on recommender systems other general approaches that are commonly identified, are utility-based filtering, knowledge-based filtering, demographic filtering, and expert-based filtering\cite{burke:2002, bostandjiev:2012}.
+
+
+\subsubsection{Collaborative recommendation}
+
+Collaborative recommendation aggregates item ratings by users. By establishing overlaps between ratings in the corresponding user profiles, the system generates new item recommendations\cite{burke:2002, herlocker:2000}. A typical user profile in a collaborative system consists of a vector of items and their ratings, that continuously augmented as the user interacts with the system over time\cite{burke:2002}. 
+
+For CF-based recommendation, there are two classes of entities: users $U$ and items $I$. The data itself can then be represented by a utility matrix\index{utility matrix} $A$. The entries $a_{i,j}$ of the utility matrix represent what is known about the degree of preference of user $u_{i}$ and item $i_{j}$\cite{rajaraman:2012}.
+
+% Similarity / distance functions ...
+
+
+\subsubsection{Content-based recommendation}
+
+Content-based recommendation learns a profile of the user’s interests based on the features present in objects the user has rated. New recommendations can then be generated based on a similarity function on these features\cite{burke:2002, pazzani:2007:CRS:1768197.1768209}.
+
+% Feature vectors ...
+
+
+\subsection{Challenges for recommender systems}\label{chapter:literature_study:section:computer:subsection:challenges}
+
+% Cold start / ramp up problem, first rater, new user, new item, gray sheep, profile trust (bad users), sparsity, black box
+
+Each recommendation technique has benefits as well as drawbacks. Some of these apply to all or most types of recommendation strategies, while others are only relevant to certain cases.
+
+%One of the challenges that 
+
+% solutions: clustering, UV-decomposition, hybrid approaches, content-boosted / using estimations of empty entries
+
+Both CF and CB-based recommendation algorithms suffer from the ramp-up\index{ramp-up|see{cold start}} problem in one way or the other. The 'ramp-up' or 'cold start' problem\index{cold start} (although they may refer to slightly different problems depending on the literature) is dual problem that encompasses two distinct, yet related problems as defined in \cite{burke:2002}:
+
+\begin{itemize}
+	\item \textbf{New User}\index{cold start!new user}: when a recommender system uses ratings by its users to compute item recommendations, it is hard to find neighbours for a user, who has a limited profile. As user profiles tend to build up over, new users usually fall in this category.
+	\item \textbf{New Item}\index{cold start!new item}: a new item will most likely not have that many ratings associated with it, and as a result will not be easily recommended. This 'new item problem' typically emerges when new items are constantly added to the system; for example when browsing a constant stream of news articles. When new articles are introduced, not many users have had the chance yet to rate these items. In the case of a news feed, an additional problem is that these items are short-lived, meaning that at some point these item profiles will most likely stop receiving any ratings at all.
+\end{itemize}
+
+A problem that is typical of collaborative filtering is the 'gray sheep problem'\index{gray sheep}\cite{burke:2002, herlocker:2000}. The gray sheep problem occurs when a user falls between different clusters of users that may have contradicting item ratings. As a result, it is hard to determine how to classify the user\cite{burke:2002}.
+
+Another issue with recommendation systems is that these system often appear as 'black boxes' towards the end user\index{black box}. The complexity of the algorithms used prevents the user from understanding the recommendation rationale\cite{zhao:2010}. This problem decreases the acceptance by the user of item suggestions. One of the solutions for this problem, proposed by Herlocker et al. in \cite{herlocker:2000}, is to provide an explanation system, i.e., the white box\index{white box}, on top of the recommender system that explains the recommendation process. This can be done through providing a transcript of the system's reasoning or through visualizations\cite{herlocker:2000}.
+
+
+% more specifics on recommender properties
+
+
+
+\section{The interface}\label{chapter:literature_study:section:interaction}
+
+% What will we study?
+% Link with previous sections?
+In this section we will take a closer look at the visual communication channel.
+
+Shirley et al.\cite{shirley:2009} lists three distinctive limitations:
+
+\begin{itemize}
+	\item \textbf{Computational capacity}: time complexity and memory usage of algorithms must allow a responsive user interface, especially in the case of interactive visualization.
+	\item \textbf{Display capacity}: there is a trade-off between the benefits of maximizing the information density, i.e., the measure of the amount of encoded information against the amount of unused space, and causing visual overload.
+	\item \textbf{Human perceptual and cognitive capacity}: optimizing the cognitive cost is one of the key aspects that make up a successful visualization, as visual and non-visual memory capacity are limited\cite{ware:2004}.
+\end{itemize}
+
+There has been done extensive research in this domain. Over the last two decades various new information visualization techniques have been developed. These techniques can be classified based on three criteria \cite{keim:2002}:
+
+\begin{itemize}
+	\item \textbf{Data}: a classification based on the structure and type of data;
+	\item \textbf{Technique}: a classification based on characteristics of visualization techniques;
+	\item \textbf{Interaction and distortion}: a classification based on the way in which interaction between user and visualization is enabled.
+\end{itemize}
+
+
+\subsection{Types of data}\label{chapter:literature_study:section:interaction:subsection:datatypes}
+
+% context
+% wat can be visualized, data types (recommender data)
+
+Information visualization\index{information visualization}\index{infovis|see{information visualization}} has been focusing on on data sets that lack inherent spatial semantics, thus posing a challenge to map the abstract data onto a two-dimensional screen space\cite{keim:2002}.
+
+There are different types of data and their characteristics will have an influence on the type of visualization. Tables of data consist out of rows, representing items, and columns, representing the data dimensions, or 'attributes'. The number of dimensions is referred to as the dimensionality\index{dimensionality} of the data set\cite{keim:2002}. There are three different kinds of dimensions, namely\cite{shirley:2009}:
+
+\begin{itemize}
+	\item \textbf{Quantitative}: numerical data on which arithmetic can be applied;
+	\item \textbf{Ordered}: an enumeration that has a definite order;
+	\item \textbf{Categorical}: data that has no specific ordering, and is distinguished by name only.
+\end{itemize}
+
+Relational data\index{relational data} on the other hand consists out of nodes\index{graph!node} and links or 'edges'\index{graph!edge}\cite{keim:2002, shirley:2009}. Both nodes and edges can have associated attributes.
+
+In \cite{keim:2002} also text and hypertext, and algorithms and software are discussed as examples of other types of data. In the case of text and hypertext, standard visualizations are hard to use, as they cannot be described easily in terms of numbers. As a result, the data is first transformed into description vectors. Next, these vectors can be used in a visualization. Examples of software and algorithm visualization are flow diagrams, presentation using a graph-based structure of source code, and so on\cite{keim:2002}.
+
+
+\subsection{Visual encoding and visual channels}\label{chapter:literature_study:section:interaction:subsection:encoding}
+
+%Visual encoding principles
+
+Visual encoding is defined as the mapping of data set attributes to a visual representation. The choice of visual encoding is one of the central problems in the visualization design\cite{shirley:2009}.
+
+Visual encoding takes place through visual channels. A visual encoding corresponds to a graphical element, or ‘mark’. Examples of visual channels are spatial position, color, size, et cetera. The dimension of the mark may vary: a point is a zero-dimensional mark, a line a one-dimensional one, an area a two-dimensional one and so on.
+
+A visual encoding has the following characteristics, as described in\cite{shirley:2009}:
+
+\begin{itemize}
+	\item \textbf{Distinguishability}: the ability of a user to distinguish between visual encodings;
+	\item \textbf{Seperability}: Separable visual channels are opposed to integral visual channels, which are focused together on a pre-conscious level. Separable visual channels are safe to use for encoding multiple dimensions;
+	\item \textbf{Pop-out}: selecting a channel and make it visually stands out from all the others.
+\end{itemize}
+
+%Visual channels
+
+There is a variety of possible visual channels that a designer can turn to in order to create a visual encoding, such as color, spatial position, size, shape, orientation, and so on. The performance of the visual encoding (through a visual channel) depends on the type of data, i.e. quantitative, ordered or categorical \cite{shirley:2009}. Figure ... gives an overview of the performance for each category, adapted from \cite{shirley:2009}. Note that spatial position is the most accurate for each data type.
+
+
+%Figure 1: Visual encoding performance for each data type
+
+
+%\subsubsection{Colour}\label{chapter:literature_study:section:interaction:subsection:encoding:subsubsection:colour}
+
+In \cite{shirley:2009} colour is considered in terms of three separate channels: hue, saturation and brightness. This allows for different encodings. Just like for most visual channels, the choice of the channel (hue, saturation or brightness) depends heavily on the type of data:
+
+\begin{itemize}
+	\item \textbf{Quantitative data}: uses a color map, a range of color values that can be continuous or discrete. It is recommended to use lightness instead of hue, as lightness has an implicit perceptual ordering. Moreover the human eye responds most to strong luminance. Hue on the other hand has a small range (around twelve values that can be reliably distinguished, including background and neutral colors);
+	\item \textbf{Ordered data}: lightness and saturation are advised. As mentioned before, these have an implicit perceptual ordering;
+	\item \textbf{Categorical data}: hue can be successfully applied for categorical data, keeping in mind its small range.
+An important remark is that roughly 10\% of men is red-green color deficient. If a coding uses red and green, it may be wise to apply redundant coding using lightness or saturation in addition to hue \cite{shirley:2009}.
+\end{itemize}
+
+Spatial layouts form other visual channels. Although these tend to be the most accurate, spatial layouts in two and three dimensions have several weaknesses \cite{shirley:2009}:
+
+\begin{itemize}
+	\item \textbf{Occlusion}: parts of the data set become hidden by others. In the case of the mapping of abstract dimensions onto spatial positions, understanding the details of a three-dimensional visualization may be challenging, even if the user is allowed to change viewpoints;
+	\item \textbf{Perspective distortion}: again, in the case of the mapping of abstract dimensions onto spatial positions, distances may convey meaning that may be distorted through perspective.
+	\item \textbf{Text in arbitrary orientations}: special care has to be taken with text, as it may become very hard to read depending on the orientation.
+\end{itemize}
+
+
+\subsection{Visualization techniques}\label{}
+
+% Techniques to overcome limitations of visual channels
+
