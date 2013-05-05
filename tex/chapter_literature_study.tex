@@ -457,6 +457,39 @@ Based on the discussion by Ware and Mitchell in \cite{ware:2004}, Keim in \cite{
 
 % 3D --> cf. ware: in order to maximize the portion of the data space being visualized...
 
+In \cite{keim:2002}, Keim lists a number of visualization techniques:
+
+\begin{itemize}
+	\item \textbf{Standard $2$D and $3$D techniques}: one-to-one data mappings from the data space onto the screen. For example xy- and xyz-plots, bar charts, line graphs and so on;
+	\item \textbf{Geometrically transformed displays}: transformations of multidimensional spaces onto a two-dimensional display. For example parallel coordinate technique, as shown in figure \ref{figure:parallel_coordinates}, or scatterplot matrices, as shown in figure \ref{figure:scatterplot_matrix}.
+	\item \textbf{Iconic displays/glyphs}: representations of a multidimensional set of attributes in a single icon.
+	\item \textbf{Dense pixel displays}:
+	\item \textbf{Stacked displays}:
+\end{itemize}
+
+
+% BEGIN FIGURE : geometrically_transformed_displays
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.6\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/parallel_coordinates}
+					\caption{Parallel coordinates.}
+					\label{figure:parallel_coordinates}
+	\end{subfigure}%
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+		%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.4\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/scatterplot_matrix}
+					\caption{Scatterplot matrix.}
+					\label{figure:scatterplot_matrix}
+	\end{subfigure}
+	\caption{Parallel coordinates and scatterplot matrix visualizations for Edgar Anderson's \emph{Iris} data set. Taken from \url{http://mbostock.github.io/d3/talk/20111116/iris-parallel.html} and \url{http://mbostock.github.io/d3/talk/20111116/iris-splom.html} respectively.}%
+	\label{figure:geometrically_transformed_displays}%
+\end{figure}
+
+
 
 \subsubsection{Interaction techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:interaction}
 
