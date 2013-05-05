@@ -3,10 +3,6 @@
 The term 'human-computer interaction' describes a phenomenon where two actors, the human or \emph{user} and the computer or \emph{system}, share a communication channel. The communication channel is a representation of data of the system towards the user. It is clear that both actors will impose certain restrictions on this visual communication channel\cite{shirley:2009, ware:2004}. In this chapter we will try to establish who these actors are, what this communication channel looks like, and what kind of restrictions are imposed upon the visual communication channel. 
 
 
-
-% --------------------------- The User ----------------------------
-% 
-% -----------------------------------------------------------------
 \section{The user}\label{chapter:literature_study:section:user}
 
 Who is the first actor? The answer to this question is of course very broad, so first we will try to list what we actually want to know. The goal is to allow the user to gain insight into the system through an interactive, visual explanation system. In conclusion, two specific questions arise:
@@ -36,11 +32,11 @@ The quality of insight can then be determined by quantifying each of these chara
 
 \subsubsection{Sensemaking}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:sensemaking}
 
-\emph{Sensemaking}\index{sensemaking} plays an important part in insight gaining \cite{yi:2008}. The definitions for sensemaking may vary. We adapt the definition presented by \cite{Klein:2006:MSS:1158821.1159015} and \cite{yi:2008}.
+Sensemaking\index{sensemaking} plays an important part in insight gaining \cite{yi:2008}. The definitions for sensemaking may vary. We adapt the definition presented by \cite{Klein:2006:MSS:1158821.1159015} and \cite{yi:2008}.
 
 In \cite{Klein:2006:MSS:1158821.1159015} sensemaking is looked at from a psychological perspective, a perspective of human-centered computing, and the perspective of naturalistic decision making. Sensemaking is then defined as follows: "sensemaking is a motivated, continuous effort to understand connections in order to anticipate their trajectories and act effectively"\cite{Klein:2006:MSS:1158821.1159015}.
 
-Based on the discussion in \cite{klein:2006:MSS:1175882.1176017} and \cite{yi:2008}, Soo Yi et al. describe the process of sensemaking. Sensemaking is a:
+Based on the dicussion in \cite{klein:2006:MSS:1175882.1176017} and \cite{yi:2008}, Soo Yi et al. describe the process of sensemaking. Sensemaking is a:
 
 \begin{itemize}
 	\item \textbf{Cyclic and iterative proceduce}: consisting out of a generation loop searching for representations, a data coverage loop instantiating the representations and finally shift representations;
@@ -88,7 +84,7 @@ Note that usability\index{usability} should not be considered a one-dimensional 
 
 \subsection{Interactive visualization}\label{chapter:literature_study:section:user:subsection:interactive}
 
-As we now have a better understanding of what insight is, we will try to establish how the insight gaining process works through visual data mining\index{visual data mining} and interactive visualization\index{visualization!interactive visualization}. The relation between insight gaining and data visualization has been pointed out in other research. Colin Ware \cite{ware:2004} describes interactive visualization as an "internal interface between the user and the computer in a problem solving system". Keim \cite{keim:2002} notes that "idea behind visual data exploration, is to present data in a visual form, allowing the user to gain insight into the data, draw conclusions, and directly interact with the data".
+As we now have a better understanding of what insight is, we will try to establish how the insight gaining process works through visual data mining\index{visual data mining} and interactive visualization\index{visualization!interactive visualization}. The relation between insight gaining and data visualization has been pointed out in other research. Colin Ware \cite{ware:2004} describes interactive visualization as the interface between the user and the computer in a problem solving system. Keim \cite{keim:2002} notes that "idea behind visual data exploration, is to present data in a visual form, allowing the user to gain insight into the data, draw conclusions, and directly interact with the data".
 
 In a chapter on visualization\index{visualization} in \cite{shirley:2009}, Tamara Munzner describes visualization as follows: "visualization allows the user to offload cognition to the perceptual system, using graphical data representations as a form of external memory. Therefore, by augmenting human capabilities, the data analyst is aided to understand, explore and form hypotheses of the data"\cite{shirley:2009}. In conclusion, the visual data exploration\index{visual data exploration|see{visual data mining}} process can then be understood as a hypothesis generation process\cite{keim:2002}.
 
@@ -102,7 +98,7 @@ In \cite{ware:2004} interactive visualization is characterized by three classes 
 	\item \textbf{Problem solving loop}: the user forms hypotheses about the data and refines them through an augmented visualization process.
 \end{itemize}
 
-The next subsections describe each feedback loop in greater detail.
+The following subsections describe each feedback loop in greater detail.
 
 
 \subsubsection{Data selection and manipulation loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops1}
@@ -141,83 +137,20 @@ In the second loop the user navigates through the data space. The basic navigati
 	\item \textbf{Computer}: the visualization may be updated and refined from data mapped onto the spatial model.
 \end{itemize}
 
-When exploring spatial maps, a user is confronted with the \emph{focus-context problem}\index{focus-context problem}, i.e., "the problem of finding detail in a larger context"\cite{ware:2004}. The objective is to see the relation between the larger context and the details, rather than finding details. Ware goes on to discern between spatial, structural and temporal scales in which the focus-context problem manifests itself\cite{ware:2004}.
-
-Ware and Mitchell remark that the human visual system is already well-adapted to the spatial focus-context problem\cite{ware:2004}. Therefore, they argue that when designing a display, it should already try to take a maximal advantage of these perceptual skills.
-
-The time it takes to navigate between two points in the data space to gather information is called the \emph{cost of knowledge}\index{cost of knowledge}\cite{ware:2004}. To keep the cost of knowledge low, various interaction techniques have been developed, such as distortion, rapid zooming, elision, and multiple windows\cite{ware:2004}. In section \ref{chapter:literature_study:section:interaction} we will take a closer look at some of these techniques.
+To establish the cognitive model, efficient and effective data exploration is crucial. The time it takes to navigate between two points in the data space to gather information is called the cost of knowledge\cite{ware:2004}. 
 
 
 \subsubsection{Problem solving loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops3}
 
-The problem solving loop can be described through means of a \emph{visual thinking algorithm}\index{visual thinking algorithm}\cite{ware:2004}. Such an algorithm combines perceptual and cognitive actions into a process, as the user interacts with the visualization and explores the data space. As we want to keep the \emph{cost of knowledge}\index{cost of knowledge} low, it is obvious that the cost and time complexity of each of these actions should be kept at a minimum. The cognitive system that runs these algorithms, is made up out of several different components. Ware lists the following components\cite{ware:2004}:
-
-\begin{itemize}
-	\item \textbf{Early visual processing}: Early visual processing occurs at the lowest level, where elementary features such as color, texture information, local edges, and motion are extracted from the visual image.
-	\item \textbf{Pattern perception}: Pattern perception occurs by combining the extracted features, patterns can be detected within the visual image.
-	\item \textbf{Eye movements}: A map schedules tasks to explore proto-patterns through eye-movements. These proto-patterns correspond to the patterns that have a high probability to be relevant to the current task.
-	\item \textbf{The intrasaccadic scanning loop}: Information is processed serially when focusing on an area of interest.
-	\item \textbf{Working memory}: The working memory forms an intermediary between the incoming patterns and long-term memory. The currency of information in the working memory are \emph{object files}\index{object file}. Object files are a combination of visual attributes and semantic meaning.
-	\item \textbf{Mental imagery}: The ability to visualize internal images, whivh can be combined with external images, such as data visualization, to construct and test hypotheses about the visualized data.
-	\item \textbf{Epistemic actions}: Epistemic actions are actions that support information search, such as eye movement, and mouse selections. Out of all epistemic actions, eye movements have the lowest cost.
-	\item \textbf{Visual queries}: A visual query\index{visual query} translates a hypothesis into a cognitive task. The result of this query can be a pattern or lack of a pattern. To reduce errors and increase efficiency, patterns are typically small, as the capacity of the visual working memory\index{visual working memory} is rather limited.
-	\item \textbf{Computational data mappings}: The computer maps data onto the screens. Sometimes the data is transformed before doing so. An important consideration is that the interval between the human action and the result on the screen should be low, promoting the so-called \emph{priciple of transparency}\index{priciple of transparency}. The objective of transparency is that the user will have the illusion of directly manipulating the data on the screen.
-\end{itemize}
-
-In \cite{ware:2004}, Ware and Mitchell list ten different visual thinking algorithms. We will describe our own visual thinking algorithm in chapter \ref{chapter:whitebox}, based on these algorithms.
 
 
-% different kinds of operations (page 398)
-
-
-% toward visual thinking algorithms
-% ---------------------------------
-
-% visual working memory + attention
-% ---------------------------------
-% visual working memory capacity
-%			simple shapes
-%			implications?
-%					glyphs,
-%					change blindness,
-%					gist
-%			egocentric coordinate map (spatial information)
-%	attention
-% object files, coherence fields, gist
-
-
-% long-term memory
-% ----------------
-% contents
-% capacity
-% structure
-% low redundancy
-
-
-% Creative thinking
-% -----------------
-%		building new things from old things
-
-
-
-% -------------------------- The System ---------------------------
-% 
-% -----------------------------------------------------------------
 \section{The system}\label{chapter:literature_study:section:computer}
 
 Before describing the visual communication channel between human and computer, it is necessary to know what exactly has to be explained through visualization. Therefore we will take a closer look at the system, i.e., the recommender system.
 
-A recommender system\index{recommender system} is a system that computes item suggestions for users based on a ratings of related items in the user's profile and/or history. Additional information can be incorporated into the recommendation algorithm\index{recommendation algorithm} to refine suggestions. Several categorizations of these techniques are proposed in literature \cite{bostandjiev:2012, burke:2002, herlocker:2000, melville:2002:CCF:777092.777124, celma:2008:phd}.
+A recommender system\index{recommender system} is a system that computes item suggestions for users based on a ratings of related items in the user's profile/history. Additional information can be incorporated into the recommendation algorithm\index{recommendation algorithm} to refine suggestions. Several categorizations of these techniques are proposed in literature \cite{bostandjiev:2012, burke:2002, herlocker:2000, melville:2002:CCF:777092.777124, celma:2008:phd}.
 
-One of the incentives behind creating recommender system is the 'long-tail phenomenon'\index{Long Tail}. This phenomenon can be explained as follows. Physical retail and warehouses can only keep a subset of all the available items in stock. These items are usually the most popular items on the market. Online vendors however, such as \emph{Amazon}\footnote{\url{http://www.amazon.com/}}, can offer a vastly larger subset of these items to clients, including also less popular and/or less known items\cite{rajaraman:2012}. Typically the long-tail phenomenon is visualized in a graph in which items are ordered by their popularity on the horizontal axis against the popularity rating on the vertical axis, as can be seen on figure \ref{figure:longtail}. Physical stores will offer only items in the first part of the graph, whereas the online vendors will also sell items from the remaining 'long tail' of the graph\cite{rajaraman:2012, celma:2008:phd}. Recommender systems then provide a means to find relevant items within this much larger range of items\cite{rajaraman:2012}. They enable to "connect supply and demand, introducing consumers to these new and newly available goods and driving demand down the tail "\cite{anderson:2006:LTW:1197299, celma:2008:phd}.
-
-\begin{figure}%
-	\begin{center}
-		\includegraphics[width=250px]{img/longtail}%
-	\end{center}
-	\caption{The long-tail: Items ordered by popularity are layed out against their popularity rating. Most of the items reside in the long tail of the graph. Companies such as Amazon can offer a vastly greater subset of the total item space.}%
-	\label{figure:longtail}%
-\end{figure}
+One of the incentives behind creating recommender system is the 'long-tail phenomenon'\index{Long Tail}. This phenomenon can be explained as follows. Physical retail and warehouses can only keep a subset of all the available items in stock. These items are usually the most popular items on the market. Online vendors however, such as \emph{Amazon}\footnote{\url{http://www.amazon.com/}}, can offer a vastly larger subset of these items to clients, including also less popular and/or less known items\cite{rajaraman:2012}. Typically the long-tail phenomenon is visualized in a graph in which items are ordered by their popularity on the horizontal axis against the popularity rating on the vertical axis. Physical stores will offer only items in the first part of the graph, whereas the online vendors will also sell items from the remaining 'long tail' of the graph\cite{rajaraman:2012, celma:2008:phd}. Recommender systems then provide a means to find relevant items within this much larger range of items\cite{rajaraman:2012}. They enable to "connect supply and demand, introducing consumers to these new and newly available goods and driving demand down the tail "\cite{anderson:2006:LTW:1197299, celma:2008:phd}.
 
 The success of recommender systems to achieve this objective has been the subject of some research, e.g. \cite{levy:2010} and \cite{celma:2008:phd}. Different classes of recommender algorithms favour different properties\cite{burke:2002, shani:2011:9780387858197}. This is elaborated further in subsection \ref{chapter:literature_study:section:computer:subsection:challenges}. For now its enough to see that the quality of recommendations is not uniquely defined. For example, in order to increase coverage of the item space, achieving high serendipity and novelty may be desired more than high recommendation accuracy, depending on the application context\cite{shani:2011:9780387858197, tripathi:2011, celma:2008:phd}.
 
@@ -295,10 +228,6 @@ Another issue with recommendation systems is that these system often appear as '
 
 
 
-
-% ------------------------ The interface --------------------------
-% 
-% -----------------------------------------------------------------
 \section{The interface}\label{chapter:literature_study:section:interaction}
 
 % What will we study?
@@ -389,142 +318,4 @@ Spatial layouts form other visual channels. Although these tend to be the most a
 \subsection{Visualization techniques}\label{}
 
 % Techniques to overcome limitations of visual channels (see also ware)
-
-
-
-
-
-% graph-based visualization
-
-
-
-
-
-
-% ------------------------ Related work- --------------------------
-% 
-% -----------------------------------------------------------------
-\section{Related work}\label{chapter:survey:section:applications}
-
-In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Four different applications are discussed: SmallWorlds, Pharos, TasteWeights, and SFVis.
-
-Next a comparison is made between these systems, based on a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}.
-
-
-\subsection{Smallworlds}\label{chapter:survey:section:applications:subsection:smallwords}
-
-In \cite{gretarsson:2010}, Gretarsson et al. used the Facebook API to create an application to generate social recommendations for Facebook users. Unfortunately the Facebook API does not support unauthorized reading of item preference information beyond the immediate friend group. This would not have been a problem unless traditional collaborative filtering strategies tend to produce item suggestions of inferior quality for small items. In this case however the research team relies on the social filtering through the active user's peer group\cite{gretarsson:2010}.
-
-\emph{SmallWorlds}\index{SmallWorlds} is "a visual interactive graph-based interface that allows users to specify, refine and build item-preference profiles"\cite{gretarsson:2010}. The system promotes transparancy in the recommendation process, and gives the user a sense of control over the recommendation process through interactions. This way, Gretarsson et al. try to further overcome the limitations of their recommender system\cite{gretarsson:2010}.
-
-SmallWorlds uses a five-layered design to create suggestions:
-
-\begin{enumerate}
-	\item the active user's node;
-	\item the active user's profile items;
-	\item friends who have items in common with the active user;
-	\item items that are not in the active user’s profile, but are liked by friends in layer $3$;
-	\item friends who have no items in common with the active user and items in their profiles, but not items in the profiles of friends in layer $3$.
-\end{enumerate}
-
-The user can move nodes in each layer further or closer towards the active user's node to adjust the weights of each node. This is used in combination with similarity functions to calculate the suggestions. Figure \ref{figure:smallworlds} shows a screenshot of the application.
-
-\begin{figure}%
-	\begin{center}
-		\includegraphics[width=350px]{img/smallworlds}%
-	\end{center}
-	\caption{The SmallWords interface.}%
-	\label{figure:smallworlds}%
-\end{figure}
-
-
-\subsection{Pharos}\label{chapter:survey:section:applications:subsection:pharos}
-
-Content-centric social websites, such as blogs and discussion forums, contain vast amounts of fast growing information. Recommendation systems have been developed to help users find the information they are looking for. The \emph{Pharos}\index{Pharos} application tries to address two distinctive problems that present themselves in this context: the cold start problem and the black box problem\cite{zhao:2010}, as described earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}.
-
-As they hope to overcome previously defined problems, Zhao et al. \cite{zhao:2010} collect and visualize content-related social behaviour. The resulting data set is tranformed into a social map. The social map provides a context for new users, addressing the cold start problem. Secondly, the user can explore the social map to increase understanding and user interaction, in an effort to overcome the black box problem.
-
-The generation of the social map takes place through the following three step process:
-
-\begin{itemize}
-	\item \textbf{Community extraction}: a map depicting 'which users are talking about what'. Starting from either relationships, people or content communities can be derived;
-	\item \textbf{Community/item/people ranking}: the next step is to rank these communities. The 'hotness' can be measured on content, people authorities and so on;
-	\item \textbf{Community labeling}: describing what each community is about.
-\end{itemize}
-
-An example of what the resulting visualization looks like, is depicted in figure \ref{figure:pharos}.
-
-\begin{figure}%
-	\begin{center}
-		\includegraphics[width=350px]{img/pharos}%
-	\end{center}
-	\caption{The Pharos social map. Colours indicate activity within a certain group.}%
-	\label{figure:pharos}%
-\end{figure}
-
-
-\subsection{TasteWeights}\label{chapter:survey:section:applications:subsection:tasteweights}
-
-Social web APIs and other data sources are constantly evolving, and traditional recommender system techniques such as automated collaborative filtering need to adapt to the changing environment of the social web (cf. Smallworlds).
-
-Bostandjiev et al. introduces two enhancements for the traditional techniques. Multiple web sources, namely from Facebook, Twitter and Wikipedia are combined when computing the recommendation. This combination provides a hybrid of different recommendation strategies, namely: collaborative filtering, expert-based and content-based respectively. The other feature is a new user interface that provides transparency into the recommendation process. The TasteWeights application uses this approach.
-
-There are three levels to be distinguished that are represented visually as well:
-
-A profile layer: liked items on Facebook,
-A context layer: items coming from different sources,
-A recommendation layer containing the actual recommendations.
-Nodes of a graph reside in one of these layers. The user can influence the outcome of the recommendation by attributing weights to the nodes in the profile layer and context layer.
-
-\begin{figure}%
-	\begin{center}
-		\includegraphics[width=350px]{img/tasteweights}%
-	\end{center}
-	\caption{The TasteWeights interface.}%
-	\label{figure:tasteweights}%
-\end{figure}
-
-
-\subsection{SFVis}\label{chapter:survey:section:applications:subsection:sfvis}
-
-SFVis (Social Friends Visualization) is an application that helps users explore and find friends interactively under a context of interest. The system is a hybrid approach of social tags and social networks. The SFVis framework transforms a data model (social tags and social networks) into a visual form. Users can both manipulate the input and visuals on demand.
-
-Social tags can form a network. Within this structure clusters may arise. From this cluster tag network a hierarchy is derived. A compound graph is generated from the tag hierarchy and social networks.
-
-A mapping function assigns actors in a social network to a tag tree. The actor similarity algorithm in SFVis considers both structure similarity in a social network and semantic similarity in a tag network. These scores will allow the recommendation system to compute friend suggestions.
-
-SFVis uses circular visualizations for the different trees and graphs for both views as well as interaction with the user.
-
-
-\subsection{PeerChooser}\label{chapter:survey:section:applications:subsection:peerchooser}
-
-Due to black-box nature of collaborative filtering O'Donovan introduces PeerChooser. This system provides visual explanations for collaborative filtering recommendations and enables users to manipulate their neighborhood at varying levels of granularity.
-
-This way the researchers hope to overcome the gray-sheep problem, defined earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}. This occurs when a user’s history does not help to identify a set of similar recommendation partners.
-
-\begin{figure}%
-	\begin{center}
-		\includegraphics[width=350px]{img/peerchooser}%
-	\end{center}
-	\caption{The PeerChooser interface.}%
-	\label{figure:peerchooser}%
-\end{figure}
-
-
-\subsection{Comparative study of visual explanation systems for item recommendation}
-
- The following listing is adapted from \cite{tintarev:2007:SER:1547550.1547664}:
-
-\begin{itemize}
-	\item \textbf{Transparency}: explain how the system works;
-	\item \textbf{Scrutability}: allow users to tell;
-	\item \textbf{Trust}: increase users' confidence in the system;
-	\item \textbf{Effectiveness}: help users make good decisions;
-	\item \textbf{Persuasiveness}: convince users to try or buy;
-	\item \textbf{Efficiency}: help users make decisions faster;
-	\item \textbf{Satisfaction}: increase the ease of usability or enjoyment.
-\end{itemize}
-
-%Table1 : overview recommender system case studies
-In table 1 an overview is presented of some the different recommender systems and some of their properties. So far most of the applications discussed here used collaborative filtering and some kind of visualization and allowed the user to interact with the system.
 
