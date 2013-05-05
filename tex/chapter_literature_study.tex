@@ -92,9 +92,11 @@ As we now have a better understanding of what insight is, we will try to establi
 
 In a chapter on visualization\index{visualization} in \cite{shirley:2009}, Tamara Munzner describes visualization as follows: "visualization allows the user to offload cognition to the perceptual system, using graphical data representations as a form of external memory. Therefore, by augmenting human capabilities, the data analyst is aided to understand, explore and form hypotheses of the data"\cite{shirley:2009}. In conclusion, the visual data exploration\index{visual data exploration|see{visual data mining}} process can then be understood as a hypothesis generation process\cite{keim:2002}.
 
+A reoccurring theme in visualization design is "overview first, zoom and filter, and details on demand"\cite{keim:2002, shirley:2009, ware:2004}. First, the user looks for patterns of interest in the data space. Next the user focuses on one or more of these patterns, and starts looking at the data on a more detailed level. The user can then draw his/her conclusions and explore the data space further\cite{keim:2002}. 
+
 In what follows, we try to describe how a human interacts with interactive visualization on a cognitive level. It will be clear that some parallels can be drawn with the insight gaining process. This should come as no surprise, since these processes are intertwined\cite{keim:2002, ware:2004, yi:2008}.
 
-In \cite{ware:2004} interactive visualization is characterized by three classes of feedback loops:
+In \cite{ware:2004}, interactive visualization is characterized by three classes of feedback loops:
 
 \begin{itemize}
 	\item \textbf{Data selection and manipulation loop}: the user selects and moves objects that are selected through simple interactions based on eye-hand coordination;
@@ -444,11 +446,37 @@ Spatial layouts form other visual channels. Although these tend to be the most a
 \end{itemize}
 
 
-\subsection{Visualization techniques}\label{chapter:literature_study:section:interaction:subsection:techniques}
+\subsection{Techniques}\label{chapter:literature_study:section:interaction:subsection:techniques}
 
 % Techniques to overcome limitations of visual channels (see also ware)
+Visualization techniques try to deal with the limitations listed in the introduction of this section. Tamara Munzner \cite{shirley:2009} acknowledges that there is a trade-off to be made concerning the interaction cost: on the positive side, interaction allows for data exploration in a larger information space than could be understood in a single static image. The downside is that interaction costs, other than the obvious implementation and computational costs, include the requirements for human time and attention\cite{shirley:2009}. Since attention drops significantly after the first hour\cite{ware:2004}, it might become a critical factor in the quality of the visualization. This view is also supported by Ware's findings described in section \cite{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops3}, as eye-movements have a much lower cost than other epistemic actions\cite{ware:2004, ware:2008}.
 
-Visualization techniques try to deal with the limitations listed in the introduction of this section.
+Based on the discussion by Ware and Mitchell in \cite{ware:2004}, Keim in \cite{keim:2002}, and Munzner in \cite{shirley:2009}, we will discuss a number of visualization, interaction, and data reduction techniques.
+
+\subsubsection{Visualization techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:infovis}
+
+% 3D --> cf. ware: in order to maximize the portion of the data space being visualized...
+
+
+\subsubsection{Interaction techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:interaction}
+
+Several techniques can be applied to solve the focus-context problem\index{focus-context problem} described in section \ref{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops2}, further, such as distortion and rapid zooming\cite{ware:2004}. Keim \cite{keim:2002} also lists a number of techniques for interactive visualization. A summary based on \cite{ware:2004}, \cite{shirley:2009} and \cite{keim:2002} is presented here:
+
+\begin{itemize}
+	\item \textbf{Dynamic projections}: Data projections are dynamically changed, allowing the user to explore a multidimensional data set.
+	\item \textbf{Interactive filtering}: The data set is interactively partitioned into different segments in order to focus on different subsets through querying, browsing or more advanced methods.
+	\item \textbf{Interactive zooming}: The data representation is interactively changed, moving between different resolutions. A distinction can be made between two kinds of zooming\cite{shirley:2009, ware:2004}:
+	\begin{itemize}
+		\item \textbf{Geometric/rapid zooming}: Rapidly changing viewpoint in a two- or three-dimensional space, similar to adjusting the ratio of the focal length on binoculars;
+		\item \textbf{Semantic zooming/elision}: Changing the representation of an abstract object visualization, for example expanding and collapsing parts of a large structure that was represented by a single visual entity.
+	\end{itemize}
+	\item \textbf{Interactive distortion}: Parts of the data are displayed with a high level of detail (focus), while others are shown with a lower level of detail (context). Examples are 'fish-eye' distortion, bifocal displays and hyperbox.
+\end{itemize}
+
+
+\subsubsection{Data reduction techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:reduction}
+
+% transformation of data, reducing data, clustering, dimensionality reduction, ...
 
 
 
@@ -600,10 +628,19 @@ Figure \ref{figure:tasteweights} shows the corresponding visual representation o
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% COMPARATIVE STUDY
+%% -----------------
+%%
+%% Based on :
+%%		* properties
+%%		* visualization techniques
+%%		* tintarev criteria
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Comparative study of visual explanation systems for item recommendation}
 
- The following listing is adapted from \cite{tintarev:2007:SER:1547550.1547664}:
+The following listing is adapted from \cite{tintarev:2007:SER:1547550.1547664}:
 
 \begin{itemize}
 	\item \textbf{Transparency}: explain how the system works;
@@ -616,5 +653,44 @@ Figure \ref{figure:tasteweights} shows the corresponding visual representation o
 \end{itemize}
 
 %Table1 : overview recommender system case studies
-In table 1 an overview is presented of some the different recommender systems and some of their properties. So far most of the applications discussed here used collaborative filtering and some kind of visualization and allowed the user to interact with the system.
+In table \ref{table:comparison:properties} an overview is presented of some the different recommender systems and some of their properties. So far most of the applications discussed here used collaborative filtering and some kind of visualization and allowed the user to interact with the system.
+
+Table \ref{table:comparison:techniques} gives an overview of each of the techniques that were used to design and implement the visualizations.
+
+Table \ref{table:comparison:criteria} gives an overview of the performance of each visual explanation system based on the criteria listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}.
+
+\begin{center}
+	\begin{table}%
+		\begin{tabular}{lcr}
+			
+		\end{tabular}
+		\caption{A comparison of the recommender systems, based on recommender system properties.}
+		\label{table:comparison:properties}
+	\end{table}
+\end{center}
+
+
+
+\begin{center}
+	\begin{table}%
+		\begin{tabular}{lcr}
+			
+		\end{tabular}
+		\caption{A comparison of the visual explanation systems, based on visualization, interaction, and data reduction techniques.}
+		\label{table:comparison:techniques}
+	\end{table}
+\end{center}
+
+
+\begin{center}
+	\begin{table}%
+		\begin{tabular}{lcr}
+			
+		\end{tabular}
+		\caption{A comparison of the visual explanation systems, based on the criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.}
+		\label{table:comparison:criteria}
+	\end{table}
+\end{center}
+
+
 

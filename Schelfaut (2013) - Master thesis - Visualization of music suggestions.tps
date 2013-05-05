@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=Schelfaut (2013) - Master thesis - Visualization of music suggestions.tex
 
 [Frame0_View0,0]
-TopLine=139
-Cursor=4978
+TopLine=164
+Cursor=5781
 
 [Frame1]
 Flags=0
@@ -32,11 +32,11 @@ NormalPos.top=26
 NormalPos.right=1098
 NormalPos.bottom=364
 Class=LaTeXView
-Document=tex\chapter_introduction.tex
+Document=tex\chapter_literature_study.tex
 
 [Frame1_View0,0]
-TopLine=112
-Cursor=10260
+TopLine=130
+Cursor=11728
 
 [Frame2]
 Flags=0
@@ -50,11 +50,11 @@ NormalPos.top=26
 NormalPos.right=1098
 NormalPos.bottom=364
 Class=LaTeXView
-Document=tex\chapter_literature_study.tex
+Document=tex\chapter_whitebox.tex
 
 [Frame2_View0,0]
-TopLine=462
-Cursor=40527
+TopLine=0
+Cursor=1409
 
 [SessionInfo]
 FrameCount=3
