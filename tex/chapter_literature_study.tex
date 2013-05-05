@@ -280,6 +280,26 @@ In order to calculate the blanks, there is a variety of similarity functions tha
 % Feature vectors ...
 When applying content-based filtering, the choice of similarity or classification function will have a significant impact on the quality of the recommendations. More importantly though, is the choice of features. To ensure good performance, these features should also be extracted easily from large quantities of data.
 
+% examples of how feature vectors can be constructed
+
+Depending on the type of item that is being recommended, different approaches can be applied to extract features and construct \emph{feature vectors}\index{feature vector}. Textual information is often extracted using some kind of stemming system\cite{rajaraman:2012}. \emph{Stemming}\index{stemming} is a technique to use root forms that capture a common meaning of certain words, rather than words themselves. For example 'compute', 'computation', 'computer', and 'computes' all have a reference to an underlying concept. Words are given a quantification of relevance to this root form, the so-called TF.IDF (term frequency times inverse document frequency) score\index{TF.IDF}\index{term frequency times inverse document frequency|see{TD.IDF}}. This score is computed in terms of the frequency of the word in a document, number of documents in which it occurs, and the total number of documents. The resulting structure consists out of tuples of root forms and quantification values\cite{pazzani:2007:CRS:1768197.1768209, rajaraman:2012}. The words with the highest scores are the words that characterize the document\cite{rajaraman:2012}. A downside of stemming is that the process may cause the loss of contextual information for each word\cite{pazzani:2007:CRS:1768197.1768209}.
+
+In \cite{bostandjiev:2012} and \cite{melville:2002:CCF:777092.777124} web crawlers are used to gather and extract features from online documents. In \cite{melville:2002:CCF:777092.777124} the web crawler collects properties such as movie title, director, cast, genre, plot summary, plot keywords user comments, reviews and so on, of each movie in the data set. Each property or feature is a 'bag of words'\index{bag of words} that is used in a naive Bayesian text classifier\index{Bayesian classifier}. This way each item can be categorized and the profile can be 'learned'\cite{melville:2002:CCF:777092.777124}.
+
+Tags are very useful as well. Although they can be generated from text, for complex objects such as images and music, tag generation relies on user input\cite{rajaraman:2012}. Nonetheless, emerging technologies such as the 'search by image' option introduced by \emph{Google}\footnote{\url{http://www.google.be/imghp?hl=nl&tab=Ti}}, allow to retrieve web sites, documents and key words related to the given image\cite{google:2011:afbeeldingen}.
+
+Mathematical models of music and images also allow for feature extraction. For example, in a study by Johnson et al. \cite{johnson:2008}, \emph{wavelets}\index{wavelet} were used to construct feature vectors from high resolution paintings. These were in turn used to classify paintings based on several clasification algorithms. A training set of Van Gogh paintings was used with the objective to classify other paitings as either genuine Van Goghs or forgeries. The algorithms were able to actually classify paintings with a high accuracy\cite{johnson:2008}.
+
+Similarly algorithms have been developed to classify music based on content features. There are various types of acoustic features that can be extracted. In \cite{Li:2006:TIM:2219090.2219562} a distinction is made between rhythmic content features, pitch content features and timbral content features.
+
+The research performed by Tzanetakis et al. in \cite{tzanetakis:2001} and \cite{tzanetakis:2002} is based on a the MARSYAS system. This system is an application that uses various techniques, such as Mel-Frequency Cepstral Coefficients (MFCC) and Short-term Fourier Transform Features (FFT) to retrieve acoustic features from audio signals \cite{Tzanetakis:1999:MFA:972850.972857}. In addition to these features, also wavelet-based feature extraction is used to retrieve rhythmic features from audio content \cite{tzanetakis:2001, tzanetakis:2002}. Using this system, music files could be classified into different genres based on rhythmic features\cite{tzanetakis:2001}.
+
+A similar research is conducted by Li et al. in \cite{Li:2006:TIM:2219090.2219562}. In addition to previously mentioned methods, also lyric-based classification is used. Apart from music classification, also music similarity search is performed. In this case, the feature vectors from the classification using MARSYAS features and wavelet-histograms can be used to form a hierarchy in which similar audio signals can be detected \cite{Li:2006:TIM:2219090.2219562}.
+
+% CLassification methods?
+
+%These methods illustrate how mathematical models can be applied for feature extraction, vector generation and classification.
+
 
 \subsubsection{Hybrid recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:hf}
 
@@ -305,20 +325,22 @@ Each of these combinations also has its advantages and disadvantages. Not necess
 
 Each recommendation technique has benefits as well as drawbacks. Some of these apply to all or most types of recommendation strategies, while others are only relevant to certain cases.
 
-%One of the challenges that 
-
-% solutions: clustering, UV-decomposition, hybrid approaches, content-boosted / using estimations of empty entries
-
 Both CF and CB-based recommendation algorithms suffer from the ramp-up\index{ramp-up|see{cold start}} problem in one way or the other. The 'ramp-up' or 'cold start' problem\index{cold start} (although they may refer to slightly different problems depending on the literature) is dual problem that encompasses two distinct, yet related problems as defined in \cite{burke:2002}:
 
 \begin{itemize}
-	\item \textbf{New User}\index{cold start!new user}: when a recommender system uses ratings by its users to compute item recommendations, it is hard to find neighbours for a user, who has a limited profile. As user profiles tend to build up over, new users usually fall in this category.
+	\item \textbf{New User}\index{cold start!new user}: when a recommender system uses ratings by its users to compute item recommendations, it is hard to find neighbours for a user, who has a limited profile. As user profiles tend to build up over time, new users usually fall in this category.
 	\item \textbf{New Item}\index{cold start!new item}: a new item will most likely not have that many ratings associated with it, and as a result will not be easily recommended. This 'new item problem' typically emerges when new items are constantly added to the system; for example when browsing a constant stream of news articles. When new articles are introduced, not many users have had the chance yet to rate these items. In the case of a news feed, an additional problem is that these items are short-lived, meaning that at some point these item profiles will most likely stop receiving any ratings at all.
 \end{itemize}
 
+Both of these issues translate themselves into a sparse regions in the utility matrix. It is worth noting that content-based recommendation algorithms suffer less from the \emph{new item} problem, as these tend to rely on features that are inherent to the items themselves, rather than user generated content. This is one of the reasons hybrid approaches can provide a solution to collaborative filtering\cite{burke:2002}. For example, in \cite{melville:2002:CCF:777092.777124}, content-based predictors are used to create pseudo-user ratings to reduce sparsity of the utility matrix, used in a collaborative algorithm.
+
+%Another solution is to use clustering
+
 A problem that is typical of collaborative filtering is the 'gray sheep problem'\index{gray sheep}\cite{burke:2002, herlocker:2000}. The gray sheep problem occurs when a user falls between different clusters of users that may have contradicting item ratings. As a result, it is hard to determine how to classify the user\cite{burke:2002}.
 
-Another issue with recommendation systems is that these system often appear as 'black boxes' towards the end user\index{black box}. The complexity of the algorithms used prevents the user from understanding the recommendation rationale\cite{zhao:2010}. This problem decreases the acceptance by the user of item suggestions. One of the solutions for this problem, proposed by Herlocker et al. in \cite{herlocker:2000}, is to provide an explanation system, i.e., the white box\index{white box}, on top of the recommender system that explains the recommendation process. This can be done through providing a transcript of the system's reasoning or through visualizations\cite{herlocker:2000}.
+% UV decomposition
+
+Another issue with recommendation systems is that these system often appear as 'black boxes' towards the end user\index{black box}. The complexity of the algorithms used, prevents the user from understanding the recommendation rationale\cite{zhao:2010}. This problem decreases the acceptance by the user of item suggestions. One of the solutions for this problem, proposed by Herlocker et al. in \cite{herlocker:2000}, is to provide an explanation system, i.e., the white box\index{white box}, on top of the recommender system that explains the recommendation process. This can be done through providing a transcript of the system's reasoning or through visualizations\cite{herlocker:2000}.
 
 
 % more specifics on recommender properties
@@ -426,7 +448,7 @@ Spatial layouts form other visual channels. Although these tend to be the most a
 
 % Techniques to overcome limitations of visual channels (see also ware)
 
-To deal with the limitations listed in the introduction of this section, ...
+Visualization techniques try to deal with the limitations listed in the introduction of this section.
 
 
 
