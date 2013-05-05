@@ -253,20 +253,50 @@ The cold start problem relates to coverage as it measures the coverage for a spe
 Based on classifications presented in \cite{burke:2002} and \cite{celma:2008:phd}, a categorization of different types of recommendation strategies can be identified. We will only discuss the two most prominent ones, namely collaborative filtering (CF)\index{recommendation algorithm!collaborative filtering} and content-based filtering (CB)\index{recommendation algorithm!content-based filtering}\cite{herlocker:2000, rajaraman:2012}, and list some hybrid strategies. In the literature on recommender systems other general approaches that are commonly identified, are utility-based filtering, knowledge-based filtering, demographic filtering, and expert-based filtering\cite{burke:2002, bostandjiev:2012}.
 
 
-\subsubsection{Collaborative recommendation}
+\subsubsection{Collaborative recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cf}
 
-Collaborative recommendation aggregates item ratings by users. By establishing overlaps between ratings in the corresponding user profiles, the system generates new item recommendations\cite{burke:2002, herlocker:2000}. A typical user profile in a collaborative system consists of a vector of items and their ratings, that continuously augmented as the user interacts with the system over time\cite{burke:2002}. 
+\emph{Collaborative recommendation}\index{collaborative recommendation|see{collaboratibe filtering}} aggregates item ratings by users. By establishing overlaps between ratings in the corresponding user profiles, the system generates new item recommendations\cite{burke:2002, herlocker:2000}. A typical user profile in a collaborative system consists of a vector of items and their ratings, that continuously augmented as the user interacts with the system over time\cite{burke:2002}. 
 
-For CF-based recommendation, there are two classes of entities: users $U$ and items $I$. The data itself can then be represented by a utility matrix\index{utility matrix} $A$. The entries $a_{i,j}$ of the utility matrix represent what is known about the degree of preference of user $u_{i}$ and item $i_{j}$\cite{rajaraman:2012}.
+For CF-based recommendation\index{CF|see{collaborative filtering}}, there are two classes of entities: users $U$ and items $I$. The data itself can then be represented by a utility matrix\index{utility matrix} $A$. The entries $a_{i,j}$ of the utility matrix represent what is known about the degree of preference of user $u_{i}$ and item $i_{j}$\cite{rajaraman:2012}. As can be seen in figure \ref{figure:utilitymatrix}, the utility matrix will have many blanks as well. The goal of the recommendation algorithm is then to fill in the blanks\cite{rajaraman:2012}.
+
+\begin{figure}%
+\begin{center}
+	\includegraphics[width=250px]{img/utility_matrix}%
+\end{center}
+	\caption{The utility matrix $A$.}%
+	\label{figure:utilitymatrix}%
+\end{figure}
 
 % Similarity / distance functions ...
+In order to calculate the blanks, there is a variety of similarity functions that has been developed over the years. Often some sort of distance function is used to compute distance between profile vectors. If the distance is small, profiles will most likely have a high similarity\cite{rajaraman:2012}. The discussion of the mathematics behind each of the algorithms is beyond the scope of this thesis.
+
+% clustering, pearson correlation, ...
 
 
-\subsubsection{Content-based recommendation}
+\subsubsection{Content-based recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}
 
-Content-based recommendation learns a profile of the user’s interests based on the features present in objects the user has rated. New recommendations can then be generated based on a similarity function on these features\cite{burke:2002, pazzani:2007:CRS:1768197.1768209}.
+\emph{Content-based recommendation}\index{content-based recommendation|see{content-based filtering}} learns a profile of the user's interests based on the features present in objects the user has rated. New recommendations can then be generated based on a similarity function on these features\cite{burke:2002, pazzani:2007:CRS:1768197.1768209}.
 
 % Feature vectors ...
+When applying content-based filtering, the choice of similarity or classification function will have a significant impact on the quality of the recommendations. More importantly though, is the choice of features. To ensure good performance, these features should also be extracted easily from large quantities of data.
+
+
+\subsubsection{Hybrid recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:hf}
+
+\emph{Hybrid filtering}\index{hybrid filtering} combines two or more recommendation algorithms\cite{burke:2002}. In \cite{burke:2002} a number of hybrid recommendation strategies are discussed. Burke et al. list seven different approaches for combining recommendation algorithms:
+
+\begin{itemize}
+	\item \textbf{Weighed}: The scores (or votes) of several recommendation techniques are combined together to produce a single recommendation.
+	\item \textbf{Switching}: The system switches between recommendation techniques depending on the current situation.
+	\item \textbf{Mixed}: Recommendations from several different recommenders are presented at the same time.
+	\item \textbf{Feature combination}: Features from different recommendation data sources are thrown together into a single recommendation algorithm.
+	\item \textbf{Cascade}: One recommender refines the recommendations given by another.
+	\item \textbf{Feature augmentation}: Output from one technique is used as an input feature to another.
+	\item \textbf{Meta-level}: The model learned by one recommender is used as input to another.
+\end{itemize}
+
+Each of these combinations also has its advantages and disadvantages. Not necessarily all combinations will be successful, and not all of them have been implemented \cite{burke:2002}.
+
 
 
 \subsection{Challenges for recommender systems}\label{chapter:literature_study:section:computer:subsection:challenges}
@@ -308,9 +338,9 @@ In this section we will take a closer look at the visual communication channel.
 Shirley et al.\cite{shirley:2009} lists three distinctive limitations:
 
 \begin{itemize}
-	\item \textbf{Computational capacity}: time complexity and memory usage of algorithms must allow a responsive user interface, especially in the case of interactive visualization.
-	\item \textbf{Display capacity}: there is a trade-off between the benefits of maximizing the information density, i.e., the measure of the amount of encoded information against the amount of unused space, and causing visual overload.
-	\item \textbf{Human perceptual and cognitive capacity}: optimizing the cognitive cost is one of the key aspects that make up a successful visualization, as visual and non-visual memory capacity are limited\cite{ware:2004}.
+	\item \textbf{Computational capacity}: time complexity and memory usage of algorithms must allow a responsive user interface, especially in the case of interactive visualization. This is also a requirement to meet the \emph{principle of transparency}\index{principle of transparency} discussed in section \ref{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops3}.
+	\item \textbf{Display capacity}: there is a trade-off between the benefits of maximizing the \emph{information density}\index{information density}, i.e., the measure of the amount of encoded information against the amount of unused space, and causing visual overload.
+	\item \textbf{Human perceptual and cognitive capacity}: optimizing the cognitive cost is one of the key aspects that make up a successful visualization, as visual and non-visual memory capacity are limited\cite{ware:2004}, as we saw earlier in section \ref{chapter:literature_study:section:user:subsection:interactive}.
 \end{itemize}
 
 There has been done extensive research in this domain. Over the last two decades various new information visualization techniques have been developed. These techniques can be classified based on three criteria \cite{keim:2002}:
@@ -346,7 +376,7 @@ In \cite{keim:2002} also text and hypertext, and algorithms and software are dis
 
 %Visual encoding principles
 
-Visual encoding is defined as the mapping of data set attributes to a visual representation. The choice of visual encoding is one of the central problems in the visualization design\cite{shirley:2009}.
+\emph{Visual encoding}\index{visual encoding} is defined as the mapping of data set attributes to a visual representation. The choice of visual encoding is one of the central problems in the visualization design\cite{shirley:2009}.
 
 Visual encoding takes place through visual channels. A visual encoding corresponds to a graphical element, or ‘mark’. Examples of visual channels are spatial position, color, size, et cetera. The dimension of the mark may vary: a point is a zero-dimensional mark, a line a one-dimensional one, an area a two-dimensional one and so on.
 
@@ -355,20 +385,26 @@ A visual encoding has the following characteristics, as described in\cite{shirle
 \begin{itemize}
 	\item \textbf{Distinguishability}: the ability of a user to distinguish between visual encodings;
 	\item \textbf{Seperability}: Separable visual channels are opposed to integral visual channels, which are focused together on a pre-conscious level. Separable visual channels are safe to use for encoding multiple dimensions;
-	\item \textbf{Pop-out}: selecting a channel and make it visually stands out from all the others.
+	\item \textbf{Pop-out}: selecting a channel and make it visually stand out from all the others.
 \end{itemize}
 
 %Visual channels
 
-There is a variety of possible visual channels that a designer can turn to in order to create a visual encoding, such as color, spatial position, size, shape, orientation, and so on. The performance of the visual encoding (through a visual channel) depends on the type of data, i.e. quantitative, ordered or categorical \cite{shirley:2009}. Figure ... gives an overview of the performance for each category, adapted from \cite{shirley:2009}. Note that spatial position is the most accurate for each data type.
-
+There is a variety of possible visual channels that a visualization designer can turn to in order to create a visual encoding, such as color, spatial position, size, shape, orientation, and so on. The performance of the visual encoding (through a visual channel) depends on the type of data, i.e. quantitative, ordered or categorical \cite{shirley:2009}. Figure \ref{figure:encodings} gives an overview of the performance for each category, adapted from \cite{shirley:2009}. Note that spatial position is the most accurate for each data type.
 
 %Figure 1: Visual encoding performance for each data type
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/visualencodings}%
+	\end{center}
+	\caption{Visual encoding performance for each data type, ordered from best to worst.}%
+	\label{figure:encodings}%
+\end{figure}
 
 
 %\subsubsection{Colour}\label{chapter:literature_study:section:interaction:subsection:encoding:subsubsection:colour}
 
-In \cite{shirley:2009} colour is considered in terms of three separate channels: hue, saturation and brightness. This allows for different encodings. Just like for most visual channels, the choice of the channel (hue, saturation or brightness) depends heavily on the type of data:
+In \cite{shirley:2009} colour is considered in terms of three separate channels: \emph{hue}, \emph{saturation} and \emph{brightness}. This allows for different encodings. Just like for most visual channels, the choice of the channel (hue, saturation or brightness) depends heavily on the type of data:
 
 \begin{itemize}
 	\item \textbf{Quantitative data}: uses a color map, a range of color values that can be continuous or discrete. It is recommended to use lightness instead of hue, as lightness has an implicit perceptual ordering. Moreover the human eye responds most to strong luminance. Hue on the other hand has a small range (around twelve values that can be reliably distinguished, including background and neutral colors);
@@ -386,13 +422,15 @@ Spatial layouts form other visual channels. Although these tend to be the most a
 \end{itemize}
 
 
-\subsection{Visualization techniques}\label{}
+\subsection{Visualization techniques}\label{chapter:literature_study:section:interaction:subsection:techniques}
 
 % Techniques to overcome limitations of visual channels (see also ware)
 
+To deal with the limitations listed in the introduction of this section, ...
 
 
 
+\subsection{Graph-based visualization}\label{chapter:literature_study:section:interaction:subsection:graphs}
 
 % graph-based visualization
 
@@ -406,9 +444,78 @@ Spatial layouts form other visual channels. Although these tend to be the most a
 % -----------------------------------------------------------------
 \section{Related work}\label{chapter:survey:section:applications}
 
-In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Four different applications are discussed: SmallWorlds, Pharos, TasteWeights, and SFVis.
+In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Five different applications are discussed: PeerChooser, Pharos, SFVis, SmallWorlds, and TasteWeights.
 
 Next a comparison is made between these systems, based on a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPLICATIONS
+\subsection{PeerChooser}\label{chapter:survey:section:applications:subsection:peerchooser}
+
+\emph{PeerChooser}\index{PeerChooser} is a "collaborative movie recommender system with an interactive graphical explanation interface"\cite{odonovan:2008}. It aims to address the black box problem, described in section \ref{chapter:literature_study:section:computer:subsection:challenges}\cite{odonovan:2008}.
+
+The application shows a peer graph of the user's neighbourhood. The visualization uses a force-directed graph layout where the on-screen distance between nodes corresponds an approximation of the node similarity. The active user is able to manipulate this neighbourhood by repositioning nodes of the graph. To deal with the high dimensionality of the data, extra cluster nodes are added to the vsiualization. These cluster peer nodes by genre\cite{odonovan:2008}.
+
+By moving a cluster node closer towards the active user's node, all user nodes associated with this cluster will be drawn closer towards the active user node. As a result, these profiles will be temorary considered more similar than before. Similarly individual users can be moved closer towards or further away from the active user node\cite{odonovan:2008}.
+
+Figure \ref{figure:peerchooser} shows the graph-based interface of the PeerChooser application.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=300px]{img/peerchooser}%
+	\end{center}
+	\caption{The PeerChooser interface.}%
+	\label{figure:peerchooser}%
+\end{figure}
+
+
+
+\subsection{Pharos}\label{chapter:survey:section:applications:subsection:pharos}
+
+Content-centric social websites, such as blogs and discussion forums, contain vast amounts of fast growing information. Recommendation systems have been developed to help users find the information they are looking for. The \emph{Pharos}\index{Pharos} application tries to address two distinctive problems that present themselves in this context: the cold start problem and the black box problem\cite{zhao:2010}, as described earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}.
+
+As they hope to overcome previously defined problems, Zhao et al. \cite{zhao:2010} collect and visualize content-related social behaviour. The resulting data set is tranformed into a social map. The social map provides a context for new users, addressing the cold start problem. Secondly, the user can explore the social map to increase understanding and user interaction, in an effort to overcome the black box problem.
+
+The generation of the social map takes place through the following three step process:
+
+\begin{itemize}
+	\item \textbf{Community extraction}: a map depicting 'which users are talking about what'. Starting from either relationships, people or content communities can be derived;
+	\item \textbf{Community/item/people ranking}: the next step is to rank these communities. The 'hotness' can be measured on content, people authorities and so on;
+	\item \textbf{Community labeling}: describing what each community is about.
+\end{itemize}
+
+An example of what the resulting visualization looks like, is depicted in figure \ref{figure:pharos}.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=300px]{img/pharos}%
+	\end{center}
+	\caption{The Pharos social map. Colours indicate activity within a certain group.}%
+	\label{figure:pharos}%
+\end{figure}
+
+
+
+
+\subsection{SFVis}\label{chapter:survey:section:applications:subsection:sfvis}
+
+SFVis (Social Friends Visualization) is an application that helps users explore and find friends interactively under a context of interest. The system is a hybrid approach of social tags and social networks. The SFVis framework transforms a data model (social tags and social networks) into a visual form. Users can both manipulate the input and visuals on demand.
+
+Social tags can form a network. Within this structure clusters may arise. From this cluster tag network a hierarchy is derived. A compound graph is generated from the tag hierarchy and social networks.
+
+A mapping function assigns actors in a social network to a tag tree. The actor similarity algorithm in SFVis considers both structure similarity in a social network and semantic similarity in a tag network. These scores will allow the recommendation system to compute friend suggestions.
+
+SFVis uses circular visualizations for the different trees and graphs for both views as well as interaction with the user.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=300px]{img/sfviz_tagtree}%
+	\end{center}
+	\caption{SFViz graphical user interface: tag tree.}%
+	\label{figure:sfviz}%
+\end{figure}
+
 
 
 \subsection{Smallworlds}\label{chapter:survey:section:applications:subsection:smallwords}
@@ -431,86 +538,47 @@ The user can move nodes in each layer further or closer towards the active user'
 
 \begin{figure}%
 	\begin{center}
-		\includegraphics[width=350px]{img/smallworlds}%
+		\includegraphics[width=300px]{img/smallworlds}%
 	\end{center}
 	\caption{The SmallWords interface.}%
 	\label{figure:smallworlds}%
 \end{figure}
 
 
-\subsection{Pharos}\label{chapter:survey:section:applications:subsection:pharos}
-
-Content-centric social websites, such as blogs and discussion forums, contain vast amounts of fast growing information. Recommendation systems have been developed to help users find the information they are looking for. The \emph{Pharos}\index{Pharos} application tries to address two distinctive problems that present themselves in this context: the cold start problem and the black box problem\cite{zhao:2010}, as described earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}.
-
-As they hope to overcome previously defined problems, Zhao et al. \cite{zhao:2010} collect and visualize content-related social behaviour. The resulting data set is tranformed into a social map. The social map provides a context for new users, addressing the cold start problem. Secondly, the user can explore the social map to increase understanding and user interaction, in an effort to overcome the black box problem.
-
-The generation of the social map takes place through the following three step process:
-
-\begin{itemize}
-	\item \textbf{Community extraction}: a map depicting 'which users are talking about what'. Starting from either relationships, people or content communities can be derived;
-	\item \textbf{Community/item/people ranking}: the next step is to rank these communities. The 'hotness' can be measured on content, people authorities and so on;
-	\item \textbf{Community labeling}: describing what each community is about.
-\end{itemize}
-
-An example of what the resulting visualization looks like, is depicted in figure \ref{figure:pharos}.
-
-\begin{figure}%
-	\begin{center}
-		\includegraphics[width=350px]{img/pharos}%
-	\end{center}
-	\caption{The Pharos social map. Colours indicate activity within a certain group.}%
-	\label{figure:pharos}%
-\end{figure}
-
-
 \subsection{TasteWeights}\label{chapter:survey:section:applications:subsection:tasteweights}
 
-Social web APIs and other data sources are constantly evolving, and traditional recommender system techniques such as automated collaborative filtering need to adapt to the changing environment of the social web (cf. Smallworlds).
+TasteWeights is a hybrid recommender with an interactive graphical user interface\cite{bostandjiev:2012}. The application allows the user to express his/her preferences changing the weights of incoming data sources.
 
-Bostandjiev et al. introduces two enhancements for the traditional techniques. Multiple web sources, namely from Facebook, Twitter and Wikipedia are combined when computing the recommendation. This combination provides a hybrid of different recommendation strategies, namely: collaborative filtering, expert-based and content-based respectively. The other feature is a new user interface that provides transparency into the recommendation process. The TasteWeights application uses this approach.
+One of the challenges Bostandjiev et al. try to address is that "social web APIs and other data sources are constantly evolving, and traditional recommender system techniques such as automated collaborative filtering need to adapt to the changing environment of the social web"\cite{bostandjiev:2012} (cf. Smallworlds). They introduce two enhancements for the traditional techniques. Multiple web sources, namely from \emph{Facebook}\footnote{\url{https://www.facebook.com/}}, \emph{Twitter}\footnote{\url{https://twitter.com/}} and \emph{Wikipedia}\footnote{\url{http://www.wikipedia.org/}} are combined when computing the recommendation. This combination provides a hybrid of different recommendation strategies, namely: collaborative filtering, expert-based and content-based respectively. The second enhancement is a new user interface that provides transparency into the recommendation process.
 
 There are three levels to be distinguished that are represented visually as well:
 
-A profile layer: liked items on Facebook,
-A context layer: items coming from different sources,
-A recommendation layer containing the actual recommendations.
-Nodes of a graph reside in one of these layers. The user can influence the outcome of the recommendation by attributing weights to the nodes in the profile layer and context layer.
+\begin{itemize}
+	\item \textbf{Profile layer}: liked items on \emph{Facebook};
+	\item \textbf{Context layer}: items coming from different sources, namely \emph{Twitter}, \emph{Facebook}, and \emph{Wikipedia};
+	\item \textbf{Recommendation layer} containing the actual recommendations.
+\end{itemize}
+
+Figure \ref{figure:tasteweights} shows the corresponding visual representation of each of these levels. Edges connect relevant parts between each of these levels on the visualization, in an attempt to explain the provenance of item recommendations. The user can influence the outcome displayed in the recommendation layer by attributing weights to the nodes in the profile layer and context layer\cite{bostandjiev:2012}.
 
 \begin{figure}%
 	\begin{center}
-		\includegraphics[width=350px]{img/tasteweights}%
+		\includegraphics[width=300px]{img/tasteweights}%
 	\end{center}
 	\caption{The TasteWeights interface.}%
 	\label{figure:tasteweights}%
 \end{figure}
 
-
-\subsection{SFVis}\label{chapter:survey:section:applications:subsection:sfvis}
-
-SFVis (Social Friends Visualization) is an application that helps users explore and find friends interactively under a context of interest. The system is a hybrid approach of social tags and social networks. The SFVis framework transforms a data model (social tags and social networks) into a visual form. Users can both manipulate the input and visuals on demand.
-
-Social tags can form a network. Within this structure clusters may arise. From this cluster tag network a hierarchy is derived. A compound graph is generated from the tag hierarchy and social networks.
-
-A mapping function assigns actors in a social network to a tag tree. The actor similarity algorithm in SFVis considers both structure similarity in a social network and semantic similarity in a tag network. These scores will allow the recommendation system to compute friend suggestions.
-
-SFVis uses circular visualizations for the different trees and graphs for both views as well as interaction with the user.
+% research questions: accuracy, user experience, benefit of explanations, hybrid better than CF?
 
 
-\subsection{PeerChooser}\label{chapter:survey:section:applications:subsection:peerchooser}
-
-Due to black-box nature of collaborative filtering O'Donovan introduces PeerChooser. This system provides visual explanations for collaborative filtering recommendations and enables users to manipulate their neighborhood at varying levels of granularity.
-
-This way the researchers hope to overcome the gray-sheep problem, defined earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}. This occurs when a user’s history does not help to identify a set of similar recommendation partners.
-
-\begin{figure}%
-	\begin{center}
-		\includegraphics[width=350px]{img/peerchooser}%
-	\end{center}
-	\caption{The PeerChooser interface.}%
-	\label{figure:peerchooser}%
-\end{figure}
 
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMPARATIVE STUDY
 \subsection{Comparative study of visual explanation systems for item recommendation}
 
  The following listing is adapted from \cite{tintarev:2007:SER:1547550.1547664}:
