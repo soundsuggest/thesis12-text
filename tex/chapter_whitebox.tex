@@ -30,7 +30,7 @@ Based on a visualization design by Valdis Krebs in \cite{steele:2010}, a dimensi
 	\label{figure:rowreduction}%
 \end{figure}
 
-For this white box model we will not apply the final step of Krebs' graph design. Instead we will keep parallel edges to keep a direct link between user and edge. In the resulting visualization of the CF-based recommender, a quantification of the similarity between users can then be established by counting parallel edges between items that occur in neighbouring profiles. Figure \ref{figure:rowreduction_dualgraph} shows how the dual graph from figure \ref{figure:dualgraph} is transformed.
+For this white box model we will not apply the final step of Krebs' graph design. Instead we will keep parallel edges to keep a direct link between user and edge. In the resulting visualization of the CF-based recommender, a quantification of the similarity between users can then be established by counting parallel edges between items that occur in neighbouring profiles. Figure \ref{figure:rowreduction_dualgraph} shows how the dual graph from figure \ref{figure:dualgraph} is transformed into a circular graph layout with the remaining item nodes.
 
 \begin{figure}%
 	\begin{center}
@@ -40,7 +40,9 @@ For this white box model we will not apply the final step of Krebs' graph design
 	\label{figure:rowreduction_dualgraph}%
 \end{figure}
 
-We lay out the nodes on the edge of a circle. Next we will apply edge-bundling on the graph to improve discernability and reduce visual clutter\cite{Holten:2006:HEB:1187627.1187772, holten:2009}. Figure \ref{figure:edgebundling_dualgraph} shows how this applied on the graph from figure \ref{figure:rowreduction_dualgraph}.
+As it is unlikely that the whole user profile can be shown in the graph while avoiding visual clutter, the active user's favourite items are used to give a representation of the active user's profile. This way the user can still directly compare him/herself with neighbouring profiles. Due to the sparsity of the utility matrix, we might have to cluster multiple neighbouring profiles in a single node to ensure adequate connectivity within the graph.
+
+Next we will apply edge-bundling on the graph to improve discernability and reduce visual clutter\cite{Holten:2006:HEB:1187627.1187772, holten:2009}. Figure \ref{figure:edgebundling_dualgraph} shows how this applied on the graph from figure \ref{figure:rowreduction_dualgraph}.
 
 \begin{figure}%
 	\begin{center}
@@ -59,15 +61,35 @@ In order gain insight into the recommendation process, it is important that cert
 	\item The position of the user in his/her neighbourhood and the relation with those neighbours.
 \end{enumerate}
 
-As it is unlikely that the whole user profile can be shown in the graph while avoiding visual clutter, the active user's favourite items are used to give a representation of the active user's profile. This way the user can still directly compare him/herself with neighbouring profiles. Due to the sparsity of the utility matrix, we might have to cluster multiple neighbouring profiles in a single node to ensure adequate connectivity within the graph.
+% interaction techniques
+To accomplish this, the active user's neighbours should be included in the visualization in one way or the other. One solution would be to label each of the edges with the corresponding neighbour's username. However, neighbour names may overlap each other, or occlude parts of the graph. Another idea would be similar to the PeerChooser application's layout. Re-introducing neighbours into the graph
+
+Instead the user's top neighbours are listed next to the graph. By hovering or clicking one of the listed neighbours, the relevant parts of the graph, i.e., items owned by the neighbour and the edges between them, are highlighted.
+
+% other design similar to PeerChooser: active user in the graph, his/her items directly around him. Neighbours are added or removed to the graph as desired.
+
 
 
 \section{The visual thinking algorithm}\label{chapter:whitebox:section:algorithm}
 
-We will try to approximate a visual thinking algorithm applied by users when exploring the graph presented in section \ref{chapter:whitebox:section:visualization}. The following algorithm is based on visual thinking algorithms derived by Ware and Mitchell \cite{ware:2004}:
+We will try to approximate a visual thinking algorithm\index{visual thinking algorithm} applied by users when exploring the graph presented in section \ref{chapter:whitebox:section:visualization}. The algorithm in table \ref{table:visual_thinking_algorithm} is the degree-of-relevance highlighting algorithm derived by Ware and Mitchell \cite{ware:2004}.
 
-\begin{enumerate}
-	\item 
-\end{enumerate}
+\begin{table}
+	\textit{Display environment: A display containing many symbols representing entities linked by a complex set of relationships.}
+
+	\begin{enumerate}
+		\item \textit{Construct a visual query to find a symbol that may lead to useful information (infromation scent).}
+		\item \textit{Execute an epistemic action by selecting a symbol.} A symbol corresponds to either a user from the user list, or node on the graph.
+		\item \textit{Computer highlights all symbols with a high degree of relevance to the selected symbol.} These are relevant parts of the graph, i.e., items owned by the neighbour and the edges between them, are highlighted.
+		\item \textit{Execute a visual pattern query among the highlighted symbols for additional information scent.}
+		\item \textit{If a very high relevance symbol is found, execute an epistemic action to drill down for additional information. Usually this will be presented in a different display window.} In this window artist and user metadata are shown, for example artist playcount, shared top artists et cetera.
+		\item \textit{Repeat from step 1 as needed, cognitively marking visited symbols.}
+	\end{enumerate}
+\caption{Degree-of-relevance highlighting visual thinking algorithm by Ware and Mitchell \cite{ware:2004}.}
+\label{table:visual_thinking_algorithm}
+\end{table}
+
+
+
 
 
