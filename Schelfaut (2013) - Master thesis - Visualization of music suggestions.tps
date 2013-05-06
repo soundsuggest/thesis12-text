@@ -12,13 +12,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1098
-NormalPos.bottom=305
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Schelfaut (2013) - Master thesis - Visualization of music suggestions.tex
 
 [Frame0_View0,0]
 TopLine=0
-Cursor=783
+Cursor=399
 
 [Frame1]
 Flags=0
@@ -30,13 +30,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1098
-NormalPos.bottom=305
+NormalPos.bottom=622
 Class=LaTeXView
 Document=tex\chapter_literature_study.tex
 
 [Frame1_View0,0]
-TopLine=878
-Cursor=66117
+TopLine=764
+Cursor=55976
 
 [SessionInfo]
 FrameCount=2

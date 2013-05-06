@@ -1,11 +1,73 @@
 \chapter{Designing a white box model for collaborative filtering}\label{chapter:whitebox}
 
-In this chapter we will describe our approach to design a white box model for collaborative filtering. In order to provide explanations about the recommendation process, we will base our design on the characteristics of collaborative filtering.
+In this chapter we will describe our approach to design a white box\index{white box} model for collaborative filtering\index{collaborative filtering}. In order to provide explanations about the recommendation process, we will base our design on the characteristics of collaborative filtering.
 
-The underlying structure of collaborative filtering can be interpreted as a dual graph. This is a graph $G(V,E)$ for which $V = U \cup I$ such that $U \cap I = \emptyset \wedge E \subseteq U \times I$\cite{dekimpe:2007}. In this case the set of nodes U corresponds to the set of users, and the other set of nodes I is set of items. In plain language this means that there only exist edges of that go from an item to a user or from a user to an item. A quantification of the similarity between users can then be identified as the number of edges leading to common items within user profiles. This way we hope to be able to answer most of the questions raised in the previous paragraphs, describing Herlocker's white box model.
+\section{The visualization}\label{chapter:whitebox:section:visualization}
+
+The underlying structure of collaborative filtering, the utility matrix, can be interpreted as a \emph{dual graph}\index{dual graph}. This is a graph $G(V,E)$ for which $V = U \cup I$ such that $U \cap I = \emptyset \wedge E \subseteq U \times I$\cite{dekimpe:2007}. Each non-blank entry in the utility matrix will then correspond to an edge. Figure \ref{figure:dualgraph} shows how a matrix is transformed into a dual graph.
+
+When applied to the context of collaborative filtering, the set of nodes $U$ corresponds to the set of users, and the other set of nodes $I$ is set of items. In conclusion this means that there only exist edges of that go from an item to a user or from a user to an item.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=300px]{img/dualgraph}
+	\end{center}
+	\caption{Transforming the utility matrix into a dual graph: two distinct sets of nodes, users and items, only share edges between nodes of different sets.}%
+	\label{figure:dualgraph}%
+\end{figure}
 
 One of the challenges of this approach is overcoming the graph drawing problem, as defined earlier in section \ref{chapter:literature_study:section:interaction:subsection:graphs}. In an application where easily millions of items may be involved, scalability becomes a significant constraint on the visualization design\cite{herman:2000}.
 
-%Several strategies have been identified to reduce the number of items, reduce the number of dimensions and reduce visual clutter, as listed in section \ref{chapter:literature_study:section:interaction:subsection:infovis} and \ref{chapter:literature_study:section:interaction:subsection:graph}.
+Several strategies have been identified to reduce the number of items, reduce the number of dimensions and reduce visual clutter, as listed in section \ref{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:reduction} and \ref{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:reduction}.
 
-Based on a visualization design by Valdis Krebs, a dimensionality reduction can be performed on the graph, by keeping only one set of nodes and representing the other set of nodes as implicit information in the edges. In \cite{steele:2010} Valdis Krebs kept the items, books purchased from the Amazon web store in this case, and represented the number of users that where linked to these items, i.e., purchased a particular book, by the thickness of the edges.
+Based on a visualization design by Valdis Krebs in \cite{steele:2010}, a dimensionality reduction\index{dimensionality reduction} can be performed on the dual graph, by keeping only one set of nodes and representing the other set of nodes as implicit information in the edges. Figure \ref{figure:rowreduction} shows an example of this idea of 'row reduction'\index{row reduction}. In Krebs' visualization the items, books purchased from the Amazon web store in this case, were retained. In the resulting graph, two items would share an edge if a user bought both these items. The thickness of the edges represented the number of users that where linked to these items\cite{krebs:2012:networkthinkers, steele:2010}.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/row_reduction}%
+	\end{center}
+	\caption{A row reduction operation on each pair of edges in a dual graph will result in a dimensionality reduction where one set of nodes is removed from the graph.}%
+	\label{figure:rowreduction}%
+\end{figure}
+
+For this white box model we will not apply the final step of Krebs' graph design. Instead we will keep parallel edges to keep a direct link between user and edge. In the resulting visualization of the CF-based recommender, a quantification of the similarity between users can then be established by counting parallel edges between items that occur in neighbouring profiles. Figure \ref{figure:rowreduction_dualgraph} shows how the dual graph from figure \ref{figure:dualgraph} is transformed.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/dualgraph_rowreduction}%
+	\end{center}
+	\caption{Row reduction applied on the graph in figure \ref{figure:dualgraph}.}%
+	\label{figure:rowreduction_dualgraph}%
+\end{figure}
+
+We lay out the nodes on the edge of a circle. Next we will apply edge-bundling on the graph to improve discernability and reduce visual clutter\cite{Holten:2006:HEB:1187627.1187772, holten:2009}. Figure \ref{figure:edgebundling_dualgraph} shows how this applied on the graph from figure \ref{figure:rowreduction_dualgraph}.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/dualgraph_edgebundling}%
+	\end{center}
+	\caption{Edge bundling applied on the graph in figure \ref{figure:rowreduction_dualgraph}.}%
+	\label{figure:edgebundling_dualgraph}%
+\end{figure}
+
+From a graph drawing perspective we managed to reduce visual clutter by reducing the number of displayed items and applying edge-bundling\cite{herman:2000, Holten:2006:HEB:1187627.1187772}.  Of course cognitive aspects come into play as the visualization encodes now more implicit information that needs to be interpreted by the end user\cite{herman:2000, ware:2004}.
+
+In order gain insight into the recommendation process, it is important that certain contextual information does not get lost through dimensionality and data reduction techniques. The contextual information we want to convey is two-fold:
+
+\begin{enumerate}
+	\item The strength of the links between a recommendation and the user's profile;
+	\item The position of the user in his/her neighbourhood and the relation with those neighbours.
+\end{enumerate}
+
+As it is unlikely that the whole user profile can be shown in the graph while avoiding visual clutter, the active user's favourite items are used to give a representation of the active user's profile. This way the user can still directly compare him/herself with neighbouring profiles. Due to the sparsity of the utility matrix, we might have to cluster multiple neighbouring profiles in a single node to ensure adequate connectivity within the graph.
+
+
+\section{The visual thinking algorithm}\label{chapter:whitebox:section:algorithm}
+
+We will try to approximate a visual thinking algorithm applied by users when exploring the graph presented in section \ref{chapter:whitebox:section:visualization}. The following algorithm is based on visual thinking algorithms derived by Ware and Mitchell \cite{ware:2004}:
+
+\begin{enumerate}
+	\item 
+\end{enumerate}
+
+
