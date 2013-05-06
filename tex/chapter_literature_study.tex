@@ -107,7 +107,7 @@ In \cite{ware:2004}, interactive visualization is characterized by three classes
 The next subsections describe each feedback loop in greater detail.
 
 
-\subsubsection{Data selection and manipulation loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops1}
+\subsubsection{Data selection and manipulation loop}\label{subsubsection:data_manipulation_loop}
 
 The quality of performance of selecting and manipulating data on a screen, depends on certain factors. Colin Ware discusses the following attributes:
 
@@ -134,7 +134,7 @@ When a task is repeated over time, the user will become more efficient at perfor
 Some actions are easier to learn than others. This is related to the \emph{stimulus-response (S-R) compatibility}\index{stimulus-response compatibility}. The stimulus-response compatibility refers to the way in which skills that have been learned before through everyday experience, are applied to computer control design. However it is not necessary to produce a whole virtual reality to create excellent computer interfaces. Research shows that mismatches between the interface and real world experience are not necessarily detrimental to the efficiency of human-computer interaction. Ware concludes that "it would be naive to conclude that computer interfaces should evolve toward VR simulations of real-world tasks (...). The magic of computers is that a single button click can often accomplish as much as a prolonged series of actions in the real world"\cite{ware:2004}.
 
 
-\subsubsection{Exploration and manipulation loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops2}
+\subsubsection{Exploration and navigation loop}\label{subsubsection:exploration_navigation_loop}
 
 In the second loop the user navigates through the data space. The basic navigation control loop is described as an iterative process that involves two distinct aspects\cite{ware:2004}:
 
@@ -150,7 +150,7 @@ Ware and Mitchell remark that the human visual system is already well-adapted to
 The time it takes to navigate between two points in the data space to gather information is called the \emph{cost of knowledge}\index{cost of knowledge}\cite{ware:2004}. To keep the cost of knowledge low, various interaction techniques have been developed, such as distortion, rapid zooming, elision, and multiple windows\cite{ware:2004}. In section \ref{chapter:literature_study:section:interaction} we will take a closer look at some of these techniques.
 
 
-\subsubsection{Problem solving loop}\label{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops3}
+\subsubsection{Problem solving loop}\label{subsubsection:problem_solving_loop}
 
 The problem solving loop can be described through means of a \emph{visual thinking algorithm}\index{visual thinking algorithm}\cite{ware:2004}. Such an algorithm combines perceptual and cognitive actions into a process, as the user interacts with the visualization and explores the data space. As we want to keep the \emph{cost of knowledge}\index{cost of knowledge} low, it is obvious that the cost and time complexity of each of these actions should be kept at a minimum. The cognitive system that runs these algorithms, is made up out of several different components. Ware lists the following components\cite{ware:2004}:
 
@@ -362,7 +362,7 @@ In this section we will take a closer look at the visual communication channel.
 Shirley et al.\cite{shirley:2009} lists three distinctive limitations:
 
 \begin{itemize}
-	\item \textbf{Computational capacity}: time complexity and memory usage of algorithms must allow a responsive user interface, especially in the case of interactive visualization. This is also a requirement to meet the \emph{principle of transparency}\index{principle of transparency} discussed in section \ref{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops3}.
+	\item \textbf{Computational capacity}: time complexity and memory usage of algorithms must allow a responsive user interface, especially in the case of interactive visualization. This is also a requirement to meet the \emph{principle of transparency}\index{principle of transparency} discussed in section \ref{subsubsection:problem_solving_loop}.
 	\item \textbf{Display capacity}: there is a trade-off between the benefits of maximizing the \emph{information density}\index{information density}, i.e., the measure of the amount of encoded information against the amount of unused space, and causing visual overload.
 	\item \textbf{Human perceptual and cognitive capacity}: optimizing the cognitive cost is one of the key aspects that make up a successful visualization, as visual and non-visual memory capacity are limited\cite{ware:2004}, as we saw earlier in section \ref{chapter:literature_study:section:user:subsection:interactive}.
 \end{itemize}
@@ -449,7 +449,7 @@ Spatial layouts form other visual channels. Although these tend to be the most a
 \subsection{Techniques}\label{chapter:literature_study:section:interaction:subsection:techniques}
 
 % Techniques to overcome limitations of visual channels (see also ware)
-Visualization techniques try to deal with the limitations listed in the introduction of this section. Tamara Munzner \cite{shirley:2009} acknowledges that there is a trade-off to be made concerning the interaction cost: on the positive side, interaction allows for data exploration in a larger information space than could be understood in a single static image. The downside is that interaction costs, other than the obvious implementation and computational costs, include the requirements for human time and attention\cite{shirley:2009}. Since attention drops significantly after the first hour\cite{ware:2004}, it might become a critical factor in the quality of the visualization. This view is also supported by Ware's findings described in section \cite{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops3}, as eye-movements have a much lower cost than other epistemic actions\cite{ware:2004, ware:2008}.
+Visualization techniques try to deal with the limitations listed in the introduction of this section. Tamara Munzner \cite{shirley:2009} acknowledges that there is a trade-off to be made concerning the interaction cost: on the positive side, interaction allows for data exploration in a larger information space than could be understood in a single static image. The downside is that interaction costs, other than the obvious implementation and computational costs, include the requirements for human time and attention\cite{shirley:2009}. Since attention drops significantly after the first hour\cite{ware:2004}, it might become a critical factor in the quality of the visualization. This view is also supported by Ware's findings described in section \ref{subsubsection:problem_solving_loop}, as eye-movements have a much lower cost than other epistemic actions\cite{ware:2004, ware:2008}.
 
 Based on the discussion by Ware and Mitchell in \cite{ware:2004}, Keim in \cite{keim:2002}, and Munzner in \cite{shirley:2009}, we will discuss a number of visualization, interaction, and data reduction techniques.
 
@@ -460,11 +460,11 @@ Based on the discussion by Ware and Mitchell in \cite{ware:2004}, Keim in \cite{
 In \cite{keim:2002}, Keim lists a number of visualization techniques:
 
 \begin{itemize}
-	\item \textbf{Standard $2$D and $3$D techniques}: one-to-one data mappings from the data space onto the screen. For example xy- and xyz-plots, bar charts, line graphs and so on;
-	\item \textbf{Geometrically transformed displays}: transformations of multidimensional spaces onto a two-dimensional display. For example parallel coordinate technique, as shown in figure \ref{figure:parallel_coordinates}, or scatterplot matrices, as shown in figure \ref{figure:scatterplot_matrix}.
-	\item \textbf{Iconic displays/glyphs}: representations of a multidimensional set of attributes in a single icon.
-	\item \textbf{Dense pixel displays}:
-	\item \textbf{Stacked displays}:
+	\item \textbf{Standard $2$D and $3$D techniques}: one-to-one data mappings from the data space onto the screen. For example xy- and xyz-plots, bar charts, pie charts, donut charts, line graphs and so on;
+	\item \textbf{Geometrically transformed displays}: transformations of multidimensional spaces onto a two-dimensional display. For example \emph{parallel coordinate technique}\index{parallel coordinate}, as shown in figure \ref{figure:parallel_coordinates}, or \emph{scatterplot matrices}\index{scatterplot matrix}, as shown in figure \ref{figure:scatterplot_matrix}.
+	\item \textbf{Iconic displays/glyphs}\index{glyph}: representations of a multidimensional set of attributes in a single icon\cite{keim:2002, ware:2004}.
+	\item \textbf{Dense pixel displays}\index{dense pixel display}: representations of a multidimensional data space where each dimension corresponds to a certain colour, and each dimension value is mapped onto a pixel on the screen. This way, large amounts of data can be visualized on a single display.
+	\item \textbf{Stacked displays}\index{stacked display}: displaying multidimensional data by creating a hierarchy of stacked coordinate systems. For example using one coordinate system as the frame of reference for objects. Within these objects, smaller coordinate systems can be constructed, displaying more detailed information for the other dimensions of the data. This can be applied recursively\cite{keim:2002}.
 \end{itemize}
 
 
@@ -493,15 +493,17 @@ In \cite{keim:2002}, Keim lists a number of visualization techniques:
 
 \subsubsection{Interaction techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:interaction}
 
-Several techniques can be applied to solve the focus-context problem\index{focus-context problem} described in section \ref{chapter:literature_study:section:user:subsection:interactive:subsubsection:loops2}, further, such as distortion and rapid zooming\cite{ware:2004}. Keim \cite{keim:2002} also lists a number of techniques for interactive visualization. A summary based on \cite{ware:2004}, \cite{shirley:2009} and \cite{keim:2002} is presented here:
+The previously described vsiualization techniques can of course be combined with various interaction techniques\cite{keim:2002}. When applying visual thinking algorithms on a visualization, the focus-context problem\index{focus-context problem}, described in section \ref{subsubsection:exploration_navigation_loop}, will surface.
+
+Several techniques can be applied to solve the focus-context problem further; for example distortion and rapid zooming\cite{ware:2004}. Keim \cite{keim:2002} also lists a number of techniques for interactive visualization. A summary based on \cite{ware:2004}, \cite{shirley:2009} and \cite{keim:2002} is presented here:
 
 \begin{itemize}
-	\item \textbf{Dynamic projections}: Data projections are dynamically changed, allowing the user to explore a multidimensional data set.
+	\item \textbf{Dynamic projections}\index{dynamic projection}: Data projections are dynamically changed, allowing the user to explore a multidimensional data set.
 	\item \textbf{Interactive filtering}: The data set is interactively partitioned into different segments in order to focus on different subsets through querying, browsing or more advanced methods.
 	\item \textbf{Interactive zooming}: The data representation is interactively changed, moving between different resolutions. A distinction can be made between two kinds of zooming\cite{shirley:2009, ware:2004}:
 	\begin{itemize}
-		\item \textbf{Geometric/rapid zooming}: Rapidly changing viewpoint in a two- or three-dimensional space, similar to adjusting the ratio of the focal length on binoculars;
-		\item \textbf{Semantic zooming/elision}: Changing the representation of an abstract object visualization, for example expanding and collapsing parts of a large structure that was represented by a single visual entity.
+		\item \textbf{Geometric/rapid zooming}\index{zooming!geometric zooming}\index{zooming!rapid zooming}: Rapidly changing viewpoint in a two- or three-dimensional space, similar to adjusting the ratio of the focal length on binoculars;
+		\item \textbf{Semantic zooming/elision}\index{zooming!semantic zooming}\index{elision|see{semantic zooming}}: Changing the representation of an abstract object visualization, for example expanding and collapsing parts of a large structure that was represented by a single visual entity.
 	\end{itemize}
 	\item \textbf{Interactive distortion}: Parts of the data are displayed with a high level of detail (focus), while others are shown with a lower level of detail (context). Examples are 'fish-eye' distortion, bifocal displays and hyperbox.
 \end{itemize}
@@ -515,11 +517,112 @@ Several techniques can be applied to solve the focus-context problem\index{focus
 
 \subsection{Graph-based visualization}\label{chapter:literature_study:section:interaction:subsection:graphs}
 
-% graph-based visualization
+In this subsection we will take a closer look at \emph{graph-based visualization}\index{graph-based visualization}. As discussed in section \ref{chapter:literature_study:section:interaction:subsection:datatypes}, relational data is data that has an inherent relation among its elements\cite{shirley:2009}. "Given a set of nodes and a set of edges, what are the positions for each node and the curves for each edge?"; this is basically the essence of the graph drawing problem\index{graph drawing problem}\cite{herman:2000}.
+
+Scalability is one of the central issues with graph drawing, as graph size poses several important challenges\cite{herman:2000}:
+
+\begin{itemize}
+	\item \textbf{Viewability and discernability}: even if it is possible to layout and display all the elements, it may become impossible to discern between nodes and edges;
+	\item \textbf{Performance and responsiveness}: graph layout algorithms may be relatively complex, and a large number of nodes and edges may become a bottleneck for performance, especially in interactive applications that require reasonable responsiveness;
+	\item \textbf{Usability}: apart from problems with discernability, also information overload may occur. It is known that detailed analysis of data in graph structures is easiest when the displayed graph is small.
+\end{itemize}
+
+To determine the best way to draw a graph, a definition of properties and a classification of layouts is required. These properties will impose constraints on the algorithms used for the layouts presented. For example planarity of the graph, i.e. the absence of edge-crossings, predictability, density, and aesthetic constraints (e.g. symmetry) can be imposed on the final layout. Note that some of the 'aesthetic rules' can have a major impact on the usability of the graph as well; in that case they are said to have an ‘absolute’ character\cite{herman:2000}.
 
 
+\subsubsection{Traditional layouts}\label{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:traditional}
+
+In \cite{herman:2000} a number of ‘traditional’ graph layouts are discussed. Here we give a brief overview of some of them:
+
+\begin{itemize}
+	\item \textbf{Tree layout}\index{tree layout}, \textbf{H-Tree layout}\index{H-tree layout}, \textbf{radial layout}\index{radial layout}, \textbf{balloon layout}\index{balloon layout}: these layouts are typically used for drawing trees. The algorithms to construct these layouts are of low-complexity, i.e. $O(N)$ with $N$ the number of nodes;
+	\item \textbf{Sugiyama layout}\index{Sugiyama layout}: this is a layout designed specifically for directed graphs. The complexity of the algorithms for this layout depends mainly on the edge-crossing minimization. As this an NP-hard problem, heuristics are usually applied.
+	\item \textbf{Spring layout} \textbf{(force-directed methods)}\index{force-directed graph}: this layout is applied to draw undirected graphs. Nodes and edges of the graph are modeled as physical bodies tied with springs. The time complexity of the algorithm and quality of the result may vary depending on the physical models used. Still, the best variants are estimated to work with a complexity of $O(N^{3})$ with $N$ the number of nodes, which is relatively slow. Another disadvantage is that the layout is rather unpredictable, which may be less preferable for information visualization. An example of a force-directed graph can be seen in figure \ref{figure:forcedirected_layout}.
+\end{itemize}
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/force-directed_graph}%
+	\end{center}
+\caption{A force-directed graph layout. Taken from \url{http://bl.ocks.org/mbostock/4062045}.}%
+\label{figure:forcedirected_layout}%
+\end{figure}
 
 
+\subsubsection{Three dimensional layouts}\label{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:threed}
+
+Limits to information visualization with graphs depend largely on the size of the graph, as we have seen in the introduction of this section. To increase graph size, one can work with some kind of interaction technique\cite{herman:2000, ware:2008}. However, as discussed in section \ref{subsubsection:problem_solving_loop}, it is better to take advantage of the efficiency of eye-movements by maximizing the amount of displayed data\cite{ware:2004, ware:2008}. Ware et al. conclude that the question how large a graph can be seen in a non-interactive display is an important one\cite{ware:2008}.
+
+Three dimensional graph visualizations allow for larger network structures to be seen, as the extra dimension will provide more 'space'\cite{herman:2000, ware:2008}. Distance can be perceived as the result of a series of depth cues, such as stereoscopic disparities, kinetic depth, perspective, texture and size gradients, occlusion, shape from shading, among others. From these depths cues, Ware et al. \cite{ware:2008} identify the user's stereoscopic disparities\index{stereoscopic disparity} and kinetic depth cues\index{kinetic depth cue} as the most significant factors that determine the performance of three dimensional graph visualization. Disparities are the relative differences between pairs of features imaged in the two eyes, and form the basis for stereoscopic depth. They allow for extremely fine judgments. The kinetic depth effect is caused by rotating a three dimensional wire-object: it will appear strongly three dimensional, even if the rotation has been stopped. Overall, stereoscopic depth appears to be the dominant factor \cite{ware:2008}.
+
+In \cite{herman:2000} a number of three dimensional layouts are listed:
+
+\begin{itemize}
+	\item \textbf{Generalize two dimensional layouts} \textbf{(e.g. radial layout)}: most of the previously described ‘traditional methods’ can be transformed to three dimensional counterparts;
+	\item \textbf{Cone tree}: A node is placed at the apex of a cone with its children placed evenly along its base. In the original implementation, each layer has cones of the same height and the cone base diameters for each level are reduced in a progression so that the bottom layer fits into the width of what the authors called the ‘room’, i.e. the box containing the full cone tree;
+	\item \textbf{Real-world metaphors}: Because of general human familiarity with 3D in the physical world, 3D lends itself to the creation of real-world metaphors that should help in perceiving complex structures.
+\end{itemize}
+
+
+\subsubsection{Data and dimensionality reduction techniques}\label{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:reduction}
+
+As graph size is one of the biggest issues of graph visualization, techniques have been developed to apply data reduction techniques on graphs\cite{herman:2000, shirley:2009}. Apart from the traditional distortion and data transformation techniques, there are some techniques that are specific for graph-based visualization. Based on a survey by Herman et al. \cite{herman:2000}, and papers by Holten \cite{Holten:2006:HEB:1187627.1187772}, and Holten et al. \cite{holten:2009}, we give an overview of two techniques: clustering and edge-bundling.
+
+Clustering is the process of discovering groupings or classes in data based on chosen semantics. Clustering techniques can be divided into two categories:
+
+\begin{itemize}
+	\item \textbf{Structure-based clustering}: clustering based on structural information, for example choosing clusters that have the least number of edges between them. Structure-based clustering tends to retain the structure of the original graph;
+	\item \textbf{Content-based clustering}: the use of semantic data associated with graph elements. This is usually harder as this data is application-specific.
+\end{itemize}
+
+Node metrics, i.e. a metric associated with a node in a graph, may be applied to cluster a graph. One can distinguish between structure-based and content-based metrics\cite{herman:2000}.
+
+Compound graphs can be used to bundle edges and nodes into 'super-nodes'. This graph can then be navigated, instead of the original one. In structure-based approaches, the compound graph provides a good overview of the global structure of the original graph\cite{herman:2000}.
+
+Hierarchical clustering is achieved by successively applying the same clustering process to groups discovered in the precious step of the clustering process. This way a hierarchical structure may be induced upon a graph that would otherwise not necessarily have one\cite{herman:2000}.
+
+Once a subset of nodes has been selected, a method of representing the unselected nodes must be chosen. In the case of clustering, the selected set of nodes is the set of super-nodes or the groups themselves. Kimelman et al. name three possible approaches\cite{herman:2000}:
+
+\begin{itemize}
+	\item \textbf{Ghosting}: deemphasizing nodes, or relegating nodes to the background.
+	\item \textbf{Hiding}: simply not displaying the unselected nodes. This is also referred to as folding or eliding.
+	\item \textbf{Grouping}: grouping nodes under a new super-node representation.
+\end{itemize}
+
+In \cite{Holten:2006:HEB:1187627.1187772} Danny Holten describes an edge-bundling method to visualize compound graphs. He describes the process as follows. The hierarchy is shown via a standard tree visualization method. Next, each adjacency edge is bent, and modeled as a B-spline curve, toward the polyline defined by the path via the inclusion edges from one node to another. This hierarchical bundling reduces visual clutter and also visualizes implicit adjacency edges between parent nodes that are the result of explicit adjacency edges between their respective child nodes.
+
+Edges are modelled as "flexible springs that can attract each other, similar to how electrical wires are bundled within a network"\cite{holten:2009}. Figure \ref{figure:hierarchical_edge_bundling} gives an overview of the different results for varying bundling strengths. It shows how edges are drawn closer towards each other, reducing visual clutter, and highlighting relationships between nodes.
+
+
+% BEGIN FIGURE : geometrically_transformed_displays
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/hierarchical_edge-bundling1}
+					\caption{Low edge bundling strength.}
+					\label{figure:hierarchical_edge-bundling1}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/hierarchical_edge-bundling2}
+					\caption{Medium edge bundling strength.}
+					\label{figure:hierarchical_edge-bundling2}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/hierarchical_edge-bundling3}
+					\caption{High egde bundling strength.}
+					\label{figure:hierarchical_edge-bundling3}
+	\end{subfigure}
+	\caption{Hierarchical edge bundling. Taken from \url{http://mbostock.github.io/d3/talk/20111116/bundle.html}. By increasing the bundling strength, edges will be drawn towards each other, clearly marking pathways between endpoints.}%
+	\label{figure:hierarchical_edge_bundling}%
+\end{figure}
+
+
+In another paper by Danny Holten and Jarke van Wijk edge-bundles for more general graphs, i.e. not necessarily hierarchical graphs, are discussed. It uses a self-organizing approach in which edges are modeled as flexible springs that can attract each other. Their visualization technique achieves very good clutter reduction and allows to discern high-level edge patterns [3].
 
 
 % ------------------------ Related work- --------------------------
