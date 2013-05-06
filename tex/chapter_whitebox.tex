@@ -16,7 +16,7 @@ When applied to the context of collaborative filtering, the set of nodes $U$ cor
 	\label{figure:dualgraph}%
 \end{figure}
 
-One of the challenges of this approach is overcoming the graph drawing problem, as defined earlier in section \ref{chapter:literature_study:section:interaction:subsection:graphs}. In an application where easily millions of items may be involved, scalability becomes a significant constraint on the visualization design\cite{herman:2000}.
+One of the challenges of this approach is overcoming the graph drawing problem, as defined earlier in section \ref{chapter:literature_study:section:interaction:subsection:graphs}. In an application where easily thousands of items may be involved, scalability becomes a significant constraint on the visualization design\cite{herman:2000}.
 
 Several strategies have been identified to reduce the number of items, reduce the number of dimensions and reduce visual clutter, as listed in section \ref{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:reduction} and \ref{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:reduction}.
 
@@ -26,7 +26,7 @@ Based on a visualization design by Valdis Krebs in \cite{steele:2010}, a dimensi
 	\begin{center}
 		\includegraphics[width=250px]{img/row_reduction}%
 	\end{center}
-	\caption{A row reduction operation on each pair of edges in a dual graph will result in a dimensionality reduction where one set of nodes is removed from the graph.}%
+	\caption{A row reduction operation on each pair of edges in a dual graph will result in a dimensionality reduction where one set of nodes is removed from the graph. An additional data reduction can be achieved by clustering edges into a thicker edge. Edge thickness then depends on the number of edges involved.}%
 	\label{figure:rowreduction}%
 \end{figure}
 
@@ -62,9 +62,9 @@ In order gain insight into the recommendation process, it is important that cert
 \end{enumerate}
 
 % interaction techniques
-To accomplish this, the active user's neighbours should be included in the visualization in one way or the other. One solution would be to label each of the edges with the corresponding neighbour's username. However, neighbour names may overlap each other, or occlude parts of the graph. Another idea would be similar to the PeerChooser application's layout. Re-introducing neighbours into the graph
+To accomplish this, the active user's neighbours should be included in the visualization in one way or the other. One solution would be to label each of the edges with the corresponding neighbour's username. However, neighbour names may overlap each other, or occlude parts of the graph. Instead, another idea would be similar to the PeerChooser application's layout. Re-introducing neighbours into the graph on demand. The corresponding edges could then be restored temporary. By adding and removing other users, item profiles can be compared.
 
-Instead the user's top neighbours are listed next to the graph. By hovering or clicking one of the listed neighbours, the relevant parts of the graph, i.e., items owned by the neighbour and the edges between them, are highlighted.
+To keep things simple, the user's top neighbours are listed next to the graph in the current visualization design. By hovering or clicking one of the listed neighbours, the relevant parts of the graph, i.e., items owned by the neighbour and the edges between them, are highlighted. In essense it shows the same information on demand as in the previously described alternative, but in a more implicit way.
 
 % other design similar to PeerChooser: active user in the graph, his/her items directly around him. Neighbours are added or removed to the graph as desired.
 
@@ -78,7 +78,7 @@ We will try to approximate a visual thinking algorithm\index{visual thinking alg
 	\textit{Display environment: A display containing many symbols representing entities linked by a complex set of relationships.}
 
 	\begin{enumerate}
-		\item \textit{Construct a visual query to find a symbol that may lead to useful information (infromation scent).}
+		\item \textit{Construct a visual query to find a symbol that may lead to useful information (infromation scent\index{infromation scent}).}
 		\item \textit{Execute an epistemic action by selecting a symbol.} A symbol corresponds to either a user from the user list, or node on the graph.
 		\item \textit{Computer highlights all symbols with a high degree of relevance to the selected symbol.} These are relevant parts of the graph, i.e., items owned by the neighbour and the edges between them, are highlighted.
 		\item \textit{Execute a visual pattern query among the highlighted symbols for additional information scent.}
@@ -89,7 +89,7 @@ We will try to approximate a visual thinking algorithm\index{visual thinking alg
 \label{table:visual_thinking_algorithm}
 \end{table}
 
-
+Based on this algorithm, we can make an estimation of the efficiency by which the user may to use the visualization. We can combine this with the insight gaining process, described in section \ref{chapter:literature_study:section:user:subsection:insight}, to get a better understanding of the user.
 
 
 
