@@ -512,6 +512,18 @@ Several techniques can be applied to solve the focus-context problem further; fo
 \subsubsection{Data reduction techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:reduction}
 
 % transformation of data, reducing data, clustering, dimensionality reduction, ...
+In \cite{shirley:2009} four main strategies are distinguished to reduce the amount of data shown, avoiding visual clutter:
+
+\begin{itemize}
+	\item \textbf{Overviews and aggregation}: many data sets have an internal structure at different scales, allowing multi-scale representations. With aggregate representations many items can covered by a single mark;
+	\item \textbf{Filtering and navigation}: by filtering only a subset of the data is shown. Navigation is a special type of filtering based on spatial positioning. In geometric zooming the viewpoint can be changed in the two- or three-dimensional space. In semantic zooming through a space of abstract items the object visualization may change very much depending on the resolution, i.e. the number of pixels available;
+	\item \textbf{Focus and context}: changing the data representation on different resolutions. E.g. fish-eye technique;
+	\item \textbf{Dimensionality reduction}: may be effective if there are many dimensions in the data. In \cite{shirley:2009} two techniques in particular are described:
+	\begin{itemize}
+		\item \textbf{Slicing}: a single value is chosen from the dimensions to eliminate, and only the items matching that value for the dimension are extracted to include in the lower-dimensional 'slice'.
+		\item \textbf{Projection}: no information of about the eliminated dimensions is retained; the values for those dimensions are simply dropped.
+	\end{itemize}
+\end{itemize}
 
 
 
