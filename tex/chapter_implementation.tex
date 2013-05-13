@@ -23,13 +23,13 @@ Content scripts are JavaScript scripts that are used to interact with a webpage 
 
 \subsection{The Last.fm API}\label{chapter:implementation:section:technologies:subsection:lastfm}
 
-The \emph{Last.fm API}\footnote{\url{http://www.last.fm/api}} offers great functionality such as the recommender system, Last.fm scrobbling and accessing and modifying your Last.fm profile information, aside from providing a large amount of data. To use the API, libraries have been developed for several technologies, such as \emph{JavaScript}\index{JavaScript}, \emph{PHP}, \emph{Python} and \emph{Actionscript} among others\cite{lastfm:2012:home}.
+The \emph{Last.fm API}\index{Last.fm API}\index{Last.fm}\footnote{\url{http://www.last.fm/api}} offers great functionality such as the recommender system, Last.fm scrobbling and accessing and modifying your Last.fm profile information, aside from providing a large amount of data. To use the API, libraries have been developed for several technologies, such as \emph{JavaScript}\index{JavaScript}, \emph{PHP}, \emph{Python} and \emph{Actionscript} among others\cite{lastfm:2012:home}.
 
 To build an application using the Last.fm API, you have to create an API account first at \url{http://www.last.fm/api/account/create}. Once you have been registered, you will receive an API key and an API secret.
 
 For testing purposes it will also be handy to have a Last.fm account of your own. So if you haven't got one already sign up at their website. You might also want to one or more of their \emph{Scrobbler}\index{Scrobbler} applications. This will collect data from your music players to generate profile information that will be used to generate recommendations\cite{lastfm:2013:scrobbling}.
 
-There are already several interesting applications that make use of the Last.fm API. Even more interesting perhaps is that some developers distribute free JavaScript libraries that act like a facade on the Last.fm API. The JavaScript library we will be using here, can be found on \emph{GitHub}\footnote{\url{https://github.com/fxb/javascript-last.fm-api}} and is written by \emph{Felix Bruns}.
+There are already several interesting applications that make use of the Last.fm API\index{Last.fm API}. Even more interesting perhaps is that some developers distribute free JavaScript libraries that act like a facade on the Last.fm API. The JavaScript library we will be using here, can be found on \emph{GitHub}\footnote{\url{https://github.com/fxb/javascript-last.fm-api}} and is written by \emph{Felix Bruns}.
 
 
 \subsection{D3.js JavaScript Library}\label{chapter:implementation:section:technologies:subsection:d3js}
@@ -46,7 +46,7 @@ In short, to get started the library should be included in your web page. Next, 
 In addition to the Last.fm API JavaScript library and D3.js, four other JavaScript libraries were used, namely:
 
 \begin{itemize}
-	\item \textbf{jQuery}\footnote{\url{http://jquery.com/}}: "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers"\cite{jquery:2013}.
+	\item \textbf{jQuery}\footnote{\url{http://jquery.com/}}\index{jQuery}: "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers"\cite{jquery:2013}.
 	\item \textbf{jQuery UI}\footnote{\url{}}: "jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library"\cite{jqueryui:2013}.
 	\item \textbf{Purl.js}\footnote{\url{https://github.com/allmarkedup/jQuery-URL-Parser}}: a library built on the jQuery library to retrieve GET parameters from the web page's URL.
 	\item \textbf{Spinner.js}\footnote{\url{http://fgnass.github.io/spin.js/}}: a library that creates a spinner element with given parameters for customization.
@@ -55,6 +55,27 @@ In addition to the Last.fm API JavaScript library and D3.js, four other JavaScri
 
 \section{Software design and application architecture}\label{chapter:implementation:section:design}
 
+The architecture of the application is shown in figure \ref{fig:architecture}. Five distict components can be identified that are of importance for the application:
+
+\begin{itemize}
+	\item \textbf{Last.fm recommendations page}: The HTML will we injected into this page. Although it is not a part of the source code, it poses certain limitations on the script. For example one should be careful not to override certain CSS definitions, and the injected code should fit into the page layout to achieve better looking results.
+	\item \textbf{Content script}: The content script creates the injected HTML elements, handles user input, and delegates calls to the Last.fm API to the background script.
+	\item \textbf{Background script}: the background script deals with local storage and calls to the Last.fm API.
+	\item \textbf{Local storage}: The local storage of the Chrome browser can be used to store preferences.
+	\item \textbf{Last.fm API}: The Last.fm API handles calls and returns the requested content.
+\end{itemize}
+
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=\columnwidth]{img/architecture}%
+	\end{center}
+	\caption{The architecture of the application.}%
+	\label{fig:architecture}%
+\end{figure}
+
+Figures \ref{fig:sequence:part1} and \ref{fig:sequence:part2} show the sequence diagrams of what happens when loading the application. The first time the application is loaded, the user will have to authenticate the application. If the user does this, the content script will retrieve the token from the callback URL, and get a session key from the Last.fm API. This session key then stored. When the application is started again, the stored key can be retrieved from the local storage. Similarly other settings are loaded from local storage. If none have been stored so far, the default settings are returned and stored.
+
 % Life lines :
 %		ACTOR
 %		(UI)
@@ -62,7 +83,6 @@ In addition to the Last.fm API JavaScript library and D3.js, four other JavaScri
 %		background script
 %		Local storage
 %		Last.fm API
-
 
 \begin{figure}%
 	\begin{center}
@@ -80,12 +100,44 @@ In addition to the Last.fm API JavaScript library and D3.js, four other JavaScri
 	\label{fig:sequence:part2}%
 \end{figure}
 
+
+Algorithm \ref{alg:loadingvis} shows how the data structure is constructed from calls to the Last.fm API\index{Last.fm API}. The resulting data structure is an approximation of the utility matrix on a local scale, i.e., the neighbourhood of the active user and the top artists of the active user. The time complexity of the algorithm depends on the number of artists, i.e., the number of recommendations added to the number of top artists, and the number of neighbours involved The resulting time complexity is then $O((R + T) * N)$.
+
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\KwData{Active user $user$}
+	\KwResult{Datastructure $D$}
+	$D$ $\leftarrow$ $\emptyset$ \;
+	$N$ $\leftarrow$ getNeighbours($user$)\;
+	$U$ $\leftarrow$ union($user$, $N$)\;
+	$T$ $\leftarrow$ getTopartists($user$)\;
+	$R$ $\leftarrow$ getRecommendations($user$)\;
+	$A$ $\leftarrow$ union($T$, $R$)\;
+	% FOR EACH ARTIST
+	\ForEach{artist $a$ in $A$}{
+		% FOR EACH USER
+		\ForEach{user $u$ in $U$}{
+			$Similar$ $\leftarrow$ getSimilar($a$)\;
+			$Score$ $\leftarrow$ compare(union($a$, $Similar$), $u$)\;
+			% IF
+			\eIf{$Score$ $>$ $threshold$}{
+				$D$[$a$] $\leftarrow$ union($D$[$a$], $u$)\;
+			}
+		}
+	}
+	\caption{Loading the data for the visualization.}
+	\label{alg:loadingvis}
+\end{algorithm}
+
+The corresponding sequence diagram is shown in figure \ref{fig:sequence:loadingvis}. The two calls within the inner loop have a large impact on the performance of the algorithm. Cashing parts of the data structure is possible. However, small changes in the data may have an impact on the rest of data structure. For example if a user gets promoted to a neighbour and another gets demoted, it is impossible to know which user has to be removed from the data structure without comparing the lists of updated neighbours to the old version. Next the relevant neighbours should be removed from the data set and the new ones added. For artists that are promoted to the status of recommendation, there is a similar scenario. In this case, note that all of the users should be compared to the new items as well.
+
+
 \begin{figure}%
 	\begin{center}
-		\includegraphics[width=\columnwidth]{img/seq_settings}%
+		\includegraphics[width=\columnwidth]{img/seq_load_visualization}%
 	\end{center}
-	\caption{Sequence diagram: changing settings.}%
-	\label{fig:sequence:settings}%
+	\caption{Sequence diagram: loading the visualization.}%
+	\label{fig:sequence:loadingvis}%
 \end{figure}
 
 
