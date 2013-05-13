@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=Schelfaut (2013) - Master thesis - Visualization of music suggestions.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=437
+TopLine=50
+Cursor=2044
 
 [Frame1]
 Flags=0
@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=tex\chapter_implementation.tex
 
 [Frame1_View0,0]
-TopLine=167
-Cursor=11854
+TopLine=198
+Cursor=13740
 
 [Frame2]
 Flags=0
@@ -53,7 +53,7 @@ Class=BibTeXView
 Document=bib\references.bib
 
 [Frame2_View0,0]
-TopLine=302
+TopLine=305
 Cursor=11610
 
 [SessionInfo]

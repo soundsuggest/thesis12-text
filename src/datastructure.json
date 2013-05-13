@@ -1,0 +1,28 @@
+{
+    "items" :
+    [
+        {
+            "name"  : "item.SOME_ARTIST",
+            "edges" :
+            [
+                "item.SOME_ARTIST.user.SOME_USER",
+                ...
+            ],
+            "owners" :
+            [
+                "SOME_USER",
+                ...
+            ],
+            "recommendation" : BOOLEAN
+        },
+        ...
+    ],
+    "users" :
+    [
+        {
+            "name"      : "SOME_USER",
+            "active"    : BOOLEAN
+        },
+        ...
+    ]
+}
