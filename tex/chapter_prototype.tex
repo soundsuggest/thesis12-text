@@ -3,97 +3,144 @@
 % Shirley et al. : human-centered design process
 %This iterative process can be human-centered design process described in \cite{shirley:2009}.
 
-This chapter describes how the idea presented in chapter \ref{chapter:whitebox} is tested and improved through different development cycles.
+This chapter describes how the idea presented in chapter \ref{chapter:whitebox} is tested and improved through different development cycles. First the evaluation and development techniques used for the tests are described.
 
 
 \section{Methodology}\label{chapter:prototype:section:methodology}
 
+\subsection{Prototyping}\label{chapter:prototype:section:methodology:subsection:development}
 
+% rapid prototyping
+
+There are three types of prototypes that were used in the iterations:
+
+\begin{itemize}
+	\item Paper prototype;
+	\item Digital prototype with 'fake' data or interaction effects;
+	\item Digital prototype with working implementation.
+\end{itemize}
+
+It is obvious that for each category the resources that are required to build the prototype differ. The objective is to filter out most of the issues in the low cost designs, avoiding a greater cost in the more expensive prototypes.
+
+% paper prototyping
+%\subsubsection{Paper prototype}\label{chapter:prototype:s:methodology:ss:development:sss:paper}
+
+\emph{Paper prototyping}\index{paper prototyping} is defined as "a variation of usability testing where representative users perform realistic tasks by interacting with a paper version of the interface that is manipulated by a person 'playing computer', who doesn’t explain how the interface is intended to work"\cite{snyder:2003:web}. It is a technique for designing, testing, and refining user interfaces \cite{snyder:2003}, and is closely related to usability testing \cite{snyder:2003:web}. In the last decade it has become a regularly applied technique in major businesses such as IBM, Digital, Honeywell, and Microsoft among others\cite{snyder:2003}.
+
+%In \cite{usabilitynet:2006:paperprototyping} a number of benefits are associated with paper prototyping:
+%\begin{itemize}
+%	\item Usability problems can be already detected in the early stages of the design process, even before any code has been written.
+%	\item The promotion of communication between designers and users.
+%	\item Paper prototypes can be created and refined relatively easily, allowing for rapid design iterations.
+%	\item Creating a paper prototype requires little resources.
+%\end{itemize}
+
+
+\subsection{Evaluation techniques}\label{chapter:prototype:section:methodology:subsection:evaluation}
+
+The evaluation of an application prototype can be performed using one or more different techniques, and based on a range of varying criteria, such as: usability, usefulness, meaning, efficiency, accuracy and so on. Various techniques exist, such as questionnaires, usability engineering, expert evaluation, and usage tracking\cite{duval:2012:chi:evaluation}.
+
+Methods may be \emph{formative}\index{formative!evaluation technique} or \emph{summative}\index{summative!evaluation technique}. Formative means that the evaluation occurs simultaneously with user task execution. Summative occurs after the user has performed all the required tasks\cite{duval:2012:chi:evaluation}.
+
+The methods we will be using here are a variation on \emph{usability engineering}\index{usability engineering} called \emph{think aloud}\index{think aloud} user tests, and a special type of questionnaires called \emph{system usability scale} (SUS)\index{system usability scale} \emph{questionnaires}\index{questionnaire}.
+
+In order to perform reliable usability tests, the test users have to be representative for the actual user population\cite{duval:2012:chi:evaluation}. The tasks that are being used, have to be representative of the system usage. Tasks also have to correspond to research questions to obtain relevant results\cite{snyder:2003}.
+
+The number of users can often be limited to a certain amount. As the number of detectable problems is likely to be finite, from a certain point on adding more users to the usability test will not produce new or better results\cite{duval:2012:chi:evaluation, nielsen:2012:nngroup:diminishing_returns}. The graph in figure \ref{fig:nielsengraph}, adapted from \cite{nielsen:2012:nngroup:diminishing_returns}, illustrates this phenomenon. Nielsen argues that as a rule of tumb, five test users is enough to acquire reliable and valuable test results. Instead of doing one test with 15 users, use three iterations with 5 users each. Based on the graph, the first iteration will discover the majority of the usability problems; the next two tests will uncover the remaining 15\% of issues. Of course, this only holds on the condition that tasks performed by the users are similar for each iteration. Between each iteration, corrections are applied to the design\cite{nielsen:2012:nngroup:diminishing_returns}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=250px]{img/nielsen2012_usertests}
+	\end{center}
+	\caption{The curve shows the user test's diminishing returns beyond a certain amount of test users; adapted from \url{http://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/}.}
+	\label{fig:nielsengraph}
+\end{figure}
+
+
+\subsubsection{Usability engineering}
+
+In \cite{duval:2012:chi:evaluation}, two methods are described to perform usability engineering tests: usability labs, and think aloud\index{think aloud} testing. In a usability lab the user is observed while performing certain tasks. Data on task completion time, mouse clicks, eye-movement can be collected. Direct observation or cameras can be used to observe the user. To mimic real-life situations, also complete settings can be recreated in which the users would normally use the application\cite{duval:2012:chi:evaluation}.
+
+Using usability labs can be rather costly, as labs need to be available and the required equipment may be expensive. The think aloud protocol is a variation on the usability lab method and is cheaper to perform, cf. 'discount usability engineering'\cite{duval:2012:chi:evaluation}. During a think aloud test, the user describes his/her reasoning for each action he/she undertakes\cite{nielsen:2012:nngroup:think_aloud}. This method has several advantages and disadvantages, as listed in table \ref{table:usability_engineering}, based on \cite{nielsen:2012:nngroup:think_aloud} and \cite{snyder:2003}.
+
+
+\begin{table}%
+	\begin{center}
+		\begin{tabular}{l p{300px}}
+			\hline
+			Advantages		&		It is cheap to perform; \\
+										&		It is robust; \\
+										&		It is flexible; \\
+										&		It is convincing; \\
+										&		It is easy to learn; \\
+			\hline
+			Disadvantages	&		It creates an unnatural situation, as users usually don't say out loud everything they are about to do or think; \\
+										&		The user may tend to filter his/her statements to avoid saying things that he/she may find silly or uninteresting; \\
+										&		The facilitator may introduce bias in user behavior if he/she provides too much information when answering or instructing users; \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Advantages and disadvantages of the think aloud protocol.}
+	\label{table:usability_engineering}
+\end{table}
+
+\subsubsection{Questionnaires}
+
+To obtain information other than observational data, the user is presented with a summative questionnaire. Questionnaires are used to obtain subjective information from the user about the user's experiences. Table \ref{table:questionnaires} lists several advantages and disadvantages of the use of questionnaires in usability studies, based on \cite{kirakowski:2013}.
+
+\begin{table}%
+	\begin{center}
+		\begin{tabular}{l p{300px}}
+			\hline
+			Advantages		&		Evaluates the point of view of the user; \\
+										&		Measures gained from a questionnaire are to a large extent, independent of the system, users, or tasks to which the questionnaire was applied; \\
+										&		Quick and cost effective; \\
+			\hline
+			Disadvantages	&		Only the user's reaction as the user perceives the situation; \\
+										&		Lack of detail, as questionnaires are usually designed to fit a number of different situations; \\
+										&		Subjective data must be enhanced with performance, mental effort, and effectiveness data. \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Advantages and disadvantages of the questionnaires.}
+	\label{table:questionnaires}
+\end{table}
+
+
+There are several standardized questionnaires. The one used for the application evaluation is the system usability scale\index{system usability scale} (SUS). A system usability scale test is a questionnaire that consists out of ten specific questions that attempts to measure the user's perception of the application's usability. Each question is answered by checking one out of five checkboxes: checkbox one corresponds to strong disagreement with the statement, the fifth checkbox corresponds to strong agreement with the statement\cite{sauro:2011}. The ten questions are listed in appendix \ref{appendix:sus}.
+
+
+\section{Story board}
 
 
 \section{Iteration 1: paper prototype}\label{chapter:prototype:section:paper}
 
-The research questions can be devided into two broad categories: questions related to insight gaining, i.e., is the visualization understandable, and questions related to usability, i.e., is the application 'user friendly' - note the quotation marks, as Nielsen points out that usability is ambiguously defined by the term user friendliness\cite{nielsen:1993:UE:529793}.
-
-The user study was carried out on five participants. This number is sufficient, as most of the errors discovered were rather similar, and it is likely that further user tests would point out the same flaws. Nielsen also describes reasons why five test users is often sufficient in [2].
-
-The questions related to insight gaining try to follow the insight gaining process as described by Yi et al. in [3]. This is a four step process consisting out of the followin steps: 'provide overview', 'adjust', 'detect pattern' and 'match mental model'.
-
-\subsection{Results}
-
-\subsection{Insight gaining}
-
-The first step aimed at forming a first mental model of the system without interacting with the visualization. When participants were asked to describe what they saw and try to explain the visualization, all of the participants identified the edges as certain relationship between artists. Most of them interpreted the relationship encoded in the edges as a content-based relationship. For example music that was similar in genre are connected.
-
-Blue edges were usually correctly associated with the highlighted active user profile. This insight made one of the users see that the edges represent a co-occurance relationship, i.e., if a user has any set of two items in his/her profile, these items are connected.
-
-In some cases it had to be emphasized that certain items came from the user’s own library and others were not, in other words these are the suggestions. If the user made the connection with the learned fact that blue nodes and edges corresponded to items that were already owned, item suggestions were easy to point out. In some cases this waited until the second step of the evalution process.
-
-In the second step, interaction with the paper prototype was allowed. The users were asked what they expected the possible interaction methods would entail. All of them listed (left) mouse clicks. Also dragging and scrolling were suggested by some participants, but these weren’t included in the design. Some users tried to click on edges as well as the nodes. Of course, the user was told that clicking an edge would have no effect – only clicking nodes and user icons.
-
-Most participants started by clicking another user’s icon and noted the added highlights in red in the graph. For one user the tasks in this step were a mere confirmation of the already established mental model. For most users this turned out to be an important moment in adjusting the first model. When alternating between clicking users icons, as well as between artist nodes and artist nodes and user icons the other users were able to correct their model in this step to finally form the correct picture of what the visualization was trying to convey. For two users this took significantly more time than for the other two remaining users.
-
-The realization of what the relationship encoded in the edges, means, is key to grasping the whole idea behind the visualization. Once this was understood, all users could point out an item recommendation that was more favourable than another suggestion. For example using the total number of links to the active user profile, the total amount of related users, or a strong connection with a particular favourite item.
-
-In conclusion, one user managed to get the complete mental model correct in the first step of the insight gaining process. The others were able to correct it in the second step. The model helped identifying a particular suggestion as more reliable than an other one.
-
-\subsection{Usability}
-
-On the usability side the main functionality, namely adding an item suggestion to the active user profile, turned out to be quite easy. Once the user had seen the effect of clicking a node, the ‘add item to library’ was quickly found.
-
-Subjective data was through a SUS questionnaire. The resulting scores averaged 77 out of a maximum of 100; the lowest score being 65 and the highest score 85.
+% 6. testen...
+%		+ doel: wat wil je te weten komen?
+%		+ methode: hoe ga je dat te weten komen?
+%		+ rationale: welke andere manieren heb je overwogen en waarom niet weerhouden?
+%		+ wie, wat, waar: n, demographics, logistics, ...
+%		+ resultaten: wat heb je gemeten, geobserveerd? (zonder interpretatie)
+%		+ besluit: wat ben je te weten gekomen? (link naar resultaten)
+% 7. itereren...
+%		+ doel: belangrijkste proble(e)m(en) dat/die je wil aanpakken
+%		+ alternatieven: hoe kan je problemen aanpakken
+%		+ keuze: en rationale
+%		+ herneem die problemen bij volgende iteratie!
 
 
-\subsection{Conclusion}
 
-In general it took the test users quite some to understand the visualization completely. Of course textual information was kept at a bare minimum to see how much could be derived from the visualization without extra aid, and also the interaction with a paper prototype is not as smooth as with a real application.
-
-In the end the results were satisfactory as all the users got a grasp of how the application works and could see how it can help them identify good recommendations.
-
-The results from the SUS questionnaire also indicate that the application is not extremely complicated and useful to some extent.
-
-
-\section{Iteration 2: digital prototype}\label{chapter:prototype:section:digital}
-
-\subsection{Research questions}
-
-The focus of the study was on how the conversion from paper to digital was successful. Apart from this the study also tried to answer some other research questions. In general, the main questions were the following:
-
-Was the conversion from paper to digital prototype successful? Were there improvements or did the conversion introduce new issues?
-What is the quality of the help files? Were there parts that needed editing? Were there parts that should be included that were not, and vice versa?
-Is there certain functionality users would like to see added?
-Method
-
-The method used was very similar to the methods used when testing of the paper prototype. Again, the user was asked to study the application, first without and later with interaction. Between each step the user was asked to explain what he/she thought the application did and what its use could be. After this the user had to provide a reasoning for choosing a particular recommendation.
-
-Next the user read and reviewed the help file.
-
-Finally the user was asked to give feedback on the application and give suggestions for improvements or new functionality.
-
-At the end of the test, the test users also completed a SUS questionnaire.
-
-\subsection{Results}
-
-7 users participated in the user tests. Here are some of the remarks by users:
-
-There should be some way to find out which lines correspond to which user when clicking an item on the graph;
-The help files should contain a table of contents;
-Some images or clips would be nice in the help files as well;
-Deselecting an item or user should be triggered by clicking somewhere outside the graph as well. Perhaps a “clear selection” button would do as well.
-Additional option to alter the number of items shown.
-Filter for showing items.
-Different colours for hovering and selecting, although others thought this wasn’t really necessary. Perhaps add an option to choose between different encodings.
-Legend for different colours.
-The average SUS score was 73 with the lowest starting from 65 to the highest score of 90. The results were spread quite evenly between these extremes.
+\section{Iteration 2: first digital prototype (SoundSuggest 1.x)}\label{chapter:prototype:section:soundsuggest1}
 
 
 
 
-\section{Iteration 3: application implementation}\label{chapter:prototype:section:implementation}
+\section{Iteration 3: second digital prototype (SoundSuggest 2.x)}\label{chapter:prototype:section:soundsuggest2}
 
 
 
 
+\section{Iteration 4: third digital prototype (SoundSuggest 3.x)}\label{chapter:prototype:section:soundsuggest3}
 
 
 
