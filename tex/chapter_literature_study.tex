@@ -1,217 +1,16 @@
 \chapter{Literature study}\label{chapter:literature_study}
 
-The term 'human-computer interaction' describes a phenomenon where two actors, the human or \emph{user} and the computer or \emph{system}, share a communication channel. The communication channel is a representation of data of the system towards the user. It is clear that both actors will impose certain restrictions on this visual communication channel\cite{shirley:2009, ware:2004}. In this chapter we will try to establish who these actors are, what this communication channel looks like, and what kind of restrictions are imposed upon the visual communication channel. 
-
-
-
-% --------------------------- The User ----------------------------
-% 
-% -----------------------------------------------------------------
-\section{The user}\label{chapter:literature_study:section:user}
-
-Who is the first actor? The answer to this question is of course very broad, so first we will try to list what we actually want to know. The goal is to allow the user to gain insight into the system through an interactive, visual explanation system. In conclusion, two specific questions arise:
-
-\begin{itemize}
-	\item how does a human gain insight?
-	\item what kind of limitations are imposed by the user on the design of an interactive visualization?
-\end{itemize}
-
-The following subsections try to establish an answer to these questions. Most of the ideas in these subsections are drawn from a papers by Yi. et al. \cite{yi:2008}, North et al. \cite{north:2006}, Klein et al. \cite{Klein:2006:MSS:1158821.1159015, klein:2006:MSS:1175882.1176017}, and a book by Colin Ware \cite{ware:2004}.
-
-
-\subsection{Insight gaining}\label{chapter:literature_study:section:user:subsection:insight}
-
-What is insight\index{insight}? In \cite{north:2006} it is argued that insight is not a well-defined term. A formal definition might be too restrictive to capture its essence, and yet too broad to be useful. To quantify insight, \cite{north:2006} and \cite{yi:2008} list characteristics that allow a finer evaluation:
-
-\begin{itemize}
-	\item \textbf{Complex}: insight is complex in the sense that involves large amounts of data that form cognitive constructs, rather than individual units;
-	\item \textbf{Deep}: insight is self-generating in a way, as insight provides a starting point for insight on the next level;
-	\item \textbf{Qualitative}: insight is subjective, uncertain and can have multiple levels of resolution;
-	\item \textbf{Unexpected}: insight is usually unpredictable, serendipitous and creative;
-	\item \textbf{Relevant}: insight is deeply embedded in the data domain: it gives data meaning as it connects data to the existing domain knowledge;
-\end{itemize}
-
-The quality of insight can then be determined by quantifying each of these characteristics\cite{north:2006}. The previously described collection of properties defines insight. Now we will look at the closely related concept of sensemaking. The next paragraphs describe how a user can arrive at insight.
-
-
-\subsubsection{Sensemaking}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:sensemaking}
-
-\emph{Sensemaking}\index{sensemaking} plays an important part in insight gaining \cite{yi:2008}. The definitions for sensemaking may vary. We adapt the definition presented by \cite{Klein:2006:MSS:1158821.1159015} and \cite{yi:2008}.
-
-In \cite{Klein:2006:MSS:1158821.1159015} sensemaking is looked at from a psychological perspective, a perspective of human-centered computing, and the perspective of naturalistic decision making. Sensemaking is then defined as follows: "sensemaking is a motivated, continuous effort to understand connections in order to anticipate their trajectories and act effectively"\cite{Klein:2006:MSS:1158821.1159015}.
-
-Based on the discussion in \cite{klein:2006:MSS:1175882.1176017} and \cite{yi:2008}, Soo Yi et al. describe the process of sensemaking. Sensemaking is a:
-
-\begin{itemize}
-	\item \textbf{Cyclic and iterative proceduce}: consisting out of a generation loop searching for representations, a data coverage loop instantiating the representations and finally shift representations;
-	\item \textbf{Creation procedure}: being more about reasoning than discovery;
-	\item \textbf{Retrospective procedure}: as people construct a framework and assign relevant information to a place withing this framework. If the data fits the framework well, the framework is confirmed, otherwise it may be updated or discarded;
-\end{itemize}
-
-An important remark made in \cite{Klein:2006:MSS:1158821.1159015} is that data fusion algorithms can reduce information overload, but they also pose challenges to sensemaking if the human can't form an accurate mental model of the machine, to understand why and how the algorithms are doing what they are doing.
-
-
-\subsubsection{Processes of insight gaining}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:processes}
-
-Although sensemaking can play an important part in gaining insight, it is not the only path to arrive at insight \cite{yi:2008}. Soo Yi et al. \cite{yi:2008} identify four processes through which insight is established. Note that these processes are intertwined and often used together to generate insights. The processes are as follows\cite{yi:2008}:
-
-\begin{itemize}
-	\item \textbf{Provide overview}: in this process the individual gains understanding of the big picture of a dataset of interest. It allows the user to make a distinction between what is known to him/her and what is not;
-	\item \textbf{Adjust}: in this process a person will explore a dataset by adjusting the level of abstraction and/or the range of selection. Typical actions involve filtering and grouping of data;
-	\item \textbf{Detect pattern}: in this process the user will try to identify specific distributions, trends, frequencies, outliers or structure in the dataset;
-	\item \textbf{Match mental model}: in this process the gap between data and cognitive model is bridged, reducing cognitive load and linking the present visual information with real-world knowledge.
-\end{itemize}
-
-The link with sensemaking is found in the cyclic and iterative nature of sensemaking - provide overview, adjust and detected pattern can be applied iteratively, as well as its creative and retrospective aspects - adjust and detect pattern create hypotheses and test them through various interaction techniques\cite{yi:2008}.
-
-
-\subsubsection{Improving insight}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:improving}
-
-Yi et al. \cite{yi:2008} identify several ways in which the insight gaining process can be made more efficient. They list the system's interactivity, the quality of visual encodings and usability among others, as possible enablers for increased insight gaining. Naturally, improvident designs will act as barriers rather than enablers in the insight gaining process.
-
-Interactivity of the system promotes the user's engagement into the dataset. Spending more time with the data will allow users to form more detailed and accurate hypotheses, and as a result greater insight\cite{yi:2008}. At the same time, while using the visualization, the user will become moe skilled at a task over time. Nonetheless, bare in mind that when performing long and tedious search tasks, vigilance will become an important aspect as well in the efficiency of data exploration\cite{ware:2004}.
-
-Similarly visual encodings that are counter-intuitive will also increase the cognitive load. Other barriers on insight gaining are clutter, occlusion and data overload\cite{yi:2008}.
-
-Usability is another aspect that may have an impact on the insight gaining process, as controls that are hard to use will inevitably occupy some of the cognitive capacity of the user\cite{yi:2008}. In the ISO standard ISO 9241-11, usability is defined as "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use"\cite{usabilitynet:2006:standards}.
-
-Note that usability\index{usability} should not be considered a one-dimensional property of a user interface. Nielsen identifies several characteristics of usability in applications\cite{nielsen:1993:UE:529793}:
-
-\begin{itemize}
-	\item \textbf{Learnability}: if the system is easy to learn, the user can get started quickly;
-	\item \textbf{Efficiency}: if the system is efficient to use, it will be possible to complete more work in less time;
-	\item \textbf{Error rate and severity}: if the system should be robust and minimize faults;
-	\item \textbf{Memorability}: once the system is learned, acquired skills should not be forgotten easily;
-	\item \textbf{Satisfaction}: the system should be pleasant to use.
-\end{itemize}
-
-
-\subsection{Interactive visualization}\label{chapter:literature_study:section:user:subsection:interactive}
-
-As we now have a better understanding of what insight is, we will try to establish how the insight gaining process works through visual data mining\index{visual data mining} and interactive visualization\index{visualization!interactive visualization}. The relation between insight gaining and data visualization has been pointed out in other research. Colin Ware \cite{ware:2004} describes interactive visualization as an "internal interface between the user and the computer in a problem solving system". Keim \cite{keim:2002} notes that "idea behind visual data exploration, is to present data in a visual form, allowing the user to gain insight into the data, draw conclusions, and directly interact with the data".
-
-In a chapter on visualization\index{visualization} in \cite{shirley:2009}, Tamara Munzner describes visualization as follows: "visualization allows the user to offload cognition to the perceptual system, using graphical data representations as a form of external memory. Therefore, by augmenting human capabilities, the data analyst is aided to understand, explore and form hypotheses of the data"\cite{shirley:2009}. In conclusion, the visual data exploration\index{visual data exploration|see{visual data mining}} process can then be understood as a hypothesis generation process\cite{keim:2002}.
-
-A reoccurring theme in visualization design is "overview first, zoom and filter, and details on demand"\cite{keim:2002, shirley:2009, ware:2004}. First, the user looks for patterns of interest in the data space. Next the user focuses on one or more of these patterns, and starts looking at the data on a more detailed level. The user can then draw his/her conclusions and explore the data space further\cite{keim:2002}. 
-
-In what follows, we try to describe how a human interacts with interactive visualization on a cognitive level. It will be clear that some parallels can be drawn with the insight gaining process. This should come as no surprise, since these processes are intertwined\cite{keim:2002, ware:2004, yi:2008}.
-
-In \cite{ware:2004}, interactive visualization is characterized by three classes of feedback loops:
-
-\begin{itemize}
-	\item \textbf{Data selection and manipulation loop}: the user selects and moves objects that are selected through simple interactions based on eye-hand coordination;
-	\item \textbf{Exploration and manipulation loop}: the user tries to find his/her way through a large visual data space;
-	\item \textbf{Problem solving loop}: the user forms hypotheses about the data and refines them through an augmented visualization process.
-\end{itemize}
-
-The next subsections describe each feedback loop in greater detail.
-
-
-\subsubsection{Data selection and manipulation loop}\label{subsubsection:data_manipulation_loop}
-
-The quality of performance of selecting and manipulating data on a screen, depends on certain factors. Colin Ware discusses the following attributes:
-
-\begin{itemize}
-	\item \textbf{Reaction time}: This is the amount of time for a user to identify and select certain objects\cite{ware:2004}.
-	\item \textbf{Types of interaction}: different types of interaction will have a different influence on user performance.
-	\item \textbf{Learning}: The speed at which a user performs a task may decrease over time, as the user becomes more skilled at executing the task.
-\end{itemize}
-
-Each of these factors has been evaluated and since, they are captured in various laws. We will discuss some of them, as listed by Ware et al. in \cite{ware:2004}.
-
-The reaction time is given by the \emph{Hick-Hyman law}\index{Hick-Hyman law}: $Time_{reaction} = a + b \log_{2}(C)$ with $C$ the number of choices and $a$ and $b$ empirically determined constants. This formula has been derived from experiments in which subjects had to press one of two buttons depending on the color of a light that was turned on or turned off\cite{ware:2004}.
-
-The reaction-time may be influenced by many other factors such as the amount of visual noise, the distinctness of the signal and so on. If a person is allowed to make mistakes, the subject will respond faster, but at a cost of loss of accuracy\cite{ware:2004}. When performing long and tedious search tasks, vigilance will become an important aspect as well\cite{ware:2004}.
-
-In \cite{ware:2004} different kinds of interactions are discussed such as selection, hover querries and path tracing. The time required for selecting an object in a two-dimensional space is determined by \emph{Fitt's law}\index{Fitt's law}: $Time_{selection} = a + b \log_{2}(D/W+1.0)$ with $D$ the distance to the target, $W$ the width of the target and $a$ and $b$ empirically determined constants\cite{ware:2004}.
-
-A common way of selecting objects is through hover queries: the user drags a cursor over an object\cite{ware:2004}.
-
-Another type of interaction is path tracing. The speed at which a user can trace or follow a given path is given by $v = W/\tau$ with velocity $v$, $W$ the path width and $\tau$ a constant depending on the motor control system of the user\cite{ware:2004}.
-
-When a task is repeated over time, the user will become more efficient at performing this task. Depending on the difficulty of the task, this learning effect will be more or less prominent. The \emph{power law of practice}\index{power law of practice} describes this speed up \cite{ware:2004}: $\log(T_{n})=C-\alpha\log(n)$ in which $T_{n}$ is the time required to perform the task at the $n$-th trial, with $C=log(T_{1})$ and $\alpha$ the steepness of the learning curve.
-
-Some actions are easier to learn than others. This is related to the \emph{stimulus-response (S-R) compatibility}\index{stimulus-response compatibility}. The stimulus-response compatibility refers to the way in which skills that have been learned before through everyday experience, are applied to computer control design. However it is not necessary to produce a whole virtual reality to create excellent computer interfaces. Research shows that mismatches between the interface and real world experience are not necessarily detrimental to the efficiency of human-computer interaction. Ware concludes that "it would be naive to conclude that computer interfaces should evolve toward VR simulations of real-world tasks (...). The magic of computers is that a single button click can often accomplish as much as a prolonged series of actions in the real world"\cite{ware:2004}.
-
-
-\subsubsection{Exploration and navigation loop}\label{subsubsection:exploration_navigation_loop}
-
-In the second loop the user navigates through the data space. The basic navigation control loop is described as an iterative process that involves two distinct aspects\cite{ware:2004}:
-
-\begin{itemize}
-	\item \textbf{Human}: the user gains understanding of the data space through a logical, spatial model. Parts of this model may be encoded in the longterm memory, on the condition that the data space is maintained for a long enough period of time;
-	\item \textbf{Computer}: the visualization may be updated and refined from data mapped onto the spatial model.
-\end{itemize}
-
-When exploring spatial maps, a user is confronted with the \emph{focus-context problem}\index{focus-context problem}, i.e., "the problem of finding detail in a larger context"\cite{ware:2004}. The objective is to see the relation between the larger context and the details, rather than finding details. Ware goes on to discern between spatial, structural and temporal scales in which the focus-context problem manifests itself\cite{ware:2004}.
-
-Ware and Mitchell remark that the human visual system is already well-adapted to the spatial focus-context problem\cite{ware:2004}. Therefore, they argue that when designing a display, it should already try to take a maximal advantage of these perceptual skills.
-
-The time it takes to navigate between two points in the data space to gather information is called the \emph{cost of knowledge}\index{cost of knowledge}\cite{ware:2004}. To keep the cost of knowledge low, various interaction techniques have been developed, such as distortion, rapid zooming, elision, and multiple windows\cite{ware:2004}. In section \ref{chapter:literature_study:section:interaction} we will take a closer look at some of these techniques.
-
-
-\subsubsection{Problem solving loop}\label{subsubsection:problem_solving_loop}
-
-The problem solving loop can be described through means of a \emph{visual thinking algorithm}\index{visual thinking algorithm}\cite{ware:2004}. Such an algorithm combines perceptual and cognitive actions into a process, as the user interacts with the visualization and explores the data space. As we want to keep the \emph{cost of knowledge}\index{cost of knowledge} low, it is obvious that the cost and time complexity of each of these actions should be kept at a minimum. The cognitive system that runs these algorithms, is made up out of several different components. Ware lists the following components\cite{ware:2004}:
-
-\begin{itemize}
-	\item \textbf{Early visual processing}: Early visual processing occurs at the lowest level, where elementary features such as color, texture information, local edges, and motion are extracted from the visual image.
-	\item \textbf{Pattern perception}: Pattern perception occurs by combining the extracted features, patterns can be detected within the visual image.
-	\item \textbf{Eye movements}: A map schedules tasks to explore proto-patterns through eye-movements. These proto-patterns correspond to the patterns that have a high probability to be relevant to the current task.
-	\item \textbf{The intrasaccadic scanning loop}: Information is processed serially when focusing on an area of interest.
-	\item \textbf{Working memory}: The working memory forms an intermediary between the incoming patterns and long-term memory. The currency of information in the working memory are \emph{object files}\index{object file}. Object files are a combination of visual attributes and semantic meaning.
-	\item \textbf{Mental imagery}: The ability to visualize internal images, whivh can be combined with external images, such as data visualization, to construct and test hypotheses about the visualized data.
-	\item \textbf{Epistemic actions}: Epistemic actions are actions that support information search, such as eye movement, and mouse selections. Out of all epistemic actions, eye movements have the lowest cost.
-	\item \textbf{Visual queries}: A visual query\index{visual query} translates a hypothesis into a cognitive task. The result of this query can be a pattern or lack of a pattern. To reduce errors and increase efficiency, patterns are typically small, as the capacity of the visual working memory\index{visual working memory} is rather limited.
-	\item \textbf{Computational data mappings}: The computer maps data onto the screens. Sometimes the data is transformed before doing so. An important consideration is that the interval between the human action and the result on the screen should be low, promoting the so-called \emph{priciple of transparency}\index{priciple of transparency}. The objective of transparency is that the user will have the illusion of directly manipulating the data on the screen.
-\end{itemize}
-
-In \cite{ware:2004}, Ware and Mitchell list ten different visual thinking algorithms. We will describe our own visual thinking algorithm in chapter \ref{chapter:whitebox}, based on these algorithms.
-
-
-% different kinds of operations (page 398)
-
-
-% toward visual thinking algorithms
-% ---------------------------------
-
-% visual working memory + attention
-% ---------------------------------
-% visual working memory capacity
-%			simple shapes
-%			implications?
-%					glyphs,
-%					change blindness,
-%					gist
-%			egocentric coordinate map (spatial information)
-%	attention
-% object files, coherence fields, gist
-
-
-% long-term memory
-% ----------------
-% contents
-% capacity
-% structure
-% low redundancy
-
-
-% Creative thinking
-% -----------------
-%		building new things from old things
-
+% introduction to the literature study
 
 
 % -------------------------- The System ---------------------------
 % 
 % -----------------------------------------------------------------
-\section{The system}\label{chapter:literature_study:section:computer}
-
-Before describing the visual communication channel between human and computer, it is necessary to know what exactly has to be explained through visualization. Therefore we will take a closer look at the system, i.e., the recommender system.
+\section{Recommender systems}\label{chapter:literature_study:section:computer}
 
 A recommender system\index{recommender system} is a system that computes item suggestions for users based on a ratings of related items in the user's profile and/or history. Additional information can be incorporated into the recommendation algorithm\index{recommendation algorithm} to refine suggestions. Several categorizations of these techniques are proposed in literature \cite{bostandjiev:2012, burke:2002, herlocker:2000, melville:2002:CCF:777092.777124, celma:2008:phd}.
 
-One of the incentives behind creating recommender system is the 'long-tail phenomenon'\index{Long Tail}. This phenomenon can be explained as follows. Physical retail and warehouses can only keep a subset of all the available items in stock. These items are usually the most popular items on the market. Online vendors however, such as \emph{Amazon}\footnote{\url{http://www.amazon.com/}}, can offer a vastly larger subset of these items to clients, including also less popular and/or less known items\cite{rajaraman:2012}. Typically the long-tail phenomenon is visualized in a graph in which items are ordered by their popularity on the horizontal axis against the popularity rating on the vertical axis, as can be seen on figure \ref{figure:longtail}. Physical stores will offer only items in the first part of the graph, whereas the online vendors will also sell items from the remaining 'long tail' of the graph\cite{rajaraman:2012, celma:2008:phd}. Recommender systems then provide a means to find relevant items within this much larger range of items\cite{rajaraman:2012}. They enable to "connect supply and demand, introducing consumers to these new and newly available goods and driving demand down the tail "\cite{anderson:2006:LTW:1197299, celma:2008:phd}.
+One of the incentives behind creating recommender system is the 'long-tail phenomenon'\index{Long Tail}\cite{rajaraman:2012}. This phenomenon can be explained as follows. Physical retail and warehouses can only keep a subset of all the available items in stock. These items are usually the most popular items on the market. Online vendors however, such as \emph{Amazon}\footnote{\url{http://www.amazon.com/}}, can offer a vastly larger subset of these items to clients, including also less popular and/or less known items\cite{rajaraman:2012}. Typically the long-tail phenomenon is visualized in a graph in which items are ordered by their popularity on the horizontal axis against the popularity rating on the vertical axis, as can be seen on figure \ref{figure:longtail}. Physical stores will offer only items in the first part of the graph, whereas the online vendors will also sell items from the remaining 'long tail' of the graph\cite{rajaraman:2012, celma:2008:phd}. Recommender systems then provide a means to find relevant items within this much larger range of items\cite{rajaraman:2012}. They enable to "connect supply and demand, introducing consumers to these new and newly available goods and driving demand down the tail "\cite{anderson:2006:LTW:1197299, celma:2008:phd}.
 
 \begin{figure}%
 	\begin{center}
@@ -221,16 +20,12 @@ One of the incentives behind creating recommender system is the 'long-tail pheno
 	\label{figure:longtail}%
 \end{figure}
 
-The success of recommender systems to achieve this objective has been the subject of some research, e.g. \cite{levy:2010} and \cite{celma:2008:phd}. Different classes of recommender algorithms favour different properties\cite{burke:2002, shani:2011:9780387858197}. This is elaborated further in subsection \ref{chapter:literature_study:section:computer:subsection:challenges}. For now its enough to see that the quality of recommendations is not uniquely defined. For example, in order to increase coverage of the item space, achieving high serendipity and novelty may be desired more than high recommendation accuracy, depending on the application context\cite{shani:2011:9780387858197, tripathi:2011, celma:2008:phd}.
-
 Typical applications of recommender systems are product recommenders for online retailers, movie and music recommenders such as \emph{Netflix}\footnote{\url{http://www.netflix.com/}} and \emph{Last.fm}\footnote{\url{http://www.last.fm/}}, and news article recommenders in online news services\cite{levy:2010, rajaraman:2012, celma:2008:phd}.
 
-Recommender system have opened up new possibilities in the landscape of online retail, and as a result, spurred the interest of businesses in this field. A remarkable initiative was the Netflix challenge\index{Netflix challenge}. In 2006, Netflix Inc. offered a prize to beat the performance of their recommendation algorithm by 10 percent. It gave a significant boost to the research on recommendation algorithms, and yielded a winning algorithm in September 2009\cite{bell:2007, rajaraman:2012}.
 
+\subsection{Properties of recommender systems}\label{chapter:literature_study:section:computer:subsection:properties}
 
-\subsection{Properties of recommendation algorithms}\label{chapter:literature_study:section:computer:subsection:properties}
-
-in \cite{herlocker:2004:ECF:963770.963772} and \cite{shani:2011:9780387858197}, Herlocker et al. and Shani et al.  respectively, compare the performance of recommender systems. They list a number of metrics for recommendation algorithms. The resulting set of properties consist out of the following characteristics:
+In \cite{herlocker:2004:ECF:963770.963772} and \cite{shani:2011:9780387858197}, Herlocker et al. and Shani et al.  respectively, compare the performance of recommender systems. A number of metrics for recommendation algorithms are described among which the following properties are listed. We will also describe methods for testing these properties, as described in \cite{shani:2011:9780387858197}.
 
 \begin{itemize}
 	\item \textbf{Accuracy}: The accuracy of item recommendations. There are three broad classes of prediction accuracy measures:
@@ -239,15 +34,14 @@ in \cite{herlocker:2004:ECF:963770.963772} and \cite{shani:2011:9780387858197}, 
 		\item the prediction whether or not a user will actually use the item (for example adding to a queue) opposed to predicting the rating itself;
 		\item the prediction of a ranking among items rather than an explicit rating of each item independently.
 	\end{itemize}
-	\item \textbf{User preference}: The opinion of certain users may be more valuable than the opinion of others.
-	\item \textbf{Coverage}: The proportion of items that the recommender system can recommend is referred to as catalog coverage. Another measure in this respect is the percentage of all items that are recommended to users. Finally we can also look at the diversity of the recommended items. Coverage can also mean the proportion of users or user interactions for which the system can recommend items.
-The cold start problem relates to coverage as it measures the coverage for a specific type of users, namely new users.
-	\item \textbf{Confidence}: Confidence in the recommendation can be defined as the systems trust in its recommendations or predictions. The most common measurement of confidence is the probability that the predicted value is indeed true, or the interval around the predicted value where predefined portion of the true values lie. Confidence bounds can be used to filter recommended items where the confidence in the predicted value is below some threshold.
-	\item \textbf{Trust}: Trust refers to the user's trust in the system, as opposed to confidence.
-	\item \textbf{Novelty}: Novel recommendations are recommendations for items that the user did not know about.
-	\item \textbf{Serendipity}: Serendipity is a measure of how surprising the successful recommendations are. One can think of serendipity as the amount of relevant information that is new to the user in a recommendation, or alternatively as deviation from the 'natural' prediction.
-	\item \textbf{Diversity}: Diversity is generally defined as the opposite of similarity. Note that an increase in diversity may correlate to a decrease in accuracy.
+	This kind of property is typically tested through an offline test on a training set, where parts of the recorded user profiles are hidden. The accuracy of the recommender system can then be determined by comparing the found recommendations to the remainder of the user profiles.
+	\item \textbf{Novelty}: Novel recommendations are recommendations for items that the user did not know about. In a user study, users can be asked whether or not recommendations were new to them.
+	\item \textbf{Serendipity}: Serendipity is a measure of how surprising the successful recommendations are. One can think of serendipity as "the amount of relevant information that is new to the user in a recommendation, or alternatively as deviation from the 'natural' prediction"\cite{shani:2011:9780387858197}. Serendipitous recommendations usually carry a higher risk, as they fall further from the class of known preferences. To find out the serendipity of recommendations, users can be asked directly if the recommendation was unexpected.
+	\item \textbf{Diversity}: Diversity is generally defined as the opposite of similarity. To measure diversity content-based approaches can be used that compare recommended items.
+	\item \textbf{Coverage}: One way to define coverage is the percentage of all items that are recommended to users during an experiment. Note that the cold start problem relates to coverage as it measures the coverage for a specific type of users, namely new users.
 \end{itemize}
+
+Many of these properties are closely related, as diverse recommendations that have a high coverage are likely to be serendipitous and novel. Also tradeoffs exist between properties; for example accuracy may drop as recommendations become more diverse\cite{shani:2011:9780387858197}. Looking at the Long-tail phenomenon, coverage, serendipity, novelty and diversity tend to be important. In the context of music recommendation, users usually want to find new music\cite{levy:2010}.
 
 
 \subsection{A classification of recommendation algorithms}\label{chapter:literature_study:section:computer:subsection:algorithms}
@@ -272,60 +66,36 @@ For CF-based recommendation\index{CF|see{collaborative filtering}}, there are tw
 % Similarity / distance functions ...
 In order to calculate the blanks, there is a variety of similarity functions that has been developed over the years. Often some sort of distance function is used to compute distance between profile vectors. If the distance is small, profiles will most likely have a high similarity\cite{rajaraman:2012}. The discussion of the mathematics behind each of the algorithms is beyond the scope of this thesis.
 
-% clustering, pearson correlation, ...
+Last.fm is an example of a music recommender system that is based on the collaborative filtering approach\cite{levy:2010}.
 
 
 \subsubsection{Content-based recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}
 
 \emph{Content-based recommendation}\index{content-based recommendation|see{content-based filtering}} learns a profile of the user's interests based on the features present in objects the user has rated. New recommendations can then be generated based on a similarity function on these features\cite{burke:2002, pazzani:2007:CRS:1768197.1768209}.
 
-% Feature vectors ...
 When applying content-based filtering, the choice of similarity or classification function will have a significant impact on the quality of the recommendations. More importantly though, is the choice of features. To ensure good performance, these features should also be extracted easily from large quantities of data.
 
-% examples of how feature vectors can be constructed
+Depending on the type of item that is being recommended, different approaches can be applied to extract features and construct \emph{feature vectors}\index{feature vector}. Textual information is often extracted using a technique called \emph{stemming}\index{stemming} that uses root forms capturing a common meaning behind groups of words. Tuples of root forms and TF.IDF (term frequency times inverse document frequency) \index{TF.IDF}\index{term frequency times inverse document frequency|see{TD.IDF}} scores are computed for each word\cite{pazzani:2007:CRS:1768197.1768209, rajaraman:2012}. The words with the highest scores are the words that characterize the document\cite{rajaraman:2012}. A downside of stemming is that the process may cause the loss of contextual information for each word\cite{pazzani:2007:CRS:1768197.1768209}.
 
-Depending on the type of item that is being recommended, different approaches can be applied to extract features and construct \emph{feature vectors}\index{feature vector}. Textual information is often extracted using some kind of stemming system\cite{rajaraman:2012}. \emph{Stemming}\index{stemming} is a technique to use root forms that capture a common meaning of certain words, rather than words themselves. For example 'compute', 'computation', 'computer', and 'computes' all have a reference to an underlying concept. Words are given a quantification of relevance to this root form, the so-called TF.IDF (term frequency times inverse document frequency) score\index{TF.IDF}\index{term frequency times inverse document frequency|see{TD.IDF}}. This score is computed in terms of the frequency of the word in a document, number of documents in which it occurs, and the total number of documents. The resulting structure consists out of tuples of root forms and quantification values\cite{pazzani:2007:CRS:1768197.1768209, rajaraman:2012}. The words with the highest scores are the words that characterize the document\cite{rajaraman:2012}. A downside of stemming is that the process may cause the loss of contextual information for each word\cite{pazzani:2007:CRS:1768197.1768209}.
+In \cite{bostandjiev:2012} and \cite{melville:2002:CCF:777092.777124} web crawlers are used to gather and extract features from online documents. Each property or feature is a 'bag of words'\index{bag of words} that can be used in a naive Bayesian text classifier\index{Bayesian classifier}. This way each item can be categorized and the profile can be 'learned'\cite{melville:2002:CCF:777092.777124}.
 
-In \cite{bostandjiev:2012} and \cite{melville:2002:CCF:777092.777124} web crawlers are used to gather and extract features from online documents. In \cite{melville:2002:CCF:777092.777124} the web crawler collects properties such as movie title, director, cast, genre, plot summary, plot keywords user comments, reviews and so on, of each movie in the data set. Each property or feature is a 'bag of words'\index{bag of words} that is used in a naive Bayesian text classifier\index{Bayesian classifier}. This way each item can be categorized and the profile can be 'learned'\cite{melville:2002:CCF:777092.777124}.
+\emph{Tags}\index{tag} are very useful as well. Although they can be generated from text, for complex objects such as images and music, tag generation relies on user input\cite{rajaraman:2012}. Nonetheless, emerging technologies such as the 'search by image' option introduced by \emph{Google}\footnote{\url{http://www.google.be/imghp?hl=nl&tab=Ti}}, allow to retrieve web sites, documents and key words related to the given image\cite{google:2011:afbeeldingen}.
 
-Tags are very useful as well. Although they can be generated from text, for complex objects such as images and music, tag generation relies on user input\cite{rajaraman:2012}. Nonetheless, emerging technologies such as the 'search by image' option introduced by \emph{Google}\footnote{\url{http://www.google.be/imghp?hl=nl&tab=Ti}}, allow to retrieve web sites, documents and key words related to the given image\cite{google:2011:afbeeldingen}.
-
-Mathematical models of music and images also allow for feature extraction. For example, in a study by Johnson et al. \cite{johnson:2008}, \emph{wavelets}\index{wavelet} were used to construct feature vectors from high resolution paintings. These were in turn used to classify paintings based on several clasification algorithms. A training set of Van Gogh paintings was used with the objective to classify other paitings as either genuine Van Goghs or forgeries. The algorithms were able to actually classify paintings with a high accuracy\cite{johnson:2008}.
-
-Similarly algorithms have been developed to classify music based on content features. There are various types of acoustic features that can be extracted. In \cite{Li:2006:TIM:2219090.2219562} a distinction is made between rhythmic content features, pitch content features and timbral content features.
-
-The research performed by Tzanetakis et al. in \cite{tzanetakis:2001} and \cite{tzanetakis:2002} is based on a the MARSYAS system. This system is an application that uses various techniques, such as Mel-Frequency Cepstral Coefficients (MFCC) and Short-term Fourier Transform Features (FFT) to retrieve acoustic features from audio signals \cite{Tzanetakis:1999:MFA:972850.972857}. In addition to these features, also wavelet-based feature extraction is used to retrieve rhythmic features from audio content \cite{tzanetakis:2001, tzanetakis:2002}. Using this system, music files could be classified into different genres based on rhythmic features\cite{tzanetakis:2001}.
-
-A similar research is conducted by Li et al. in \cite{Li:2006:TIM:2219090.2219562}. In addition to previously mentioned methods, also lyric-based classification is used. Apart from music classification, also music similarity search is performed. In this case, the feature vectors from the classification using MARSYAS features and wavelet-histograms can be used to form a hierarchy in which similar audio signals can be detected \cite{Li:2006:TIM:2219090.2219562}.
-
-% CLassification methods?
-
-%These methods illustrate how mathematical models can be applied for feature extraction, vector generation and classification.
+Mathematical models for music also allow for feature extraction. Algorithms have been developed to classify music based on content features\cite{Li:2006:TIM:2219090.2219562, tzanetakis:2002}. There are various types of acoustic features that can be extracted. In \cite{Li:2006:TIM:2219090.2219562} a distinction is made between rhythmic content features, pitch content features and timbral content features.
 
 
 \subsubsection{Hybrid recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:hf}
 
-\emph{Hybrid filtering}\index{hybrid filtering} combines two or more recommendation algorithms\cite{burke:2002}. In \cite{burke:2002} a number of hybrid recommendation strategies are discussed. Burke et al. list seven different approaches for combining recommendation algorithms:
+\emph{Hybrid filtering}\index{hybrid filtering} combines two or more recommendation algorithms\cite{burke:2002}. In \cite{burke:2002} a number of hybrid recommendation strategies are discussed. Robin Burke lists seven different approaches for combining recommendation algorithms. Each of these combinations also has its advantages and disadvantages. Not necessarily all combinations will be successful, and not all of them have been implemented\cite{burke:2002}.
 
-\begin{itemize}
-	\item \textbf{Weighed}: The scores (or votes) of several recommendation techniques are combined together to produce a single recommendation.
-	\item \textbf{Switching}: The system switches between recommendation techniques depending on the current situation.
-	\item \textbf{Mixed}: Recommendations from several different recommenders are presented at the same time.
-	\item \textbf{Feature combination}: Features from different recommendation data sources are thrown together into a single recommendation algorithm.
-	\item \textbf{Cascade}: One recommender refines the recommendations given by another.
-	\item \textbf{Feature augmentation}: Output from one technique is used as an input feature to another.
-	\item \textbf{Meta-level}: The model learned by one recommender is used as input to another.
-\end{itemize}
-
-Each of these combinations also has its advantages and disadvantages. Not necessarily all combinations will be successful, and not all of them have been implemented \cite{burke:2002}.
-
+Based on the discussion in this paper by Robin Burke \cite{burke:2002}, hybrid systems for music recommendation can be built that use both collaborative filtering approaches and content-based approaches. For example Bostandjiev et al. \cite{bostandjiev:2012} have built a music recommender\indxe{TasteWeights} that uses Wikipedia, a content-based source, Facebook, a collborative source, and Twitter, an expert-based source.
 
 
 \subsection{Challenges for recommender systems}\label{chapter:literature_study:section:computer:subsection:challenges}
 
-% Cold start / ramp up problem, first rater, new user, new item, gray sheep, profile trust (bad users), sparsity, black box
-
 Each recommendation technique has benefits as well as drawbacks. Some of these apply to all or most types of recommendation strategies, while others are only relevant to certain cases.
+
+\subsubsection{Cold start}
 
 Both CF and CB-based recommendation algorithms suffer from the ramp-up\index{ramp-up|see{cold start}} problem in one way or the other. The 'ramp-up' or 'cold start' problem\index{cold start} (although they may refer to slightly different problems depending on the literature) is dual problem that encompasses two distinct, yet related problems as defined in \cite{burke:2002}:
 
@@ -336,16 +106,29 @@ Both CF and CB-based recommendation algorithms suffer from the ramp-up\index{ram
 
 Both of these issues translate themselves into a sparse regions in the utility matrix. It is worth noting that content-based recommendation algorithms suffer less from the \emph{new item} problem, as these tend to rely on features that are inherent to the items themselves, rather than user generated content. This is one of the reasons hybrid approaches can provide a solution to collaborative filtering\cite{burke:2002}. For example, in \cite{melville:2002:CCF:777092.777124}, content-based predictors are used to create pseudo-user ratings to reduce sparsity of the utility matrix, used in a collaborative algorithm.
 
-%Another solution is to use clustering
+
+\subsubsection{Gray sheep}
 
 A problem that is typical of collaborative filtering is the 'gray sheep problem'\index{gray sheep}\cite{burke:2002, herlocker:2000}. The gray sheep problem occurs when a user falls between different clusters of users that may have contradicting item ratings. As a result, it is hard to determine how to classify the user\cite{burke:2002}.
 
-% UV decomposition
+
+\subsubsection{Black box}
 
 Another issue with recommendation systems is that these system often appear as 'black boxes' towards the end user\index{black box}. The complexity of the algorithms used, prevents the user from understanding the recommendation rationale\cite{zhao:2010}. This problem decreases the acceptance by the user of item suggestions. One of the solutions for this problem, proposed by Herlocker et al. in \cite{herlocker:2000}, is to provide an explanation system, i.e., the white box\index{white box}, on top of the recommender system that explains the recommendation process. This can be done through providing a transcript of the system's reasoning or through visualizations\cite{herlocker:2000}.
 
+In this thesis we will focus mainly on this problem in the context of collaborative music recommendation. We will try design, implement and test a new visual explanation system in an effort to overcome this problem.
 
-% more specifics on recommender properties
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -353,27 +136,12 @@ Another issue with recommendation systems is that these system often appear as '
 % ------------------------ The interface --------------------------
 % 
 % -----------------------------------------------------------------
-\section{The interface}\label{chapter:literature_study:section:interaction}
+\section{Information visualization}\label{chapter:literature_study:section:interaction}
 
 % What will we study?
 % Link with previous sections?
-In this section we will take a closer look at the visual communication channel.
 
-Shirley et al.\cite{shirley:2009} lists three distinctive limitations:
-
-\begin{itemize}
-	\item \textbf{Computational capacity}: time complexity and memory usage of algorithms must allow a responsive user interface, especially in the case of interactive visualization. This is also a requirement to meet the \emph{principle of transparency}\index{principle of transparency} discussed in section \ref{subsubsection:problem_solving_loop}.
-	\item \textbf{Display capacity}: there is a trade-off between the benefits of maximizing the \emph{information density}\index{information density}, i.e., the measure of the amount of encoded information against the amount of unused space, and causing visual overload.
-	\item \textbf{Human perceptual and cognitive capacity}: optimizing the cognitive cost is one of the key aspects that make up a successful visualization, as visual and non-visual memory capacity are limited\cite{ware:2004}, as we saw earlier in section \ref{chapter:literature_study:section:user:subsection:interactive}.
-\end{itemize}
-
-There has been done extensive research in this domain. Over the last two decades various new information visualization techniques have been developed. These techniques can be classified based on three criteria \cite{keim:2002}:
-
-\begin{itemize}
-	\item \textbf{Data}: a classification based on the structure and type of data;
-	\item \textbf{Technique}: a classification based on characteristics of visualization techniques;
-	\item \textbf{Interaction and distortion}: a classification based on the way in which interaction between user and visualization is enabled.
-\end{itemize}
+In this section different aspects of information visualization that were used to visualize the recommendation rationale are highlighted. First types of data are discussed, next we will look at visual encodings for these types of data. Finally we will discuss some visualization, interaction and data reduction techniques that were used in the \emph{SoundSuggest} application.
 
 
 \subsection{Types of data}\label{chapter:literature_study:section:interaction:subsection:datatypes}
@@ -381,19 +149,33 @@ There has been done extensive research in this domain. Over the last two decades
 % context
 % wat can be visualized, data types (recommender data)
 
-Information visualization\index{information visualization}\index{infovis|see{information visualization}} has been focusing on on data sets that lack inherent spatial semantics, thus posing a challenge to map the abstract data onto a two-dimensional screen space\cite{keim:2002}.
+Information visualization\index{information visualization}\index{infovis|see{information visualization}} has been focusing on on data sets that lack inherent spatial semantics, thus posing a challenge to map the abstract data onto a two-dimensional screen space\cite{keim:2002}. Within this category of data, still different types of data can be distinguished and their characteristics will have an influence on the type of visualization.
 
-There are different types of data and their characteristics will have an influence on the type of visualization. Tables of data consist out of rows, representing items, and columns, representing the data dimensions, or 'attributes'. The number of dimensions is referred to as the dimensionality\index{dimensionality} of the data set\cite{keim:2002}. There are three different kinds of dimensions, namely\cite{shirley:2009}:
+\emph{Tables of data} consist out of rows, representing items, and columns, representing the data dimensions, or 'attributes'. The number of dimensions is referred to as the dimensionality\index{dimensionality} of the data set\cite{keim:2002}. There are three different kinds of dimensions, namely\cite{shirley:2009}:
 
 \begin{itemize}
-	\item \textbf{Quantitative}: numerical data on which arithmetic can be applied;
-	\item \textbf{Ordered}: an enumeration that has a definite order;
-	\item \textbf{Categorical}: data that has no specific ordering, and is distinguished by name only.
+	\item \textbf{Quantitative}: numerical data on which arithmetic can be applied. For example playcount of a particular track, the duration of a track, the number of artists that two users have in common, et cetera.
+	\item \textbf{Ordered}: an enumeration that has a definite order. For example ratings such as 'good', 'average', and 'bad'.
+	\item \textbf{Categorical}: data that has no specific ordering, and is distinguished by name only. For example composer names, band members, artist tracks, users who like a particular item, et cetera.
 \end{itemize}
 
-Relational data\index{relational data} on the other hand consists out of nodes\index{graph!node} and links or 'edges'\index{graph!edge}\cite{keim:2002, shirley:2009}. Both nodes and edges can have associated attributes.
+In the utility matrix each column corresponds to an item and a row to a user. The entries of this matrix are typically quantitative data, while item and user names are categorical data.
 
-In \cite{keim:2002} also text and hypertext, and algorithms and software are discussed as examples of other types of data. In the case of text and hypertext, standard visualizations are hard to use, as they cannot be described easily in terms of numbers. As a result, the data is first transformed into description vectors. Next, these vectors can be used in a visualization. Examples of software and algorithm visualization are flow diagrams, presentation using a graph-based structure of source code, and so on\cite{keim:2002}.
+\emph{Relational data}\index{relational data} on the other hand consists out of nodes\index{graph!node} and links or 'edges'\index{graph!edge}\cite{keim:2002, shirley:2009}. Both nodes and edges can have associated attributes. These attributes can again be either of quantitative, ordered, or categorical nature.
+
+The underlying structure of collaborative filtering, the utility matrix, can be interpreted as a \emph{dual graph}\index{dual graph}. This is a graph $G(V,E)$ for which $V = U \cup I$ such that $U \cap I = \emptyset \wedge E \subseteq U \times I$\cite{dekimpe:2007}. Each non-blank entry in the utility matrix will then correspond to an edge. Figure \ref{figure:dualgraph} shows how a matrix is transformed into a dual graph.
+
+When applied to the context of collaborative filtering, the set of nodes $U$ corresponds to the set of users, and the other set of nodes $I$ is set of items. In conclusion this means that there only exist edges of that go from an item to a user or from a user to an item.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=300px]{img/dualgraph}
+	\end{center}
+	\caption{Transforming the utility matrix into a dual graph: two distinct sets of nodes, users and items, only share edges between nodes of different sets.}%
+	\label{figure:dualgraph}%
+\end{figure}
+
+
 
 
 \subsection{Visual encoding and visual channels}\label{chapter:literature_study:section:interaction:subsection:encoding}
@@ -402,7 +184,7 @@ In \cite{keim:2002} also text and hypertext, and algorithms and software are dis
 
 \emph{Visual encoding}\index{visual encoding} is defined as the mapping of data set attributes to a visual representation. The choice of visual encoding is one of the central problems in the visualization design\cite{shirley:2009}.
 
-Visual encoding takes place through visual channels. A visual encoding corresponds to a graphical element, or ‘mark’. Examples of visual channels are spatial position, color, size, et cetera. The dimension of the mark may vary: a point is a zero-dimensional mark, a line a one-dimensional one, an area a two-dimensional one and so on.
+Visual encoding takes place through \emph{visual channels}\index{visual channel}. A visual encoding corresponds to a graphical element, or 'mark'. Examples of visual channels are spatial position, color, size, et cetera. The dimension of the mark may vary: a point is a zero-dimensional mark, a line a one-dimensional one, an area a two-dimensional one and so on.
 
 A visual encoding has the following characteristics, as described in\cite{shirley:2009}:
 
@@ -414,7 +196,7 @@ A visual encoding has the following characteristics, as described in\cite{shirle
 
 %Visual channels
 
-There is a variety of possible visual channels that a visualization designer can turn to in order to create a visual encoding, such as color, spatial position, size, shape, orientation, and so on. The performance of the visual encoding (through a visual channel) depends on the type of data, i.e. quantitative, ordered or categorical \cite{shirley:2009}. Figure \ref{figure:encodings} gives an overview of the performance for each category, adapted from \cite{shirley:2009}. Note that spatial position is the most accurate for each data type.
+There is a variety of possible visual channels that a visualization designer can turn to in order to create a visual encoding, such as colour, spatial position, size, shape, orientation, and so on. The performance of the visual encoding (through a visual channel) depends on the type of data, i.e. quantitative, ordered or categorical \cite{shirley:2009}. Figure \ref{figure:encodings} gives an overview of the performance for each category, adapted from \cite{shirley:2009}. Note that spatial position is the most accurate for each data type\cite{shirley:2009}.
 
 %Figure 1: Visual encoding performance for each data type
 \begin{figure}%
@@ -426,112 +208,35 @@ There is a variety of possible visual channels that a visualization designer can
 \end{figure}
 
 
-%\subsubsection{Colour}\label{chapter:literature_study:section:interaction:subsection:encoding:subsubsection:colour}
+\subsubsection{Colour}
 
-In \cite{shirley:2009} colour is considered in terms of three separate channels: \emph{hue}, \emph{saturation} and \emph{brightness}. This allows for different encodings. Just like for most visual channels, the choice of the channel (hue, saturation or brightness) depends heavily on the type of data:
+In \cite{shirley:2009} colour is considered in terms of three separate channels: \emph{hue}, \emph{saturation} and \emph{brightness}. This allows for different encodings. Just like for most visual channels, the choice of the channel (hue, saturation or brightness) depends heavily on the type of data.
 
-\begin{itemize}
-	\item \textbf{Quantitative data}: uses a color map, a range of color values that can be continuous or discrete. It is recommended to use lightness instead of hue, as lightness has an implicit perceptual ordering. Moreover the human eye responds most to strong luminance. Hue on the other hand has a small range (around twelve values that can be reliably distinguished, including background and neutral colors);
-	\item \textbf{Ordered data}: lightness and saturation are advised. As mentioned before, these have an implicit perceptual ordering;
-	\item \textbf{Categorical data}: hue can be successfully applied for categorical data, keeping in mind its small range.
-An important remark is that roughly 10\% of men is red-green color deficient. If a coding uses red and green, it may be wise to apply redundant coding using lightness or saturation in addition to hue \cite{shirley:2009}.
-\end{itemize}
+For categorical data, hue can be successfully applied, keeping in mind its small range. An important remark is that roughly 10\% of men is red-green color deficient. If a coding uses red and green, it may be wise to apply redundant coding using lightness or saturation in addition to hue \cite{shirley:2009}.
 
-Spatial layouts form other visual channels. Although these tend to be the most accurate, spatial layouts in two and three dimensions have several weaknesses \cite{shirley:2009}:
-
-\begin{itemize}
-	\item \textbf{Occlusion}: parts of the data set become hidden by others. In the case of the mapping of abstract dimensions onto spatial positions, understanding the details of a three-dimensional visualization may be challenging, even if the user is allowed to change viewpoints;
-	\item \textbf{Perspective distortion}: again, in the case of the mapping of abstract dimensions onto spatial positions, distances may convey meaning that may be distorted through perspective.
-	\item \textbf{Text in arbitrary orientations}: special care has to be taken with text, as it may become very hard to read depending on the orientation.
-\end{itemize}
+In the \emph{SoundSuggest} application, items in a list of neighbours are highlighted using the hue visual channel to distinguish between different groups of items.
 
 
-\subsection{Techniques}\label{chapter:literature_study:section:interaction:subsection:techniques}
+\subsubsection{Spatial layout}
 
-% Techniques to overcome limitations of visual channels (see also ware)
-Visualization techniques try to deal with the limitations listed in the introduction of this section. Tamara Munzner \cite{shirley:2009} acknowledges that there is a trade-off to be made concerning the interaction cost: on the positive side, interaction allows for data exploration in a larger information space than could be understood in a single static image. The downside is that interaction costs, other than the obvious implementation and computational costs, include the requirements for human time and attention\cite{shirley:2009}. Since attention drops significantly after the first hour\cite{ware:2004}, it might become a critical factor in the quality of the visualization. This view is also supported by Ware's findings described in section \ref{subsubsection:problem_solving_loop}, as eye-movements have a much lower cost than other epistemic actions\cite{ware:2004, ware:2008}.
-
-Based on the discussion by Ware and Mitchell in \cite{ware:2004}, Keim in \cite{keim:2002}, and Munzner in \cite{shirley:2009}, we will discuss a number of visualization, interaction, and data reduction techniques.
-
-\subsubsection{Visualization techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:infovis}
-
-% 3D --> cf. ware: in order to maximize the portion of the data space being visualized...
-
-In \cite{keim:2002}, Keim lists a number of visualization techniques:
+Spatial layouts form other visual channels. Although these tend to be the most accurate, spatial layouts in two and three dimensions have several weaknesses; two of these are\cite{shirley:2009}:
 
 \begin{itemize}
-	\item \textbf{Standard $2$D and $3$D techniques}: one-to-one data mappings from the data space onto the screen. For example xy- and xyz-plots, bar charts, pie charts, donut charts, line graphs and so on;
-	\item \textbf{Geometrically transformed displays}: transformations of multidimensional spaces onto a two-dimensional display. For example \emph{parallel coordinate technique}\index{parallel coordinate}, as shown in figure \ref{figure:parallel_coordinates}, or \emph{scatterplot matrices}\index{scatterplot matrix}, as shown in figure \ref{figure:scatterplot_matrix}.
-	\item \textbf{Iconic displays/glyphs}\index{glyph}: representations of a multidimensional set of attributes in a single icon\cite{keim:2002, ware:2004}.
-	\item \textbf{Dense pixel displays}\index{dense pixel display}: representations of a multidimensional data space where each dimension corresponds to a certain colour, and each dimension value is mapped onto a pixel on the screen. This way, large amounts of data can be visualized on a single display.
-	\item \textbf{Stacked displays}\index{stacked display}: displaying multidimensional data by creating a hierarchy of stacked coordinate systems. For example using one coordinate system as the frame of reference for objects. Within these objects, smaller coordinate systems can be constructed, displaying more detailed information for the other dimensions of the data. This can be applied recursively\cite{keim:2002}.
+	\item \textbf{Occlusion}: Parts of the data set become hidden by others. In the case of the mapping of abstract dimensions onto spatial positions, understanding the details of a three-dimensional visualization may be challenging, even if the user is allowed to change viewpoints. For the \emph{SoundSuggest} application, edges may overlap.
+	\item \textbf{Text in arbitrary orientations}: Special care has to be taken with text, as it may become very hard to read depending on the orientation. In the \emph{SoundSuggest} application artist names are turned according to their position on the circle layout.
 \end{itemize}
 
+% text problem: try to overcome: click --> shows title
 
-% BEGIN FIGURE : geometrically_transformed_displays
-\begin{figure}
-	\centering
-	\begin{subfigure}[b]{0.6\textwidth}
-					\centering
-					\includegraphics[width=\textwidth]{img/parallel_coordinates}
-					\caption{Parallel coordinates.}
-					\label{figure:parallel_coordinates}
-	\end{subfigure}%
-	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
-		%(or a blank line to force the subfigure onto a new line)
-	\begin{subfigure}[b]{0.4\textwidth}
-					\centering
-					\includegraphics[width=\textwidth]{img/scatterplot_matrix}
-					\caption{Scatterplot matrix.}
-					\label{figure:scatterplot_matrix}
-	\end{subfigure}
-	\caption{Parallel coordinates and scatterplot matrix visualizations for Edgar Anderson's \emph{Iris} data set. Taken from \url{http://mbostock.github.io/d3/talk/20111116/iris-parallel.html} and \url{http://mbostock.github.io/d3/talk/20111116/iris-splom.html} respectively.}%
-	\label{figure:geometrically_transformed_displays}%
-\end{figure}
-
-
-
-\subsubsection{Interaction techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:interaction}
-
-The previously described vsiualization techniques can of course be combined with various interaction techniques\cite{keim:2002}. When applying visual thinking algorithms on a visualization, the focus-context problem\index{focus-context problem}, described in section \ref{subsubsection:exploration_navigation_loop}, will surface.
-
-Several techniques can be applied to solve the focus-context problem further; for example distortion and rapid zooming\cite{ware:2004}. Keim \cite{keim:2002} also lists a number of techniques for interactive visualization. A summary based on \cite{ware:2004}, \cite{shirley:2009} and \cite{keim:2002} is presented here:
-
-\begin{itemize}
-	\item \textbf{Dynamic projections}\index{dynamic projection}: Data projections are dynamically changed, allowing the user to explore a multidimensional data set.
-	\item \textbf{Interactive filtering}: The data set is interactively partitioned into different segments in order to focus on different subsets through querying, browsing or more advanced methods.
-	\item \textbf{Interactive zooming}: The data representation is interactively changed, moving between different resolutions. A distinction can be made between two kinds of zooming\cite{shirley:2009, ware:2004}:
-	\begin{itemize}
-		\item \textbf{Geometric/rapid zooming}\index{zooming!geometric zooming}\index{zooming!rapid zooming}: Rapidly changing viewpoint in a two- or three-dimensional space, similar to adjusting the ratio of the focal length on binoculars;
-		\item \textbf{Semantic zooming/elision}\index{zooming!semantic zooming}\index{elision|see{semantic zooming}}: Changing the representation of an abstract object visualization, for example expanding and collapsing parts of a large structure that was represented by a single visual entity.
-	\end{itemize}
-	\item \textbf{Interactive distortion}: Parts of the data are displayed with a high level of detail (focus), while others are shown with a lower level of detail (context). Examples are 'fish-eye' distortion, bifocal displays and hyperbox.
-\end{itemize}
-
-
-\subsubsection{Data reduction techniques}\label{chapter:literature_study:section:interaction:subsection:techniques:subsubsection:reduction}
-
-% transformation of data, reducing data, clustering, dimensionality reduction, ...
-In \cite{shirley:2009} four main strategies are distinguished to reduce the amount of data shown, avoiding visual clutter:
-
-\begin{itemize}
-	\item \textbf{Overviews and aggregation}: many data sets have an internal structure at different scales, allowing multi-scale representations. With aggregate representations many items can covered by a single mark;
-	\item \textbf{Filtering and navigation}: by filtering only a subset of the data is shown. Navigation is a special type of filtering based on spatial positioning. In geometric zooming the viewpoint can be changed in the two- or three-dimensional space. In semantic zooming through a space of abstract items the object visualization may change very much depending on the resolution, i.e. the number of pixels available;
-	\item \textbf{Focus and context}: changing the data representation on different resolutions. E.g. fish-eye technique;
-	\item \textbf{Dimensionality reduction}: may be effective if there are many dimensions in the data. In \cite{shirley:2009} two techniques in particular are described:
-	\begin{itemize}
-		\item \textbf{Slicing}: a single value is chosen from the dimensions to eliminate, and only the items matching that value for the dimension are extracted to include in the lower-dimensional 'slice'.
-		\item \textbf{Projection}: no information of about the eliminated dimensions is retained; the values for those dimensions are simply dropped.
-	\end{itemize}
-\end{itemize}
+To overcome limitations of visual channels, various visualization, interaction, and data reduction techniques may be applied\cite{keim:2002, shirley:2009, ware:2004}. Before discussing this any further, the following section will first take a closer look at graph drawing.
 
 
 
 \subsection{Graph-based visualization}\label{chapter:literature_study:section:interaction:subsection:graphs}
 
-In this subsection we will take a closer look at \emph{graph-based visualization}\index{graph-based visualization}. As discussed in section \ref{chapter:literature_study:section:interaction:subsection:datatypes}, relational data is data that has an inherent relation among its elements\cite{shirley:2009}. "Given a set of nodes and a set of edges, what are the positions for each node and the curves for each edge?"; this is basically the essence of the graph drawing problem\index{graph drawing problem}\cite{herman:2000}.
+Relational data is data that has an inherent relation among its elements\cite{shirley:2009}. The graph drawing problem describes the problem of how nodes and edges are visualized on a display\index{graph drawing problem}\cite{herman:2000}.
 
-Scalability is one of the central issues with graph drawing, as graph size poses several important challenges\cite{herman:2000}:
+Scalability is one of the central issues with graph drawing, as graph size poses several important challenges\cite{herman:2000}. The following issues are of course closely related to the general problems of visualization design discussed in section \ref{chapter:literature_study:section:interaction:subsection:encoding}:
 
 \begin{itemize}
 	\item \textbf{Viewability and discernability}: even if it is possible to layout and display all the elements, it may become impossible to discern between nodes and edges;
@@ -539,71 +244,43 @@ Scalability is one of the central issues with graph drawing, as graph size poses
 	\item \textbf{Usability}: apart from problems with discernability, also information overload may occur. It is known that detailed analysis of data in graph structures is easiest when the displayed graph is small.
 \end{itemize}
 
-To determine the best way to draw a graph, a definition of properties and a classification of layouts is required. These properties will impose constraints on the algorithms used for the layouts presented. For example planarity of the graph, i.e. the absence of edge-crossings, predictability, density, and aesthetic constraints (e.g. symmetry) can be imposed on the final layout. Note that some of the 'aesthetic rules' can have a major impact on the usability of the graph as well; in that case they are said to have an ‘absolute’ character\cite{herman:2000}.
 
+As graph size is one of the biggest issues of graph visualization, techniques have been developed to apply data reduction techniques on graphs\cite{herman:2000, shirley:2009}. Apart from the traditional distortion and data transformation techniques, there are some techniques that are specific for graph-based visualization.
 
-\subsubsection{Traditional layouts}\label{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:traditional}
+\subsubsection{Data and dimensionality reduction}
 
-In \cite{herman:2000} a number of ‘traditional’ graph layouts are discussed. Here we give a brief overview of some of them:
-
-\begin{itemize}
-	\item \textbf{Tree layout}\index{tree layout}, \textbf{H-Tree layout}\index{H-tree layout}, \textbf{radial layout}\index{radial layout}, \textbf{balloon layout}\index{balloon layout}: these layouts are typically used for drawing trees. The algorithms to construct these layouts are of low-complexity, i.e. $O(N)$ with $N$ the number of nodes;
-	\item \textbf{Sugiyama layout}\index{Sugiyama layout}: this is a layout designed specifically for directed graphs. The complexity of the algorithms for this layout depends mainly on the edge-crossing minimization. As this an NP-hard problem, heuristics are usually applied.
-	\item \textbf{Spring layout} \textbf{(force-directed methods)}\index{force-directed graph}: this layout is applied to draw undirected graphs. Nodes and edges of the graph are modeled as physical bodies tied with springs. The time complexity of the algorithm and quality of the result may vary depending on the physical models used. Still, the best variants are estimated to work with a complexity of $O(N^{3})$ with $N$ the number of nodes, which is relatively slow. Another disadvantage is that the layout is rather unpredictable, which may be less preferable for information visualization. An example of a force-directed graph can be seen in figure \ref{figure:forcedirected_layout}.
-\end{itemize}
+Based on a visualization design by Valdis Krebs in \cite{steele:2010}, a dimensionality reduction\index{dimensionality reduction} can be performed on the dual graph, by keeping only one set of nodes and representing the other set of nodes as implicit information in the edges. Figure \ref{figure:rowreduction} shows an example of this idea of 'row reduction'\index{row reduction}. In Krebs' visualization the items, books purchased from the Amazon web store in this case, were retained. In the resulting graph, two items would share an edge if a user bought both these items. The thickness of the edges represented the number of users that where linked to these items\cite{krebs:2012:networkthinkers, steele:2010}.
 
 \begin{figure}%
 	\begin{center}
-		\includegraphics[width=250px]{img/force-directed_graph}%
+		\includegraphics[width=250px]{img/row_reduction}%
 	\end{center}
-\caption{A force-directed graph layout. Taken from \url{http://bl.ocks.org/mbostock/4062045}.}%
-\label{figure:forcedirected_layout}%
+	\caption{A row reduction operation on each pair of edges in a dual graph will result in a dimensionality reduction where one set of nodes is removed from the graph. An additional data reduction can be achieved by clustering edges into a thicker edge. Edge thickness then depends on the number of edges involved.}%
+	\label{figure:rowreduction}%
 \end{figure}
 
+The \emph{SoundSuggest} application does not use the final step of Krebs' graph design. Instead parallel edges are retained to keep a direct link between user and edge. In the resulting visualization of the CF-based recommender, a quantification of the similarity between users can then be established by counting parallel edges between items that occur in neighbouring profiles. Figure \ref{figure:rowreduction_dualgraph} shows how the dual graph from figure \ref{figure:dualgraph} is transformed into a circular graph layout with the remaining item nodes, similar to the visualization in figure \ref{figure:hierarchical_edge_bundling}.
 
-\subsubsection{Three dimensional layouts}\label{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:threed}
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/dualgraph_rowreduction}%
+	\end{center}
+	\caption{Row reduction applied on the graph in figure \ref{figure:dualgraph}.}%
+	\label{figure:rowreduction_dualgraph}%
+\end{figure}
 
-Limits to information visualization with graphs depend largely on the size of the graph, as we have seen in the introduction of this section. To increase graph size, one can work with some kind of interaction technique\cite{herman:2000, ware:2008}. However, as discussed in section \ref{subsubsection:problem_solving_loop}, it is better to take advantage of the efficiency of eye-movements by maximizing the amount of displayed data\cite{ware:2004, ware:2008}. Ware et al. conclude that the question how large a graph can be seen in a non-interactive display is an important one\cite{ware:2008}.
-
-Three dimensional graph visualizations allow for larger network structures to be seen, as the extra dimension will provide more 'space'\cite{herman:2000, ware:2008}. Distance can be perceived as the result of a series of depth cues, such as stereoscopic disparities, kinetic depth, perspective, texture and size gradients, occlusion, shape from shading, among others. From these depths cues, Ware et al. \cite{ware:2008} identify the user's stereoscopic disparities\index{stereoscopic disparity} and kinetic depth cues\index{kinetic depth cue} as the most significant factors that determine the performance of three dimensional graph visualization. Disparities are the relative differences between pairs of features imaged in the two eyes, and form the basis for stereoscopic depth. They allow for extremely fine judgments. The kinetic depth effect is caused by rotating a three dimensional wire-object: it will appear strongly three dimensional, even if the rotation has been stopped. Overall, stereoscopic depth appears to be the dominant factor \cite{ware:2008}.
-
-In \cite{herman:2000} a number of three dimensional layouts are listed:
-
-\begin{itemize}
-	\item \textbf{Generalize two dimensional layouts} \textbf{(e.g. radial layout)}: most of the previously described ‘traditional methods’ can be transformed to three dimensional counterparts;
-	\item \textbf{Cone tree}: A node is placed at the apex of a cone with its children placed evenly along its base. In the original implementation, each layer has cones of the same height and the cone base diameters for each level are reduced in a progression so that the bottom layer fits into the width of what the authors called the ‘room’, i.e. the box containing the full cone tree;
-	\item \textbf{Real-world metaphors}: Because of general human familiarity with 3D in the physical world, 3D lends itself to the creation of real-world metaphors that should help in perceiving complex structures.
-\end{itemize}
+As it is unlikely that the whole user profile can be shown in the graph while avoiding visual clutter, the active user's favourite items are used to give a representation of the active user's profile. This way the user can still directly compare him/herself with neighbouring profiles.
 
 
-\subsubsection{Data and dimensionality reduction techniques}\label{chapter:literature_study:section:interaction:subsection:graphs:subsubsection:reduction}
+\subsubsection{Clutter reduction}
 
-As graph size is one of the biggest issues of graph visualization, techniques have been developed to apply data reduction techniques on graphs\cite{herman:2000, shirley:2009}. Apart from the traditional distortion and data transformation techniques, there are some techniques that are specific for graph-based visualization. Based on a survey by Herman et al. \cite{herman:2000}, and papers by Holten \cite{Holten:2006:HEB:1187627.1187772}, and Holten et al. \cite{holten:2009}, we give an overview of two techniques: clustering and edge-bundling.
+Based on a survey by Herman et al. \cite{herman:2000}, and papers by Holten \cite{Holten:2006:HEB:1187627.1187772}, and Holten et al. \cite{holten:2009}, the following gives an brief overview of two techniques: \emph{clustering}\index{clustering} and \emph{edge-bundling}\index{edge-bundling}.
 
-Clustering is the process of discovering groupings or classes in data based on chosen semantics. Clustering techniques can be divided into two categories:
+\emph{Clustering}\index{clustering} is the process of discovering groupings or classes in data based on chosen semantics, i.e., structure, or content. An example of structure-based approach is to bundle groups nodes that have certain number of edges between them. For content-based approaches, edges or nodes with similar attribute values can be clustered.
 
-\begin{itemize}
-	\item \textbf{Structure-based clustering}: clustering based on structural information, for example choosing clusters that have the least number of edges between them. Structure-based clustering tends to retain the structure of the original graph;
-	\item \textbf{Content-based clustering}: the use of semantic data associated with graph elements. This is usually harder as this data is application-specific.
-\end{itemize}
+Due to the sparsity of the utility matrix, we might have to cluster multiple neighbouring profiles in a single node to ensure adequate connectivity within the resulting graph.
 
-Node metrics, i.e. a metric associated with a node in a graph, may be applied to cluster a graph. One can distinguish between structure-based and content-based metrics\cite{herman:2000}.
-
-Compound graphs can be used to bundle edges and nodes into 'super-nodes'. This graph can then be navigated, instead of the original one. In structure-based approaches, the compound graph provides a good overview of the global structure of the original graph\cite{herman:2000}.
-
-Hierarchical clustering is achieved by successively applying the same clustering process to groups discovered in the precious step of the clustering process. This way a hierarchical structure may be induced upon a graph that would otherwise not necessarily have one\cite{herman:2000}.
-
-Once a subset of nodes has been selected, a method of representing the unselected nodes must be chosen. In the case of clustering, the selected set of nodes is the set of super-nodes or the groups themselves. Kimelman et al. name three possible approaches\cite{herman:2000}:
-
-\begin{itemize}
-	\item \textbf{Ghosting}: deemphasizing nodes, or relegating nodes to the background.
-	\item \textbf{Hiding}: simply not displaying the unselected nodes. This is also referred to as folding or eliding.
-	\item \textbf{Grouping}: grouping nodes under a new super-node representation.
-\end{itemize}
-
-In \cite{Holten:2006:HEB:1187627.1187772} Danny Holten describes an edge-bundling method to visualize compound graphs. He describes the process as follows. The hierarchy is shown via a standard tree visualization method. Next, each adjacency edge is bent, and modeled as a B-spline curve, toward the polyline defined by the path via the inclusion edges from one node to another. This hierarchical bundling reduces visual clutter and also visualizes implicit adjacency edges between parent nodes that are the result of explicit adjacency edges between their respective child nodes.
-
-Edges are modelled as "flexible springs that can attract each other, similar to how electrical wires are bundled within a network"\cite{holten:2009}. Figure \ref{figure:hierarchical_edge_bundling} gives an overview of the different results for varying bundling strengths. It shows how edges are drawn closer towards each other, reducing visual clutter, and highlighting relationships between nodes.
+\emph{Edge-bundling}\index{edge-bundling} is a technique to visualize compound graphs\cite{Holten:2006:HEB:1187627.1187772}. Edges are modelled as "flexible springs that can attract each other, similar to how electrical wires are bundled within a network"\cite{holten:2009}. Figure \ref{figure:hierarchical_edge_bundling} gives an overview of the different results for varying bundling strengths. It shows how edges are drawn closer towards each other, reducing visual clutter, and highlighting relationships between nodes.
 
 
 % BEGIN FIGURE : geometrically_transformed_displays
@@ -634,21 +311,307 @@ Edges are modelled as "flexible springs that can attract each other, similar to 
 \end{figure}
 
 
-In another paper by Danny Holten and Jarke van Wijk edge-bundles for more general graphs, i.e. not necessarily hierarchical graphs, are discussed. It uses a self-organizing approach in which edges are modeled as flexible springs that can attract each other. Their visualization technique achieves very good clutter reduction and allows to discern high-level edge patterns [3].
+Figure \ref{figure:edgebundling_dualgraph} shows how this applied on the graph from figure \ref{figure:rowreduction_dualgraph}. From a graph drawing perspective we managed to reduce visual clutter by reducing the number of displayed items and applying edge-bundling\cite{herman:2000, Holten:2006:HEB:1187627.1187772}.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/dualgraph_edgebundling}%
+	\end{center}
+	\caption{Edge bundling applied on the graph in figure \ref{figure:rowreduction_dualgraph}.}%
+	\label{figure:edgebundling_dualgraph}%
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+%The term 'human-computer interaction' describes a phenomenon where two actors, the human or \emph{user} and the computer or \emph{system}, share a communication channel. The communication channel is a representation of data of the system towards the user. It is clear that both actors will impose certain restrictions on this visual communication channel\cite{shirley:2009, ware:2004}. In this chapter we will try to establish who these actors are, what this communication channel looks like, and what kind of restrictions are imposed upon the visual communication channel. 
+
+% --------------------------- The User ----------------------------
+% 
+% -----------------------------------------------------------------
+\section{Gaining insight into interactive visualization}\label{chapter:literature_study:section:user}
+
+The goal of the \emph{SoundSuggest} application is to allow the user to gain insight into the system through an interactive, visual explanation system. Two specific questions arise:
+
+\begin{itemize}
+	\item how does a human gain insight?
+	\item are there any human limitations imposed on the design of an interactive visualization?
+\end{itemize}
+
+The following subsections try to establish an answer to these questions. Most of the ideas in these subsections are drawn from a papers by Yi. et al. \cite{yi:2008}, Chris North \cite{north:2006}, Klein et al. \cite{Klein:2006:MSS:1158821.1159015, klein:2006:MSS:1175882.1176017}, and a book by Colin Ware \cite{ware:2004}.
+
+
+
+
+
+
+
+
+
+
+% --------------------------- The User ----------------------------
+% INSIGHT
+% -----------------------------------------------------------------
+\subsection{Insight gaining}\label{chapter:literature_study:section:user:subsection:insight}
+
+In \cite{north:2006} it is argued that insight\index{insight} is not a well-defined term. A formal definition might be too restrictive to capture its essence, and yet too broad to be useful. To quantify insight, \cite{north:2006} and \cite{yi:2008} list characteristics that allow a finer evaluation:
+
+\begin{itemize}
+	\item \textbf{Complex}: insight is complex in the sense that it involves large amounts of data, cf. the input data of a recommender system, that form cognitive constructs, rather than individual units.
+	\item \textbf{Deep}: insight is self-generating in a way, as insight provides a starting point for insight on the next level. Users may apply previously gained insight into a certain recommendation on other recommendations.
+	\item \textbf{Qualitative}: insight is subjective, uncertain and can have multiple levels of resolution;
+	\item \textbf{Unexpected}: insight is usually unpredictable, serendipitous and creative;
+	\item \textbf{Relevant}: insight is deeply embedded in the data domain: it gives data meaning as it connects data to the existing domain knowledge: the user has to give meaning to seeminly random suggestions.
+\end{itemize}
+
+The quality of insight can then be determined by quantifying each of these characteristics\cite{north:2006}. North describes methods to evaluate insight gaining through visualizations, such as usability testing, heuristic evaluation, cognitive evaluation, and controlled experiments on benchmark tasks\cite{north:2006}.
+
+Chris North notes that controlled experiments suffer from four fundamental problems that may hinder effective evaluation of previously listed characteristics of insight. Such experiments are\cite{north:2006}:
+
+\begin{itemize}
+	\item \textbf{Predefined}: Following specific, predefined instructions leave little room for unexpected insight.
+	\item \textbf{Limited in time}: Short task times leave little room for deep insight.
+	\item \textbf{Definitive}: Multiple choice questions leave little room for quantative insight.
+	\item \textbf{Superficial}: Answers are concise, leaving little room for complex and relevant insight.
+\end{itemize}
+
+In this thesis we will focus on the think aloud technique instead. This is part of an alternative method described by Chris North that includes three key innovations\cite{north:2006}:
+
+\begin{itemize}
+	\item an open-ended protocol;
+	\item a qualitive insight analysis;
+	\item an emphasis on domain relevance.
+\end{itemize}
+
+In this technique users are free to explore the data. By applying the think aloud protocol, the user's insight's can be captured. In order to increase domain relevance, the test users should be users from the target audience. Domain experts can then provide "critical metrics for the value of importance of the reported insights in the domain"\cite{north:2006}.
+
+
+\subsubsection{Sensemaking}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:sensemaking}
+
+\emph{Sensemaking}\index{sensemaking} plays an important part in insight gaining \cite{yi:2008}. The definitions for sensemaking may vary. We adapt the definition presented by \cite{Klein:2006:MSS:1158821.1159015} and \cite{yi:2008}.
+
+In \cite{Klein:2006:MSS:1158821.1159015} sensemaking is looked at from a psychological perspective, a perspective of human-centered computing, and the perspective of naturalistic decision making. Sensemaking is then defined as follows: "sensemaking is a motivated, continuous effort to understand connections in order to anticipate their trajectories and act effectively"\cite{Klein:2006:MSS:1158821.1159015}.
+
+Based on the discussion in \cite{klein:2006:MSS:1175882.1176017} and \cite{yi:2008}, Soo Yi et al. describe the process of sensemaking. Sensemaking is a:
+
+\begin{itemize}
+	\item \textbf{Cyclic and iterative proceduce}: consisting out of a generation loop searching for representations, a data coverage loop instantiating the representations and finally shift representations;
+	\item \textbf{Creation procedure}: being more about reasoning than discovery;
+	\item \textbf{Retrospective procedure}: as people construct a framework and assign relevant information to a place withing this framework. If the data fits the framework well, the framework is confirmed, otherwise it may be updated or discarded;
+\end{itemize}
+
+An important remark made in \cite{Klein:2006:MSS:1158821.1159015} is that data fusion algorithms can reduce information overload, but they also pose challenges to sensemaking if the human can't form an accurate mental model of the machine, to understand why and how the algorithms are doing what they are doing.
+
+%The recommender system's algorithm may use weights, clustering and other techniques. A particular explanation system may not describe the recommendation process with such detail. Also, the data visualized by an explanation system may cover a much smaller subset of the actual data that was processed to compute a particular recommendation. When working with large sets of data, like in the case of a recommender system, clustering, glyphs, dimensionality reduction and other data fusion techniques may be applied to describe a multitude of data units in a single visual entity\cite{herman:2000, keim:2002, shirley:2009, ware:2004}.
+
+The data and dimensionality reduction algorithms used in \emph{SoundSuggest}, increase the amount of implicit information that needs to be interpreted by the end user\cite{herman:2000, ware:2004}. In order gain insight into the recommendation process, it is important that certain contextual information is retained. The contextual information we want to convey is two-fold:
+
+\begin{enumerate}
+	\item The strength of the links between a recommendation and the user's profile;
+	\item The position of the user in his/her neighbourhood and the relation with those neighbours.
+\end{enumerate}
+
+% interaction techniques
+The first type of information is contained in parallel edges between items. For the second type of information, the active user's neighbours should be included in the visualization in one way or the other. In the resulting visualization the user's top neighbours are listed next to the graph. By hovering or clicking one of the listed neighbours, the relevant parts of the graph, i.e., items owned by the neighbour and the edges between them, are highlighted.
+
+
+
+\subsubsection{Processes of insight gaining}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:processes}
+
+Although sensemaking can play an important part in gaining insight, it is not the only path to arrive at insight \cite{yi:2008}. Yi et al. \cite{yi:2008} identify four processes, that are often intertwined, through which insight is established:
+
+\begin{itemize}
+	\item \textbf{Provide overview}: \textit{In this process the individual gains understanding of the big picture of a dataset of interest. It allows the user to make a distinction between what is known to him/her and what is not.} The user gets an overview of the recommendation rationale.
+	\item \textbf{Adjust}: In this process a person will explore a dataset by adjusting the level of abstraction and/or the range of selection. Typical actions involve filtering and grouping of data.
+	\item \textbf{Detect pattern}: \textit{In this process the user will try to identify specific distributions, trends, frequencies, outliers or structure in the dataset.} Through numerous interactions, the user is able to identify a pattern in the relationshpis between recommendations.
+	\item \textbf{Match mental model}: In this process the gap between data and cognitive model is bridged, reducing cognitive load and linking the present visual information with real-world knowledge.
+\end{itemize}
+
+The link with sensemaking is found in the cyclic and iterative nature of sensemaking - provide overview, adjust and detected pattern can be applied iteratively, as well as its creative and retrospective aspects - adjust and detect pattern create hypotheses and test them through various interaction techniques\cite{yi:2008}.
+
+It would be interesting to see if we can identify these steps in the user tests performed in this thesis as well.
+
+
+\subsubsection{Improving insight}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:improving}
+
+% !!!!!!!
+% + explain how used in the application
+
+Yi et al. \cite{yi:2008} identify several ways in which the insight gaining process can be made more efficient. They list the system's interactivity, the quality of visual encodings and usability among others, as possible enablers for increased insight gaining. Naturally, improvident designs will act as barriers rather than enablers in the insight gaining process.
+
+Interactivity of the system promotes the user's engagement into the dataset. Spending more time with the data will allow users to form more detailed and accurate hypotheses, and as a result greater insight\cite{yi:2008}. At the same time, while using the visualization, the user will become more skilled at a task over time. Nonetheless, bare in mind that when performing long and tedious search tasks, vigilance will become an important aspect as well in the efficiency of data exploration\cite{ware:2004}. Visual explanation systems may involve interaction techniques. For example, in the \emph{SoundSuggest} application, users can click an item node. Related item nodes will then be highlighted with it as well.
+
+Similarly visual encodings that are counter-intuitive will also increase the cognitive load. Other barriers on insight gaining are clutter, occlusion and data overload\cite{yi:2008}. In the application we have built, we applied clutter reduction techniques for graph visualization.
+
+Usability is another aspect that may have an impact on the insight gaining process, as controls that are hard to use will inevitably occupy some of the cognitive capacity of the user\cite{yi:2008}. In the ISO standard ISO 9241-11, usability is defined as "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use"\cite{usabilitynet:2006:standards}.
+
+Note that usability\index{usability} should not be considered a one-dimensional property of a user interface. Nielsen identifies several characteristics of usability in applications\cite{nielsen:1993:UE:529793}:
+
+\begin{itemize}
+	\item \textbf{Learnability}: if the system is easy to learn, the user can get started quickly;
+	\item \textbf{Efficiency}: if the system is efficient to use, it will be possible to complete more work in less time;
+	\item \textbf{Error rate and severity}: if the system should be robust and minimize faults;
+	\item \textbf{Memorability}: once the system is learned, acquired skills should not be forgotten easily;
+	\item \textbf{Satisfaction}: the system should be pleasant to use.
+\end{itemize}
+
+Note that an application may not necessarily have to have a high value for each of these properties. An expert visual explanation system that is highly complex may score low on learnability, while still remaining a very usable system. On the other hand, a system for casual users may require high learnability, otherwise users will be reluctant to use it. The application we have built is aimed at users that want to dig deeper into the recommendation data to gain a better understanding of the recommendation system's rationale, but without going into high detail.
+
+One of the aspects of the user tests we conducted involved testing the perceived usability of the application through test questionnaires. Through the think aloud protocol described ealier, some usability problems could also be detected through observation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% --------------------------- The User ----------------------------
+% INTERACTIVE VISUALIZATION
+% -----------------------------------------------------------------
+\subsection{Interactive visualization}\label{chapter:literature_study:section:user:subsection:interactive}
+
+%As we now have a better understanding of what insight is, we will try to establish how the insight gaining process works through visual data mining\index{visual data mining} and interactive visualization\index{visualization!interactive visualization}.
+
+The relation between insight gaining and data visualization has been pointed out in other research. Colin Ware \cite{ware:2004} describes interactive visualization as an "internal interface between the user and the computer in a problem solving system". Keim \cite{keim:2002} notes that "idea behind visual data exploration, is to present data in a visual form, allowing the user to gain insight into the data, draw conclusions, and directly interact with the data".
+
+In a chapter on visualization\index{visualization} in \cite{shirley:2009}, Tamara Munzner describes visualization as follows: "visualization allows the user to offload cognition to the perceptual system, using graphical data representations as a form of external memory. Therefore, by augmenting human capabilities, the data analyst is aided to understand, explore and form hypotheses of the data"\cite{shirley:2009}. In conclusion, the \emph{visual data exploration}\index{visual data mining}\index{visual data exploration|see{visual data mining}} process can then be understood as a hypothesis generation process\cite{keim:2002}.
+
+A reoccurring theme in visualization design is Schneiderman's mantra: "overview first, zoom and filter, and details on demand"\cite{keim:2002, shirley:2009, ware:2004}. First, the user looks for patterns of interest in the data space. Next the user focuses on one or more of these patterns, and starts looking at the data on a more detailed level. The user can then draw his/her conclusions and explore the data space further\cite{keim:2002}. 
+
+In what follows, we try to describe how a human interacts with interactive visualization on a cognitive level. It will be clear that some parallels can be drawn with the insight gaining process. This should come as no surprise, since these processes are intertwined\cite{keim:2002, ware:2004, yi:2008}.
+
+In \cite{ware:2004}, interactive visualization is characterized by three classes of feedback loops:
+
+\begin{itemize}
+	\item \textbf{Data selection and manipulation loop}: the user selects and moves objects that are selected through simple interactions based on eye-hand coordination;
+	\item \textbf{Exploration and manipulation loop}: the user tries to find his/her way through a large visual data space;
+	\item \textbf{Problem solving loop}: the user forms hypotheses about the data and refines them through an augmented visualization process.
+\end{itemize}
+
+The next subsections describe each feedback loop in greater detail.
+
+
+\subsubsection{Data selection and manipulation loop}\label{subsubsection:data_manipulation_loop}
+
+In the data selection and manipulation loop a user will try to interact with the visualization. For example by clicking a node in a graph, hovering a list of elements and so on. The quality of performance of selecting and manipulating data on a screen, depends on certain factors. Colin Ware discusses the following attributes:
+
+\begin{itemize}
+	\item \textbf{Reaction time}: This is the amount of time for a user to identify and select certain objects.
+	\item \textbf{Types of interaction}: different types of interaction will have a different influence on user performance. In our visualization only two types of interaction are supported: clicking and hovering buttons, links or words.
+	\item \textbf{Learning}: The speed at which a user performs a task may decrease over time, as the user becomes more skilled at executing the task.
+\end{itemize}
+
+Each of these attributes may be influenced by different factors. Through experiments predictions for these parameters have been captured in various laws such as Hick-Hyman law (reaction time), Fitt's law (selecting an object in a two-dimensional space) and the power law of practice (learning effects)\cite{ware:2004}. Based on these laws, it is expected that reaction time will decrease over time as users become more familiar with the visualization.
+
+
+\subsubsection{Exploration and navigation loop}\label{subsubsection:exploration_navigation_loop}
+
+In the second loop the user navigates through the data space. The basic navigation control loop is described as an iterative process that involves two distinct aspects\cite{ware:2004}:
+
+\begin{itemize}
+	\item \textbf{Human}: The user gains understanding of, i.e., gains insight into, the data space through a logical, spatial model. Parts of this model may be encoded in the longterm memory, on the condition that the data space is maintained for a long enough period of time.
+	\item \textbf{Computer}: The visualization may be updated and refined based on user input. Through clicks and hover queries the user will be able to change parts of the visualization.
+\end{itemize}
+
+When exploring spatial maps, a user is confronted with the \emph{focus-context problem}\index{focus-context problem}, i.e., "the problem of finding detail in a larger context"\cite{ware:2004}. The objective is to see the relation between the larger context and the details, rather than finding details. Ware goes on to discern between spatial, structural and temporal scales in which the focus-context problem manifests itself\cite{ware:2004}.
+
+Ware and Mitchell remark that the human visual system is already well-adapted to the spatial focus-context problem\cite{ware:2004}. Therefore, they argue that when designing a display, it should already try to take a maximal advantage of these perceptual skills. This can be done by displaying as much data as possible, without causing visual overload\cite{ware:2004}. Of course, there are always computational costs, either finding the best way to represent large amounts of data, or instead, using interaction techniques to delve deeper into the data\cite{herman:2000, shirley:2009}.
+
+% cf. graph drawing problem vs. focus+context, e.g. fish-eye
+
+%The time it takes to navigate between two points in the data space to gather information is called the \emph{cost of knowledge}\index{cost of knowledge}\cite{ware:2004}. To keep the cost of knowledge low, various interaction techniques have been developed, such as distortion, rapid zooming, elision, and multiple windows\cite{ware:2004}.
+
+
+\subsubsection{Problem solving loop}\label{subsubsection:problem_solving_loop}
+
+The problem solving loop can be described through means of a \emph{visual thinking algorithm}\index{visual thinking algorithm}\cite{ware:2004}. Such an algorithm combines perceptual and cognitive actions into a process, as the user interacts with the visualization and explores the data space. As we want to keep the \emph{cost of knowledge}\index{cost of knowledge} low, it is obvious that the cost and time complexity of each of these actions should be kept at a minimum. The cognitive system that runs these algorithms, is made up out of several different components\cite{ware:2004}.
+
+Visual queries\index{visual query} translate a hypothesis into a cognitive task. The result of a visual query can be a pattern or lack of a pattern. To support vsiual quaeries, actions that support information search are executed, called \emph{epistemic actions}\index{epistemic action}. Out of all epistemic actions, eye movements have the lowest cost, before mouse selection and hover queries. At the lowest level, elementary features such as color, texture information, and local edges are extracted from the image. Next, patterns are recognized by combining these features. Through eye movements possibly interesting patterns are explored. In the visual working memory, which forms the intermediary between the long-term memory and the incoming patterns, patterns are processed as \emph{object files}\index{object files}; these are a combination of visual attributes and semantic meaning. Internal images can be combined with external images to construct and test hypotheses about the visualized data.
+
+We will try to approximate a visual thinking algorithm\index{visual thinking algorithm} applied by users when exploring SoundSuggest's visualization. The algorithm in table \ref{table:visual_thinking_algorithm} is the degree-of-relevance highlighting algorithm derived by Ware and Mitchell \cite{ware:2004}.
+
+\begin{table}
+	\textit{Display environment: A display containing many symbols representing entities linked by a complex set of relationships.}
+
+	\begin{enumerate}
+		\item \textit{Construct a visual query to find a symbol that may lead to useful information (information scent\index{information scent}).} For example, the user wants to find out more about a particular recommendation, shown in the visualization.
+		\item \textit{Execute an epistemic action by selecting a symbol.} A symbol corresponds to either a user from the user list, or node on the graph in the visualization.
+		\item \textit{Computer highlights all symbols with a high degree of relevance to the selected symbol.} These are relevant parts of the graph, i.e., items owned by the neighbour and the edges between them, are highlighted.
+		\item \textit{Execute a visual pattern query among the highlighted symbols for additional information scent.}
+		\item \textit{If a very high relevance symbol is found, execute an epistemic action to drill down for additional information. Usually this will be presented in a different display window.} In this window artist and user metadata are shown, for example artist playcount, shared top artists et cetera.
+		\item \textit{Repeat from step 1 as needed, cognitively marking visited symbols.}
+	\end{enumerate}
+\caption{Degree-of-relevance highlighting visual thinking algorithm by Ware and Mitchell \cite{ware:2004}.}
+\label{table:visual_thinking_algorithm}
+\end{table}
+
+Based on this algorithm, we can make an estimation of the efficiency by which the user may to use the visualization. We can combine this with the insight gaining process, described in section \ref{chapter:literature_study:section:user:subsection:insight}, to get a better understanding of the user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 % ------------------------ Related work- --------------------------
 % 
 % -----------------------------------------------------------------
-\section{Related work}\label{chapter:survey:section:applications}
+\section{Visual explanation systems}\label{chapter:survey:section:applications}
 
-In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Five different applications are discussed: PeerChooser, Pharos, SFVis, SmallWorlds, and TasteWeights.
+In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Five different applications are discussed: \emph{PeerChooser}\index{PeerChooser}, \emph{Pharos}\index{Pharos}, \emph{SFVis}\index{SFVis}, \emph{SmallWorlds}\index{SmallWorlds}, and \emph{TasteWeights}\index{TasteWeights}.
 
 Next a comparison is made between these systems, based on a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% APPLICATIONS
+
+% PEERCHOOSER
 \subsection{PeerChooser}\label{chapter:survey:section:applications:subsection:peerchooser}
 
 \emph{PeerChooser}\index{PeerChooser} is a "collaborative movie recommender system with an interactive graphical explanation interface"\cite{odonovan:2008}. It aims to address the black box problem, described in section \ref{chapter:literature_study:section:computer:subsection:challenges}\cite{odonovan:2008}.
@@ -669,6 +632,7 @@ Figure \ref{figure:peerchooser} shows the graph-based interface of the PeerChoos
 
 
 
+% PHAROS
 \subsection{Pharos}\label{chapter:survey:section:applications:subsection:pharos}
 
 Content-centric social websites, such as blogs and discussion forums, contain vast amounts of fast growing information. Recommendation systems have been developed to help users find the information they are looking for. The \emph{Pharos}\index{Pharos} application tries to address two distinctive problems that present themselves in this context: the cold start problem and the black box problem\cite{zhao:2010}, as described earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}.
@@ -696,6 +660,7 @@ An example of what the resulting visualization looks like, is depicted in figure
 
 
 
+% SFVis
 \subsection{SFVis}\label{chapter:survey:section:applications:subsection:sfvis}
 
 SFVis (Social Friends Visualization) is an application that helps users explore and find friends interactively under a context of interest. The system is a hybrid approach of social tags and social networks. The SFVis framework transforms a data model (social tags and social networks) into a visual form. Users can both manipulate the input and visuals on demand.
@@ -716,6 +681,8 @@ SFVis uses circular visualizations for the different trees and graphs for both v
 
 
 
+
+% SMALLWORLDS
 \subsection{Smallworlds}\label{chapter:survey:section:applications:subsection:smallwords}
 
 In \cite{gretarsson:2010}, Gretarsson et al. used the Facebook API to create an application to generate social recommendations for Facebook users. Unfortunately the Facebook API does not support unauthorized reading of item preference information beyond the immediate friend group. This would not have been a problem unless traditional collaborative filtering strategies tend to produce item suggestions of inferior quality for small items. In this case however the research team relies on the social filtering through the active user's peer group\cite{gretarsson:2010}.
@@ -743,9 +710,11 @@ The user can move nodes in each layer further or closer towards the active user'
 \end{figure}
 
 
+
+% TASTEWEIGHTS
 \subsection{TasteWeights}\label{chapter:survey:section:applications:subsection:tasteweights}
 
-TasteWeights is a hybrid recommender with an interactive graphical user interface\cite{bostandjiev:2012}. The application allows the user to express his/her preferences changing the weights of incoming data sources.
+\emph{TasteWeights}\index{TasteWeights} is a hybrid recommender with an interactive graphical user interface\cite{bostandjiev:2012}. The application allows the user to express his/her preferences changing the weights of incoming data sources.
 
 One of the challenges Bostandjiev et al. try to address is that "social web APIs and other data sources are constantly evolving, and traditional recommender system techniques such as automated collaborative filtering need to adapt to the changing environment of the social web"\cite{bostandjiev:2012} (cf. Smallworlds). They introduce two enhancements for the traditional techniques. Multiple web sources, namely from \emph{Facebook}\footnote{\url{https://www.facebook.com/}}, \emph{Twitter}\footnote{\url{https://twitter.com/}} and \emph{Wikipedia}\footnote{\url{http://www.wikipedia.org/}} are combined when computing the recommendation. This combination provides a hybrid of different recommendation strategies, namely: collaborative filtering, expert-based and content-based respectively. The second enhancement is a new user interface that provides transparency into the recommendation process.
 
@@ -786,7 +755,10 @@ Figure \ref{figure:tasteweights} shows the corresponding visual representation o
 %%		* tintarev criteria
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparative study of visual explanation systems for item recommendation}
+\subsection{Comparing visual explanation systems for item recommendation}
+
+%%% ELABORATE !!!!!!!!!!!!!!!!!!
+
 
 The following listing is adapted from \cite{tintarev:2007:SER:1547550.1547664}:
 
@@ -800,45 +772,44 @@ The following listing is adapted from \cite{tintarev:2007:SER:1547550.1547664}:
 	\item \textbf{Satisfaction}: increase the ease of usability or enjoyment.
 \end{itemize}
 
-%Table1 : overview recommender system case studies
-In table \ref{table:comparison:properties} an overview is presented of some the different recommender systems and some of their properties. So far most of the applications discussed here used collaborative filtering and some kind of visualization and allowed the user to interact with the system.
-
-Table \ref{table:comparison:techniques} gives an overview of each of the techniques that were used to design and implement the visualizations.
-
 Table \ref{table:comparison:criteria} gives an overview of the performance of each visual explanation system based on the criteria listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}.
 
 \begin{center}
 	\begin{table}%
 		\begin{tabular}{lcr}
-			
-		\end{tabular}
-		\caption{A comparison of the recommender systems, based on recommender system properties.}
-		\label{table:comparison:properties}
-	\end{table}
-\end{center}
-
-
-
-\begin{center}
-	\begin{table}%
-		\begin{tabular}{lcr}
-			
-		\end{tabular}
-		\caption{A comparison of the visual explanation systems, based on visualization, interaction, and data reduction techniques.}
-		\label{table:comparison:techniques}
-	\end{table}
-\end{center}
-
-
-\begin{center}
-	\begin{table}%
-		\begin{tabular}{lcr}
-			
+			\hline
+										&	Transparency & Scrutability & Trust & Effectiveness & Persuasiveness & Efficiency & Satisfaction
+			PeerChooser		&	 &	&	&	& & &
+			Pharos				&	 &	&	&	& & &
+			SFVis					&	x &	&	&	& & &
+			SmallWorlds		&	 &	&	&	& & &
+			TasteWeights	&	x &	&	&	& & &
+			\hline
 		\end{tabular}
 		\caption{A comparison of the visual explanation systems, based on the criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.}
 		\label{table:comparison:criteria}
 	\end{table}
 \end{center}
+
+
+
+
+
+
+
+\section{Summary}\label{chapter:literature_study:section:summary}
+
+First recommender systems were discussed: we looked at types of recommendation algorithms, a number of properties of recommender systems, and finally some challenges of recommender systems. One of these challenges was the black box problem. We saw that visualizations can be used to develop a white box model.
+
+Next, aspects of information visualization were discussed: we look at different types of data and visual encodings. We saw that the recommendation rationale behind collaborative filtering could be interpreted as a set of relationships between users and items. As a result, a graph-based approach could be used to visualize this data. Using data, dimensionality, and clutter reduction techniques along with interaction techniques, we developed a visualization that could serve as a white box model for collaborative filtering.
+
+Then we described how users can gain insight into interactive visualization. We look at evaluation techniques for insight gaining. Finally a visual thinking algorithm was proposed that describes how a user could gain insight into the visualization developed in the previous section.
+
+In the last section we looked at five visual explanation systems that already exist. A comparison of these systems was presented based on the evaluation criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.
+
+The next chapter describes SoundSuggest's target audience, the application's story board, and use cases. Chapter \ref{chapter:prototype} gives an overview of the evaluation and design iterations. Chapter \ref{chapter:implementation} describes the implementation of the SoundSuggest application. In chapter \ref{chapter:conclusion} conclusions and future work are discussed.
+
+
 
 
 
