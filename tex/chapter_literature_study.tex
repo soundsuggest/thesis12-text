@@ -123,15 +123,11 @@ Another issue with recommendation systems is that these system often appear as '
 In this thesis we will focus mainly on this problem in the context of collaborative music recommendation. We will try design, implement and test a new visual explanation system in an effort to overcome this problem.
 
 
+\subsection{Music recommendation}\label{chapter:literature_study:section:computer:subsection:music}
 
+%A number of popular recommender systems for music exist. For example Last.fm, Spotify, Grooveshark, Deezer are specifically aimed at music recommendation, but also websites such as Facebook, Youtube, and Amazon have can provide recommendation for music. Most of these systems use collaborative filtering, sometimes in combination with content-based features.
 
-
-
-
-
-
-
-
+A number of popular recommender systems for music exist, such as \emph{Last.fm}\footnote{\url{http://www.last.fm/}}, \emph{Spotify}\footnote{\url{http://www.spotify.com/}}, \emph{Grooveshark}\footnote{\url{http://www.grooveshark.com/}}, \emph{Deezer}\footnote{\url{http://www.deezer.com/}}, \emph{Tastekid}\footnote{\url{http://www.tastekid.com/}}, \emph{Pandora}\footnote{\url{http://www.pandora.com/}} and so on.
 
 
 
@@ -762,20 +758,19 @@ Figure \ref{figure:tasteweights} shows the corresponding visual representation o
 
 %%% ELABORATE !!!!!!!!!!!!!!!!!!
 
-
-The following listing is adapted from \cite{tintarev:2007:SER:1547550.1547664}:
+To compare explanation systems, Tintarev and Masthoff developed a set of measures to evaluate and compare explanation systems. They list the following criteria \cite{tintarev:2007:SER:1547550.1547664}:
 
 \begin{itemize}
-	\item \textbf{Transparency}: explain how the system works;
-	\item \textbf{Scrutability}: allow users to tell;
-	\item \textbf{Trust}: increase users' confidence in the system;
-	\item \textbf{Effectiveness}: help users make good decisions;
-	\item \textbf{Persuasiveness}: convince users to try or buy;
-	\item \textbf{Efficiency}: help users make decisions faster;
-	\item \textbf{Satisfaction}: increase the ease of usability or enjoyment.
+	\item \textbf{Transparency}: Explain how the system works;
+	\item \textbf{Scrutability}: Allow users to tell the system is wrong;
+	\item \textbf{Trust}: Increase users' confidence in the system;
+	\item \textbf{Effectiveness}: Help users make good decisions;
+	\item \textbf{Persuasiveness}: Convince users to try or buy;
+	\item \textbf{Efficiency}: Help users make decisions faster;
+	\item \textbf{Satisfaction}: Increase the ease of usability or enjoyment.
 \end{itemize}
 
-Table \ref{table:comparison:criteria} gives an overview of the performance of each visual explanation system based on the criteria listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}.
+Table \ref{table:comparison:criteria} gives an overview of the performance of each visual explanation system based on the criteria listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}. All of the presented systems aim to provide transparency into the recommender system through a visualization. Although some of the systems allow the user to alter the recommender settings, none of the systems had an option to explicitely discard recommendations. However, three of the five systems listed here, allowed the user to make changes to the recommendation process. Persuasiveness is a measure that was not explicitely covered in these studies. Most of the studies tried to find out if the recommendations found, using the visualization, were effective. Also satisfaction, trust and effciency were evaluated in some of the studies.
 
 \begin{center}
 	\begin{table}%
@@ -783,13 +778,20 @@ Table \ref{table:comparison:criteria} gives an overview of the performance of ea
 		\begin{center}
 			\begin{tabular}{l | l l l l l l l }
 				\hline
-											&	\begin{sideways}Transparency\end{sideways} & \begin{sideways}Scrutability\end{sideways} & \begin{sideways}Trust\end{sideways} & \begin{sideways}Effectiveness\end{sideways} & \begin{sideways}Persuasiveness\end{sideways} & \begin{sideways}Efficiency\end{sideways} & \begin{sideways}Satisfaction\end{sideways}  \\
+											&	\begin{sideways}Transparency\end{sideways} 
+											& \begin{sideways}Scrutability\end{sideways} 
+											& \begin{sideways}Trust\end{sideways} 
+											& \begin{sideways}Effectiveness\end{sideways} 
+											& \begin{sideways}Persuasiveness\end{sideways} 
+											& \begin{sideways}Efficiency\end{sideways} 
+											& \begin{sideways}Satisfaction\end{sideways}  \\
 				\hline
-				PeerChooser		&	x &	&	&	& & &  \\
-				Pharos				&	 &	&	&	& & &  \\
-				SFVis					&	x &	&	&	& & &  \\
-				SmallWorlds		&	 &	&	&	& & &  \\
-				TasteWeights	&	x &	&	&	& & &  \\
+										%	&	t & s	& t &	e	& p	& e	& s
+				PeerChooser		&	x &	x	&		&	x	& 	& 	& x	\\
+				Pharos				&	x	&		&	x	&		& 	& 	&  	\\
+				SFVis					&	x &		&		&		& 	& 	&  	\\
+				SmallWorlds		&	x	&	x	&		&	x	& 	& 	& x	\\
+				TasteWeights	&	x &	x	&	x	&	x	& 	& x	&  	\\
 				\hline
 			\end{tabular}
 		\end{center}
@@ -797,8 +799,6 @@ Table \ref{table:comparison:criteria} gives an overview of the performance of ea
 		\label{table:comparison:criteria}
 	\end{table}
 \end{center}
-
-
 
 
 

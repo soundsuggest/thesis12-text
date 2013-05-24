@@ -12,11 +12,20 @@
 
 In their essence, recommender systems can be seen as filters applied on a large data sets. Ever since computer engineers started to develop this kind of systems, a wide range of algorithms have been designed and implemented to compute item recommendations\cite{burke:2002, melville:2002:CCF:777092.777124, pazzani:2007:CRS:1768197.1768209, rajaraman:2012}; each of them with their own advantages and disadvantages.
 
-To solve this problem, you will need some kind of explanation system that provides a reasoning to arrive at the results. An ambitious approach would be to explain each step of the recommendation algorithm, but this not always possible or desired. Indicating which of your tracks are closely related to the given recommendations, the system's confidence in the accuracy of the suggestions, et cetera, also help giving some additional context in explaining why a particular recommendation would be interesting\cite{herlocker:2000}. Over the course of the last decade a wide range of explanation systems have been implemented. Many of these also use visualizations to explore user and/or item relationships\cite{bostandjiev:2012, crnovrsanin:2011:VRN:2421953.2422013, faridani:2010:opinionspace, gou:2011:SIF:2016656.2016671, gretarsson:2010, odonovan:2008}.
+One of these recommendation algorithms is called collaborative filtering. In short, in this algorithm the system looks for similar user profiles, and recommends items that these do not share yet to each other\cite{rajaraman:2012}. A problem that is typical of collaborative recommendation, is that the end user does not know how the recommendation was computed, which is also referred to as the '\emph{black box problem}'\index{black box problem}\cite{herlocker:2000}.
+
+To solve this problem, some kind of explanation system can be built to provide an explanation for the reasoning to arrive at the results. An ambitious approach would be to explain each step of the recommendation algorithm, but this not always possible or desired. Other examples of how additional context can be provided for explainations are indicating which tracks in a user's music library are closely related to the given recommendations, giving the system's confidence in the accuracy of the suggestions, et cetera\cite{herlocker:2000}.
+
+Over the course of the last decade a wide range of explanation systems have been implemented. Many of these also use visualizations to explore user and/or item relationships\cite{bostandjiev:2012, crnovrsanin:2011:VRN:2421953.2422013, faridani:2010:opinionspace, gou:2011:SIF:2016656.2016671, gretarsson:2010, odonovan:2008}.
+
 
 \section{Thesis objective}\label{chapter:introduction:section:objective}
 
 The goal of this thesis is to design, implement and evaluate visualization and interaction techniques that will allow the user to gain insight into the recommendation process as well as actively steer the process. The elaboration of this thesis consists out of a literature study on the topic of visualization of music suggestions, and secondly a similar application that is designed and implemented\cite{kuleuven:2008:t313}.
+
+In the literature study we will investigate recommender systems and their rationale, different visualization techniques, and how users gain insight into visualization. We will design a new visual explanation system. To evaluate this application we will use the insight evaluation techniques developed by Chris North in \cite{north:2006}, as well as usability testing based on evaluation techniques listed by Erik Duval in his course on user interfaces. These techniques include the think aloud protocol and use of SUS questionnaires.
+
+Additional evaluation criteria, identified by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664} are used to compare explanation systems for recommender systems. In this thesis we will try to measure the performance of the explanation system based on these criteria.
 
 
 \section{The visual explanation system}\label{chapter:introduction:section:application}
