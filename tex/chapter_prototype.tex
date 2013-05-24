@@ -113,6 +113,16 @@ To obtain information other than observational data, the user is presented with 
 
 There are several standardized questionnaires. The one used for the application evaluation is the system usability scale\index{system usability scale} (SUS). A system usability scale test is a questionnaire that consists out of ten specific questions that attempts to measure the user's perception of the application's usability. Each question is answered by checking one out of five checkboxes: checkbox one corresponds to strong disagreement with the statement, the fifth checkbox corresponds to strong agreement with the statement\cite{sauro:2011}. The ten questions are listed in appendix \ref{appendix:sus}.
 
+To interpret SUS results, the scores should be compared on a percentile rank. Figure \ref{figure:sus_percentile} shows a graph by Jeff Sauro adapted from \cite{sauro:2011}. A SUS score of 80 means then that the perceived usability is higher than almost 90 percent of the products tested in Sauro's user studies.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=280px]{img/sus_curve}%
+	\end{center}
+	% http://www.measuringusability.com/sus.php
+	\caption{Percentile ranks associate with SUS scores and letter grades, adapted from \cite{sauro:2011}.}%
+	\label{figure:sus_percentile}%
+\end{figure}
 
 
 \section{Iterations}
@@ -135,7 +145,7 @@ There are several standardized questionnaires. The one used for the application 
 
 \subsubsection{The prototype}\label{chapter:prototype:section:paper:prototype}
 
-The paper prototype that was tested consisted out of a single screen. On this screen a visualization was drawn by hand. A number of copies of this drawing and by changing certain parts of the visualization, transitions within the vsiualization could be mimicked as users interacted with the screen. A selection of these screens are shown in figure \ref{figure:paper_prototype}.
+The paper prototype that was tested consisted out of a single screen. On this screen a visualization was drawn by hand. A number of copies of this drawing and by changing certain parts of the visualization, transitions within the visualization could be mimicked as users interacted with the screen. A selection of these screens are shown in figure \ref{figure:paper_prototype}.
 
 % BEGIN FIGURE : paper prototype
 \begin{figure}
@@ -167,7 +177,7 @@ The paper prototype that was tested consisted out of a single screen. On this sc
 
 \subsubsection{Test parameters}\label{chapter:prototype:section:paper:setup}
 
-Five test users were selected that often listen to music. Although they did not necessarily use recommendation systems to actively search for new music, they had a vague impression of what these systems were. Test applicants were between 22 and 26 years of age.
+Five test users were selected that often listen to music. Although they did not necessarily use recommendation systems to actively search for new music, they had a notion of what these systems were. Test applicants were between 22 and 26 years of age.
 
 The objective of the test is two-fold:
 
@@ -215,7 +225,7 @@ In conclusion, one user managed to get the complete mental model correct in the 
 \subsubsection{The prototype}\label{chapter:prototype:section:soundsuggest1:prototype}
 
 % changes from previous iteration
-As the test users were able to discover the recommender rationale using the visualization, and no notable usability had arisen, we started working on the digital prototype. This prototype used static data, but already supported all the use cases listed in appendix \ref{appendix:use_cases}. The resulting prototype can be seen in figure \ref{figure:prototype_soundsuggest1}.
+As the test users were able to discover the recommender rationale using the visualization, and no notable usability issues had arisen, we started working on the digital prototype. This prototype used static data, but already supported all the use cases listed in appendix \ref{appendix:use_cases}. The resulting prototype can be seen in figure \ref{figure:prototype_soundsuggest1}.
 
 
 % BEGIN FIGURE : hierarchical_edge_bundling
@@ -401,7 +411,7 @@ All of the test users were able to describe the recommendation rationale. Most o
 
 From the recommended items most users already knew more or less who these artists were. For some users this would increase trust, as they basically forgot about them when building up listening history. For other users this would actually decrease their trust in the system as they just were not interested in the recommendation. Interestingly Last.fm's own explanation for recommending the item was usually displeasing. Last.fm would justify the recommendation by listing a number of 'similar' artists. Unfortunately, for some categories of artists there exists some bias in the recommendations. For example musicians that have a solo project and also played in a series of different bands lets Last.fm consider these artists as similar. Another example is that artist recommendations for bands and musicians that operate in a country with a less international music scene would be influenced by regional effects. Belgian bands would be considered similar just for beging Belgian to the point were all similar artist pages on the Last.fm website would be Belgian regardless of their genre. Users confirmed that this kind of bias reduces the trust in the recommender system. On the other hand, it was interesting to see that this bias could actually be detected in the visualization as neighbours usually did not have edges going from items in their profile to these 'biased' recommendations.
 
-When users did not know a certain recommendation, most users were interested if the recommendation occurred in one of the neighbouring profiles. In this sense the visualization helped persuade the users check out certain artists. From the six users that checked out an item they did not already know, four of them found at least one item that they liked and added to their profile. When doscovering a new item that they liked, users admitted this significantly increased their trust in the recommender system, even more than when they found an item that they liked but already knew about.
+When users did not know a certain recommendation, most users were interested if the recommendation occurred in one of the neighbouring profiles. In this sense the visualization helped persuade the users check out certain artists. From the six users that checked out an item they did not already know, four of them found at least one item that they liked and added to their profile. When discovering a new item that they liked, users admitted this significantly increased their trust in the recommender system, even more than when they found an item that they liked but already knew about.
 
 % risk pays of if the result is good!!
 
@@ -418,5 +428,35 @@ In future iterations the problems with overlapping edges should be addressed, fo
 
 Overall, the application scores well based on the user's feedback and it enables users to discover some characteristics of Last.fm's recommender.
 
+Figure \ref{figure:iterations_sus_scores} shows the evolution of the SUS values over the four iterations. Based on the percentile rank, the average score for the final iteration procudes a grade of A.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=250px]{img/iterations_sus_scores}%
+	\end{center}
+	\caption{The evolution of the SUS values over the four iterations.}%
+	\label{figure:iterations_sus_scores}%
+\end{figure}
+
+The distribution of scores for each separate SUS question for the last iteration is shown in figure \ref{figure:sus_scores_iteration4}. The questions with the lowest scores were the first question and the seventh question. It should be noted thaht all test users were frequent Last.fm users and also not all of the test users used the Chrome browser that was required for running the Chrome extension. Nonetheless there were test users that were very positive about the application in that respect as well. Although there were no negative votes for question 7, a lot of users were not convinced that using the application was easy to learn. There might still be some work left to make the application more accessible to casual users.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/sus_question_distribution}%
+					\caption{The distribution of scores for each separate SUS question for the last iteration.}
+					\label{figure:it4_sus_question_distribution}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.5\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/sus_question_scores}
+					\caption{The SUS scores for each question after conversion to the same scale.}
+					\label{figure:it4_sus_question_score}
+	\end{subfigure}
+	\caption{A selection of the screens used in the user study with the first digital prototype.}%
+	\label{figure:sus_scores_iteration4}%
+\end{figure}
 
 

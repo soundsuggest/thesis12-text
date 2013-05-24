@@ -1,7 +1,5 @@
 \chapter{Conclusion and future work}\label{chapter:conclusion}
 
-
-
 % CONTENTS :
 % Geef een overzicht van het door jou geleverde werk. Zorg dat het duidelijk is wat je eigen inbreng is en wat je elders gevonden hebt.
 % Vergelijk de oorspronkelijke doelstelling met wat je bereikt hebt.
@@ -14,3 +12,24 @@
 %				...
 % 		using this thesis as a starting point with visualization, sensemaking, etc. in literature study
 %			using the whitebox in another context than music recommendation
+
+In the literature we discussed recommender systems, the general context for recommender systems. We also listed general properties of recommender systems, described three recommendation approaches, and listed typical issues and shortcomings of recommender systems. One of these issues is the black box problem for which the end user fails to gain insight into the recommendation process and as a result may have little trust in its recommendations. To solve this problem an explanation system can be used that explains the recommendation rationale.
+
+In the next part of the litature study we looked at various ways to visualize this rationale. We came up with a graph-based visualization representing the underlying utility matrix of collabrative recommendation, that uses Holten's edge-bundling algorithm along with node reduction to reduce the number of data dimensions, inspired by a visualization by Valdis Krebs.
+
+Subsequently we looked at an evaluation method for visualization insight by Chris North. We also investigated the insight gaining process established by Klein et al. Finally we adapted Ware and Mitchell's visual thinking algorithm to describe how a user would interact with the visualization to solve a certain problem.
+
+A number of visual explanation systems were discussed and we used a number of criteria by Tintarev and Masthoff to compare them.
+
+Chapter \ref{chapter:requirements} investigated the target users, possbile scenarios of use and more elementary scenarios captured in use cases.
+
+In chapter \ref{chapter:prototype} we looked at the different design and evaluation methods. The second part of this chapter described four different iterations in which a total of 15 test users observed while testing and evaluating the application. Between each iteration the detected usability issues were addressed and tested in the next. all the test users gained insight into the recommendation process and were able explain the recommendation rationale.
+
+The objective that was could not be reached was to enable users to actively steer the recommendation process. This is due to the fact that the Last.fm API did not support this functionality. Of course an alternative could have been to make use of other methods in the API to construct our own custom recommender system, but we have chosen to explain the artist recommendations made by the actual Last.fm recommender instead. Another possibility could have been to use another recommender system altogether, but from the systems that were investigated, no significant additional functionality was discovered that could have overcome these issues.
+
+Future work may include addressing problems with visual clutter, and slow data load. Also, the visual explanation system could be tested using other data sets and collaborative recommendation systems. Another possibility is to increase the interaction possibilities. For example by allowing interaction with edges the user could dig deeper into the relationship between artists and the corresponding users.
+
+
+
+
+
