@@ -2,6 +2,10 @@
 
 % introduction to the literature study
 
+This chapter describes the various components that are used in the development of this thesis. Section \ref{chapter:literature_study:section:computer} looks at recommender systems and their rationale. Next we will look at visualization techniques and how these can be used to visualize the recommendation rationale in section \ref{chapter:literature_study:section:interaction}. After this, insight gaining and human perceptual skills are investigated in section \ref{chapter:literature_study:section:user}. We discuss how insight gaining can be evaluated and how the user is expected to use the visualization in a visual thinking algorithm. Finally we discuss and compare other visual explanation systems in section \ref{chapter:literature_study:section:applications}.
+
+
+
 
 % -------------------------- The System ---------------------------
 % 
@@ -88,7 +92,7 @@ Mathematical models for music also allow for feature extraction. Algorithms have
 
 \emph{Hybrid filtering}\index{hybrid filtering} combines two or more recommendation algorithms\cite{burke:2002}. In \cite{burke:2002} a number of hybrid recommendation strategies are discussed. Robin Burke lists seven different approaches for combining recommendation algorithms. Each of these combinations also has its advantages and disadvantages. Not necessarily all combinations will be successful, and not all of them have been implemented\cite{burke:2002}.
 
-Based on the discussion in this paper by Robin Burke \cite{burke:2002}, hybrid systems for music recommendation can be built that use both collaborative filtering approaches and content-based approaches. For example Bostandjiev et al. \cite{bostandjiev:2012} have built a music recommender\indxe{TasteWeights} that uses Wikipedia, a content-based source, Facebook, a collborative source, and Twitter, an expert-based source.
+Based on the discussion in this paper by Robin Burke \cite{burke:2002}, hybrid systems for music recommendation can be built that use both collaborative filtering approaches and content-based approaches. For example Bostandjiev et al. \cite{bostandjiev:2012} have built a music recommender\index{TasteWeights} that uses Wikipedia, a content-based source, Facebook, a collborative source, and Twitter, an expert-based source.
 
 
 \subsection{Challenges for recommender systems}\label{chapter:literature_study:section:computer:subsection:challenges}
@@ -283,7 +287,7 @@ Due to the sparsity of the utility matrix, we might have to cluster multiple nei
 \emph{Edge-bundling}\index{edge-bundling} is a technique to visualize compound graphs\cite{Holten:2006:HEB:1187627.1187772}. Edges are modelled as "flexible springs that can attract each other, similar to how electrical wires are bundled within a network"\cite{holten:2009}. Figure \ref{figure:hierarchical_edge_bundling} gives an overview of the different results for varying bundling strengths. It shows how edges are drawn closer towards each other, reducing visual clutter, and highlighting relationships between nodes.
 
 
-% BEGIN FIGURE : geometrically_transformed_displays
+% BEGIN FIGURE : hierarchical_edge_bundling
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.3\textwidth}
@@ -543,7 +547,7 @@ Ware and Mitchell remark that the human visual system is already well-adapted to
 
 The problem solving loop can be described through means of a \emph{visual thinking algorithm}\index{visual thinking algorithm}\cite{ware:2004}. Such an algorithm combines perceptual and cognitive actions into a process, as the user interacts with the visualization and explores the data space. As we want to keep the \emph{cost of knowledge}\index{cost of knowledge} low, it is obvious that the cost and time complexity of each of these actions should be kept at a minimum. The cognitive system that runs these algorithms, is made up out of several different components\cite{ware:2004}.
 
-Visual queries\index{visual query} translate a hypothesis into a cognitive task. The result of a visual query can be a pattern or lack of a pattern. To support vsiual quaeries, actions that support information search are executed, called \emph{epistemic actions}\index{epistemic action}. Out of all epistemic actions, eye movements have the lowest cost, before mouse selection and hover queries. At the lowest level, elementary features such as color, texture information, and local edges are extracted from the image. Next, patterns are recognized by combining these features. Through eye movements possibly interesting patterns are explored. In the visual working memory, which forms the intermediary between the long-term memory and the incoming patterns, patterns are processed as \emph{object files}\index{object files}; these are a combination of visual attributes and semantic meaning. Internal images can be combined with external images to construct and test hypotheses about the visualized data.
+Visual queries\index{visual query} translate a hypothesis into a cognitive task. The result of a visual query can be a pattern or lack of a pattern. To support vsiual quaeries, actions that support information search are executed, called \emph{epistemic actions}\index{epistemic action}. Out of all epistemic actions, eye movements have the lowest cost, before mouse selection and hover queries. At the lowest level, elementary features such as color, texture information, and local edges are extracted from the image. Next, patterns are recognized by combining these features. Through eye movements possibly interesting patterns are explored. In the visual working memory, which forms the intermediary between the long-term memory and the incoming patterns, patterns are processed as \emph{object files}\index{object files}; these are a combination of visual attributes and semantic meaning. Internal images can be combined with external images to construct and test hypotheses about the visualized data\cite{ware:2004}.
 
 We will try to approximate a visual thinking algorithm\index{visual thinking algorithm} applied by users when exploring SoundSuggest's visualization. The algorithm in table \ref{table:visual_thinking_algorithm} is the degree-of-relevance highlighting algorithm derived by Ware and Mitchell \cite{ware:2004}.
 
@@ -601,7 +605,7 @@ Based on this algorithm, we can make an estimation of the efficiency by which th
 % ------------------------ Related work- --------------------------
 % 
 % -----------------------------------------------------------------
-\section{Visual explanation systems}\label{chapter:survey:section:applications}
+\section{Visual explanation systems}\label{chapter:literature_study:section:applications}
 
 In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Five different applications are discussed: \emph{PeerChooser}\index{PeerChooser}, \emph{Pharos}\index{Pharos}, \emph{SFVis}\index{SFVis}, \emph{SmallWorlds}\index{SmallWorlds}, and \emph{TasteWeights}\index{TasteWeights}.
 
@@ -776,17 +780,21 @@ Table \ref{table:comparison:criteria} gives an overview of the performance of ea
 
 \begin{center}
 	\begin{table}%
-		\begin{tabular}{lcr}
-			\hline
-										&	Transparency & Scrutability & Trust & Effectiveness & Persuasiveness & Efficiency & Satisfaction
-			PeerChooser		&	 &	&	&	& & &
-			Pharos				&	 &	&	&	& & &
-			SFVis					&	x &	&	&	& & &
-			SmallWorlds		&	 &	&	&	& & &
-			TasteWeights	&	x &	&	&	& & &
-			\hline
-		\end{tabular}
-		\caption{A comparison of the visual explanation systems, based on the criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.}
+	\caption{A comparison of the visual explanation systems, based on the criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.}
+		\begin{center}
+			\begin{tabular}{l | l l l l l l l }
+				\hline
+											&	\begin{sideways}Transparency\end{sideways} & \begin{sideways}Scrutability\end{sideways} & \begin{sideways}Trust\end{sideways} & \begin{sideways}Effectiveness\end{sideways} & \begin{sideways}Persuasiveness\end{sideways} & \begin{sideways}Efficiency\end{sideways} & \begin{sideways}Satisfaction\end{sideways}  \\
+				\hline
+				PeerChooser		&	x &	&	&	& & &  \\
+				Pharos				&	 &	&	&	& & &  \\
+				SFVis					&	x &	&	&	& & &  \\
+				SmallWorlds		&	 &	&	&	& & &  \\
+				TasteWeights	&	x &	&	&	& & &  \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
 		\label{table:comparison:criteria}
 	\end{table}
 \end{center}

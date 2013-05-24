@@ -21,6 +21,9 @@
 \usepackage{longtable}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{rotating}
+\usepackage{float}
+\usepackage{placeins}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DEFINE JavaScript listings
@@ -140,9 +143,9 @@
 \flushleft
 Supervisor: Prof. E. Duval\\[-2pt]
 \textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
-Co-supervisor: \textsl{(J. Klerkx)}\\[-2pt]
+Co-supervisor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
 \textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
-Mentor: \textsl{(J. Klerkx)}\\[-2pt]
+Mentor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
 \textcolor{blueaff}{Affiliation \textsl{(optional)}}\\
 \end{textblock}
 %
@@ -179,7 +182,16 @@ Academic year 2012-2013
 \setcounter{page}{0}
 \pagenumbering{roman}
 
+% Voorwoord: Hierin moet het algemene doel van het werk samengevat worden. Verder dient iedereen die heeft bijgedragen hier bedankt te worden.
+
+% Korte samenvatting (max. 2 pagina’s): Hierin dienen de belangrijkste doelstellingen en conclusies van de masterproef samengevat worden, in het Nederlands en in het Engels.
+
+% Lijst van afkortingen en lijst van symbolen: Hierin staan de belangrijkste afkortingen en symbolen die gebruikt worden in de masterproef, met hun betekenis en eenheid.
+
+
+
 \newpage
+% Inhoud: Een overzicht van de inhoud moet ordelijk worden weergegeven met referentie naar de correctie paginanummers (maximum drie subniveaus). Alle pagina’s vóór hoofdstuk 1 dienen genummerd te worden met Romeinse cijfers (I, II, …). Vanaf hoofdstuk 1 gebeurt de nummering met Arabische cijfers (1, 2, …).
 \tableofcontents
 
 \newpage
@@ -190,10 +202,14 @@ Academic year 2012-2013
 \pagenumbering{arabic}
 
 %% TEX FILES (Chapters)
+% Een uitgebreide inleiding die naast het schetsen van de aanpak en de gebruikte methodes het onderzoek in een bredere context plaatst.
 \include{tex/chapter_introduction}
 \include{tex/chapter_literature_study}
+\include{tex/chapter_requirements}
+% Resultaten en bespreking van het onderzoek.
 \include{tex/chapter_prototype}
 \include{tex/chapter_implementation}
+% Een conclusie, waarin een globale discussie van de onderzoeksresultaten wordt opgenomen. Eventueel kunnen hierin suggesties gedaan worden voor toekomstig onderzoek.
 \include{tex/chapter_conclusion}
 
 
@@ -236,7 +252,10 @@ Academic year 2012-2013
 %% ----------
 \clearpage
 \addcontentsline{toc}{chapter}{Appendices}
+% Appendices: Hierin worden de delen van het onderzoek opgenomen die essentieel zijn voor het werk, maar die de leesbaarheid van de tekst zouden verlagen bv. door de lengte (wiskundige afleidingen, experimentele data, voorbeelden, figuren, etc.).
 \appendix
+
+\input{tex/appendix_usecases}
 
 % SUS questionnaire questions
 \input{tex/appendix_sus}

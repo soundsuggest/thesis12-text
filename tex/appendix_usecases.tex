@@ -1,0 +1,95 @@
+
+\chapter{Use cases}\label{appendix:use_cases}
+
+%%%%%%%%%%%%%%%USE CASE 1
+\begin{table}[h]
+\caption{Use case 1 \textit{Hover item}}
+\begin{center}
+	\begin{tabular}{ l p{300px} } % l = left-aligned column; p{...px} = paragraph with specified width.
+		\hline
+		\textbf{Primary actor:}	& Active user \\
+		\textbf{Preconditions:}	& The application has access to the active user's profile; \\
+														& The visualization has successfully loaded; \\
+		\textbf{Basic flow:}	& (1) The user enters the area of an item node in the graph; \\
+													& (2) The system highlights the nodes and edges that are directly connected to the target node (popout technique); \\
+													& (3) The system highlights icons next to the graph corresponding to neighbours that have the target item in their profile; \\
+													& (4) The user exits the node area; \\
+													& (5) The system shows the default layout of the graph; \\
+		\hline
+	\end{tabular}
+\end{center}
+\label{tab:use_case1}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%USE CASE 2
+\begin{table}[h]
+\caption{Use case 2 \textit{Hover neighbour}}
+\begin{center}
+	\begin{tabular}{ l p{300px} }
+		\hline
+		\textbf{Primary actor:}	& Active user \\
+		\textbf{Preconditions:}	& The application has access to the active user's profile; \\
+														& The visualization has successfully loaded; \\
+		\textbf{Basic flow:}	& (1) The user enters the area of a neighbour icon next to the graph; \\
+													& (2) The system highlights the neighbour's icon; \\
+													& (3) The system highlights the nodes and edges that connect items that are in the profile of the selected user; \\
+													& (4) The user exits the icon area; \\
+													& (5) The system shows the default layout of the graph; \\
+		\hline
+	\end{tabular}
+\end{center}
+\label{tab:use_case2}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%USE CASE 3
+\begin{table}[h]
+\caption{Use case 3 \textit{Click item}}
+\begin{center}
+	\begin{tabular}{ l p{300px} }
+		\hline
+		\textbf{Primary actor:}	& Active user \\
+		
+		\textbf{Preconditions:}	& The application has access to the active user's profile; \\
+														& The visualization has successfully loaded; \\
+		
+		\textbf{Basic flow:}	& (1) The user clicks an item node in the graph; \\
+													& (2) The system highlights the nodes and edges that are directly connected to the target node; \\
+													& (3) The system highlights icons next to the graph corresponding to neighbours that have the target item in their profile; \\
+													& (5) The system displays additional information about the item and options in an area next to the visualization; information includes a brief introductory text and top tracks; options include the possibility to add the item to the active user's profile. \\
+		
+		\textbf{Alternate flow:}	& (2.a) the item was already selected: the item is now deselected; \\
+		
+		\hline
+	\end{tabular}
+\end{center}
+\label{tab:use_case3}
+\end{table}
+
+
+%%%%%%%%%%%%%%%USE CASE 4
+\begin{table}[h]
+\caption{Use case 4 \textit{Click neighbour}}
+\begin{center}
+	\begin{tabular}{ l p{300px} }
+		\hline
+		\textbf{Primary actor:}	& Active user \\
+		
+		\textbf{Preconditions:}	& The application has access to the active user's profile; \\
+														& The visualization has successfully loaded; \\
+		
+		\textbf{Basic flow:}	& (1) The user clicks an item node in the graph; \\
+													& (2) The system highlights the nodes and edges that are directly connected to the target node; \\
+													& (3) The system highlights icons next to the graph corresponding to neighbours that have the target item in their profile; \\
+													& (4) The system displays additional information about the item and options in an area next to the visualization; information includes a brief introductory text and top tracks; options include the possibility to add the item to the active user's profile. \\
+		
+		\textbf{Alternate flow:}	& (2.a) the neighbour was already selected: the neighbour is now deselected; \\
+		
+		\hline
+	\end{tabular}
+\end{center}
+\label{tab:use_case4}
+\end{table}

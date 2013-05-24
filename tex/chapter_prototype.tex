@@ -3,7 +3,7 @@
 % Shirley et al. : human-centered design process
 %This iterative process can be human-centered design process described in \cite{shirley:2009}.
 
-This chapter describes how the idea presented in chapter \ref{chapter:whitebox} is tested and improved through different development cycles. First the evaluation and development techniques used for the tests are described.
+This chapter describes how the idea presented in chapter \ref{chapter:literature_study} is tested and improved through different development cycles. First the evaluation and development techniques used for the tests are described.
 
 
 \section{Methodology}\label{chapter:prototype:section:methodology}
@@ -27,6 +27,8 @@ It is obvious that for each category the resources that are required to build th
 
 \emph{Paper prototyping}\index{paper prototyping} is defined as "a variation of usability testing where representative users perform realistic tasks by interacting with a paper version of the interface that is manipulated by a person 'playing computer', who doesn’t explain how the interface is intended to work"\cite{snyder:2003:web}. It is a technique for designing, testing, and refining user interfaces \cite{snyder:2003}, and is closely related to usability testing \cite{snyder:2003:web}. In the last decade it has become a regularly applied technique in major businesses such as IBM, Digital, Honeywell, and Microsoft among others\cite{snyder:2003}.
 
+Digital prototypes capture a portion of the functionality in an application. In the early stages of the design process, this application usually works with static data, or a limited number of screen transitions. This allows for more flexibility when certain functionality has to be altered. In later iterations the static data is replaced with the real data. In such prototypes, the effects of performance of algorithms and interface responsiveness can be analyzed in greater detail.
+
 %In \cite{usabilitynet:2006:paperprototyping} a number of benefits are associated with paper prototyping:
 %\begin{itemize}
 %	\item Usability problems can be already detected in the early stages of the design process, even before any code has been written.
@@ -42,11 +44,13 @@ The evaluation of an application prototype can be performed using one or more di
 
 Methods may be \emph{formative}\index{formative!evaluation technique} or \emph{summative}\index{summative!evaluation technique}. Formative means that the evaluation occurs simultaneously with user task execution. Summative occurs after the user has performed all the required tasks\cite{duval:2012:chi:evaluation}.
 
-The methods we will be using here are a variation on \emph{usability engineering}\index{usability engineering} called \emph{think aloud}\index{think aloud} user tests, and a special type of questionnaires called \emph{system usability scale} (SUS)\index{system usability scale} \emph{questionnaires}\index{questionnaire}.
+The goal of the evaluation is at one hand usability testing, and at the other hand verifying whether or not the visualization can produce insight by test users as described in section \ref{chapter:literature_study:section:user:subsection:insight}. Both objectives can be tested through a variation on \emph{usability engineering}\index{usability engineering} called \emph{think aloud}\index{think aloud} user tests. Additionally, a type of questionnaires called \emph{system usability scale} (SUS)\index{system usability scale} \emph{questionnaires}\index{questionnaire} are used to obtain a quantification of the perceived usability by test users. Such a quantification may allow us to identify positive or negative trends in the usability throughout the iterations.
 
-In order to perform reliable usability tests, the test users have to be representative for the actual user population\cite{duval:2012:chi:evaluation}. The tasks that are being used, have to be representative of the system usage. Tasks also have to correspond to research questions to obtain relevant results\cite{snyder:2003}.
+In order to perform reliable usability tests, the test users have to be representative for the actual user population\cite{duval:2012:chi:evaluation, north:2006}. The tasks that are being used, have to be representative of the system usage. Tasks also have to correspond to research questions to obtain relevant results\cite{snyder:2003}.
 
-The number of users can often be limited to a certain amount. As the number of detectable problems is likely to be finite, from a certain point on adding more users to the usability test will not produce new or better results\cite{duval:2012:chi:evaluation, nielsen:2012:nngroup:diminishing_returns}. The graph in figure \ref{fig:nielsengraph}, adapted from \cite{nielsen:2012:nngroup:diminishing_returns}, illustrates this phenomenon. Nielsen argues that as a rule of tumb, five test users is enough to acquire reliable and valuable test results. Instead of doing one test with 15 users, use three iterations with 5 users each. Based on the graph, the first iteration will discover the majority of the usability problems; the next two tests will uncover the remaining 15\% of issues. Of course, this only holds on the condition that tasks performed by the users are similar for each iteration. Between each iteration, corrections are applied to the design\cite{nielsen:2012:nngroup:diminishing_returns}.
+The number of users can often be limited. As the number of detectable problems is likely to be finite, from a certain point on testing more users will not produce new or better results\cite{duval:2012:chi:evaluation, nielsen:2012:nngroup:diminishing_returns}. The graph in figure \ref{fig:nielsengraph}, adapted from \cite{nielsen:2012:nngroup:diminishing_returns}, illustrates this phenomenon.
+
+Nielsen argues that as a rule of tumb, five test users is enough to acquire reliable and valuable test results. Instead of doing one test with 15 users, use three iterations with 5 users each. Based on the graph, the first iteration will discover the majority of the usability problems; the next two tests will uncover the remaining 15\% of issues. Of course, this only holds on the condition that tasks performed by the users are similar for each iteration. Between each iteration, corrections are applied to the design\cite{nielsen:2012:nngroup:diminishing_returns}. Between these groups of tests, detected usability problems are addressed, and hopefully resolved which can be verified in the next iteration.
 
 \begin{figure}
 	\begin{center}
@@ -61,7 +65,7 @@ The number of users can often be limited to a certain amount. As the number of d
 
 In \cite{duval:2012:chi:evaluation}, two methods are described to perform usability engineering tests: usability labs, and think aloud\index{think aloud} testing. In a usability lab the user is observed while performing certain tasks. Data on task completion time, mouse clicks, eye-movement can be collected. Direct observation or cameras can be used to observe the user. To mimic real-life situations, also complete settings can be recreated in which the users would normally use the application\cite{duval:2012:chi:evaluation}.
 
-Using usability labs can be rather costly, as labs need to be available and the required equipment may be expensive. The think aloud protocol is a variation on the usability lab method and is cheaper to perform, cf. 'discount usability engineering'\cite{duval:2012:chi:evaluation}. During a think aloud test, the user describes his/her reasoning for each action he/she undertakes\cite{nielsen:2012:nngroup:think_aloud}. This method has several advantages and disadvantages, as listed in table \ref{table:usability_engineering}, based on \cite{nielsen:2012:nngroup:think_aloud} and \cite{snyder:2003}.
+Using usability labs can be rather costly, since labs need to be available and the required equipment may be expensive. The think aloud protocol is a variation on the usability lab method and is cheaper to perform, cf. 'discount usability engineering'\cite{duval:2012:chi:evaluation}. During a think aloud test, the user describes his/her reasoning for each action he/she undertakes\cite{nielsen:2012:nngroup:think_aloud}. This method has several advantages and disadvantages, as listed in table \ref{table:usability_engineering}, based on \cite{nielsen:2012:nngroup:think_aloud} and \cite{snyder:2003}.
 
 
 \begin{table}%
@@ -70,7 +74,7 @@ Using usability labs can be rather costly, as labs need to be available and the 
 			\hline
 			Advantages		&		It is cheap to perform; \\
 										&		It is robust; \\
-										&		It is flexible; \\
+										&		It is flexible; \\ % giving required freedom to perform insight tests
 										&		It is convincing; \\
 										&		It is easy to learn; \\
 			\hline
@@ -110,10 +114,11 @@ To obtain information other than observational data, the user is presented with 
 There are several standardized questionnaires. The one used for the application evaluation is the system usability scale\index{system usability scale} (SUS). A system usability scale test is a questionnaire that consists out of ten specific questions that attempts to measure the user's perception of the application's usability. Each question is answered by checking one out of five checkboxes: checkbox one corresponds to strong disagreement with the statement, the fifth checkbox corresponds to strong agreement with the statement\cite{sauro:2011}. The ten questions are listed in appendix \ref{appendix:sus}.
 
 
-\section{Story board}
 
+\section{Iterations}
 
-\section{Iteration 1: paper prototype}\label{chapter:prototype:section:paper}
+%%%%%%% ITERATION 1
+\subsection{Iteration 1: paper prototype}\label{chapter:prototype:section:paper}
 
 % 6. testen...
 %		+ doel: wat wil je te weten komen?
@@ -128,21 +133,290 @@ There are several standardized questionnaires. The one used for the application 
 %		+ keuze: en rationale
 %		+ herneem die problemen bij volgende iteratie!
 
+\subsubsection{The prototype}\label{chapter:prototype:section:paper:prototype}
+
+The paper prototype that was tested consisted out of a single screen. On this screen a visualization was drawn by hand. A number of copies of this drawing and by changing certain parts of the visualization, transitions within the vsiualization could be mimicked as users interacted with the screen. A selection of these screens are shown in figure \ref{figure:paper_prototype}.
+
+% BEGIN FIGURE : paper prototype
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/paper_prototype_default}
+					\caption{The default visualization with the active users items highlighted.}
+					\label{figure:paper_prototype_default}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/paper_prototype_user_click}
+					\caption{Clicking a user list element.}
+					\label{figure:paper_prototype_user_click}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/paper_prototype_item_click}
+					\caption{Clicking an item node.}
+					\label{figure:paper_prototype_item_click}
+	\end{subfigure}
+	\caption{A selection of the screens used in the user study with paper prototype.}%
+	\label{figure:paper_prototype}%
+\end{figure}
 
 
-\section{Iteration 2: first digital prototype (SoundSuggest 1.x)}\label{chapter:prototype:section:soundsuggest1}
+\subsubsection{Test parameters}\label{chapter:prototype:section:paper:setup}
+
+Five test users were selected that often listen to music. Although they did not necessarily use recommendation systems to actively search for new music, they had a vague impression of what these systems were. Test applicants were between 22 and 26 years of age.
+
+The objective of the test is two-fold:
+
+\begin{enumerate}
+	\item \textbf{Insight}: Verifying whether or not the user can gain insight into the recommendation rationale.
+	\item \textbf{Usability}: Finding out the perceived usability of the application? Discovering usability issues through observation?
+\end{enumerate}
+
+%Each task is related to one of those objectives. ELABORATE
+The list of tasks that were performed by the users is listed in appendix \ref{appendix:tasklists:prototype1}.
+
+
+\subsubsection{Test results}\label{chapter:prototype:section:paper:results}
+
+The first part of the test was aimed at forming a first mental model of the system without interacting with the visualization. When participants were asked to describe what they saw and try to explain the visualization, all of the participants identified the edges as certain relationship between artists. Most of them interpreted the relationship encoded in the edges as a content-based relationship; for example artists that have similar genres are connected.
+
+Blue edges were usually correctly associated with the highlighted active user profile. This insight made one of the users see that the edges represent a co-occurance relationship, i.e., if a user has any set of two items in his/her profile, these items are connected.
+
+If users became aware of the fact that blue nodes and edges corresponded to items that were already owned, item suggestions were easy to point out. In some cases this waited until the second step of the evaluation process where interaction was allowed.
+
+The test users were asked what kind of interactions were possible with the visualization, and what the effects of these actions would be. All of the users listed left mouse clicks. Also dragging and scrolling were suggested by some participants. In that case participants were simply told that this kind of interaction was not supported. They expected to be able to manipulate the edge trajectory by dragging the edges were they wanted. However, clicking an edges is also not supported by the visualization. The effect of clicking a node was usually correctly predicted, although some users did not immediately see that related users would be highlighted as well.
+
+In order to avoid restricting the user to predefined action patterns, the user was relatively free to explore the visualization in the second part of the test. Most participants started by clicking another user's icon and noted the resulting highlights in red in the graph. For one user the tasks in this step were a mere confirmation of the already established mental model. For most users this turned out to be an important moment in adjusting the first model. When alternating between clicking users icons, as well as between artist nodes and artist nodes and user icons the other users were able to correct their model in this step to finally form the correct picture of what the visualization was trying to convey. For two users this took significantly more time than for the other two remaining users.
+
+The understanding of the relationship encoded in the edges, is key to grasping the whole idea behind the visualization. Once this was understood, all users could explain the recommender rationale. Moreover, users were able to point out an item recommendation that was more favourable than another suggestion. For example using the total number of links to the active user profile, the total amount of related users, or a strong connection with a particular favourite item.
+
+
+\subsubsection{Conclusions}\label{chapter:prototype:section:paper:conclusion}
+
+
+In conclusion, one user managed to get the complete mental model correct in the first step of the insight gaining process. The others were able to correct it in the second step. The model helped identifying a particular suggestion as more interesting than an others based on what they learned from the visualization.
+
+% In terms of the usability characteristics, the prototype ...
+
+% terugkoppelen naar usability properties: learnability, Error rate and severity, Efficiency, Satisfaction, Memorability (see future user tests)
+% does the explanation system provide transparency?
+% can users gain insight into the visualization?
 
 
 
 
-\section{Iteration 3: second digital prototype (SoundSuggest 2.x)}\label{chapter:prototype:section:soundsuggest2}
+%%%%%%%% ITERATION 2
+\subsection{Iteration 2: first digital prototype (SoundSuggest 1.x)}\label{chapter:prototype:section:soundsuggest1}
+
+\subsubsection{The prototype}\label{chapter:prototype:section:soundsuggest1:prototype}
+
+% changes from previous iteration
+As the test users were able to discover the recommender rationale using the visualization, and no notable usability had arisen, we started working on the digital prototype. This prototype used static data, but already supported all the use cases listed in appendix \ref{appendix:use_cases}. The resulting prototype can be seen in figure \ref{figure:prototype_soundsuggest1}.
+
+
+% BEGIN FIGURE : hierarchical_edge_bundling
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/prototype_soundsuggest1_default}
+					\caption{The default visualization with the active users items highlighted.}
+					\label{figure:prototype_soundsuggest1_default}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/prototype_soundsuggest1_user_click}
+					\caption{Clicking a user list element.}
+					\label{figure:prototype_soundsuggest1_user_click}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/prototype_soundsuggest1_item_click}
+					\caption{Clicking an item node.}
+					\label{figure:prototype_soundsuggest1_item_click}
+	\end{subfigure}
+	\caption{A selection of the screens used in the user study with the first digital prototype.}%
+	\label{figure:prototype_soundsuggest1}%
+\end{figure}
 
 
 
+\subsubsection{Test parameters}\label{chapter:prototype:section:soundsuggest1:setup}
 
-\section{Iteration 4: third digital prototype (SoundSuggest 3.x)}\label{chapter:prototype:section:soundsuggest3}
+Test users were selected in a similar manner as in the first iteration. Two test users from the previous iteration were tested again, the other three were new test users. The test users that had been tested before, were tested first.
+
+The objective are the same as in iteration one. However, in addition to these objectives we want to find out how successful the transformation from paper to digital prototype had been. Also feedback was asked on a help file that was made for the application.
+
+The tasks remained the same as in the previous iteration. The test users that were tested in the first iteration also were asked if there were any improvements or new issues going from the paper prototype to a digital one. Remarks made by these persons were also presented to the other test users.
 
 
+\subsubsection{Test results}\label{chapter:prototype:section:soundsuggest1:results}
+
+Test users listed the list of neighbours, artist names. Most of them also noted that certain items and edges were coloured blue. One user also immediatelt saw that some of the other users and items did not have this colour and explained that these items corresponded to items recommended by these users. This participant further clarified that he expected that for each neighbour a similar coloured structure would exist as for the highlighted active user. When asked how this helped him understanding the recommendation rationale, the test user explained that these were users that had similar tastes as the active user. Items in these profiles were then candidate recommendations.
+
+The other users did not find the recommendation rationale in the first step. When interacting with visualization however, they were able to tell similar stories. Again, the key to understanding the visualization turns out to be understanding what contextual information is that is encoded in the link between artist nodes. For most users this could be discovered by comparing the neighbour profile with the active user's profile on the graph.
+
+With regard to the first iteration, one particular difficulty was mentioned by both users that tested the paper prototype: in the paper prototype parallel edges were easy to discern, but in the edge-bundling algorithm used, parallel edges will overlap in the resulting visualization. This makes it harder to see the connection between a clicked artist, and the number of neighbours that were highlighted. However, when the new test users were asked if they saw this as a problem, they acknowledged that this could help, but didn't see it as a major improvement. An improvement in the digital prototype was that the smoothness of interactions had of course greatly increased, which made it much easier to compare items and users, according to the test users.
+
+Two users thought that deselecting an item or user should be triggered by clicking somewhere outside the graph as well.
+
+% ---> no surprise that neighbour clicked --> insight, artist click ---> not so much
+
+When asked to add one of the recommendations to the active user profile, all users could give one or more reasons, similar to the first iteration.
+
+The help files should have a table of contents or some sort of overview.
+
+
+\subsubsection{Conclusions}\label{chapter:prototype:section:soundsuggest1:conclusion}
+
+% parallel edge occlusion: previously tested users say it would help, especially to see when two users share a parallel edge - otherwise hard to see which users have what items if overlap, but it is still clear.
+% also, new test users were able to still get the recommender rationale
+
+Overall the going from paper to digital prototype was successful, apart from the issue mentioned earlier. Although it would be interesting if this problem could be solved, users indicated that was not a particular barrier for gaining insight into the recommendation rationale.
+
+Different colours for hovering and selecting, although others thought this wasn't really necessary. Users suggested to add an option to choose between different encodings with an additional legend for the meaning of the different colours. Also options to alter the number of items shown were considered useful additions to the application's functionality.
+
+
+%%%%%%% ITERATION 5
+\subsection{Iteration 3: second digital prototype (SoundSuggest 2.x)}\label{chapter:prototype:section:soundsuggest2}
+
+\subsubsection{The prototype}\label{chapter:prototype:section:soundsuggest2:prototype}
+
+% changes from previous iteration
+The layout from the previous iteration was retained, but this time the visualization was incorporated into a chrome suggestion that could be injected directly into the Last.fm recommendations page, using real data.
+
+An option menu was added with options to alter the data settings, and colour encodings. Data settings that could be answered were the number of recommendations shown, the number of top artists from the active user's profile shown, and the number of neighbours included in the visualization. Another option was to change the threshold. The threshold corresponds to the clustering range of the data collection algorithm. A low threshold value will allow the user to have a link to a certain artist without owning it. Instead the user may own one or more related artists, i.e., the neighbour is required to have a link to an item inside a cluster of items, rather than a particular item.
+
+To solve the problem of deselecting an item, an addional button was added in the menu bar.
+
+\begin{figure}%
+	\begin{center}
+		\includegraphics[width=200px]{img/prototype_soundsuggest2_settings}%
+	\end{center}
+	\caption{The settings menu of the second digital prototype.}%
+	\label{figure:prototype_soundsuggest2_settings}%
+\end{figure}
+
+
+\subsubsection{Test parameters}\label{chapter:prototype:section:soundsuggest2:setup}
+
+Five test subjects were selected that were Last.fm users between the ages of 22 and 26. Three of them were regular users, the other two only used Last.fm occasionally. Two users had tested both the paper and first digital prototype, one other user already had tested the paper prototype.
+
+The objectives of the test remained the same. In addion to the previous objectives the performance of the application was investigated as well. Concerning usability, there were three areas of interest:
+
+\begin{enumerate}
+	\item \textbf{Visualization}: The general usability of the visualization according to new users.
+	\item \textbf{Option menu}: General usability of the options menu.
+	\item \textbf{Chrome extension}: The placement of the application into the Last.fm recommendations page.
+\end{enumerate}
+
+The tasks listed in appendix \ref{appendix:tasklists:prototype2} were used to investigate these areas. Insight by new users could again be tested using the scheme in appendix \ref{appendix:tasklists:prototype1}. To get an idea of the learnablity and memorability of the application, test users from previous iterations were asked to explain the visualization rationale again before the rest of the test.
+
+
+\subsubsection{Test results}\label{chapter:prototype:section:soundsuggest2:results}
+
+When testing insight no notable differences from the previous iteration occurred. The new users also needed interaction with the vsiualization before the recommender rationale could be discovered.
+
+Users from previous iterations were able to recall the visualization rationale from previous sessions, although two of them needed to interact with the visualization before they could remember it accurately.
+
+The settings menu was found by all users when asked to change the number of visualized items and/or users. One of the remarks when changing the data settings, was that the visualization would take long to load. As there were now more edges and nodes, some scalability issues came into play: some users complained that the increased number of edges would create clutter that made it hard to compare profiles.
+
+Another issue that was mentioned was that it was hard to distinguish between recommendations once the test user started hovering over the listed neighbours. A test user from the previous session noted that this was less of a concern in the previous prototype, as the number of nodes much lower.
+
+The threshold option turned out to be very confusing, even with an explanation from the help files. Also, the results of changing the threshold were not visually pleasing either. As soon as the threshold would be over $0.1$, the connectivity dropped and some edges that were previously connected were no longer connected.
+
+When adding a recommendation to the user profile, to see the changes in the profile, the whole page needed to be refreshed instead of just the visualization. Also, if the user would refresh or navigate away from the page, all of the data would have to be reloaded.
+
+
+\subsubsection{Conclusions}\label{chapter:prototype:section:soundsuggest2:conclusion}
+
+Apart from the threshold option, the settings menu posed no notable difficulties. It would probably be better to use a default setting for the threshold, and remove the option from the settings menu altogether. The other options can remain as they are.
+
+If possible, it would be interesting to increase the data load speed.
+
+
+%%%%%%% ITERATION 4
+\subsection{Iteration 4: third digital prototype (SoundSuggest 3.x)}\label{chapter:prototype:section:soundsuggest3}
+
+\subsubsection{The prototype}\label{chapter:prototype:section:soundsuggest3:prototype}
+
+% changes from previous iteration
+
+To reduce issues with clutter, an additional option was added to the settings menu to alter the tension of the edges. This way, the user would be able to alter the layout to a certain extend.
+
+To make it easier to distinguish between recommendations and top artists, the node labels for top artists are underlined in the graph.
+
+A button to refresh the data and update the visualization was added to solve the problem of having to refresh the whole page to have the latest version of the data.
+
+To avoid long waiting times when loading the page, the data that was loaded last was cashed. This way the latest data set could be loaded quickly from local storage. The refresh button can be used to get an up-to-date version of the data.
+
+An example of the resulting visualization is shown in figure \ref{figure:prototype_soundsuggest3}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=250px]{img/prototype_soundsuggest3_click_user_hover_item}
+	\end{center}
+	\caption{The third prototype of the SoundSuggest application. In this figure, the active user hovered an item while one of the users is selected.}
+	\label{figure:prototype_soundsuggest3}
+\end{figure}
+
+
+
+\subsubsection{Test parameters}\label{chapter:prototype:section:soundsuggest3:setup}
+
+Ten test users were selected. Three of these users already had experience with the application based on the previous iteration. Two of the other test users had tested one the first digital prototype. The other test users were new users. All of the test users had some experience with Last.fm or other music recommenders like \emph{Grooveshark}, \emph{Spotify} or \emph{Youtube}. If users didn't have a Last.fm account, they were asked to create one one to two weeks in advance and add their listening habits to their Last.fm profile.
+
+% users: show diagrams with distribution for listening habits, Last.fm usage
+
+For new users insight could again be tested using the tasks in appendix \ref{appendix:tasklists:prototype1}. The tasks listed in appendix \ref{appendix:tasklists:prototype3} were used to test the following explanation system properties: \emph{transparency}, \emph{effectiveness}, \emph{persuasion}, \emph{trust}, and \emph{satisfaction}.
+
+Although \emph{scrutanability}\index{scrutanability} could have been tested by removing undesired recommendations from the list under the visualization, the visualization did not seem to include this information immediately when refreshing the data. It is also not really clear to what extend the information of removed suggestions is included into future recommendations by Last.fm's recommender algorithm.
+
+% Efficiency is not explicitly tested here. For example benchmark tasks ... perceived effeiciency ...  rely on usability
+
+
+\subsubsection{Test results}\label{chapter:prototype:section:soundsuggest3:results}
+
+Previously tested users liked the changes to the visualization. The tension parameter was visually pleasing. Most users liked a tension in the area of $0.45$ to $0.60$. Underlining owned artists made it easier to compare user profiles. One user indicated that simply sorting the artists by recommendation or top artist would make it even easier to distinguish between owned and recommended artists. The fact that the data set was cashed made users much more confident in clicking links, as they didn't had to worry about long loading times.
+
+A problem that remained was the scalability of the graph. When visualizing a total of over 40 recommendations and top artists, loading times not only increase but the density caused by overlapping edges, makes it hard to compare user profiles.
+
+%The refresh button proved useful when adding a new recommendation.
+
+% 1. Find three neighbours that are closely related to you, based on the visualization.
+% 2. Find three recommended artists you think are interesting.
+% 3. Explain the recommendation rationale (transparency).
+% 4. Find a suggestion for an artist you didn't know about.
+%		Would you like to check our this artist's profile and listen one or more songs by this artist (persuasion)?
+%		Do you think the recommender system has made a good suggestion? Would you add it your profile (effectiveness)?
+%		How does it affect your trust in the recommender system (trust)?
+
+All of the test users were able to describe the recommendation rationale. Most of them used a variation on the following: "Last.fm looks for users that have a similar taste based on the active user's favourite artists, i.e., neighbours. Last.fm decides which items owned by these neighbours are interesting for recommendation based on preference by neighbours (top artists) and the total number neighbours that own these items".
+
+From the recommended items most users already knew more or less who these artists were. For some users this would increase trust, as they basically forgot about them when building up listening history. For other users this would actually decrease their trust in the system as they just were not interested in the recommendation. Interestingly Last.fm's own explanation for recommending the item was usually displeasing. Last.fm would justify the recommendation by listing a number of 'similar' artists. Unfortunately, for some categories of artists there exists some bias in the recommendations. For example musicians that have a solo project and also played in a series of different bands lets Last.fm consider these artists as similar. Another example is that artist recommendations for bands and musicians that operate in a country with a less international music scene would be influenced by regional effects. Belgian bands would be considered similar just for beging Belgian to the point were all similar artist pages on the Last.fm website would be Belgian regardless of their genre. Users confirmed that this kind of bias reduces the trust in the recommender system. On the other hand, it was interesting to see that this bias could actually be detected in the visualization as neighbours usually did not have edges going from items in their profile to these 'biased' recommendations.
+
+When users did not know a certain recommendation, most users were interested if the recommendation occurred in one of the neighbouring profiles. In this sense the visualization helped persuade the users check out certain artists. From the six users that checked out an item they did not already know, four of them found at least one item that they liked and added to their profile. When doscovering a new item that they liked, users admitted this significantly increased their trust in the recommender system, even more than when they found an item that they liked but already knew about.
+
+% risk pays of if the result is good!!
+
+
+\subsubsection{Conclusions}\label{chapter:prototype:section:soundsuggest3:conclusion}
+
+One issue that was resolved between the user tests was that the artist names that were used to create CSS \texttt{id} and \texttt{class} names sometimes contained special characters causing the visualization to not function correctly anymore. This was solved by using the hash value of the artist name instead. Although no new iteration was started for this alteration, this may have influenced some of the test results. Overall this only affected two participants.
+
+By letting users choosing the tension parameter themselves, a better default value for the tension would probably be around $0.55$.
+
+In future iterations the problems with overlapping edges should be addressed, for example by decreasing the alpha value of egdes that are not relevant to the selection.
+
+%As trust increases 
+
+Overall, the application scores well based on the user's feedback and it enables users to discover some characteristics of Last.fm's recommender.
 
 
 
