@@ -24,6 +24,8 @@
 \usepackage{rotating}
 \usepackage{float}
 \usepackage{placeins}
+\usepackage{pdfpages}
+\usepackage{nomencl}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DEFINE JavaScript listings
@@ -92,6 +94,10 @@
 
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COVER ENGLISH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % ----------------------- Cover --------------------------------------
 % Please fill in:
 % - The title and subtitle (if applicable)
@@ -122,14 +128,7 @@
 	\fontsize{40}{42}\selectfont \textcolor{bluetitle}{Visualization of music suggestions}\\[1.5mm]
 	\fontsize{20}{22}\selectfont {A visual explanation system for collaborative filtering}
 \end{textblock}
-%
-%\begin{textblock}{82}(50,103)
-%\textblockcolour{}
-%\vspace{-\parskip}
-%\flushleft
-%\fbox{\parbox{79mm}{The background can be left blank or you can insert an image (maximum height 10 cm, width variable, mind author's rights). NO logos (you can use the logos inside the manuscript, but not on front or back cover). \textit{Delete this textbox.}}}
-%\end{textblock}
-%
+
 \begin{textblock}{160}(8,153)
 \textblockcolour{}
 \vspace{-\parskip}
@@ -173,6 +172,80 @@ Academic year 2012-2013
 \vfill
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COVER DUTCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
+\newcommand{\form}[1]{\scalebox{1.087}{\boldmath{#1}}}
+\sffamily
+%
+\begin{textblock}{191}(-24,-11)
+	\colorbox{green}{\hspace{139mm}\ \parbox[c][18truemm]{52mm}{\textcolor{white}{FACULTY OF SCIENCE}}}
+\end{textblock}
+%
+\begin{textblock}{70}(-18,-19)
+	\textblockcolour{}
+	\includegraphics*[height=19.8truemm]{LogoKULeuven}
+\end{textblock}
+%
+\begin{textblock}{160}(-6,63)
+	\textblockcolour{}
+	\vspace{-\parskip}
+	\flushleft
+	\fontsize{40}{42}\selectfont \textcolor{bluetitle}{Visualisatie van muzieksuggesties}\\[1.5mm]
+	\fontsize{20}{22}\selectfont {A visueel uitlegsysteem voor collaboratieve filtering}
+\end{textblock}
+
+\begin{textblock}{160}(8,153)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushright
+\fontsize{14}{16}\selectfont \textbf{Joris SCHELFAUT}
+\end{textblock}
+%
+\begin{textblock}{70}(-6,191)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushleft
+Supervisor: Prof. E. Duval\\[-2pt]
+\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
+Co-supervisor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
+\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
+Mentor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
+\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\
+\end{textblock}
+%
+\begin{textblock}{160}(8,191)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushright
+Thesis presented in\\[4.5pt]
+fulfillment of the requirements\\[4.5pt]
+for the degree of Master of Science\\[4.5pt]
+in Applied Computer Science\\
+\end{textblock}
+%
+\begin{textblock}{160}(8,232)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushright
+Academic year 2012-2013
+\end{textblock}
+%
+\begin{textblock}{191}(-24,248)
+{\color{blueline}\rule{550pt}{5.5pt}}
+\end{textblock}
+%
+\vfill
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 % In case you want to integrate the TeX-file for the titlepage
 % with the rest of your thesis, you cab continue below
 % ------------------------- First pages ---------------------------
@@ -182,13 +255,11 @@ Academic year 2012-2013
 \setcounter{page}{0}
 \pagenumbering{roman}
 
-% Voorwoord: Hierin moet het algemene doel van het werk samengevat worden. Verder dient iedereen die heeft bijgedragen hier bedankt te worden.
-
-% Korte samenvatting (max. 2 pagina’s): Hierin dienen de belangrijkste doelstellingen en conclusies van de masterproef samengevat worden, in het Nederlands en in het Engels.
+\include{tex/chapter_foreword}
+\include{tex/chapter_summary}
 
 % Lijst van afkortingen en lijst van symbolen: Hierin staan de belangrijkste afkortingen en symbolen die gebruikt worden in de masterproef, met hun betekenis en eenheid.
-
-
+\makenomenclature
 
 \newpage
 % Inhoud: Een overzicht van de inhoud moet ordelijk worden weergegeven met referentie naar de correctie paginanummers (maximum drie subniveaus). Alle pagina’s vóór hoofdstuk 1 dienen genummerd te worden met Romeinse cijfers (I, II, …). Vanaf hoofdstuk 1 gebeurt de nummering met Arabische cijfers (1, 2, …).
@@ -257,14 +328,14 @@ Academic year 2012-2013
 
 \input{tex/appendix_usecases}
 
-% SUS questionnaire questions
-\input{tex/appendix_sus}
-
 % Questions for the user tests for each iteration
 \input{tex/appendix_tasklists}
 
 % The statistics of the social media usage
 \input{tex/appendix_quantifiedself}
+
+\chapter{Scientific article}
+\includepdf[pages={1-9}]{pdf/scientific_article}
 
 
 \newpage
