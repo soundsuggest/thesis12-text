@@ -1,5 +1,8 @@
 \chapter{Introduction}\label{chapter:introduction}
 
+\nomenclature{Fig.}{Figure}
+\nomenclature{$A_i$}{Area of the $i^{th}$ component}
+
 % CONTENTS :
 % 	Een situering van het onderwerp in een ruimere context. Dit kan, al naar gelang het onderwerp, vrij ver gaan: situering binnen het vakdomein, situering binnen de maatschappelijke evolutie, raakvlakken met andere disciplines,...
 % 	Een beknopt historisch overzicht van de evolutie van het onderwerp.
@@ -8,15 +11,15 @@
 % 	De doelstellingen van de masterproef.
 % 	Een overzicht van de verschillende hoofdstukken
 
-Music catalogues for online retail have become immense over the past decades. In 2013 the iTunes music catalogue was comprised of over 26 million tracks with users downloading over 25 billion songs\cite{itunes:2013:sales}. Today virtually anyone can create music and upload it to a music database such as \emph{bandcamp}\footnote{\url{https://bandcamp.com/}}, \emph{iTunes}\footnote{\url{http://www.apple.com/itunes/}}, or \emph{Last.fm}\footnote{\url{http://www.last.fm/}}\cite{bandcamp:2013:artists, itunes:2013:sales, lastfm:2012:home}. Well-known artists and tracks make up a very small portion of this item space, which is known as the \emph{Long-tail phenomenon}\cite{levy:2010}. As a result, finding new, interesting music has become a challenging task. \emph{Recommender systems} try alleviate this problem by filtering the item repository based on a user's music taste. Taste can be modelled by analyzing user preferences and tracking user behaviour, e.g., by analyzing a user's listening history\cite{lastfm:2012:home}.
+Music catalogues for online retail have become immense over the past decades. In 2013 the iTunes music catalogue was comprised of over 26 million tracks with users downloading over 25 billion songs\cite{itunes:2013:sales}. Today virtually anyone can create music and upload it to a music database such as \emph{bandcamp}\footnote{\url{https://bandcamp.com/}}, \emph{iTunes}\footnote{\url{http://www.apple.com/itunes/}}, or \emph{Last.fm}\footnote{\url{http://www.last.fm/}}\cite{bandcamp:2013:artists, itunes:2013:sales, lastfm:2012:home}. Well-known artists and tracks make up a very small portion of this item space, which is known as the \emph{Long-tail phenomenon}\cite{levy:2010}. As a result, finding new, interesting music has become a challenging task. \emph{Recommender systems} try alleviate this problem by filtering the item repository based on a user's music taste. Taste can be modelled by analyzing user preferences and tracking user behaviour, e.g., by analyzing a user's listening history\cite{song:2012}.
 
 Ever since computer engineers started to develop this kind of systems, a wide range of algorithms have been designed and implemented to compute item recommendations\cite{burke:2002, melville:2002:CCF:777092.777124, pazzani:2007:CRS:1768197.1768209, rajaraman:2012}; each of them with their own advantages and disadvantages.
 
 There are two commonly applied recommendation strategies\cite{rajaraman:2012}:
 
 \begin{itemize}
-	\item \textbf{Content-based filtering (CBF)}: Using chosen or modelled features of items to define similarity between items in the user profile and candidate suggestions;
-	\item \textbf{Collaborative filtering (CF)}: Using overlap of item sets of each user profile to find possible suggestions in the difference of these item sets.
+	\item \textbf{Content-based filtering (CBF)\nomenclature{CBF}{Content-based filtering}}: Using chosen or modelled features of items to define similarity between items in the user profile and candidate suggestions;
+	\item \textbf{Collaborative filtering (CF)\nomenclature{CF}{Collaborative filtering}}: Using overlap of item sets of each user profile to find possible suggestions in the difference of these item sets.
 \end{itemize}
 
 Although recommender systems have proven to be successful in terms of prediction accuracy, the success of a recommender system also relies on the trust in its recommendations by the end user. If the user does not know why a particular item is recommended to him, the user may be reluctant to check it out. Herlocker et al. \cite{herlocker:2000} describe this issue as the \emph{black box problem}. To improve acceptance of recommendations, they propose to build an explanation system presenting the user with a \emph{white box model} of the recommender system rationale.

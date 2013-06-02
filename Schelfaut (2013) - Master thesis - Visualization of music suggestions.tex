@@ -88,9 +88,9 @@
 \setlength{\TPVertModule}{1mm}
 
 % ---------------------------- index ---------------------------------
-%
-% --------------------------------------------------------------------
 \makeindex
+% ------------------------- nomenclature -----------------------------
+\makenomenclature
 
 \begin{document}
 
@@ -136,16 +136,18 @@
 \fontsize{14}{16}\selectfont \textbf{Joris SCHELFAUT}
 \end{textblock}
 %
-\begin{textblock}{70}(-6,191)
+\begin{textblock}{90}(-6,181)
 \textblockcolour{}
 \vspace{-\parskip}
 \flushleft
-Supervisor: Prof. E. Duval\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
-Co-supervisor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
-Mentor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\
+Supervisor: Prof. dr. ir. E. Duval\\[-2pt]
+\textcolor{blueaff}{Affiliation \textsl{KU Leuven Department of Computer Science}}\\[5pt]
+Co-supervisor: \textsl{Dr. J. Klerkx}\\[-2pt]
+\textcolor{blueaff}{Affiliation \textsl{KU Leuven Department of Computer Science}}\\[5pt]
+Co-supervisor: \textsl{Prof. dr. K. Verbert}\\[-2pt]
+\textcolor{blueaff}{Affiliation \textsl{Technische Universiteit Eindhoven Department of Information Systems WSK\&I}}\\[5pt]
+Mentor: \textsl{Dr. J. Klerkx}\\[-2pt]
+Co-mentor: \textsl{Prof. dr. K. Verbert}\\[-2pt]
 \end{textblock}
 %
 \begin{textblock}{160}(8,191)
@@ -155,7 +157,7 @@ Mentor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
 Thesis presented in\\[4.5pt]
 fulfillment of the requirements\\[4.5pt]
 for the degree of Master of Science\\[4.5pt]
-in Applied Computer Science\\
+in Applied Informatics\\
 \end{textblock}
 %
 \begin{textblock}{160}(8,232)
@@ -172,6 +174,8 @@ Academic year 2012-2013
 \vfill
 \newpage
 
+% Dissertation presented in fulfillment of the requirements for the degree of Master of Science in Applied Informatics
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COVER DUTCH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,7 +185,7 @@ Academic year 2012-2013
 \sffamily
 %
 \begin{textblock}{191}(-24,-11)
-	\colorbox{green}{\hspace{139mm}\ \parbox[c][18truemm]{52mm}{\textcolor{white}{FACULTY OF SCIENCE}}}
+	\colorbox{green}{\hspace{139mm}\ \parbox[c][18truemm]{52mm}{\textcolor{white}{FACULTEIT WETENSCHAPPEN}}}
 \end{textblock}
 %
 \begin{textblock}{70}(-18,-19)
@@ -204,26 +208,28 @@ Academic year 2012-2013
 \fontsize{14}{16}\selectfont \textbf{Joris SCHELFAUT}
 \end{textblock}
 %
-\begin{textblock}{70}(-6,191)
+\begin{textblock}{90}(-6,181)
 \textblockcolour{}
 \vspace{-\parskip}
 \flushleft
-Supervisor: Prof. E. Duval\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
-Co-supervisor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\[5pt]
-Mentor: \textsl{J. Klerkx}, \textsl{K. Verbert}\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{(optional)}}\\
+Promotor: Prof. dr. ir. E. Duval\\[-2pt]
+\textcolor{blueaff}{Affiliatie \textsl{KU Leuven Department of Computer Science}}\\[5pt]
+Co-promotor: \textsl{Dr. J. Klerkx}\\[-2pt]
+\textcolor{blueaff}{Affiliatie \textsl{KU Leuven Department of Computer Science}}\\[5pt]
+Co-promotor: \textsl{Prof. dr. K. Verbert}\\[-2pt]
+\textcolor{blueaff}{Affiliatie \textsl{Technische Universiteit Eindhoven Department of Information Systems WSK\&I}}\\[5pt]
+Begeleider: \textsl{Dr. J. Klerkx}\\[-2pt]
+Begeleider: \textsl{Prof. dr. K. Verbert}\\[-2pt]
 \end{textblock}
 %
 \begin{textblock}{160}(8,191)
 \textblockcolour{}
 \vspace{-\parskip}
 \flushright
-Thesis presented in\\[4.5pt]
-fulfillment of the requirements\\[4.5pt]
-for the degree of Master of Science\\[4.5pt]
-in Applied Computer Science\\
+Proefschrift ingediend\\[4.5pt]
+tot het behalen van\\[4.5pt]
+de graad van Master of Science\\[4.5pt]
+in de Toegepaste Informatica\\
 \end{textblock}
 %
 \begin{textblock}{160}(8,232)
@@ -257,13 +263,33 @@ Academic year 2012-2013
 
 \include{tex/chapter_foreword}
 \include{tex/chapter_summary}
+\include{tex/chapter_samenvatting}
 
-% Lijst van afkortingen en lijst van symbolen: Hierin staan de belangrijkste afkortingen en symbolen die gebruikt worden in de masterproef, met hun betekenis en eenheid.
-\makenomenclature
+\newpage
+%% List of acronyms
+%% ----------------
+%\printnomenclature
 
 \newpage
 % Inhoud: Een overzicht van de inhoud moet ordelijk worden weergegeven met referentie naar de correctie paginanummers (maximum drie subniveaus). Alle pagina’s vóór hoofdstuk 1 dienen genummerd te worden met Romeinse cijfers (I, II, …). Vanaf hoofdstuk 1 gebeurt de nummering met Arabische cijfers (1, 2, …).
 \tableofcontents
+
+%% The List of Figures
+%% -------------------
+\clearpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+%% The List of Tables
+%% ------------------
+\clearpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+
+% Lijst van afkortingen en lijst van symbolen: Hierin staan de belangrijkste afkortingen en symbolen die gebruikt worden in de masterproef, met hun betekenis en eenheid.
+
+
 
 \newpage
 % -------------------------- Proper text --------------------------
@@ -300,18 +326,6 @@ Academic year 2012-2013
 \bibliographystyle{abbrv}
 \bibliography{bib/references}
 
-
-%% The List of Figures
-%% -------------------
-\clearpage
-\addcontentsline{toc}{chapter}{List of Figures}
-\listoffigures
-
-%% The List of Tables
-%% ------------------
-\clearpage
-\addcontentsline{toc}{chapter}{List of Tables}
-\listoftables
 
 %% Index
 %% -----

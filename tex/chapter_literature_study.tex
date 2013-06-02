@@ -50,7 +50,7 @@ Many of these properties are closely related, as diverse recommendations that ha
 
 \subsection{A classification of recommendation algorithms}\label{chapter:literature_study:section:computer:subsection:algorithms}
 
-Based on classifications presented in \cite{burke:2002} and \cite{celma:2008:phd}, a categorization of different types of recommendation strategies can be identified. We will only discuss the two most prominent ones, namely collaborative filtering (CF)\index{recommendation algorithm!collaborative filtering} and content-based filtering (CB)\index{recommendation algorithm!content-based filtering}\cite{herlocker:2000, rajaraman:2012}, and list some hybrid strategies. In the literature on recommender systems other general approaches that are commonly identified, are utility-based filtering, knowledge-based filtering, demographic filtering, and expert-based filtering\cite{burke:2002, bostandjiev:2012}.
+Based on classifications presented in \cite{burke:2002} and \cite{celma:2008:phd}, a categorization of different types of recommendation strategies can be identified. We will only discuss the two most prominent ones, namely collaborative filtering (CF)\index{recommendation algorithm!collaborative filtering} and content-based filtering (CB)\index{recommendation algorithm!content-based filtering}\cite{herlocker:2000, rajaraman:2012}, and list some hybrid strategies. In the literature on recommender systems other general approaches that are commonly identified, are utility-based filtering, knowledge-based filtering, demographic filtering, and expert-based filtering\cite{bostandjiev:2012, burke:2002, song:2012}.
 
 
 \subsubsection{Collaborative recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cf}
@@ -69,8 +69,6 @@ For CF-based recommendation\index{CF|see{collaborative filtering}}, there are tw
 
 % Similarity / distance functions ...
 In order to calculate the blanks, there is a variety of similarity functions that has been developed over the years. Often some sort of distance function is used to compute distance between profile vectors. If the distance is small, profiles will most likely have a high similarity\cite{rajaraman:2012}. The discussion of the mathematics behind each of the algorithms is beyond the scope of this thesis.
-
-Last.fm is an example of a music recommender system that is based on the collaborative filtering approach\cite{levy:2010}.
 
 
 \subsubsection{Content-based recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}
@@ -92,7 +90,10 @@ Mathematical models for music also allow for feature extraction. Algorithms have
 
 \emph{Hybrid filtering}\index{hybrid filtering} combines two or more recommendation algorithms\cite{burke:2002}. In \cite{burke:2002} a number of hybrid recommendation strategies are discussed. Robin Burke lists seven different approaches for combining recommendation algorithms. Each of these combinations also has its advantages and disadvantages. Not necessarily all combinations will be successful, and not all of them have been implemented\cite{burke:2002}.
 
-Based on the discussion in this paper by Robin Burke \cite{burke:2002}, hybrid systems for music recommendation can be built that use both collaborative filtering approaches and content-based approaches. For example Bostandjiev et al. \cite{bostandjiev:2012} have built a music recommender\index{TasteWeights} that uses Wikipedia, a content-based source, Facebook, a collborative source, and Twitter, an expert-based source.
+A good hybrid model is likely to outperform any single approach, as weaknesses of one strategy may be cancelled out by the advantages of another\cite{song:2012}.
+
+%Hybrid systems for music recommendation can be built that use both collaborative filtering approaches and content-based approaches.
+
 
 
 \subsection{Challenges for recommender systems}\label{chapter:literature_study:section:computer:subsection:challenges}
@@ -118,7 +119,7 @@ A problem that is typical of collaborative filtering is the 'gray sheep problem'
 
 \subsubsection{Black box}
 
-Another issue with recommendation systems is that these system often appear as 'black boxes' towards the end user\index{black box}. The complexity of the algorithms used, prevents the user from understanding the recommendation rationale\cite{zhao:2010}. This problem decreases the acceptance by the user of item suggestions. One of the solutions for this problem, proposed by Herlocker et al. in \cite{herlocker:2000}, is to provide an explanation system, i.e., the white box\index{white box}, on top of the recommender system that explains the recommendation process. This can be done through providing a transcript of the system's reasoning or through visualizations\cite{herlocker:2000}.
+Another issue with recommendation systems is that these system often appear as 'black boxes' towards the end user\index{black box}. The complexity of the algorithms used, prevents the user from understanding the recommendation rationale\cite{zhao:2010}. This problem may decrease the acceptance by the user of item suggestions. One of the solutions for this problem, proposed by Herlocker et al. in \cite{herlocker:2000}, is to provide an explanation system, i.e., the white box\index{white box}, on top of the recommender system that explains the recommendation process. This can be done through providing a transcript of the system's reasoning or through visualizations\cite{herlocker:2000}.
 
 In this thesis we will focus mainly on this problem in the context of collaborative music recommendation. We will try design, implement and test a new visual explanation system in an effort to overcome this problem.
 
@@ -127,7 +128,40 @@ In this thesis we will focus mainly on this problem in the context of collaborat
 
 %A number of popular recommender systems for music exist. For example Last.fm, Spotify, Grooveshark, Deezer are specifically aimed at music recommendation, but also websites such as Facebook, Youtube, and Amazon have can provide recommendation for music. Most of these systems use collaborative filtering, sometimes in combination with content-based features.
 
+\subsubsection{Examples}
+
 A number of popular recommender systems for music exist, such as \emph{Last.fm}\footnote{\url{http://www.last.fm/}}, \emph{Spotify}\footnote{\url{http://www.spotify.com/}}, \emph{Grooveshark}\footnote{\url{http://www.grooveshark.com/}}, \emph{Deezer}\footnote{\url{http://www.deezer.com/}}, \emph{Tastekid}\footnote{\url{http://www.tastekid.com/}}, \emph{Pandora}\footnote{\url{http://www.pandora.com/}} and so on.
+
+\emph{Last.fm} is an example of a music recommender system that is based on the collaborative filtering\cite{levy:2010}, although it uses additional content-based approaches as well\cite{song:2012}. Also \emph{Pandora}, \emph{Allmusic}\footnote{\url{http://www.allmusic.com}} and \emph{Shazam}\footnote{\url{http://www.shazam.com}} use hybrid approaches\cite{song:2012}.
+
+Bostandjiev et al. \cite{bostandjiev:2012} have built a music recommender\index{TasteWeights} that uses \emph{Wikipedia}\footnote{\url{http://www.wikipedia.org/}}, a content-based source, \emph{Facebook}\footnote{\url{https://www.facebook.com/}}, a collaborative source, and \emph{Twitter}, an \emph{expert-based!recommender algorithm}\index{expert-based!recommender algorithm} or \emph{context-based}\index{context-based} source.
+
+\subsubsection{Profile generation}
+
+One of the difficulties for any recommendation algorithm is the modeling of good user and item profiles. Song et al. \cite{song:2012} list several approaches for music recommendation.
+
+A typical \emph{user profile} exists out of two types of data: a collection of demographic, geographic and/or psychologic data, and user listening experience\cite{song:2012}.
+
+As music libraries are often constantly changing, as new music is added to the user profile, listening patterns change and listening history is updated. As a result, music recommenders should be able to address this kind of \emph{dynamic evolvement}\index{dynamic evolvement}\cite{song:2012}. For example, \emph{Last.fm} deals with this problem through their \emph{Scrobbler}, which tracks the user's listening history through various media players\cite{lastfm:2013:scrobbling}.
+
+In \cite{song:2012} three types of data are associated with \emph{item profiles}:
+
+\begin{itemize}
+	\item \textbf{Editorial metadata} (EM)\nomenclature{EM}{editorial metadata}: for example composer, performing artist, title, genre, cover art, et cetera.
+	\item \textbf{Cultural metadata (CM)}\nomenclature{CM}{cultural metadata}: data obtained from analysis of text-based sources, enabling a categorization of music; for example tag-based feature extraction as described in section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}.
+	\item \textbf{Acoustic metadata (AC)}\nomenclature{AM}{acoustic metadata}: data directly obtained from analysis of audio signals; for example wavelet-based approaches described section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}.
+\end{itemize}
+
+As described in section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}, item profiles can be used for content-based item recommendation.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -154,9 +188,9 @@ Information visualization\index{information visualization}\index{infovis|see{inf
 \emph{Tables of data} consist out of rows, representing items, and columns, representing the data dimensions, or 'attributes'. The number of dimensions is referred to as the dimensionality\index{dimensionality} of the data set\cite{keim:2002}. There are three different kinds of dimensions, namely\cite{shirley:2009}:
 
 \begin{itemize}
-	\item \textbf{Quantitative}: numerical data on which arithmetic can be applied. For example playcount of a particular track, the duration of a track, the number of artists that two users have in common, et cetera.
+	\item \textbf{Quantitative}: numerical data on which arithmetic can be applied. For example playcount of a particular track, the duration of a track, the number of artists that two users have in common, et cetera. Quantative data occurs in all kinds of music and user metadata.
 	\item \textbf{Ordered}: an enumeration that has a definite order. For example ratings such as 'good', 'average', and 'bad'.
-	\item \textbf{Categorical}: data that has no specific ordering, and is distinguished by name only. For example composer names, band members, artist tracks, users who like a particular item, et cetera.
+	\item \textbf{Categorical}: data that has no specific ordering, and is distinguished by name only. For example composer names, band members, artist tracks, users who like a particular item, et cetera. Most editorial and cultural metadata can be considered categorical.
 \end{itemize}
 
 In the utility matrix each column corresponds to an item and a row to a user. The entries of this matrix are typically quantitative data, while item and user names are categorical data.
@@ -604,11 +638,81 @@ Based on this algorithm, we can make an estimation of the efficiency by which th
 
 In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Five different applications are discussed: \emph{PeerChooser}\index{PeerChooser}, \emph{Pharos}\index{Pharos}, \emph{SFVis}\index{SFVis}, \emph{SmallWorlds}\index{SmallWorlds}, and \emph{TasteWeights}\index{TasteWeights}.
 
-Next a comparison is made between these systems, based on a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}.
+First we will give an overview of a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}. Before going into detail, a general comparison of these systems is made, based on the previously mentioned aims.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMPARATIVE STUDY
+%% -----------------
+%%
+%% Based on :
+%%		* properties
+%%		* visualization techniques
+%%		* tintarev criteria
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comparing visual explanation systems for item recommendation}
+
+%%% ELABORATE !!!!!!!!!!!!!!!!!!
+
+To compare explanation systems, Tintarev and Masthoff \cite{tintarev:2007:SER:1547550.1547664} identified a set of aims for explanation systems. Table \ref{table:explanation:aims} gives an overview of these aims.
+
+Tintarev and Masthoff explain that some of these aims are hard to reconcile. For example, a system that focuses on persuasion and efficiency, is likely to score poorly for effectiveness, as the user may be quicker to try something he/she may not like. As a result they indicate that the performance for these metrics depends on the overall system goal\cite{tintarev:2007:SER:1547550.1547664}.
+
+Table \ref{table:comparison:aims} shows which of the characteristics described by Tintarev and Masthoff, were pursued for each of the explanation systems. All of the presented systems aim to provide transparency into the recommender system through a visualization. However, four out of the five systems listed here, allowed the user to make changes to the recommendation process, adding scrutability. Persuasiveness is a measure that was not explicitely covered in these studies. Most of the studies tried to find out if the recommendations found, using the visualization, were effective. Also satisfaction, trust and effciency were evaluated in some of the studies.
+
+\begin{center}
+	\begin{table}%
+	\caption{A comparison of the visual explanation systems, based on the criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.}
+		\begin{center}
+			\begin{tabular}{l | l l l l l l l }
+				\hline
+											&	\begin{sideways}Transparency\end{sideways} 
+											& \begin{sideways}Scrutability\end{sideways} 
+											& \begin{sideways}Trust\end{sideways} 
+											& \begin{sideways}Effectiveness\end{sideways} 
+											& \begin{sideways}Persuasiveness\end{sideways} 
+											& \begin{sideways}Efficiency\end{sideways} 
+											& \begin{sideways}Satisfaction\end{sideways}  \\
+				\hline
+										%	&	t & s	& t &	e	& p	& e	& s
+				PeerChooser		&	x &	x	&		&	x	& 	& 	& x	\\
+				Pharos				&	x	&		&	x	&		& 	& 	&  	\\
+				SFVis					&	x &	x	&		&		& 	& 	&  	\\
+				SmallWorlds		&	x	&	x	&		&	x	& 	& 	& x	\\
+				TasteWeights	&	x &	x	&	x	&	x	& 	& x	&  	\\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		\label{table:comparison:criteria}
+	\end{table}
+\end{center}
+
+The objectives for the SoundSuggest application with respect to Tintarev and Masthoff's aims are listed in table \ref{table:soundsuggest:aims}.
+
+\begin{center}
+	\begin{table}%
+	\caption{The objectives for the SoundSuggest application with respect to Tintarev and Masthoff's aims.}
+		\begin{center}
+			\begin{tabular}{l l l l l l l }
+				\hline
+				Tra. & Scr. & Trust & Efk. & Pers. & Efc. & Sat.  \\
+				\hline
+				%	&	t & s	& t &	e	& p	& e	& s
+				x &		&	x	&	x	& x	& x	& x	\\
+				\hline
+			\end{tabular}
+		\end{center}
+		\label{table:soundsuggest:aims}
+	\end{table}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% APPLICATIONS
+
+%% Give a detailed description of how each study tries to address the "aims" as listed in the previously given table !!!!!
 
 % PEERCHOOSER
 \subsection{PeerChooser}\label{chapter:survey:section:applications:subsection:peerchooser}
@@ -744,63 +848,6 @@ Figure \ref{figure:tasteweights} shows the corresponding visual representation o
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% COMPARATIVE STUDY
-%% -----------------
-%%
-%% Based on :
-%%		* properties
-%%		* visualization techniques
-%%		* tintarev criteria
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparing visual explanation systems for item recommendation}
-
-%%% ELABORATE !!!!!!!!!!!!!!!!!!
-
-To compare explanation systems, Tintarev and Masthoff developed a set of measures to evaluate and compare explanation systems. They list the following criteria \cite{tintarev:2007:SER:1547550.1547664}:
-
-\begin{itemize}
-	\item \textbf{Transparency}: Explain how the system works;
-	\item \textbf{Scrutability}: Allow users to tell the system is wrong;
-	\item \textbf{Trust}: Increase users' confidence in the system;
-	\item \textbf{Effectiveness}: Help users make good decisions;
-	\item \textbf{Persuasiveness}: Convince users to try or buy;
-	\item \textbf{Efficiency}: Help users make decisions faster;
-	\item \textbf{Satisfaction}: Increase the ease of usability or enjoyment.
-\end{itemize}
-
-Table \ref{table:comparison:criteria} gives an overview of the performance of each visual explanation system based on the criteria listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}. All of the presented systems aim to provide transparency into the recommender system through a visualization. Although some of the systems allow the user to alter the recommender settings, none of the systems had an option to explicitely discard recommendations. However, three of the five systems listed here, allowed the user to make changes to the recommendation process. Persuasiveness is a measure that was not explicitely covered in these studies. Most of the studies tried to find out if the recommendations found, using the visualization, were effective. Also satisfaction, trust and effciency were evaluated in some of the studies.
-
-\begin{center}
-	\begin{table}%
-	\caption{A comparison of the visual explanation systems, based on the criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.}
-		\begin{center}
-			\begin{tabular}{l | l l l l l l l }
-				\hline
-											&	\begin{sideways}Transparency\end{sideways} 
-											& \begin{sideways}Scrutability\end{sideways} 
-											& \begin{sideways}Trust\end{sideways} 
-											& \begin{sideways}Effectiveness\end{sideways} 
-											& \begin{sideways}Persuasiveness\end{sideways} 
-											& \begin{sideways}Efficiency\end{sideways} 
-											& \begin{sideways}Satisfaction\end{sideways}  \\
-				\hline
-										%	&	t & s	& t &	e	& p	& e	& s
-				PeerChooser		&	x &	x	&		&	x	& 	& 	& x	\\
-				Pharos				&	x	&		&	x	&		& 	& 	&  	\\
-				SFVis					&	x &		&		&		& 	& 	&  	\\
-				SmallWorlds		&	x	&	x	&		&	x	& 	& 	& x	\\
-				TasteWeights	&	x &	x	&	x	&	x	& 	& x	&  	\\
-				\hline
-			\end{tabular}
-		\end{center}
-		
-		\label{table:comparison:criteria}
-	\end{table}
-\end{center}
-
-
 
 
 
