@@ -1,17 +1,8 @@
 \chapter{Conclusion and future work}\label{chapter:conclusion}
 
-% CONTENTS :
-% Geef een overzicht van het door jou geleverde werk. Zorg dat het duidelijk is wat je eigen inbreng is en wat je elders gevonden hebt.
-% Vergelijk de oorspronkelijke doelstelling met wat je bereikt hebt.
-% Vermeld de belangrijkste problemen die je had bij het verwezenlijken van die doelstellingen.
-% Wees kritisch en geef de voor- en nadelen van jouw oplossing en vergelijk je bekomen resultaat met beschikbare alternatieven.
-% Geef aan welke uitbreidingen en verﬁjningen je nog zou kunnen/willen doen als je er de tijd voor had.
-% 	FUTURE WORK
-% 		visualization of content-based recommendation:
-%			distance functions of feature vectors in a spatial map
-%				...
-% 		using this thesis as a starting point with visualization, sensemaking, etc. in literature study
-%			using the whitebox in another context than music recommendation
+% (1) de voornaamste bijdragen van de thesis proberen voor te stellen, (2) de doelstellingen herhalen en beschrijven in welke mate je deze doelstellingen gehaald hebt, (3) tekortkomingen van jouw werk en opportuniteiten voor toekomstig onderzoek en eventueel (4) een reflectie toevoegen: bijvoorbeeld als je opnieuw mocht beginnen wat zou je dan anders doen, wat heb je geleerd, etc.
+
+% overview (geen subsection)
 
 In the literature we discussed recommender systems, the general context for recommender systems. We also listed general properties of recommender systems, described three recommendation approaches, and listed typical issues and shortcomings of recommender systems. One of these issues is the black box problem for which the end user fails to gain insight into the recommendation process and as a result may have little trust in its recommendations. To solve this problem an explanation system can be used that explains the recommendation rationale.
 
@@ -25,13 +16,44 @@ Chapter \ref{chapter:requirements} investigated the target users, possbile scena
 
 In chapter \ref{chapter:prototype} we looked at the different design and evaluation methods. The second part of this chapter described four different iterations in which a total of 15 test users observed while testing and evaluating the application. Between each iteration the detected usability issues were addressed and tested in the next. All the test users gained insight into the recommendation process and were able explain the recommendation rationale.
 
+\section{Thesis objective}
+
 As a result, the SoundSuggest explanation system provides \emph{transparency} into the Last.fm recommendation process. The explanations did not always increase system \emph{trust}, but could give an indication of recommender system bias, as poor recommendations were often not connected to the user's top neighbours.
 
 The objective that was could not be reached was to enable users to actively steer the recommendation process. This is due to the fact that the Last.fm API did not support this functionality. Of course an alternative could have been to make use of other methods in the API to construct our own custom recommender system, but we have chosen to explain the artist recommendations made by the actual Last.fm recommender instead. Another possibility could have been to use another recommender system altogether, but from the systems that were investigated, no significant additional functionality was discovered that could have overcome these issues.
 
+
+\section{Future work}
+
 Future work may include addressing problems with visual clutter, and slow data load. Also, the visual explanation system could be tested using other data sets and collaborative recommendation systems. Another possibility is to increase the interaction possibilities. For example by allowing interaction with edges the user could dig deeper into the relationship between artists and the corresponding users.
 
 For future user tests, Last.fm users could be given a pre-test questionnaire to evaluate the Last.fm recommender and its explanations. Such a benchmark could have proven useful in understanding the usefulness of the application.
+
+
+\section{Personal reflection}
+
+
+
+
+
+
+% CONTENTS :
+% Geef een overzicht van het door jou geleverde werk. Zorg dat het duidelijk is wat je eigen inbreng is en wat je elders gevonden hebt.
+% Vergelijk de oorspronkelijke doelstelling met wat je bereikt hebt.
+% Vermeld de belangrijkste problemen die je had bij het verwezenlijken van die doelstellingen.
+% Wees kritisch en geef de voor- en nadelen van jouw oplossing en vergelijk je bekomen resultaat met beschikbare alternatieven.
+% Geef aan welke uitbreidingen en verﬁjningen je nog zou kunnen/willen doen als je er de tijd voor had.
+% 	FUTURE WORK
+% 		visualization of content-based recommendation:
+%			distance functions of feature vectors in a spatial map
+%				...
+% 		using this thesis as a starting point with visualization, sensemaking, etc. in literature study
+%			using the whitebox in another context than music recommendation
+
+
+
+
+
 
 
 
