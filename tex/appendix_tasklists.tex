@@ -2,7 +2,7 @@
 
 \section{Task list 1: testing insight and usability}\label{appendix:tasklists:prototype1}
 
-The user is given some context, i.e., the user knows he/she is using a recommender system to find new music and he/she has a number artists in his/her artist library.
+First the user is given some context, i.e., the user knows he/she is using a recommender system to find new music and he/she has a number artists in his/her artist library. Next tasks \ref{table:task:t1}, \ref{table:task:t2} and \ref{table:task:t3} are performed.
 
 \begin{table}
 	\caption{Task 1.1: hypothesis generation, no interaction allowed.}
@@ -62,10 +62,10 @@ The user is given some context, i.e., the user knows he/she is using a recommend
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
 		\textbf{Goal/Output}			& \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
+		\textbf{Inputs}						& See table \ref{table:task:t1}. \\
+		\textbf{Assumptions}			& See table \ref{table:task:t1}. \\
+		\textbf{Steps}						& The user clicks an artist of his/her choice. The user clicks \emph{Add to library} and confirms his/her action. The item is added to the profile and the visualization refreshes. \\
+		\textbf{Estimated time} 	& $1$ to $5$ minutes. \\
 		\textbf{Instructions}			&
 		Add an item to your profile. Answer the following questions:
 		\begin{enumerate}
@@ -90,11 +90,11 @@ Tables \ref{table:task:t4}, \ref{table:task:t5}, and \ref{table:task:t6} give an
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
 		\textbf{Goal/Output}			& The number of displayed recommendations in the graph has changed. \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
-		\textbf{Instructions}			& \\
+		\textbf{Inputs}						& The user has a \emph{Last.fm} account. The user has authorized the application. \\
+		\textbf{Assumptions}			& The user is logged in. The user has navigated to the recommendations page and the vsiualization has loaded. \\
+		\textbf{Steps}						& Click the \emph{Settings} button and alter the slider for the number of recommendations. Click \emph{Save}. \\
+		\textbf{Estimated time} 	& Less than a minute. \\
+		\textbf{Instructions}			& Change the number of shown recommendations up to $20$. \\
 		\hline
 	\end{tabular}
 	\label{table:task:t4}
@@ -105,12 +105,12 @@ Tables \ref{table:task:t4}, \ref{table:task:t5}, and \ref{table:task:t6} give an
 	\caption{Task 2.2: Change the threshold to $0.3$.}
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
-		\textbf{Goal/Output}			& \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
-		\textbf{Instructions}			& \\
+		\textbf{Goal/Output}			& The threshold used to cluster items has changed, which will affect the connectivity of the graph. \\
+		\textbf{Inputs}						& See table \ref{table:task:t4}. \\
+		\textbf{Assumptions}			& See table \ref{table:task:t4}. \\
+		\textbf{Steps}						& Click the \emph{Settings} button and alter the slider for the threshold. Click \emph{Save}. \\
+		\textbf{Estimated time} 	& Less than a minute. \\
+		\textbf{Instructions}			& Change the threshold to $0.3$. \\
 		\hline
 	\end{tabular}
 	\label{table:task:t5}
@@ -122,12 +122,12 @@ Tables \ref{table:task:t4}, \ref{table:task:t5}, and \ref{table:task:t6} give an
 	\caption{Task 2.3: Change the colours to an encoding that you like.}
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
-		\textbf{Goal/Output}			& \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
-		\textbf{Instructions}			& \\
+		\textbf{Goal/Output}			& The colour encodings for hover and click actions has changed, as well as the colour of the active user profile. \\
+		\textbf{Inputs}						& See table \ref{table:task:t4}. \\
+		\textbf{Assumptions}			& See table \ref{table:task:t4}. \\
+		\textbf{Steps}						& Click the \emph{Settings} button and alter the the colour settings. Click \emph{Save}. \\
+		\textbf{Estimated time} 	& About a minute or more. \\
+		\textbf{Instructions}			& Change the colours to an encoding that you like. \\
 		\hline
 	\end{tabular}
 	\label{table:task:t6}
@@ -141,16 +141,17 @@ Tables \ref{table:task:t4}, \ref{table:task:t5}, and \ref{table:task:t6} give an
 
 \section{Task list 3: testing the performance of the evaluation system}\label{appendix:tasklists:prototype3}
 
+Tasks \ref{table:task:t7}, \ref{table:task:t8} \ref{table:task:t9}, and \ref{table:task:t10} are used to further evaluate the explanation system properties.
 
 \begin{table}
 	\caption{Task 3.1: Find three neighbours that are closely related to you, based on the visualization.}
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
 		\textbf{Goal/Output}			& The user can find three closely related neighbours and can give an adequate motivation for his/her choice. \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
+		\textbf{Inputs}						& See table \ref{table:task:t4}. \\
+		\textbf{Assumptions}			& See table \ref{table:task:t4}. \\
+		\textbf{Steps}						& Based on the visual thinking algorithm in table \ref{table:visual_thinking_algorithm}. \\
+		\textbf{Estimated time} 	& $3$ minutes or more, depending on past experience. \\
 		\textbf{Instructions}			&
 		Find three neighbours that are closely related to you, based on the visualization. Explain why these are closer neighbours than others neighbours on the graph.
 		\\
@@ -165,10 +166,10 @@ Tables \ref{table:task:t4}, \ref{table:task:t5}, and \ref{table:task:t6} give an
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
 		\textbf{Goal/Output}			& The user can find three interesting artist recommendations and give an adequate motivation for his/her choice. \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
+		\textbf{Inputs}						& See table \ref{table:task:t4}. \\
+		\textbf{Assumptions}			& See table \ref{table:task:t4}. \\
+		\textbf{Steps}						& Based on the visual thinking algorithm in table \ref{table:visual_thinking_algorithm}. \\
+		\textbf{Estimated time} 	& $3$ minutes or more, depending on past experience. \\
 		\textbf{Instructions}			&
 		Find three recommended artists you think are interesting. Explain why these artists are more interesting than other recommendations shown in the graph.
 		\\
@@ -182,13 +183,13 @@ Tables \ref{table:task:t4}, \ref{table:task:t5}, and \ref{table:task:t6} give an
 	\caption{Task 3.3: Explain the recommendation rationale (transparency).}
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
-		\textbf{Goal/Output}			& \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
+		\textbf{Goal/Output}			& The high level algorithm for collaborative filtering. \\
+		\textbf{Inputs}						& See table \ref{table:task:t4}. \\
+		\textbf{Assumptions}			& See table \ref{table:task:t4}. \\
+		\textbf{Steps}						& Based on the visual thinking algorithm in table \ref{table:visual_thinking_algorithm}. \\
+		\textbf{Estimated time} 	& $3$ minutes or more, depending on past experience. \\
 		\textbf{Instructions}			&
-		Explain the recommendation rationale. How do you think Last.fm's recommender system works?
+		Explain the recommendation rationale. How do you think \emph{Last.fm}'s recommender system works?
 		\\
 		\hline
 	\end{tabular}
@@ -200,13 +201,13 @@ Tables \ref{table:task:t4}, \ref{table:task:t5}, and \ref{table:task:t6} give an
 	\caption{Task 3.4: Find a suggestion for an artist you didn't know about.}
 	\begin{tabular}{ p{80px} | p{350px} }
 		\hline
-		\textbf{Goal/Output}			& \\
-		\textbf{Inputs}						& \\
-		\textbf{Assumptions}			& \\
-		\textbf{Steps}						& \\
-		\textbf{Estimated time} 	& \\
+		\textbf{Goal/Output}			& A new suggestion. \\
+		\textbf{Inputs}						& See table \ref{table:task:t4}. \\
+		\textbf{Assumptions}			& See table \ref{table:task:t4}. \\
+		\textbf{Steps}						& The user looks at each of the suggestions and points out those that are new to him/her. \\
+		\textbf{Estimated time} 	& About a minute to find new suggestions. Investigating interesting recommendations and answering the questions may take up up to $15$ minutes. \\
 		\textbf{Instructions}			&
-		Find a suggestion for an artist you didn't know about.
+		Find a suggestion for an artist you didn't know about, and answer the following questions:
 		\begin{itemize}
 			\item Would you like to check our this artist's profile and listen one or more songs by this artist (persuasion)?
 			\item Do you think the recommender system has made a good suggestion? Would you add it your profile (effectiveness)?
