@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=Schelfaut (2013) - Master thesis - Visualization of music suggestions.tex
 
 [Frame0_View0,0]
-TopLine=353
-Cursor=11637
+TopLine=220
+Cursor=7720
 
 [SessionInfo]
 FrameCount=1
