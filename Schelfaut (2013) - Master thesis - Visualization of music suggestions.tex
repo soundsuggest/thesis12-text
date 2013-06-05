@@ -27,6 +27,7 @@
 \usepackage{pdfpages}
 \usepackage{nomencl}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DEFINE JavaScript listings
 
@@ -91,6 +92,9 @@
 \makeindex
 % ------------------------- nomenclature -----------------------------
 \makenomenclature
+% --------------------------- glossary -------------------------------
+\makeglossaries
+
 
 \begin{document}
 
@@ -108,70 +112,8 @@
 % - Your master
 % - The academic year
 % --------------------------------------------------------------------
-\thispagestyle{empty}
-\newcommand{\form}[1]{\scalebox{1.087}{\boldmath{#1}}}
-\sffamily
-%
-\begin{textblock}{191}(-24,-11)
-	\colorbox{green}{\hspace{139mm}\ \parbox[c][18truemm]{52mm}{\textcolor{white}{FACULTY OF SCIENCE}}}
-\end{textblock}
-%
-\begin{textblock}{70}(-18,-19)
-	\textblockcolour{}
-	\includegraphics*[height=19.8truemm]{LogoKULeuven}
-\end{textblock}
-%
-\begin{textblock}{160}(-6,63)
-	\textblockcolour{}
-	\vspace{-\parskip}
-	\flushleft
-	\fontsize{40}{42}\selectfont \textcolor{bluetitle}{Visualization of music suggestions}\\[1.5mm]
-	\fontsize{20}{22}\selectfont {A visual explanation system for collaborative filtering}
-\end{textblock}
+\include{tex/cover_english}
 
-\begin{textblock}{160}(8,153)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushright
-\fontsize{14}{16}\selectfont \textbf{Joris SCHELFAUT}
-\end{textblock}
-%
-\begin{textblock}{90}(-6,181)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushleft
-Supervisor: Prof. dr. ir. E. Duval\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{KU Leuven Department of Computer Science}}\\[5pt]
-Co-supervisor: \textsl{Dr. J. Klerkx}\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{KU Leuven Department of Computer Science}}\\[5pt]
-Co-supervisor: \textsl{Prof. dr. K. Verbert}\\[-2pt]
-\textcolor{blueaff}{Affiliation \textsl{Technische Universiteit Eindhoven Department of Information Systems WSK\&I}}\\[5pt]
-Mentor: \textsl{Dr. J. Klerkx}\\[-2pt]
-Co-mentor: \textsl{Prof. dr. K. Verbert}\\[-2pt]
-\end{textblock}
-%
-\begin{textblock}{160}(8,191)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushright
-Thesis presented in\\[4.5pt]
-fulfillment of the requirements\\[4.5pt]
-for the degree of Master of Science\\[4.5pt]
-in Applied Informatics\\
-\end{textblock}
-%
-\begin{textblock}{160}(8,232)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushright
-Academic year 2012-2013
-\end{textblock}
-%
-\begin{textblock}{191}(-24,248)
-{\color{blueline}\rule{550pt}{5.5pt}}
-\end{textblock}
-%
-\vfill
 \newpage
 
 % Dissertation presented in fulfillment of the requirements for the degree of Master of Science in Applied Informatics
@@ -180,72 +122,9 @@ Academic year 2012-2013
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COVER DUTCH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\thispagestyle{empty}
-\newcommand{\form}[1]{\scalebox{1.087}{\boldmath{#1}}}
-\sffamily
-%
-\begin{textblock}{191}(-24,-11)
-	\colorbox{green}{\hspace{139mm}\ \parbox[c][18truemm]{62mm}{\textcolor{white}{FACULTEIT WETENSCHAPPEN}}}
-\end{textblock}
-%
-\begin{textblock}{70}(-18,-19)
-	\textblockcolour{}
-	\includegraphics*[height=19.8truemm]{LogoKULeuven}
-\end{textblock}
-%
-\begin{textblock}{160}(-6,63)
-	\textblockcolour{}
-	\vspace{-\parskip}
-	\flushleft
-	\fontsize{40}{42}\selectfont \textcolor{bluetitle}{Visualisatie van muzieksuggesties}\\[1.5mm]
-	\fontsize{20}{22}\selectfont {A visueel uitlegsysteem voor collaboratieve filtering}
-\end{textblock}
+\include{tex/cover_dutch}
 
-\begin{textblock}{160}(8,153)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushright
-\fontsize{14}{16}\selectfont \textbf{Joris SCHELFAUT}
-\end{textblock}
-%
-\begin{textblock}{90}(-6,181)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushleft
-Promotor: Prof. dr. ir. E. Duval\\[-2pt]
-\textcolor{blueaff}{Affiliatie \textsl{KU Leuven Department of Computer Science}}\\[5pt]
-Co-promotor: \textsl{Dr. J. Klerkx}\\[-2pt]
-\textcolor{blueaff}{Affiliatie \textsl{KU Leuven Department of Computer Science}}\\[5pt]
-Co-promotor: \textsl{Prof. dr. K. Verbert}\\[-2pt]
-\textcolor{blueaff}{Affiliatie \textsl{Technische Universiteit Eindhoven Department of Information Systems WSK\&I}}\\[5pt]
-Begeleider: \textsl{Dr. J. Klerkx}\\[-2pt]
-Begeleider: \textsl{Prof. dr. K. Verbert}\\[-2pt]
-\end{textblock}
-%
-\begin{textblock}{160}(8,191)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushright
-Proefschrift ingediend\\[4.5pt]
-tot het behalen van\\[4.5pt]
-de graad van Master of Science\\[4.5pt]
-in de Toegepaste Informatica\\
-\end{textblock}
-%
-\begin{textblock}{160}(8,232)
-\textblockcolour{}
-\vspace{-\parskip}
-\flushright
-Academic year 2012-2013
-\end{textblock}
-%
-\begin{textblock}{191}(-24,248)
-{\color{blueline}\rule{550pt}{5.5pt}}
-\end{textblock}
-%
-\vfill
 \newpage
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -269,6 +148,9 @@ Academic year 2012-2013
 %% List of acronyms
 %% ----------------
 %\printnomenclature
+%\include{tex/chapter_abbreviations}
+%\printglossary[type=\acronymtype,title=Abbreviations]
+
 
 \newpage
 % Inhoud: Een overzicht van de inhoud moet ordelijk worden weergegeven met referentie naar de correctie paginanummers (maximum drie subniveaus). Alle pagina’s vóór hoofdstuk 1 dienen genummerd te worden met Romeinse cijfers (I, II, …). Vanaf hoofdstuk 1 gebeurt de nummering met Arabische cijfers (1, 2, …).

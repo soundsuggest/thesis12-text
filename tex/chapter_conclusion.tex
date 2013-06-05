@@ -4,34 +4,96 @@
 
 % overview (geen subsection)
 
-In the literature we discussed recommender systems, the general context for recommender systems. We also listed general properties of recommender systems, described three recommendation approaches, and listed typical issues and shortcomings of recommender systems. One of these issues is the black box problem for which the end user fails to gain insight into the recommendation process and as a result may have little trust in its recommendations. To solve this problem an explanation system can be used that explains the recommendation rationale.
+In the literature we discussed recommender systems and their general context. We listed system properties, described three common recommendation approaches, and listed typical issues and shortcomings of recommender systems. One of these issues is the black box problem for which the end user fails to gain insight into the recommendation process and as a result may have little trust in its recommendations. To solve this problem an explanation system can be used that explains the recommendation rationale.
 
-In the next part of the litature study we looked at various ways to visualize this rationale. We came up with a graph-based visualization representing the underlying utility matrix of collabrative recommendation, that uses Holten's edge-bundling algorithm along with node reduction to reduce the number of data dimensions, inspired by a visualization by Valdis Krebs.
+In the next part of the litature study we looked at a way to visualize this rationale. We came up with a graph-based visualization representing the underlying utility matrix of collaborative recommendation, that uses Holten's edge-bundling algorithm along with node reduction to reduce the number of data dimensions, inspired by a visualization by Valdis Krebs.
 
-Subsequently we looked at an evaluation method for visualization insight by Chris North. We also investigated the insight gaining process established by Klein et al. Finally we adapted Ware and Mitchell's visual thinking algorithm to describe how a user would interact with the visualization to solve a certain problem.
+Subsequently we looked at an evaluation method for visualization insight developed by Chris North. We also investigated the insight gaining process established by Klein et al. Finally we adapted Ware and Mitchell's visual thinking algorithm to describe how a user would interact with the visualization to solve a certain problem.
 
-A number of visual explanation systems were discussed and we used a number of criteria by Tintarev and Masthoff to compare them.
+A number of visual explanation systems were discussed. To compare these systems we used a number of goals presented by Tintarev and Masthoff.
 
-Chapter \ref{chapter:requirements} investigated the target users, possbile scenarios of use and more elementary scenarios captured in use cases.
+%Chapter \ref{chapter:requirements} investigated the target users, possibile scenarios of use and more elementary scenarios captured in use cases.
 
-In chapter \ref{chapter:prototype} we looked at the different design and evaluation methods. The second part of this chapter described four different iterations in which a total of 15 test users observed while testing and evaluating the application. Between each iteration the detected usability issues were addressed and tested in the next. All the test users gained insight into the recommendation process and were able explain the recommendation rationale.
+%In chapter \ref{chapter:prototype} we looked at a number of design and evaluation methods. The second part of this chapter described four different iterations in which a total of $15$ test users were observed while testing and evaluating the application. Between each iteration the detected usability issues were addressed and tested for success in the next. All the test users gained insight into the recommendation process and were able explain the recommendation rationale. All test users could give a reasoning for choosing certain recommendations based on the visualization. Deeper levels of insight were attained mainly, but not only, by users who had participated in more than one iteration.
 
-\section{Thesis objective}
 
-As a result, the SoundSuggest explanation system provides \emph{transparency} into the Last.fm recommendation process. The explanations did not always increase system \emph{trust}, but could give an indication of recommender system bias, as poor recommendations were often not connected to the user's top neighbours.
+\section{Objectives}
 
-The objective that was could not be reached was to enable users to actively steer the recommendation process. This is due to the fact that the Last.fm API did not support this functionality. Of course an alternative could have been to make use of other methods in the API to construct our own custom recommender system, but we have chosen to explain the artist recommendations made by the actual Last.fm recommender instead. Another possibility could have been to use another recommender system altogether, but from the systems that were investigated, no significant additional functionality was discovered that could have overcome these issues.
+The first objective described in section \ref{chapter:introduction:section:objective} was to conduct a literature study on techniques for the visualization of music suggestions. This has not been entirely reflected in this text. Nonetheless an effort was made to link presented techniques either to the end product or other examples in the context of music recommendation.
+
+%The literature study as it is, focuses more on  psychological aspects.
+%In hindsight, 
+
+The second objective was to design, implement and evaluate an interactive visualization that will allow the user to gain insight into the recommendation process as well as actively steer the process. The following success criteria for the application were listed in section \ref{introduction:objective:criteria} of the introduction:
+
+\begin{itemize}
+	\item Aimed at non-expert users with an average to high interest in music;
+	\item Achieve high usability, in particular learnability and memorability;
+	\item Provide transparency.
+\end{itemize}
+
+Although there were some casual listeners among the test users, the majority of participants was representative of the target audience. Results for the perceived usefulness in the last iteration vary between $2$ and $5$, suggesting that the first criteria has not been met entirely. Still, if the application would be developed further, and more users get tested, the average may still increase.
+
+An overall average SUS score of $80.5$ in the final iteration suggests that the usability of the system is good, as perceived by users. However, the learnability of the system has perhaps some room for improvement.
+
+Results indicate that our design can be effective in explaining the rationale of collaborative recommendations. The explanations did not always increase system \emph{trust}, but could give an indication of recommender system bias, as poor recommendations were often not connected to the user's top neighbours. Finally, the explanation system may provide a starting point for further data exploration.
+
+The objective that was not met, was to enable users to actively steer the recommendation process. This is due to the fact that the \emph{Last.fm API} did not support this functionality. Of course an alternative could have been to make use of other methods in the API to construct our own custom recommender system, but we have chosen to explain the artist recommendations made by the actual recommender instead. Another possibility could have been to use another recommender system altogether, but from the systems that were investigated, no significant additional functionality was discovered that could have overcome these issues.
+
+% waarom Last.fm
 
 
 \section{Future work}
 
-Future work may include addressing problems with visual clutter, and slow data load. Also, the visual explanation system could be tested using other data sets and collaborative recommendation systems. Another possibility is to increase the interaction possibilities. For example by allowing interaction with edges the user could dig deeper into the relationship between artists and the corresponding users.
+\subsection{Issues}
 
-For future user tests, Last.fm users could be given a pre-test questionnaire to evaluate the Last.fm recommender and its explanations. Such a benchmark could have proven useful in understanding the usefulness of the application.
+Future work may include addressing problems with visual clutter, and slow data load as listed in table \ref{table:iteration4:issues}.
+
+
+\subsection{Evaluation}
+
+For future user tests, \emph{Last.fm} users could be given a pre-test questionnaire to evaluate the Last.fm recommender and its explanations. Such a benchmark could have proven useful in understanding the usefulness of the application. Other evaluation methods that can be used, are for example expert-based evaluation, and heuristic approaches.
+
+
+\subsection{Visualization and music}
+
+The focus of the literature study was mainly on providing a context for the elements that were used in the application. To improve the initial design, it might have been better to also incorporate some sort of comparative study of visualization techniques for music, especially if we were to built an explanation system for content-based recommendation. On the other hand, this subject may provide enough content for another thesis.
+
+
+\subsection{Extensions}
+
+The interactive elements could be enhanced, and the amount of interactive elements increased. For example by allowing interaction with edges, the user could dig deeper into the relationship between artists and the corresponding users.
+
+The visual explanation system could be tested using other data sets and collaborative recommendation systems. The model could be extended for use in a hybrid environment, for example by visualizing also tag-based or other relationships among artists in \emph{Last.fm}.
 
 
 \section{Personal reflection}
 
+All in all this has been an interesting project. During its course, I have learned a lot and as I am looking back I can see how much my reasoning on this subject has developed. In hindsight there are inevitably things that one would do differently, and this is no exception.
+
+\subsection{An overview of how the project unfolded}
+
+The first months of this project were probably the most difficult. It was not always easy to determine what I should be looking for. A lot of papers I have had to read again in a later stage, since a lot of details escaped me due to a lack of context and direction. I assume that this is typical of students coming from the programme \emph{Schakelprogramma Master Toegepaste Informatica}\footnote{\url{http://onderwijsaanbod.kuleuven.be/opleidingen/n/SC_50527959.htm}}. Especially in a one year programme, some classes that could have provided background for the thesis subject, may come late in the academic year, such as the course \emph{Gebruikersinterfaces}\footnote{\url{http://onderwijsaanbod.kuleuven.be/2012/syllabi/n/H04I2AN.htm}}. As a result, my motivation for working on the thesis by the end of the first semester was rather low.
+
+During the Christmas break, I reread some papers and began getting a better idea of what I wanted to do. As a result, I have tried to make up for the slow progress in the first semester in the second one. Still, looking back, I don't think it is easy to counter this problem, which is perhaps part of the insight gaining process decribed in this thesis.
+
+
+\subsection{Lessons learned}
+
+Some things that I would have done differently would probably be to have started earlier with user tests. The idea explained in this thesis was developed early on in the project, but was tested much later. Conducting user studies early on would have yielded more test results, and provided additional experience. Some issues with the application and testing methods are likely to have been discovered at a much earlier stage as well. One of the reasons for stalling, was that I was not very confident about the idea, and also that I lacked experience in conducting user studies.
+
+%Other than that, reading and writing scientific literature have become a bit more fluent.
+
+%For example the course \emph{Gebruikersinterfaces}\footnote{\url{http://onderwijsaanbod.kuleuven.be/2012/syllabi/n/H04I2AN.htm}} teaches a methodology for conducting user studies.
+
+
+%\subsection{Results}
+% personal score for the result?
+
+
+
+
+%\subsection{Remarks}
 
 
 

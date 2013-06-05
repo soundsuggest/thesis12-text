@@ -154,9 +154,9 @@ Music libraries are often constantly changing, as new music is added to the user
 In \cite{song:2012} three types of data are associated with \emph{item profiles}:
 
 \begin{itemize}
-	\item \textbf{Editorial metadata} (EM)\nomenclature{EM}{editorial metadata}: for example composer, performing artist, title, genre, cover art, et cetera.
-	\item \textbf{Cultural metadata (CM)}\nomenclature{CM}{cultural metadata}: data obtained from analysis of text-based sources, enabling a categorization of music; for example tag-based feature extraction as described in section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}.
-	\item \textbf{Acoustic metadata (AC)}\nomenclature{AM}{acoustic metadata}: data directly obtained from analysis of audio signals; for example wavelet-based approaches described section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}.
+	\item \textbf{Editorial metadata} (EM)\nomenclature{EM}{editorial metadata}\index{editorial metadata}: for example composer, performing artist, title, genre, cover art, et cetera.
+	\item \textbf{Cultural metadata (CM)}\nomenclature{CM}{cultural metadata}\index{cultural metadata}: data obtained from analysis of text-based sources, enabling a categorization of music; for example tag-based feature extraction as described in section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}.
+	\item \textbf{Acoustic metadata (AM)}\nomenclature{AM}{acoustic metadata}\index{acoustic metadata}: data directly obtained from analysis of audio signals; for example wavelet-based approaches described section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}.
 \end{itemize}
 
 As described in section \ref{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}, item profiles can be used for content-based item recommendation.
@@ -645,7 +645,7 @@ Based on this algorithm, we can make an estimation of the efficiency by which th
 % -----------------------------------------------------------------
 \section{Visual explanation systems}\label{chapter:literature_study:section:applications}
 
-In this section we will take a look at visual explanation systems that already exist and that have been evaliated as well. Five different applications are discussed: \emph{PeerChooser}\index{PeerChooser}, \emph{Pharos}\index{Pharos}, \emph{SFVis}\index{SFVis}, \emph{SmallWorlds}\index{SmallWorlds}, and \emph{TasteWeights}\index{TasteWeights}.
+In this section we will take a look at visual explanation systems that already exist and that have been evaluated as well. Five different applications are discussed: \emph{PeerChooser}\index{PeerChooser}, \emph{Pharos}\index{Pharos}, \emph{SFVis}\index{SFVis}, \emph{SmallWorlds}\index{SmallWorlds}, and \emph{TasteWeights}\index{TasteWeights}.
 
 First we will give an overview of a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}. Before going into detail, a general comparison of these systems is made, based on the previously mentioned aims.
 
@@ -668,7 +668,7 @@ To compare explanation systems, Tintarev and Masthoff \cite{tintarev:2007:SER:15
 
 Tintarev and Masthoff explain that some of these aims are hard to reconcile. For example, a system that focuses on persuasion and efficiency, is likely to score poorly for effectiveness, as the user may be quicker to try something he/she may not like. As a result they indicate that the performance for these metrics depends on the overall system goal\cite{tintarev:2007:SER:1547550.1547664}.
 
-Table \ref{table:comparison:aims} shows which of the characteristics described by Tintarev and Masthoff, were pursued for each of the explanation systems. All of the presented systems aim to provide transparency into the recommender system through a visualization. However, four out of the five systems listed here, allowed the user to make changes to the recommendation process, adding scrutability. Persuasiveness is a measure that was not explicitely covered in these studies. Most of the studies tried to find out if the recommendations found, using the visualization, were effective. Also satisfaction, trust and effciency were evaluated in some of the studies.
+Table \ref{table:comparison:criteria} shows which of the characteristics described by Tintarev and Masthoff, were pursued for each of the explanation systems. All of the presented systems aim to provide transparency into the recommender system through a visualization. Four out of the five systems listed here, allowed the user to make changes to the recommendation process, adding scrutability. Persuasiveness is a measure that was not explicitely covered in these studies. Most of the studies tried to find out if the recommendations found, using the visualization, were effective. Also satisfaction, trust and effciency were evaluated in some of the studies.
 
 \begin{center}
 	\begin{table}%
@@ -685,11 +685,11 @@ Table \ref{table:comparison:aims} shows which of the characteristics described b
 											& \begin{sideways}Satisfaction\end{sideways}  \\
 				\hline
 										%	&	t & s	& t &	e	& p	& e	& s
-				PeerChooser		&	$+$ 	&	$+$		&				&	$+$		& 	& 			& $+$		\\
-				Pharos				&	$+$		&				&	$+$		&				& 	& 			&  			\\
-				SFVis					&	$+$ 	&	$+$		&				&				& 	& 			&  			\\
-				SmallWorlds		&	$+$		&	$+$		&				&	$+$		& 	& 			& $+$		\\
-				TasteWeights	&	$+$		&	$+$		&	$+$		&	$+$		& 	& $+$		&  			\\
+				PeerChooser		&	$+$ 	&	$+$		&	$-$		&	$+$		& $-$	& $-$		& $+$		\\
+				Pharos				&	$+$		&	$-$		&	$+$		&	$-$		& $-$	& $-$		& $-$		\\
+				SFVis					&	$+$ 	&	$+$		&	$-$		&	$-$		& $-$	& $-$		& $-$		\\
+				SmallWorlds		&	$+$		&	$+$		&	$-$		&	$+$		& $-$	& $-$		& $+$		\\
+				TasteWeights	&	$+$		&	$+$		&	$+$		&	$+$		& $-$	& $+$		& $-$		\\
 				\hline
 			\end{tabular}
 		\end{center}
@@ -726,13 +726,9 @@ The objectives for the SoundSuggest application with respect to Tintarev and Mas
 % PEERCHOOSER
 \subsection{PeerChooser}\label{chapter:survey:section:applications:subsection:peerchooser}
 
-\emph{PeerChooser}\index{PeerChooser} is a "collaborative movie recommender system with an interactive graphical explanation interface"\cite{odonovan:2008}. It aims to address the black box problem, described in section \ref{chapter:literature_study:section:computer:subsection:challenges}\cite{odonovan:2008}.
+%\subsubsection{Scrutability, transparency, effectiveness and satisfaction}
 
-The application shows a peer graph of the user's neighbourhood. The visualization uses a force-directed graph layout where the on-screen distance between nodes corresponds an approximation of the node similarity. The active user is able to manipulate this neighbourhood by repositioning nodes of the graph. To deal with the high dimensionality of the data, extra cluster nodes are added to the vsiualization. These cluster peer nodes by genre\cite{odonovan:2008}.
-
-By moving a cluster node closer towards the active user's node, all user nodes associated with this cluster will be drawn closer towards the active user node. As a result, these profiles will be temorary considered more similar than before. Similarly individual users can be moved closer towards or further away from the active user node\cite{odonovan:2008}.
-
-Figure \ref{figure:peerchooser} shows the graph-based interface of the PeerChooser application.
+\emph{PeerChooser}\index{PeerChooser} is a "collaborative movie recommender system with an interactive graphical explanation interface"\cite{odonovan:2008}. It aims to address the black box problem, described in section \ref{chapter:literature_study:section:computer:subsection:challenges}\cite{odonovan:2008}. Figure \ref{figure:peerchooser} shows the graph-based interface of the PeerChooser application.
 
 \begin{figure}%
 	\begin{center}
@@ -743,9 +739,17 @@ Figure \ref{figure:peerchooser} shows the graph-based interface of the PeerChoos
 \end{figure}
 
 
+The application shows a peer graph of the user's neighbourhood. The visualization uses a force-directed graph layout where the on-screen distance between nodes corresponds an approximation of the node similarity. The active user is able to manipulate this neighbourhood by repositioning nodes of the graph. To deal with the high dimensionality of the data, extra cluster nodes are added to the visualization. These cluster peer nodes by genre\cite{odonovan:2008}.
+
+By moving a cluster node closer towards the active user's node, all user nodes associated with this cluster will be drawn closer towards the active user node. As a result, these profiles will be temorary considered more similar than before. Similarly individual users can be moved closer towards or further away from the active user node\cite{odonovan:2008}.
+
+
+
 
 % PHAROS
 \subsection{Pharos}\label{chapter:survey:section:applications:subsection:pharos}
+
+%\subsubsection{Transparency, trust}
 
 Content-centric social websites, such as blogs and discussion forums, contain vast amounts of fast growing information. Recommendation systems have been developed to help users find the information they are looking for. The \emph{Pharos}\index{Pharos} application tries to address two distinctive problems that present themselves in this context: the cold start problem and the black box problem\cite{zhao:2010}, as described earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}.
 
@@ -775,13 +779,7 @@ An example of what the resulting visualization looks like, is depicted in figure
 % SFVis
 \subsection{SFVis}\label{chapter:survey:section:applications:subsection:sfvis}
 
-SFVis (Social Friends Visualization) is an application that helps users explore and find friends interactively under a context of interest. The system is a hybrid approach of social tags and social networks. The SFVis framework transforms a data model (social tags and social networks) into a visual form. Users can both manipulate the input and visuals on demand.
-
-Social tags can form a network. Within this structure clusters may arise. From this cluster tag network a hierarchy is derived. A compound graph is generated from the tag hierarchy and social networks.
-
-A mapping function assigns actors in a social network to a tag tree. The actor similarity algorithm in SFVis considers both structure similarity in a social network and semantic similarity in a tag network. These scores will allow the recommendation system to compute friend suggestions.
-
-SFVis uses circular visualizations for the different trees and graphs for both views as well as interaction with the user.
+\emph{SFVis} \emph{(Social Friends Visualization)} is an application developed by Gou et al. \cite{gou:2011:SIF:2016656.2016671} that helps users explore and find friends interactively under a context of interest. The system is a hybrid approach of social tags and social networks. Figure \ref{figure:sfviz} displays what the resulting visualization may look like.
 
 \begin{figure}%
 	\begin{center}
@@ -791,11 +789,20 @@ SFVis uses circular visualizations for the different trees and graphs for both v
 	\label{figure:sfviz}%
 \end{figure}
 
+%\subsubsection{Transparency, scrutability}
+
+The SFVis framework transforms a data model consisting out of social tags and social networks, into a visual form. Users can both manipulate the input and visuals on demand, adding scrutability.
+
+The visualization is constructed as follows. Social tags can form a network. Within this structure clusters may arise. From this cluster tag network a hierarchy is derived. A compound graph is generated from the tag hierarchy and social networks. A mapping function assigns actors in a social network to a tag tree. The actor similarity algorithm in SFVis considers both structure similarity in a social network and semantic similarity in a tag network. These scores will allow the recommendation system to compute friend suggestions\cite{gou:2011:SIF:2016656.2016671}.
+
+SFVis uses circular visualizations for the different trees and graphs for both views as well as interaction with the user.
 
 
 
 % SMALLWORLDS
 \subsection{Smallworlds}\label{chapter:survey:section:applications:subsection:smallwords}
+
+%\subsubsection{Scrutability, transparency, effectiveness and satisfaction}
 
 In \cite{gretarsson:2010}, Gretarsson et al. used the Facebook API to create an application to generate social recommendations for Facebook users. Unfortunately the Facebook API does not support unauthorized reading of item preference information beyond the immediate friend group. This would not have been a problem unless traditional collaborative filtering strategies tend to produce item suggestions of inferior quality for small items. In this case however the research team relies on the social filtering through the active user's peer group\cite{gretarsson:2010}.
 
@@ -825,6 +832,8 @@ The user can move nodes in each layer further or closer towards the active user'
 
 % TASTEWEIGHTS
 \subsection{TasteWeights}\label{chapter:survey:section:applications:subsection:tasteweights}
+
+%\subsubsection{Scrutability, transparency, trust, effectiveness and satisfaction}
 
 \emph{TasteWeights}\index{TasteWeights} is a hybrid recommender with an interactive graphical user interface\cite{bostandjiev:2012}. The application allows the user to express his/her preferences changing the weights of incoming data sources.
 

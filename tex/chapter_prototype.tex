@@ -667,7 +667,7 @@ The average SUS score for this iteration was $80.5$. The distribution of results
 
 \paragraph{Transparency}
 
-All of the test users were able to describe the recommendation rationale. Most of them used a variation on the following: "Last.fm looks for users that have a similar taste based on the active user's favourite artists, i.e., neighbours. Last.fm decides which items owned by these neighbours are interesting for recommendation based on preference by neighbours (top artists) and the total number neighbours that own these items".
+All of the test users were able to describe the recommendation rationale. Most of them used a variation on the following: \textit{Last.fm looks for users that have a similar taste, based on the active user's favourite artists, i.e., neighbours. Last.fm decides which items owned by these neighbours are interesting for recommendation based on preference by neighbours, i.e., top artists in the neighbouring profiles, and the total number neighbours that own these items}.
 
 
 \paragraph{Trust, effectiveness, and persuasion}
@@ -675,6 +675,8 @@ All of the test users were able to describe the recommendation rationale. Most o
 Most users already knew more or less who the recommended artists were. For some users this would increase trust, as they basically forgot about them when building up listening history. For other users this would actually decrease their trust in the system as they just were not interested in the recommendation. Interestingly Last.fm's own explanation for recommending the item was usually displeasing. Last.fm would justify the recommendation by listing a number of 'similar' artists. Unfortunately, for some categories of artists there exists some bias in the recommendations. For example musicians that have a solo project and also played in a series of different bands lets Last.fm consider these artists as similar. Another example is that artist recommendations for bands and musicians that operate in a country with a less international music scene would be influenced by regional effects. Belgian bands would be considered similar just for beging Belgian to the point were all similar artist pages on the \emph{Last.fm} website would be Belgian regardless of their genre. Users confirmed that this kind of bias reduces the trust in the recommender system. On the other hand, it was interesting to see that this bias could actually be detected in the visualization as neighbours usually did not have edges going from items in their profile to these 'biased' recommendations.
 
 When users did not know a certain recommendation, most users were interested if the recommendation occurred in one of the neighbouring profiles. In this sense the visualization helped persuade the users check out certain artists. From the six users that checked out an item they did not already know, four of them found at least one item that they liked and added to their profile. When discovering a new item that they liked, users admitted this significantly increased their trust in the recommender system, even more than when they found an item that they liked but already knew about.
+
+Although the explanation system was not always as effective in helping to find good recommendations, it provided an additional means for the user to establish his/her own approach for finding recommendations. For example a user would look at neighbours for artist suggestions, rather than just the artist recommendations by \emph{Last.fm}.
 
 
 
@@ -718,7 +720,7 @@ Based from the choice of the tension parameter by users, a better default value 
 
 %As trust increases 
 
-Overall, the application scores well based on the user's feedback and it enables users to discover some characteristics of Last.fm's recommender.
+Overall, the application scores well based on the user's feedback. It enables users to discover some characteristics of \emph{Last.fm}'s recommender.
 
 Figure \ref{fig:iterations_sus_scores_boxplots} shows the evolution of the SUS values over the four iterations. Based on the percentile rank, the average score of $80.5$ for the final iteration procudes a grade of \texttt{A}.
 
