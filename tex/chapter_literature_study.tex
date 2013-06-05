@@ -647,7 +647,7 @@ Based on this algorithm, we can make an estimation of the efficiency by which th
 
 In this section we will take a look at visual explanation systems that already exist and that have been evaluated as well. Five different applications are discussed: \emph{PeerChooser}\index{PeerChooser}, \emph{Pharos}\index{Pharos}, \emph{SFVis}\index{SFVis}, \emph{SmallWorlds}\index{SmallWorlds}, and \emph{TasteWeights}\index{TasteWeights}.
 
-First we will give an overview of a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}. Before going into detail, a general comparison of these systems is made, based on the previously mentioned aims.
+First we will give an overview of a number of objectives for explanation systems listed by Tintarev and Masthoff in \cite{tintarev:2007:SER:1547550.1547664}. A general comparison of these systems is made, based on the previously mentioned aims. Next some additional information is given for each application.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -695,25 +695,6 @@ Table \ref{table:comparison:criteria} shows which of the characteristics describ
 		\end{center}
 		
 		\label{table:comparison:criteria}
-	\end{table}
-\end{center}
-
-The objectives for the SoundSuggest application with respect to Tintarev and Masthoff's aims are listed in table \ref{table:soundsuggest:aims}.
-
-\begin{center}
-	\begin{table}%
-	\caption{The objectives for the SoundSuggest application with respect to Tintarev and Masthoff's aims.}
-		\begin{center}
-			\begin{tabular}{l l l l l l l }
-				\hline
-				Tra. & Scr. & Trust & Efk. & Pers. & Efc. & Sat.  \\
-				\hline
-				%	&	t & s	& t &	e	& p	& e	& s
-				$+$ &		&	$\pm$	&	$\pm$	& $\pm$	& $\pm$	& $+$	\\
-				\hline
-			\end{tabular}
-		\end{center}
-		\label{table:soundsuggest:aims}
 	\end{table}
 \end{center}
 
@@ -877,7 +858,35 @@ Next, aspects of information visualization were discussed: we look at different 
 
 Then we described how users can gain insight into interactive visualization. We look at evaluation techniques for insight gaining. Finally a visual thinking algorithm was proposed that describes how a user could gain insight into the visualization developed in the previous section.
 
-In the last section we looked at five visual explanation systems that already exist. A comparison of these systems was presented based on the evaluation criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}.
+The resulting idea for the visualization is shown in figure \ref{figure:whitebox:final}. This will serve as the starting point for the iterations described in chapter \ref{chapter:prototype}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.7]{img/whitebox_model}%
+	\end{center}
+	\caption{The resulting visualization serving as a white box model for collaborative filtering.}
+	\label{figure:whitebox:final}
+\end{figure}
+
+In the last section we looked at five visual explanation systems that already exist. A comparison of these systems was presented based on the evaluation criteria by Tintarev and Masthoff listed in \cite{tintarev:2007:SER:1547550.1547664}. We hope to obtain interesting results based on these criteria for the previously decribed model. The objectives for the \emph{SoundSuggest} application with respect to Tintarev and Masthoff's aims are listed in table \ref{table:soundsuggest:aims}.
+
+\begin{center}
+	\begin{table}%
+	\caption{The objectives for the SoundSuggest application with respect to Tintarev and Masthoff's aims. A $\pm$ indicates that this aim is not a priority, based on the success criteria listed in section \ref{introduction:objective:criteria}.}
+		\begin{center}
+			\begin{tabular}{l l l l l l l }
+				\hline
+				Tra. & Scr. & Trust & Efk. & Pers. & Efc. & Sat.  \\
+				\hline
+				%	&	t & s	& t &	e	& p	& e	& s
+				$+$ &	$-$	&	$\pm$	&	$\pm$	& $\pm$	& $\pm$	& $+$	\\
+				\hline
+			\end{tabular}
+		\end{center}
+		\label{table:soundsuggest:aims}
+	\end{table}
+\end{center}
+
 
 The next chapter describes SoundSuggest's target audience, the application's story board, and use cases. Chapter \ref{chapter:prototype} gives an overview of the evaluation and design iterations. Chapter \ref{chapter:implementation} describes the implementation of the SoundSuggest application. In chapter \ref{chapter:conclusion} conclusions and future work are discussed.
 
