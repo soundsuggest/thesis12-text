@@ -356,7 +356,7 @@ As the test users were able to discover the recommender rationale using the visu
 
 Test users were selected in a similar manner as in the first iteration. Two test users from the previous iteration were tested again, the other three were new test users. The test users that had been tested before, were tested first. Memorability was evaluated for these subjects along with the other objectives for this iteration. Based on listening habits, one savant, two enthousiasts and two casual listeners were tested.
 
-The objective are the same as in iteration one. However, in addition to these objectives we want to find out how successful the transformation from paper to digital prototype had been. Also feedback was asked on a help file that was made for the application.
+The objectives are the same as in iteration one. However, in addition to these objectives we want to find out how successful the transformation from paper to digital prototype had been. Also feedback was asked on a help file that was made for the application.
 
 The tasks remained the same as in the previous iteration. The test users that were tested in the first iteration also were asked if there were any improvements or new issues going from the paper prototype to a digital one. Remarks made by these persons were also presented to the other test users.
 
@@ -428,7 +428,7 @@ Table \ref{table:iteration2:issues} gives an overview of the most important issu
 			(1) Show a legend of the visual encodings. (2) Enable the user to choose encodings him/herself. % see Ware: beware to not make this too complicated
 			\\
 			
-			Deslecting an item
+			Deselecting an item
 			&
 			\emph{Medium}: Most users did not really had a problem with this, but it seems this could be solved easily enough.
 			&
@@ -451,7 +451,7 @@ Table \ref{table:iteration2:issues} gives an overview of the most important issu
 % changes from previous iteration
 The layout from the previous iteration was retained, but this time the visualization was incorporated into a chrome suggestion that could be injected directly into the \emph{Last.fm} recommendations page, using real data.
 
-An option menu was added with options to alter the data settings, and colour encodings. Data settings that could be answered were the number of recommendations shown, the number of top artists from the active user's profile shown, and the number of neighbours included in the visualization. Another option was to change the threshold. The threshold corresponds to the clustering range of the data collection algorithm. A low threshold value will allow the user to have a link to a certain artist without owning it. Instead the user may own one or more related artists, i.e., the neighbour is required to have a link to an item inside a cluster of items, rather than a particular item. The settings menu is shown in figure \ref{figure:prototype_soundsuggest2_settings}.
+An option menu was added with options to alter the data settings, and colour encodings. Data settings that could be altered were the number of recommendations shown, the number of top artists from the active user's profile shown, and the number of neighbours included in the visualization. Another option was to change the \emph{threshold}. The threshold corresponds to the clustering range of the data collection algorithm. A low threshold value will allow the user to have a link to a certain artist without owning it. Instead the user may own one or more related artists, i.e., the neighbour is required to have a link to an item inside a cluster of items, rather than a particular item. The settings menu is shown in figure \ref{figure:prototype_soundsuggest2_settings}.
 
 \begin{figure}%
 	\begin{center}
@@ -462,7 +462,7 @@ An option menu was added with options to alter the data settings, and colour enc
 \end{figure}
 
 
-To solve the problem of deselecting an item, an additional button titled \emph{Clear selection} was added in the menu bar. As the data loads, a spinner indicates to the user that the system is busy, as can be seen in figure \ref{figure:prototype_soundsuggest2_loading_data}. The resulting prototype is shown in figure \ref{figure:prototype_soundsuggest2}.
+To solve the problem of deselecting an item, an additional button titled \emph{Clear selection}, was added in the menu bar. As the data loads, a spinner indicates to the user that the system is busy, as can be seen in figure \ref{figure:prototype_soundsuggest2_loading_data}. The resulting prototype is shown in figure \ref{figure:prototype_soundsuggest2}.
 
 \begin{figure}%
 	\begin{center}
@@ -667,12 +667,12 @@ The average SUS score for this iteration was $80.5$. The distribution of results
 
 \paragraph{Transparency}
 
-All of the test users were able to describe the recommendation rationale. Most of them used a variation on the following: \textit{Last.fm looks for users that have a similar taste, based on the active user's favourite artists, i.e., neighbours. Last.fm decides which items owned by these neighbours are interesting for recommendation based on preference by neighbours, i.e., top artists in the neighbouring profiles, and the total number neighbours that own these items}.
+All of the test users were able to describe the recommendation rationale. Most of them used a variation on the following: \textit{Last.fm looks for users that have a similar taste based on the active user's favourite artists, i.e., neighbours. Last.fm decides which items owned by these neighbours are interesting for recommendation based on preference by neighbours, i.e., top artists in the neighbouring profiles, and the total number neighbours that own these items}.
 
 
 \paragraph{Trust, effectiveness, and persuasion}
 
-Most users already knew more or less who the recommended artists were. For some users this would increase trust, as they basically forgot about them when building up listening history. For other users this would actually decrease their trust in the system as they just were not interested in the recommendation. Interestingly Last.fm's own explanation for recommending the item was usually displeasing. Last.fm would justify the recommendation by listing a number of 'similar' artists. Unfortunately, for some categories of artists there exists some bias in the recommendations. For example musicians that have a solo project and also played in a series of different bands lets Last.fm consider these artists as similar. Another example is that artist recommendations for bands and musicians that operate in a country with a less international music scene would be influenced by regional effects. Belgian bands would be considered similar just for beging Belgian to the point were all similar artist pages on the \emph{Last.fm} website would be Belgian regardless of their genre. Users confirmed that this kind of bias reduces the trust in the recommender system. On the other hand, it was interesting to see that this bias could actually be detected in the visualization as neighbours usually did not have edges going from items in their profile to these 'biased' recommendations.
+Most users already knew more or less who the recommended artists were. For some users this would increase trust, as they basically forgot about them when building up listening history. For other users this would actually decrease their trust in the system as they simply were not interested in the recommendation. Interestingly \emph{Last.fm}'s own explanation for recommending the item was usually displeasing. \emph{Last.fm} would justify the recommendation by listing a number of 'similar' artists. Unfortunately, for some categories of artists there exists some bias in the recommendations. For example musicians that have a solo project and also played in a series of different bands lets Last.fm consider these artists as similar. Another example is that artist recommendations for bands and musicians that operate in a country with a less international music scene would be influenced by regional effects. Belgian bands would be considered similar just for beging Belgian to the point were all similar artist pages on the \emph{Last.fm} website would be Belgian regardless of their genre. Users confirmed that this kind of bias reduces the trust in the recommender system. On the other hand, it was interesting to see that this bias could actually be detected in the visualization as neighbours usually did not have edges going from items in their profile to these 'biased' recommendations.
 
 When users did not know a certain recommendation, most users were interested if the recommendation occurred in one of the neighbouring profiles. In this sense the visualization helped persuade the users check out certain artists. From the six users that checked out an item they did not already know, four of them found at least one item that they liked and added to their profile. When discovering a new item that they liked, users admitted this significantly increased their trust in the recommender system, even more than when they found an item that they liked but already knew about.
 
@@ -682,13 +682,13 @@ Although the explanation system was not always as effective in helping to find g
 
 \paragraph{Satisfaction, memorability, learnability, and efficiency}
 
-The fact that the data set was cashed made users much more confident in clicking links, as they didn't had to worry about long loading times.
+The fact that the data set was cached made users much more confident in clicking links, as they didn't had to worry about long loading times.
 
 A problem that remained was the scalability of the graph. When visualizing a total of over $40$ recommendations and top artists, loading times not only increase but the density caused by overlapping edges, makes it hard to compare user profiles. Although the tension parameter was visually pleasing, this did not completely resolve these scalability issues. Most users liked a tension in the area of $0.45$ to $0.60$ for graphs including up to $40$ nodes. Beyond this amount of nodes its effects became less important.
 
 By underlining owned artists, it had become easier to compare user profiles. Users from previous iterations stated that this was definitively an improvement, but that there might still be better ways to visualize this. % still room for improvement
 
-The distribution of scores for each separate SUS question for the last iteration is shown in figure \ref{fig:iterations_sus_scores_it4_boxplots}. The questions with the lowest scores were the first question and the seventh question. It should be noted thaht all test users were frequent \emph{Last.fm} users and also not all of the test users used the Chrome browser that was required for running the Chrome extension. Nonetheless there were test users that were very positive about the application in that respect as well. Although there were no negative votes for question 7, a lot of users were not convinced that using the application was easy to learn. There might still be some work left to make the application more accessible to casual users.
+The distribution of scores for each separate SUS question for the last iteration is shown in figure \ref{fig:iterations_sus_scores_it4_boxplots}. The questions with the lowest scores were the first question and the seventh question. It should be noted thaht all test users were frequent \emph{Last.fm} users and also not all of the test users used the Chrome browser that was required for running the Chrome extension. Nonetheless there were test users that were very positive about the application in that respect as well. Although there were no negative votes for \texttt{Q7}, a lot of users were not convinced that using the application was easy to learn. There might still be some work left to make the application more accessible to casual users.
 
 
 
@@ -722,7 +722,7 @@ Based from the choice of the tension parameter by users, a better default value 
 
 Overall, the application scores well based on the user's feedback. It enables users to discover some characteristics of \emph{Last.fm}'s recommender.
 
-Figure \ref{fig:iterations_sus_scores_boxplots} shows the evolution of the SUS values over the four iterations. Based on the percentile rank, the average score of $80.5$ for the final iteration procudes a grade of \texttt{A}.
+Figure \ref{fig:iterations_sus_scores_boxplots} shows the evolution of the SUS values over the four iterations. Based on the percentile rank, the average score of $80.5$ for the final iteration produces a grade of \texttt{A}.
 
 \begin{figure}
 	\begin{center}

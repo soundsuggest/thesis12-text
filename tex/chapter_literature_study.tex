@@ -12,9 +12,9 @@ This chapter describes the various components that are used in the development o
 % -----------------------------------------------------------------
 \section{Recommender systems}\label{chapter:literature_study:section:computer}
 
-A recommender system\index{recommender system} is a system that computes item suggestions for users based on a ratings of related items in the user's profile and/or history. Additional information can be incorporated into the recommendation algorithm\index{recommendation algorithm} to refine suggestions. Several categorizations of these techniques are proposed in literature \cite{bostandjiev:2012, burke:2002, herlocker:2000, melville:2002:CCF:777092.777124, celma:2008:phd}.
+A recommender system\index{recommender system} is a system that computes personalized suggestions for users based on item ratings by users. Additional information can be incorporated into the recommendation algorithm\index{recommendation algorithm} to refine suggestions. Several categorizations of these techniques are proposed in literature \cite{bostandjiev:2012, burke:2002, herlocker:2000, melville:2002:CCF:777092.777124, celma:2008:phd}.
 
-One of the incentives behind creating recommender system is the 'long-tail phenomenon'\index{Long Tail}\cite{rajaraman:2012}. This phenomenon can be explained as follows. Physical retail and warehouses can only keep a subset of all the available items in stock. These items are usually the most popular items on the market. Online vendors however, such as \emph{Amazon}\footnote{\url{http://www.amazon.com/}}, can offer a vastly larger subset of these items to clients, including also less popular and/or less known items\cite{rajaraman:2012}. Typically the long-tail phenomenon is visualized in a graph in which items are ordered by their popularity on the horizontal axis against the popularity rating on the vertical axis, as can be seen on figure \ref{figure:longtail}. Physical stores will offer only items in the first part of the graph, whereas the online vendors will also sell items from the remaining 'long tail' of the graph\cite{rajaraman:2012, celma:2008:phd}. Recommender systems then provide a means to find relevant items within this much larger range of items\cite{rajaraman:2012}. They enable to "connect supply and demand, introducing consumers to these new and newly available goods and driving demand down the tail "\cite{anderson:2006:LTW:1197299, celma:2008:phd}.
+One of the incentives behind creating recommender system is the \emph{long-tail phenomenon}\index{Long Tail}\cite{rajaraman:2012}. This phenomenon can be explained as follows. Physical retail and warehouses can only keep a subset of all the available items in stock. These items are usually the most popular items on the market. Online vendors however, such as \emph{Amazon}\footnote{\url{http://www.amazon.com/}}, can offer a vastly larger subset of these items to clients, including also less popular and/or less known items\cite{rajaraman:2012}. The \emph{Long Tail} is visualized as a graph in which items are ordered by their popularity on the horizontal axis against the popularity rating on the vertical axis, as can be seen on figure \ref{figure:longtail}. Physical stores will offer only items from the first part of the curve, whereas the online vendors will also sell items from the remaining 'long tail' of the graph\cite{rajaraman:2012, celma:2008:phd}. Recommender systems then provide a means to find relevant items within this much larger range of items\cite{rajaraman:2012}. They enable to "connect supply and demand, introducing consumers to these new and newly available goods and driving demand down the tail "\cite{anderson:2006:LTW:1197299, celma:2008:phd}.
 
 \begin{figure}%
 	\begin{center}
@@ -29,7 +29,7 @@ Typical applications of recommender systems are product recommenders for online 
 
 \subsection{Properties of recommender systems}\label{chapter:literature_study:section:computer:subsection:properties}
 
-In \cite{herlocker:2004:ECF:963770.963772} and \cite{shani:2011:9780387858197}, Herlocker et al. and Shani et al.  respectively, compare the performance of recommender systems. A number of metrics for recommendation algorithms are described among which the following properties are listed. We will also describe methods for testing these properties, as described in \cite{shani:2011:9780387858197}.
+In \cite{herlocker:2004:ECF:963770.963772} and \cite{shani:2011:9780387858197}, Herlocker et al. and Shani et al. respectively, provide metrics for the performance of recommender systems. They list a number properties associated with these systems. We will also describe methods for testing those properties, as described in \cite{shani:2011:9780387858197}.
 
 \begin{itemize}
 	\item \textbf{Accuracy}: The accuracy of item recommendations. There are three broad classes of prediction accuracy measures:
@@ -42,7 +42,7 @@ In \cite{herlocker:2004:ECF:963770.963772} and \cite{shani:2011:9780387858197}, 
 	\item \textbf{Novelty}: Novel recommendations are recommendations for items that the user did not know about. In a user study, users can be asked whether or not recommendations were new to them.
 	\item \textbf{Serendipity}: Serendipity is a measure of how surprising the successful recommendations are. One can think of serendipity as "the amount of relevant information that is new to the user in a recommendation, or alternatively as deviation from the 'natural' prediction"\cite{shani:2011:9780387858197}. Serendipitous recommendations usually carry a higher risk, as they fall further from the class of known preferences. To find out the serendipity of recommendations, users can be asked directly if the recommendation was unexpected.
 	\item \textbf{Diversity}: Diversity is generally defined as the opposite of similarity. To measure diversity content-based approaches can be used that compare recommended items.
-	\item \textbf{Coverage}: One way to define coverage is the percentage of all items that are recommended to users during an experiment. Note that the cold start problem relates to coverage as it measures the coverage for a specific type of users, namely new users.
+	\item \textbf{Coverage}: One way to define coverage is the percentage of all items that are recommended to users during an experiment.
 \end{itemize}
 
 Many of these properties are closely related, as diverse recommendations that have a high coverage are likely to be serendipitous and novel. Also tradeoffs exist between properties; for example accuracy may drop as recommendations become more diverse\cite{shani:2011:9780387858197}. Looking at the Long-tail phenomenon, coverage, serendipity, novelty and diversity tend to be important. In the context of music recommendation, users usually want to find new music\cite{levy:2010}.
@@ -55,9 +55,9 @@ Based on classifications presented in \cite{burke:2002} and \cite{celma:2008:phd
 
 \subsubsection{Collaborative recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cf}
 
-\emph{Collaborative recommendation}\index{collaborative recommendation|see{collaboratibe filtering}} aggregates item ratings by users. By establishing overlaps between ratings in the corresponding user profiles, the system generates new item recommendations\cite{burke:2002, herlocker:2000}. User profiles consist of a vector of items and their ratings, which are continuously updated as the user interacts with the system over time\cite{burke:2002}.
+\emph{Collaborative recommendation}\index{collaborative recommendation|see{collaboratibe filtering}} aggregates item ratings by users. By establishing overlaps between ratings in the corresponding user profiles, the system finds new item recommendations in the difference between user profiles\cite{burke:2002, herlocker:2000}. User profiles consist of a vector of items and their ratings, which are continuously updated as the user interacts with the system over time\cite{burke:2002}.
 
-For CF-based recommendation\index{CF|see{collaborative filtering}}, there are two classes of entities: users $U$ and items $I$. The data itself can then be represented by a utility matrix\index{utility matrix} $A$. The entries $a_{i,j}$ of the utility matrix represent what is known about the degree of preference of user $u_{i}$ and item $i_{j}$\cite{rajaraman:2012}. As can be seen in figure \ref{figure:utilitymatrix}, the utility matrix will have many blanks as well. The goal of the recommendation algorithm is then to fill in the blanks\cite{rajaraman:2012}.
+For CF-based recommendation\index{CF|see{collaborative filtering}}, there are two classes of entities: users $U$ and items $I$. The data itself can then be represented by a utility matrix\index{utility matrix} $A$. The entries $a_{i,j}$ of the utility matrix represent what is known about the degree of preference of user $u_{i}$ and item $i_{j}$\cite{rajaraman:2012}. As can be seen in figure \ref{figure:utilitymatrix}, the utility matrix will have many blanks as well. The goal of the recommendation algorithm is then to fill in the blanks that are likely to have high ratings\cite{rajaraman:2012}.
 
 \begin{figure}%
 \begin{center}
@@ -68,7 +68,7 @@ For CF-based recommendation\index{CF|see{collaborative filtering}}, there are tw
 \end{figure}
 
 % Similarity / distance functions ...
-In order to calculate the blanks, there is a variety of similarity functions that has been developed, e.g. \emph{cosine distance}, \emph{Pearson correlation}, \emph{Tanimoto-Jaccard}\cite{Verbert:2011:DRI:2090116.2090122}. For example, a small cosine distance will most likely correspond to a high similarity between profiles\cite{rajaraman:2012}. The discussion of the mathematics behind each of the algorithms is beyond the scope of this thesis.
+In order to calculate the blanks, there is a variety of similarity functions that has been developed, e.g. \emph{cosine distance}, \emph{Pearson correlation}, \emph{Tanimoto-Jaccard}\cite{Verbert:2011:DRI:2090116.2090122}. For example, a small cosine distance will correspond to a high similarity between profiles\cite{rajaraman:2012}. The discussion of the mathematics behind each of the algorithms is beyond the scope of this thesis.
 
 
 \subsubsection{Content-based recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:cbf}
@@ -77,13 +77,13 @@ In order to calculate the blanks, there is a variety of similarity functions tha
 
 When applying content-based filtering, the choice of similarity or classification function will have a significant impact on the quality of the recommendations. More importantly though, is the choice of features. To ensure good performance, these features should also be extracted easily from large quantities of data.
 
-Depending on the type of item that is being recommended, different approaches can be applied to extract features and construct \emph{feature vectors}\index{feature vector}. Textual information is often extracted using a technique called \emph{stemming}\index{stemming} that uses root forms capturing a common meaning behind groups of words. Tuples of root forms and \emph{TF.IDF}, i.e., term frequency times inverse document frequency\index{TF.IDF}\index{term frequency times inverse document frequency|see{TD.IDF}}\nomenclature{TD.IDF}{term frequency times inverse document frequency} scores are computed for each word\cite{pazzani:2007:CRS:1768197.1768209, rajaraman:2012}. The words with the highest scores are the words that characterize the document\cite{rajaraman:2012}. A downside of stemming is that the process may cause the loss of contextual information for each word\cite{pazzani:2007:CRS:1768197.1768209}.
+Depending on the type of item that is being recommended, different approaches can be applied to extract features and construct \emph{feature vectors}\index{feature vector}. Textual information is often extracted using a technique called \emph{stemming}\index{stemming}. This technique uses root forms capturing a common meaning behind groups of words. Tuples of root forms and \emph{term frequency times inverse document frequency} (TF.IDF)\index{TF.IDF}\index{term frequency times inverse document frequency|see{TD.IDF}}\nomenclature{TD.IDF}{term frequency times inverse document frequency} scores are computed for each word\cite{pazzani:2007:CRS:1768197.1768209, rajaraman:2012}. The words with the highest scores are the words that characterize the document\cite{rajaraman:2012}. A downside of stemming is that the process may cause the loss of contextual information for each word\cite{pazzani:2007:CRS:1768197.1768209}.
 
 In \cite{bostandjiev:2012} and \cite{melville:2002:CCF:777092.777124} web crawlers are used to gather and extract features from online documents. Each property or feature is a 'bag of words'\index{bag of words} that can be used in a naive Bayesian text classifier\index{Bayesian classifier}. This way each item can be categorized and the profile can be 'learned'\cite{melville:2002:CCF:777092.777124}.
 
 \emph{Tags}\index{tag} are very useful as well. Although they can be generated from text, for complex objects such as images and music, tag generation relies on user input\cite{rajaraman:2012}. Nonetheless, emerging technologies such as the 'search by image' option introduced by \emph{Google}\footnote{\url{http://www.google.be/imghp?hl=nl&tab=Ti}}, allow to retrieve web sites, documents and key words related to the given image\cite{google:2011:afbeeldingen}.
 
-Mathematical models for music also allow for feature extraction. Algorithms have been developed to classify music based on content features\cite{Li:2006:TIM:2219090.2219562, tzanetakis:2002}. There are various types of acoustic features that can be extracted. In \cite{Li:2006:TIM:2219090.2219562} a distinction is made between rhythmic content features, pitch content features and timbral content features.
+Mathematical models for music also allow for automated feature extraction. Algorithms have been developed to classify music based on content features\cite{Li:2006:TIM:2219090.2219562, tzanetakis:2002}. There are various types of acoustic features that can be extracted. In \cite{Li:2006:TIM:2219090.2219562} a distinction is made between rhythmic content features, pitch content features and timbral content features.
 
 
 \subsubsection{Hybrid recommendation}\label{chapter:literature_study:section:computer:subsection:algorithms:subsubsection:hf}
@@ -105,7 +105,7 @@ The \emph{cold start} and \emph{gray sheep} problem both affect prediction accur
 
 \subsubsection{Cold start}
 
-Both CF and CB-based recommendation algorithms suffer from the ramp-up\index{ramp-up|see{cold start}} problem in one way or the other. The 'ramp-up' or 'cold start' problem\index{cold start} (although they may refer to slightly different problems depending on the literature) is dual problem that encompasses two distinct, yet related problems as defined in \cite{burke:2002}:
+Both CF and CB-based recommendation algorithms suffer from the ramp-up\index{ramp-up|see{cold start}} problem in one way or the other. The \emph{ramp-up} or \emph{cold start} problem\index{cold start} (although they may refer to slightly different problems depending on the literature) is dual problem that encompasses two distinct, yet related problems as defined in \cite{burke:2002}:
 
 \begin{itemize}
 	\item \textbf{New User}\index{cold start!new user}: Finding recommendations for users with a limited rating history is hard. Since user profiles tend to build up over time, new users usually fall in this category. As a result, recommender accuracy tends to be lower for new users.
@@ -117,7 +117,7 @@ Both of these issues translate themselves into a sparse regions in the utility m
 
 \subsubsection{Gray sheep}
 
-A problem that is typical of collaborative filtering is the 'gray sheep problem'\index{gray sheep}\cite{burke:2002, herlocker:2000}. The gray sheep problem occurs when a user falls between different clusters of users that may have contradicting item ratings. As a result, it is hard to determine how to classify the user\cite{burke:2002}.
+A problem that is typical of collaborative filtering is the \emph{gray sheep} problem\index{gray sheep}\cite{burke:2002, herlocker:2000}. The gray sheep problem occurs when a user falls between different clusters of users that may have contradicting item ratings. As a result, it is hard to determine how to classify the user\cite{burke:2002}.
 
 Classifying users is typically a harder problem than classifying artists. An artist can usually be classified into one particular genre, whereas two users may have one genre in common, but may have rather conflicting tastes as well\cite{rajaraman:2012}.
 
@@ -141,7 +141,7 @@ A number of popular recommender systems for music exist, such as \emph{Last.fm}\
 
 \emph{Last.fm} is an example of a music recommender system that is based on the collaborative filtering\cite{levy:2010}, although it uses additional content-based approaches as well\cite{song:2012}. Also \emph{Pandora}, \emph{Allmusic}\footnote{\url{http://www.allmusic.com}} and \emph{Shazam}\footnote{\url{http://www.shazam.com}} use hybrid approaches\cite{song:2012}.
 
-Bostandjiev et al. \cite{bostandjiev:2012} have built a music recommender\index{TasteWeights} that uses \emph{Wikipedia}\footnote{\url{http://www.wikipedia.org/}}, a content-based source, \emph{Facebook}\footnote{\url{https://www.facebook.com/}}, a collaborative source, and \emph{Twitter}, an \emph{expert-based!recommender algorithm}\index{expert-based!recommender algorithm} or \emph{context-based}\index{context-based} source.
+Bostandjiev et al. \cite{bostandjiev:2012} have built a music recommender\index{TasteWeights} that uses \emph{Wikipedia}\footnote{\url{http://www.wikipedia.org/}}, a content-based source, \emph{Facebook}\footnote{\url{https://www.facebook.com/}}, a collaborative source, and \emph{Twitter}, an \emph{expert-based}\index{expert-based!recommender algorithm} or \emph{context-based}\index{context-based} source.
 
 \subsubsection{Profile generation}
 
@@ -197,12 +197,12 @@ Information visualization\index{information visualization}\index{infovis|see{inf
 \begin{itemize}
 	\item \textbf{Quantitative}: numerical data on which arithmetic can be applied. For example playcount of a particular track, the duration of a track, the number of artists that two users have in common, et cetera. Quantative data occurs in all kinds of music and user metadata.
 	\item \textbf{Ordered}: an enumeration that has a definite order. For example ratings such as 'good', 'average', and 'bad'.
-	\item \textbf{Categorical}: data that has no specific ordering, and is distinguished by name only. For example composer names, band members, artist tracks, users who like a particular item, et cetera. Most editorial and cultural metadata can be considered categorical.
+	\item \textbf{Categorical}: data that has no specific ordering, and is distinguished by name only. For example composer names, band members, artist tracks, users who like a particular item, et cetera. Most EM and CM can be considered categorical.
 \end{itemize}
 
 In the utility matrix each column corresponds to an item and a row to a user. The entries of this matrix are typically quantitative data, while item and user names are categorical data.
 
-\emph{Relational data}\index{relational data} on the other hand consists out of nodes\index{graph!node} and links or 'edges'\index{graph!edge}\cite{keim:2002, shirley:2009}. Both nodes and edges can have associated attributes. These attributes can again be either of quantitative, ordered, or categorical nature.
+\emph{Relational data}\index{relational data} on the other hand consists out of nodes\index{graph!node} and links or \emph{edges}\index{graph!edge}\cite{keim:2002, shirley:2009}. Both nodes and edges can have associated attributes. These attributes can again be either of quantitative, ordered, or categorical nature.
 
 The underlying structure of collaborative filtering, the utility matrix, can be interpreted as a \emph{dual graph}\index{dual graph}. This is a graph $G(V,E)$ for which $V = U \cup I$ such that $U \cap I = \emptyset \wedge E \subseteq U \times I$\cite{dekimpe:2007}. Each non-blank entry in the utility matrix will then correspond to an edge. Figure \ref{figure:dualgraph} shows the dual graph of the corresponding utility matrix.
 
@@ -263,7 +263,7 @@ In the \emph{SoundSuggest} application, items in a list of neighbours are highli
 Spatial layouts form other visual channels. Although these tend to be the most accurate, spatial layouts in two and three dimensions have several weaknesses; two of these are\cite{shirley:2009}:
 
 \begin{itemize}
-	\item \textbf{Occlusion}: Parts of the data set become hidden by others. In the case of the mapping of abstract dimensions onto spatial positions, understanding the details of a three-dimensional visualization may be challenging, even if the user is allowed to change viewpoints. For the \emph{SoundSuggest} application, elements in the vsiualization may overlap when edges cross.
+	\item \textbf{Occlusion}: Parts of the data set become hidden by others. In the case of the mapping of abstract dimensions onto spatial positions, understanding the details of a three-dimensional visualization may be challenging, even if the user is allowed to change viewpoints. For the \emph{SoundSuggest} application, elements in the visualization may overlap when edges cross.
 	\item \textbf{Text in arbitrary orientations}: Special care has to be taken with text, as it may become very hard to read depending on the orientation. In the \emph{SoundSuggest} application artist names are turned according to their position on the circle layout.
 \end{itemize}
 
@@ -290,7 +290,7 @@ As graph size is one of the biggest issues of graph visualization, techniques ha
 
 \subsubsection{Data and dimensionality reduction}
 
-Based on a visualization design by Valdis Krebs in \cite{steele:2010}, a dimensionality reduction\index{dimensionality reduction} can be performed on the dual graph, by keeping only one set of nodes and representing the other set of nodes as implicit information in the edges. Figure \ref{figure:rowreduction} shows an example of this idea of 'row reduction'\index{row reduction}. In Krebs' visualization the items, books purchased from the Amazon web store in this case, were retained. In the resulting graph, two items would share an edge if a user bought both these items. The thickness of the edges represented the number of users that where linked to these items\cite{krebs:2012:networkthinkers, steele:2010}.
+Based on a visualization design by Valdis Krebs in \cite{steele:2010}, a dimensionality reduction\index{dimensionality reduction} can be performed on the dual graph, by keeping only one set of nodes and representing the other set of nodes as implicit information in the edges. Figure \ref{figure:rowreduction} shows an example of this idea of \emph{row reduction}\index{row reduction}. In Krebs' visualization the items, books purchased from the Amazon web store in this case, were retained. In the resulting graph, two items would share an edge if a user bought both these items. The thickness of the edges represented the number of users that where linked to these items\cite{krebs:2012:networkthinkers, steele:2010}.
 
 \begin{figure}%
 	\begin{center}
@@ -310,7 +310,7 @@ The \emph{SoundSuggest} application does not use the final step of Krebs' graph 
 	\label{figure:rowreduction_dualgraph}%
 \end{figure}
 
-As it is unlikely that the whole user profile can be shown in the graph while avoiding visual clutter, the active user's favourite items are used to give a representation of the active user's profile. This way the user can still directly compare him/herself with neighbouring profiles.
+To further limit graph size, the active user's favourite items are used to give a representation of the active user's profile. This way the user can still directly compare him/herself with neighbouring profiles.
 
 
 \subsubsection{Clutter reduction}
@@ -413,7 +413,7 @@ In \cite{north:2006} it is argued that insight\index{insight} is not a well-defi
 
 The quality of insight can then be determined by quantifying each of these characteristics\cite{north:2006}. North describes methods to evaluate insight gaining through visualizations, such as usability testing, heuristic evaluation, cognitive evaluation, and controlled experiments on benchmark tasks\cite{north:2006}.
 
-Chris North notes that controlled experiments suffer from four fundamental problems that may hinder effective evaluation of previously listed characteristics of insight. Such experiments are\cite{north:2006}:
+Controlled experiments are the dominant method for evaluating insight\cite{north:2006}. Chris North notes this kind of experiments suffer from four fundamental problems that may hinder effective evaluation of previously listed characteristics of insight. Such experiments are\cite{north:2006}:
 
 \begin{itemize}
 	\item \textbf{Predefined}: Following specific, predefined instructions leave little room for unexpected insight.
@@ -430,7 +430,7 @@ In this thesis we will focus on the think aloud technique instead. This is part 
 	\item an emphasis on domain relevance.
 \end{itemize}
 
-In this technique users are free to explore the data. By applying the think aloud protocol, the user's insight's can be captured. In order to increase domain relevance, the test users should be users from the target audience. Domain experts can then provide "a critical metric for the value of importance of the reported insights in the domain"\cite{north:2006}.
+In this technique users are free to explore the data. By applying the think aloud protocol, the user's insight's can be captured. In order to increase domain relevance, the test users should be users from the target audience. Domain experts can then provide a "critical metric for the value of importance of the reported insights in the domain"\cite{north:2006}.
 
 
 \subsubsection{Sensemaking}\label{chapter:literature_study:section:user:subsection:insight:subsubsection:sensemaking}
@@ -442,9 +442,9 @@ In \cite{Klein:2006:MSS:1158821.1159015} sensemaking is looked at from a psychol
 Based on the discussion in \cite{klein:2006:MSS:1175882.1176017} and \cite{yi:2008}, Soo Yi et al. describe the process of sensemaking. Sensemaking is a:
 
 \begin{itemize}
-	\item \textbf{Cyclic and iterative proceduce}: consisting out of a generation loop searching for representations, a data coverage loop instantiating the representations and finally shift representations;
-	\item \textbf{Creation procedure}: being more about reasoning than discovery;
-	\item \textbf{Retrospective procedure}: as people construct a framework and assign relevant information to a place withing this framework. If the data fits the framework well, the framework is confirmed, otherwise it may be updated or discarded;
+	\item \textbf{Cyclic and iterative proceduce}: Consisting out of a generation loop searching for representations, a data coverage loop instantiating the representations and finally shift representations;
+	\item \textbf{Creation procedure}: Being more about reasoning than discovery;
+	\item \textbf{Retrospective procedure}: As people construct a framework and assign relevant information to a place withing this framework. If the data fits the framework well, the framework is confirmed, otherwise it may be updated or discarded;
 \end{itemize}
 
 An important remark made in \cite{Klein:2006:MSS:1158821.1159015} is that data fusion algorithms can reduce information overload, but they also pose challenges to sensemaking if the human can't form an accurate mental model of the machine, to understand why and how the algorithms are doing what they are doing.
@@ -468,10 +468,10 @@ The first type of information is contained in parallel edges between items. For 
 Although sensemaking can play an important part in gaining insight, it is not the only path to arrive at insight \cite{yi:2008}. Yi et al. \cite{yi:2008} identify four processes, that are often intertwined, through which insight is established:
 
 \begin{itemize}
-	\item \textbf{Provide overview}: \textit{In this process the individual gains understanding of the big picture of a dataset of interest. It allows the user to make a distinction between what is known to him/her and what is not.} The user gets an overview of the recommendation rationale.
-	\item \textbf{Adjust}: In this process a person will explore a dataset by adjusting the level of abstraction and/or the range of selection. Typical actions involve filtering and grouping of data.
+	\item \textbf{Provide overview}: \textit{In this process the individual gains understanding of the big picture of the dataset. It allows the user to make a distinction between what is known to him/her and what is not.} The user gets an overview of the recommendation rationale.
+	\item \textbf{Adjust}: \textit{In this process a person will explore a dataset by adjusting the level of abstraction and/or the range of selection.} Typical actions involve filtering and grouping of data.
 	\item \textbf{Detect pattern}: \textit{In this process the user will try to identify specific distributions, trends, frequencies, outliers or structure in the dataset.} Through numerous interactions, the user is able to identify a pattern in the relationshpis between recommendations.
-	\item \textbf{Match mental model}: In this process the gap between data and cognitive model is bridged, reducing cognitive load and linking the present visual information with real-world knowledge.
+	\item \textbf{Match mental model}: \textit{In this process the gap between data and cognitive model is bridged, reducing cognitive load and linking the present visual information with real-world knowledge}.
 \end{itemize}
 
 The link with sensemaking is found in the cyclic and iterative nature of sensemaking - provide overview, adjust and detected pattern can be applied iteratively, as well as its creative and retrospective aspects - adjust and detect pattern create hypotheses and test them through various interaction techniques\cite{yi:2008}.
@@ -488,11 +488,11 @@ Yi et al. \cite{yi:2008} identify several ways in which the insight gaining proc
 
 % careless, improvident, nonchalant, ...
 
-Interactivity of the system promotes the user's engagement into the dataset. Spending more time with the data will allow users to form more detailed and accurate hypotheses, and as a result greater insight\cite{yi:2008}. At the same time, while using the visualization, the user will become more skilled at a task over time. Nonetheless, bare in mind that when performing long and tedious search tasks, vigilance will become an important aspect as well in the efficiency of data exploration\cite{ware:2004}. Visual explanation systems may involve interaction techniques. For example, in the \emph{SoundSuggest} application, users can click an item node. Related item nodes will then be highlighted with it as well. An important consideration is that the interval between the human action and the result on the screen should be low, promoting the so-called \emph{priciple of transparency}\index{priciple of transparency}. The objective of transparency is that the user will have the illusion of directly manipulating the data on the screen.
+\paragraph{Interactivity} Interactivity of the system promotes the user's engagement into the dataset. Spending more time with the data will allow users to form more detailed and accurate hypotheses, and as a result greater insight\cite{yi:2008}. At the same time, while using the visualization, the user will become more skilled at a task over time. Nonetheless, bare in mind that when performing long and tedious search tasks, vigilance will become an important aspect as well in the efficiency of data exploration\cite{ware:2004}. Visual explanation systems may involve interaction techniques. For example, in the \emph{SoundSuggest} application, users can click an item node. Related item nodes will then be highlighted with it as well. An important consideration is that the interval between the human action and the result on the screen should be low, promoting the so-called \emph{priciple of transparency}\index{priciple of transparency}. The objective of transparency is that the user will have the illusion of directly manipulating the data on the screen.
 
-Similarly visual encodings that are counter-intuitive will also increase the cognitive load. Other barriers on insight gaining are clutter, occlusion and data overload\cite{yi:2008}. In the application we have built, we applied clutter reduction techniques for graph visualization.
+\paragraph{Visualization design} Similarly visual encodings that are counter-intuitive will also increase the cognitive load. Other barriers on insight gaining are clutter, occlusion and data overload\cite{yi:2008}. In the application we have built, we applied clutter reduction techniques for graph visualization.
 
-Usability is another aspect that may have an impact on the insight gaining process, as controls that are hard to use will inevitably occupy some of the cognitive capacity of the user\cite{yi:2008}. In the ISO standard ISO 9241-11, usability is defined as "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use"\cite{usabilitynet:2006:standards}.
+\paragraph{Usability} Usability is another aspect that may have an impact on the insight gaining process, as controls that are hard to use will inevitably occupy some of the cognitive capacity of the user\cite{yi:2008}. In the ISO standard ISO 9241-11, usability is defined as "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use"\cite{usabilitynet:2006:standards}.
 
 Note that usability\index{usability} should not be considered a one-dimensional property of a user interface. Nielsen identifies several characteristics of usability in applications\cite{nielsen:1993:UE:529793}:
 
@@ -575,7 +575,7 @@ In the second loop the user navigates through the data space. The basic navigati
 
 When exploring spatial maps, a user is confronted with the \emph{focus-context problem}\index{focus-context problem}, i.e., "the problem of finding detail in a larger context"\cite{ware:2004}. The objective is to see the relation between the larger context and the details, rather than finding details. Ware goes on to discern between spatial, structural and temporal scales in which the focus-context problem manifests itself\cite{ware:2004}.
 
-Ware and Mitchell remark that the human visual system is already well-adapted to the spatial focus-context problem\cite{ware:2004}. Therefore, they argue that when designing a display, it should already try to take a maximal advantage of these perceptual skills. This can be done by displaying as much data as possible, without causing visual overload\cite{ware:2004}. Of course, there are always computational costs, either finding the best way to represent large amounts of data, or instead, using interaction techniques to delve deeper into the data\cite{herman:2000, shirley:2009}.
+Ware and Mitchell remark that the human visual system is already well-adapted to the spatial focus-context problem\cite{ware:2004}. Therefore, they argue that when designing a display, it should already try to take a maximal advantage of these perceptual skills. This can be done by displaying as much data as possible, without causing visual overload\cite{ware:2004}. Of course, there are always computational costs, either for finding the best way to represent large amounts of data, or instead, for using interaction techniques to delve deeper into the data\cite{herman:2000, shirley:2009}.
 
 % cf. graph drawing problem vs. focus+context, e.g. fish-eye
 
@@ -586,9 +586,9 @@ Ware and Mitchell remark that the human visual system is already well-adapted to
 
 The problem solving loop can be described through means of a \emph{visual thinking algorithm}\index{visual thinking algorithm}\cite{ware:2004}. Such an algorithm combines perceptual and cognitive actions into a process, as the user interacts with the visualization and explores the data space. As we want to keep the \emph{cost of knowledge}\index{cost of knowledge} low, it is obvious that the cost and time complexity of each of these actions should be kept at a minimum. The cognitive system that runs these algorithms, is made up out of several different components\cite{ware:2004}.
 
-Visual queries\index{visual query} translate a hypothesis into a cognitive task. The result of a visual query can be a pattern or lack of a pattern. To support vsiual quaeries, actions that support information search are executed, called \emph{epistemic actions}\index{epistemic action}. Out of all epistemic actions, eye movements have the lowest cost, before mouse selection and hover queries. At the lowest level, elementary features such as color, texture information, and local edges are extracted from the image. Next, patterns are recognized by combining these features. Through eye movements possibly interesting patterns are explored. In the visual working memory, which forms the intermediary between the long-term memory and the incoming patterns, patterns are processed as \emph{object files}\index{object files}; these are a combination of visual attributes and semantic meaning. Internal images can be combined with external images to construct and test hypotheses about the visualized data\cite{ware:2004}.
+Visual queries\index{visual query} translate a hypothesis into a cognitive task. The result of a visual query can be a pattern or lack of a pattern. To support visual queries, actions that support information search are executed, called \emph{epistemic actions}\index{epistemic action}. Out of all epistemic actions, eye movements have the lowest cost, before mouse selection and hover queries. At the lowest level, elementary features such as color, texture information, and local edges are extracted from the image. Next, patterns are recognized by combining these features. Through eye movements possibly interesting patterns are explored. In the visual working memory, which forms the intermediary between the long-term memory and the incoming patterns, patterns are processed as \emph{object files}\index{object files}; these are a combination of visual attributes and semantic meaning. Internal images can be combined with external images to construct and test hypotheses about the visualized data\cite{ware:2004}.
 
-We will try to approximate a visual thinking algorithm\index{visual thinking algorithm} applied by users when exploring SoundSuggest's visualization. The algorithm in table \ref{table:visual_thinking_algorithm} is the degree-of-relevance highlighting algorithm derived by Ware and Mitchell \cite{ware:2004}.
+We will try to approximate a visual thinking algorithm\index{visual thinking algorithm} applied by users when exploring \emph{SoundSuggest}'s visualization. The algorithm in table \ref{table:visual_thinking_algorithm} is the \emph{degree-of-relevance highlighting} algorithm derived by Ware and Mitchell \cite{ware:2004}.
 
 \begin{table}
 	\textit{Display environment: A display containing many symbols representing entities linked by a complex set of relationships.}
@@ -605,7 +605,7 @@ We will try to approximate a visual thinking algorithm\index{visual thinking alg
 \label{table:visual_thinking_algorithm}
 \end{table}
 
-Based on this algorithm, we can make an estimation of the efficiency by which the user may to use the visualization. We can combine this with the insight gaining process, described in section \ref{chapter:literature_study:section:user:subsection:insight}, to get a better understanding of the user. Ware and Mitchell state that "if the degree of relevance algorithm can reduce the visual search to around $10$ to $20$ items, then the gain in cognitive efficiency can easily be an order of magnitude"\cite{ware:2004}. They point out even though that degree-of-relevance highlighting can be used for data displays with over a thousand items, to be efficient the number of members in the highlighted patterns should be much lower\cite{ware:2004}.
+Based on this algorithm, we can make an estimation of the efficiency by which the user may to use the visualization. We can combine this with the insight gaining process, described in section \ref{chapter:literature_study:section:user:subsection:insight}, to get a better understanding of the user. Ware and Mitchell state that "if the degree of relevance algorithm can reduce the visual search to around $10$ to $20$ items, then the gain in cognitive efficiency can easily be an order of magnitude"\cite{ware:2004}. They point out even though that degree-of-relevance highlighting can be used for data displays with over a thousand items, to be efficient, the number of members in the highlighted patterns should be much lower\cite{ware:2004}.
 
 
 
@@ -720,7 +720,7 @@ Table \ref{table:comparison:criteria} shows which of the characteristics describ
 \end{figure}
 
 
-The application shows a peer graph of the user's neighbourhood. The visualization uses a force-directed graph layout where the on-screen distance between nodes corresponds an approximation of the node similarity. The active user is able to manipulate this neighbourhood by repositioning nodes of the graph. To deal with the high dimensionality of the data, extra cluster nodes are added to the visualization. These cluster peer nodes by genre\cite{odonovan:2008}.
+The application shows a network of the user's neighbourhood. The visualization uses a force-directed graph layout where the on-screen distance between nodes corresponds an approximation of the node similarity. The active user is able to manipulate this neighbourhood by repositioning nodes of the graph. To deal with the high dimensionality of the data, extra cluster nodes are added to the visualization. These cluster peer nodes by genre\cite{odonovan:2008}.
 
 By moving a cluster node closer towards the active user's node, all user nodes associated with this cluster will be drawn closer towards the active user node. As a result, these profiles will be temorary considered more similar than before. Similarly individual users can be moved closer towards or further away from the active user node\cite{odonovan:2008}.
 
@@ -732,19 +732,9 @@ By moving a cluster node closer towards the active user's node, all user nodes a
 
 %\subsubsection{Transparency, trust}
 
-Content-centric social websites, such as blogs and discussion forums, contain vast amounts of fast growing information. Recommendation systems have been developed to help users find the information they are looking for. The \emph{Pharos}\index{Pharos} application tries to address two distinctive problems that present themselves in this context: the cold start problem and the black box problem\cite{zhao:2010}, as described earlier in section \ref{chapter:literature_study:section:computer:subsection:challenges}.
+Content-centric social websites, such as blogs and discussion forums, contain vast amounts of fast growing information. Recommendation systems have been developed to help users find the information they are looking for. The \emph{Pharos}\index{Pharos} application tries to address two distinctive problems that present themselves in this context: the cold start problem and the black box problem\cite{zhao:2010}.
 
-As they hope to overcome previously defined problems, Zhao et al. \cite{zhao:2010} collect and visualize content-related social behaviour. The resulting data set is tranformed into a social map. The social map provides a context for new users, addressing the cold start problem. Secondly, the user can explore the social map to increase understanding and user interaction, in an effort to overcome the black box problem.
-
-The generation of the social map takes place through the following three step process:
-
-\begin{itemize}
-	\item \textbf{Community extraction}: a map depicting 'which users are talking about what'. Starting from either relationships, people or content communities can be derived;
-	\item \textbf{Community/item/people ranking}: the next step is to rank these communities. The 'hotness' can be measured on content, people authorities and so on;
-	\item \textbf{Community labeling}: describing what each community is about.
-\end{itemize}
-
-An example of what the resulting visualization looks like, is depicted in figure \ref{figure:pharos}.
+As they hope to overcome previously defined problems, Zhao et al. \cite{zhao:2010} collect and visualize content-related social behaviour. The data set is tranformed into a social map. The social map provides a context for new users, addressing the cold start problem. Secondly, the user can explore the social map to increase understanding and user interaction, in an effort to overcome the black box problem. An example of what the resulting visualization looks like, is depicted in figure \ref{figure:pharos}.
 
 \begin{figure}%
 	\begin{center}
@@ -754,13 +744,21 @@ An example of what the resulting visualization looks like, is depicted in figure
 	\label{figure:pharos}%
 \end{figure}
 
+The generation of the social map takes place through the following three step process:
+
+\begin{itemize}
+	\item \textbf{Community extraction}: a map depicting 'which users are talking about what'. Starting from either relationships, people or content communities can be derived;
+	\item \textbf{Community/item/people ranking}: the next step is to rank these communities. The 'hotness' can be measured on content, people authorities and so on;
+	\item \textbf{Community labeling}: describing what each community is about.
+\end{itemize}
+
 
 
 
 % SFVis
 \subsection{SFVis}\label{chapter:survey:section:applications:subsection:sfvis}
 
-\emph{SFVis} \emph{(Social Friends Visualization)} is an application developed by Gou et al. \cite{gou:2011:SIF:2016656.2016671} that helps users explore and find friends interactively under a context of interest. The system is a hybrid approach of social tags and social networks. Figure \ref{figure:sfviz} displays what the resulting visualization may look like.
+\emph{SFVis} \emph{(Social Friends Visualization)} is an application developed by Gou et al. \cite{gou:2011:SIF:2016656.2016671} that helps users interactively explore and find friends under a context of interest. The system is a hybrid approach of social tags and social networks. SFVis uses circular visualizations for the different trees and graphs for views and interaction. Figure \ref{figure:sfviz} displays what the resulting visualization could look like.
 
 \begin{figure}%
 	\begin{center}
@@ -774,9 +772,7 @@ An example of what the resulting visualization looks like, is depicted in figure
 
 The SFVis framework transforms a data model consisting out of social tags and social networks, into a visual form. Users can both manipulate the input and visuals on demand, adding scrutability.
 
-The visualization is constructed as follows. Social tags can form a network. Within this structure clusters may arise. From this cluster tag network a hierarchy is derived. A compound graph is generated from the tag hierarchy and social networks. A mapping function assigns actors in a social network to a tag tree. The actor similarity algorithm in SFVis considers both structure similarity in a social network and semantic similarity in a tag network. These scores will allow the recommendation system to compute friend suggestions\cite{gou:2011:SIF:2016656.2016671}.
-
-SFVis uses circular visualizations for the different trees and graphs for both views as well as interaction with the user.
+The visualization is constructed as follows. Social tags can form a network. Within this structure clusters may arise. From this tag network, a hierarchy is derived. A compound graph is generated from the tag hierarchy and social networks. A mapping function assigns actors in each social network to a tag tree. The actor similarity algorithm in SFVis considers both \emph{structure similarity} in a social network and \emph{semantic similarity} in a tag network. These scores will allow the recommendation system to compute friend suggestions\cite{gou:2011:SIF:2016656.2016671}.
 
 
 
@@ -785,7 +781,7 @@ SFVis uses circular visualizations for the different trees and graphs for both v
 
 %\subsubsection{Scrutability, transparency, effectiveness and satisfaction}
 
-In \cite{gretarsson:2010}, Gretarsson et al. used the Facebook API to create an application to generate social recommendations for Facebook users. Unfortunately the Facebook API does not support unauthorized reading of item preference information beyond the immediate friend group. This would not have been a problem unless traditional collaborative filtering strategies tend to produce item suggestions of inferior quality for small items. In this case however the research team relies on the social filtering through the active user's peer group\cite{gretarsson:2010}.
+In \cite{gretarsson:2010}, Gretarsson et al. used the \emph{Facebook API} to create an application to generate social recommendations for \emph{Facebook}\footnote{\url{https://www.facebook.com/}} users. Unfortunately the \emph{Facebook API} does not support unauthorized reading of item preference information beyond the immediate friend group. This would not have been a problem unless traditional collaborative filtering strategies tend to produce item suggestions of inferior quality for small items. In this case however the research team relies on the social filtering through the active user's peer group\cite{gretarsson:2010}.
 
 \emph{SmallWorlds}\index{SmallWorlds} is "a visual interactive graph-based interface that allows users to specify, refine and build item-preference profiles"\cite{gretarsson:2010}. The system promotes transparancy in the recommendation process, and gives the user a sense of control over the recommendation process through interactions. This way, Gretarsson et al. try to further overcome the limitations of their recommender system\cite{gretarsson:2010}.
 
@@ -816,9 +812,9 @@ The user can move nodes in each layer further or closer towards the active user'
 
 %\subsubsection{Scrutability, transparency, trust, effectiveness and satisfaction}
 
-\emph{TasteWeights}\index{TasteWeights} is a hybrid recommender with an interactive graphical user interface\cite{bostandjiev:2012}. The application allows the user to express his/her preferences changing the weights of incoming data sources.
+\emph{TasteWeights}\index{TasteWeights} is a hybrid recommender with an interactive graphical user interface\cite{bostandjiev:2012}. The application allows the user to express his/her preferences by changing the weights of incoming data sources.
 
-One of the challenges Bostandjiev et al. try to address is that "social web APIs and other data sources are constantly evolving, and traditional recommender system techniques such as automated collaborative filtering need to adapt to the changing environment of the social web"\cite{bostandjiev:2012} (cf. Smallworlds). They introduce two enhancements for the traditional techniques. Multiple web sources, namely from \emph{Facebook}\footnote{\url{https://www.facebook.com/}}, \emph{Twitter}\footnote{\url{https://twitter.com/}} and \emph{Wikipedia}\footnote{\url{http://www.wikipedia.org/}} are combined when computing the recommendation. This combination provides a hybrid of different recommendation strategies, namely: collaborative filtering, expert-based and content-based respectively. The second enhancement is a new user interface that provides transparency into the recommendation process.
+One of the challenges Bostandjiev et al. try to address is that "social web APIs and other data sources are constantly evolving, and traditional recommender system techniques such as automated collaborative filtering need to adapt to the changing environment of the social web"\cite{bostandjiev:2012} (cf. Smallworlds). They introduce two enhancements for the traditional techniques. Multiple web sources, namely from \emph{Facebook}, \emph{Twitter}\footnote{\url{https://twitter.com/}} and \emph{Wikipedia}\footnote{\url{http://www.wikipedia.org/}} are combined when computing the recommendation. This combination provides a hybrid of different recommendation strategies, namely: collaborative filtering, expert-based and content-based respectively. The second enhancement is a new user interface that provides transparency into the recommendation process.
 
 There are three levels to be distinguished that are represented visually as well:
 
@@ -854,7 +850,7 @@ Figure \ref{figure:tasteweights} shows the corresponding visual representation o
 
 First recommender systems were discussed: we looked at types of recommendation algorithms, a number of properties of recommender systems, and finally some challenges of recommender systems. One of these challenges was the black box problem. We saw that visualizations can be used to develop a white box model.
 
-Next, aspects of information visualization were discussed: we look at different types of data and visual encodings. We saw that the recommendation rationale behind collaborative filtering could be interpreted as a set of relationships between users and items. As a result, a graph-based approach could be used to visualize this data. Using data, dimensionality, and clutter reduction techniques along with interaction techniques, we developed a visualization that could serve as a white box model for collaborative filtering.
+Next, aspects of information visualization were discussed: we looked at different types of data and visual encodings. We saw that the recommendation rationale behind collaborative filtering could be interpreted as a set of relationships between users and items. As a result, a graph-based approach could be used to visualize this data. Using data, dimensionality, and clutter reduction techniques along with interaction techniques, we developed a visualization that could serve as a white box model for collaborative filtering.
 
 Then we described how users can gain insight into interactive visualization. We look at evaluation techniques for insight gaining. Finally a visual thinking algorithm was proposed that describes how a user could gain insight into the visualization developed in the previous section.
 
@@ -872,7 +868,7 @@ In the last section we looked at five visual explanation systems that already ex
 
 \begin{center}
 	\begin{table}%
-	\caption{The objectives for the SoundSuggest application with respect to Tintarev and Masthoff's aims. A $\pm$ indicates that this aim is not a priority, based on the success criteria listed in section \ref{introduction:objective:criteria}.}
+	\caption{The objectives for the \emph{SoundSuggest} application with respect to Tintarev and Masthoff's aims. A $\pm$ indicates that this aim is not a priority, based on the success criteria listed in section \ref{introduction:objective:criteria}.}
 		\begin{center}
 			\begin{tabular}{l l l l l l l }
 				\hline

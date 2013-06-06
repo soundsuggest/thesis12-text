@@ -26,6 +26,7 @@
 \usepackage{placeins}
 \usepackage{pdfpages}
 \usepackage{nomencl}
+\usepackage{tabularx}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,7 +94,7 @@
 % ------------------------- nomenclature -----------------------------
 \makenomenclature
 % --------------------------- glossary -------------------------------
-\makeglossaries
+%\makeglossaries
 
 
 \begin{document}
@@ -144,13 +145,6 @@
 \include{tex/chapter_summary}
 \include{tex/chapter_samenvatting}
 
-\newpage
-%% List of acronyms
-%% ----------------
-%\printnomenclature
-%\include{tex/chapter_abbreviations}
-%\printglossary[type=\acronymtype,title=Abbreviations]
-
 
 \newpage
 % Inhoud: Een overzicht van de inhoud moet ordelijk worden weergegeven met referentie naar de correctie paginanummers (maximum drie subniveaus). Alle pagina’s vóór hoofdstuk 1 dienen genummerd te worden met Romeinse cijfers (I, II, …). Vanaf hoofdstuk 1 gebeurt de nummering met Arabische cijfers (1, 2, …).
@@ -170,7 +164,11 @@
 
 
 % Lijst van afkortingen en lijst van symbolen: Hierin staan de belangrijkste afkortingen en symbolen die gebruikt worden in de masterproef, met hun betekenis en eenheid.
-
+\newpage
+%% List of acronyms
+%% ----------------
+%\printnomenclature
+\include{tex/chapter_abbreviations}
 
 
 \newpage
