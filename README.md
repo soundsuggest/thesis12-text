@@ -1,4 +1,4 @@
 thesis12-text
 =============
 
-Schelfaut (2013) - Master thesis - Visualization of music suggestions
+The Latex files for the master thesis Visualization of music suggestions (2013).
